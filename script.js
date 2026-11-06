@@ -1,7 +1,7 @@
 // ===== Configuração (único lugar para editar) =====
 const CONFIG = {
   // Link do checkout da assinatura na Kiwify. Colar aqui quando o produto estiver criado.
-  CHECKOUT_URL: "",
+  CHECKOUT_URL: "https://pay.kiwify.com.br/kOr6u1x",
   ABRE:  "2026-12-01T00:00:00-03:00",   // início da pré-venda (Brasília)
   FECHA: "2026-12-07T23:59:59-03:00",   // fim da pré-venda (Brasília)
 };
