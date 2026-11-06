@@ -53,18 +53,18 @@ function aplicarEstado(){
 // ===== As seis perguntas, aplicadas ao caso do hotel =====
 const PERGUNTAS = [
   ["Qual é a afirmação exata?",
-   "Nas redes, o caso virou duas frases prontas: “o hotel matou a hóspede” e “ela sentou na janela, a culpa é dela”. A pergunta que interessa é mais precisa: se uma hóspede se senta no batente e uma peça da estrutura cede, o hotel responde, mesmo com o risco que ela assumiu?"],
+   "Nas redes, o caso virou duas frases prontas: “o hotel matou a hóspede” e “ela sentou na janela, a culpa é dela”. Repare que nenhuma das duas responde à pergunta que importa. A meu ver, ela é mais precisa: se uma hóspede se senta no batente e uma peça da estrutura cede, o hotel responde, mesmo com o risco que ela assumiu?"],
   ["O que sabemos e de qual fonte?",
-   "As câmeras mostram que ela se sentou no batente, apoiou as costas numa estrutura de alumínio e a peça cedeu. A polícia investiga a morte como acidental e apura se o hotel tem responsabilidade. A perícia ainda não concluiu a causa do desprendimento.",
+   "Antes de opinar, a gente separa o que se sabe de onde veio cada informação. As câmeras mostram que ela se sentou no batente, apoiou as costas numa estrutura de alumínio e a peça cedeu. A polícia investiga a morte como acidental e apura se o hotel tem responsabilidade. E perceba: a perícia ainda não concluiu a causa.",
    "Fontes citadas na edição: Polícia Civil e SSP-MA, segundo g1 e Metrópoles."],
   ["O que é fato, relato, inferência ou opinião?",
-   "Fato: a peça cedeu, e as câmeras mostram isso. Relato: o namorado disse que os dois tinham bebido. Inferência: “ela caiu porque bebeu” e “a janela era irregular”, enquanto a perícia não disser. Opinião qualificada: um engenheiro que analisou o vídeo, sem laudo."],
+   "É aqui que a maioria das discussões se perde. Fato: a peça cedeu, e as câmeras mostram isso. Relato: o namorado disse que os dois tinham bebido. Inferência: “ela caiu porque bebeu” e, da mesma forma, “a janela era irregular”, enquanto a perícia não disser. Opinião qualificada: um engenheiro que analisou o vídeo, mas sem laudo."],
   ["Que outras explicações cabem nos dados?",
-   "Pelo menos três: uma falha da instalação, se a peça funcionava como proteção contra queda; um uso incompatível com a função, se ela era só parte da janela; ou as duas coisas juntas. Uso imprudente e falha de segurança não se excluem."],
+   "Eu vejo pelo menos três: uma falha da instalação, se a peça funcionava como proteção contra queda; um uso incompatível com a função, se ela era só parte da janela; ou as duas coisas juntas. E essa última, a meu ver, é a que mais gente esquece."],
   ["O que falta saber e poderia mudar a conclusão?",
-   "Qual era a função da peça que cedeu, como estava fixada, a altura do peitoril, que força provocou o desprendimento e, principalmente, o laudo da perícia. Qualquer um desses itens pode virar a análise de lado."],
+   "Se você me perguntar o que eu precisaria saber: qual era a função da peça que cedeu, como estava fixada, a altura do peitoril, que força provocou o desprendimento e, principalmente, o laudo da perícia. Qualquer um desses itens, sozinho, pode virar a análise de lado."],
   ["O que é responsável concluir agora?",
-   "Pelo Código de Defesa do Consumidor, o hotel responde por defeito do serviço independentemente de culpa, mas pode se defender provando que não havia defeito ou que a conduta da vítima foi a causa exclusiva. Se as duas coisas contribuíram, a indenização pode ser reduzida. Hoje, não dá para cravar nem uma coisa nem outra.",
+   "Pelo Código de Defesa do Consumidor, o hotel responde por defeito do serviço independentemente de culpa, mas pode se defender provando que não havia defeito ou que a conduta da vítima foi a causa exclusiva. E, se as duas coisas contribuíram, a indenização pode ser reduzida. A meu ver, hoje não dá para cravar nem uma coisa nem outra.",
    "Base legal citada na edição: CDC, art. 14; Código Civil, arts. 945 e 948."],
 ];
 
