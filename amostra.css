@@ -1,0 +1,21 @@
+.narrow{max-width:760px}
+.ahead{background:var(--teal);color:var(--cream);padding:56px 0 44px}
+.kicker.light{color:#c9d3d1;margin-top:10px}
+.status a{color:#e7ecea}
+.article{padding-top:24px;padding-bottom:80px;background:var(--cream)}
+.atitle{font-size:clamp(30px,4.4vw,46px);margin:18px 0 8px;color:var(--cream)}
+.article h3{font-size:22px;margin:40px 0 14px;color:var(--teal)}
+.article p,.article li{font-family:var(--serif);font-size:19px;line-height:1.7;color:#2a2826}
+.article p{margin:14px 0}
+.article ul,.article ol{padding-left:24px;margin:14px 0}
+.article li{margin:8px 0}
+.article hr{border:0;height:1px;background:var(--line);margin:40px 0 0}
+.article a{color:var(--blue);font-weight:600}
+.article table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15.5px;display:block;overflow-x:auto}
+.article th,.article td{border-bottom:1px solid var(--line);padding:12px 10px;text-align:left;vertical-align:top;line-height:1.5}
+.article th{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.article td:first-child{min-width:300px}
+.article blockquote{background:var(--teal);border-left:6px solid var(--accent);border-radius:12px;padding:20px 24px;margin:16px 0}
+.article blockquote p{color:var(--cream);margin:0}
+.fecho .btn{margin-top:8px}
+@media(max-width:520px){.article p,.article li{font-size:17.5px}.article td:first-child{min-width:220px}}
