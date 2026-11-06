@@ -198,6 +198,8 @@ section{padding:96px 0}
 footer{background:var(--teal-ink);color:#b9c4c2;font-size:14px;padding:36px 0 44px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between}
 footer a{color:#e7ecea}
+footer .forn{flex-basis:100%;font-size:13px;color:#b9c4c2;margin:0;border-top:1px solid #2c4245;padding-top:16px}
+footer .forn+.disc{border-top:0;padding-top:0}
 footer .disc{flex-basis:100%;font-size:12.5px;color:#8fa09d;border-top:1px solid #2c4245;padding-top:16px}
 
 /* reveal */
