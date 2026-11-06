@@ -17,5 +17,12 @@
 .article td:first-child{min-width:300px}
 .article blockquote{background:var(--teal);border-left:6px solid var(--accent);border-radius:12px;padding:20px 24px;margin:16px 0}
 .article blockquote p{color:var(--cream);margin:0}
+.article h4{font-family:var(--display);font-size:17px;font-weight:700;color:var(--ink);margin:30px 0 6px;display:flex;align-items:center;gap:10px}
+.article h4::before{content:"";width:18px;height:3px;background:var(--accent);border-radius:2px;flex:none}
+.article blockquote.lei{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:10px;padding:16px 20px}
+.article blockquote.lei p{color:#2a2826;font-size:17.5px}
+.article blockquote.conclusao{background:#fff8dc;border:1px solid #ecd78a;border-left:6px solid var(--accent);border-radius:12px;padding:18px 22px}
+.article blockquote.conclusao p{color:#2a2826;margin:0 0 10px}.article blockquote.conclusao p:last-child{margin:0}
+.article ul ul{margin:6px 0}
 .fecho .btn{margin-top:8px}
 @media(max-width:520px){.article p,.article li{font-size:17.5px}.article td:first-child{min-width:220px}}
