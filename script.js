@@ -2,10 +2,9 @@
 const CONFIG = {
   // Link do checkout da assinatura na Kiwify (plano Assinante fundador, R$ 9,90/mês).
   CHECKOUT_URL: "https://pay.kiwify.com.br/kOr6u1x",
-  // Link do checkout do Plano Anual na Kiwify (R$ 99,00/ano — 2 meses grátis).
   CHECKOUT_ANNUAL_URL: "https://pay.kiwify.com.br/xlNLeB4",
-  ABRE:  "2026-11-10T00:00:00-03:00",   // vendas abertas a partir de hoje (Brasília)
-  FECHA: "2027-12-31T23:59:59-03:00",   // fim da pré-venda (Brasília)
+  ABRE:  "2026-12-01T00:00:00-03:00",   // início da pré-venda (Brasília)
+  FECHA: "2026-12-07T23:59:59-03:00",   // fim da pré-venda (Brasília)
 };
 
 // Permite conferir os estados: ?estado=antes | aberta | encerrada
@@ -35,7 +34,9 @@ function aplicarEstado(){
       n.innerHTML = 'Pré-venda de fundador de 1º a 7 de dezembro, por R$ 9,90/mês. Para ser avisado, ative as notificações do <a class="link" href="https://www.instagram.com/profalexandrezamboni/" target="_blank" rel="noopener">@profalexandrezamboni</a>.';
     });
   } else if (est === "aberta"){
-    status.innerHTML = 'Inscrições de Assinante Fundador abertas · <b>Acesso imediato</b> às edições (texto + áudio) e nova edição todo domingo, às 8h';
+    const boxAnual = document.getElementById("box-anual");
+    if (boxAnual) boxAnual.style.display = "block";
+    status.innerHTML = 'Pré-venda de fundador aberta <b>até segunda, 7/12, às 23h59</b> · primeira edição no domingo, 13/12, às 8h';
     ctas.forEach(b => {
       if (CONFIG.CHECKOUT_URL){ b.href = CONFIG.CHECKOUT_URL; b.rel = "noopener"; }
       else { b.href = "#oferta"; b.dataset.semCheckout = "1"; }
