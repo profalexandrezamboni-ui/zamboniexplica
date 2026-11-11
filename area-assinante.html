@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zamboni Explica — Edições e Áudio</title>
+  <style>
+    /* OPÇÃO 1 (Padrão): AREIA EDITORIAL & AZUL OXFORD (Tom exato de "A Causa") */
+    :root, [data-theme="oxford"] {
+      --bg: #f4f0e6;
+      --bg-alt: #ebe5d8;
+      --surface: #fbf9f4;
+      --nav-glass: rgba(244, 240, 230, 0.85);
+      --ink: #191918;
+      --muted: #5e5b54;
+      --subtle: #78746b;
+      --blue: #1b4d89;
+      --blue-hover: #143b6b;
+      --hairline: rgba(25, 25, 24, 0.09);
+      --ok: #1d6b38;
+      --ok-bg: #e9f5ec;
+      --warn: #b25000;
+      --warn-bg: #fff5eb;
+      --err: #b3261e;
+    }
+
+    /* OPÇÃO 2: BRANCO PURO & VERDE-PETRÓLEO */
+    [data-theme="petroleo"] {
+      --bg: #ffffff;
+      --bg-alt: #f4f3ef;
+      --surface: #ffffff;
+      --nav-glass: rgba(255, 255, 255, 0.85);
+      --ink: #182226;
+      --muted: #526066;
+      --subtle: #6e7a80;
+      --blue: #1e3a40;
+      --blue-hover: #14282c;
+      --hairline: rgba(24, 34, 38, 0.09);
+      --ok: #1d6b38;
+      --ok-bg: #e9f5ec;
+      --warn: #b25000;
+      --warn-bg: #fff5eb;
+      --err: #b3261e;
+    }
+
+    /* OPÇÃO 3: PAPEL NOBRE & TERRACOTA (@profalexandrezamboni) */
+    [data-theme="terracota"] {
+      --bg: #fdfbf7;
+      --bg-alt: #f5f0e6;
+      --surface: #ffffff;
+      --nav-glass: rgba(253, 251, 247, 0.86);
+      --ink: #161616;
+      --muted: #5c5852;
+      --subtle: #76726b;
+      --blue: #9e221b;
+      --blue-hover: #7d1914;
+      --hairline: rgba(22, 22, 22, 0.08);
+      --ok: #1e6b3b;
+      --ok-bg: #e9f5ec;
+      --warn: #b25000;
+      --warn-bg: #fff5eb;
+      --err: #9e221b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .theme-switcher {
+      background: #191918;
+      color: #f4f0e6;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .theme-btn {
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 980px;
+      cursor: pointer;
+      font-size: 12.5px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+    }
+    .theme-btn.active {
+      background: #fff;
+      color: #191918;
+      font-weight: 700;
+      border-color: #fff;
+    }
+    .swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid rgba(0,0,0,0.2);
+    }
+
+    /* Apple Frosted Glass Header */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 52px;
+      background: var(--nav-glass);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--hairline);
+    }
+    .nav-bar {
+      max-width: 860px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .nav-meta a {
+      color: var(--blue);
+      text-decoration: none;
+      margin-left: 14px;
+      font-weight: 500;
+    }
+
+    .wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 52px 24px 88px;
+    }
+
+    /* Masthead Apple News+ Style */
+    .masthead {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .masthead h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+      margin-bottom: 8px;
+    }
+    .tagline {
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    /* Apple iOS/macOS Segmented Pill Switcher */
+    .tabs {
+      display: flex;
+      background: #e8e8ed;
+      padding: 4px;
+      border-radius: 980px;
+      gap: 4px;
+      margin-bottom: 44px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      flex: 1;
+      white-space: nowrap;
+      padding: 9px 18px;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      border-radius: 980px;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Article Card */
+    .card {
+      background: var(--surface);
+      border-radius: 28px;
+      padding: 52px 48px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.035);
+      border: 1px solid var(--hairline);
+    }
+    @media (max-width: 640px) {
+      .card { padding: 32px 24px; }
+    }
+    .article-title {
+      font-size: clamp(1.75rem, 3.4vw, 2.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      margin: 8px 0 10px;
+    }
+    .byline {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    /* Apple Podcasts Style Audio Player Bar */
+    .audio-bar {
+      background: var(--bg-alt);
+      border-radius: 20px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .audio-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .audio-meta img {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+    .audio-meta strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .audio-meta span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .audio-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .speed-group {
+      display: inline-flex;
+      background: #e5e5ea;
+      padding: 3px;
+      border-radius: 980px;
+      gap: 2px;
+    }
+    .speed-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 980px;
+      cursor: pointer;
+    }
+    .speed-btn.active {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    /* Narrative Intro & Lunch Summary */
+    .story-box {
+      background: var(--bg-alt);
+      border-radius: 22px;
+      padding: 32px 34px;
+      margin-bottom: 38px;
+    }
+    .story-box h3 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .story-box p {
+      font-size: 16.5px;
+      line-height: 1.65;
+      color: #2c2c2e;
+      margin-bottom: 14px;
+    }
+    .story-box p:last-child { margin-bottom: 0; }
+
+    .section-sub {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+    .q-step {
+      border-top: 1px solid var(--hairline);
+      padding: 22px 0;
+      font-size: 16.5px;
+      line-height: 1.65;
+      color: #2c2c2e;
+    }
+    .q-num {
+      display: block;
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 18px;
+      letter-spacing: -0.015em;
+      margin-bottom: 6px;
+    }
+    .q-num span {
+      color: var(--blue);
+      margin-right: 6px;
+    }
+
+    .lunch-box {
+      background: #f2f7fd;
+      border-radius: 22px;
+      padding: 28px 32px;
+      margin-top: 28px;
+    }
+    .lunch-box strong {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+    .lunch-box p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* Dictionary Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .concept-card {
+      background: var(--bg-alt);
+      border-radius: 20px;
+      padding: 24px;
+    }
+    .concept-card strong {
+      display: block;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .concept-card p {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .btn-pill {
+      display: inline-block;
+      background: var(--err);
+      color: #fff;
+      padding: 11px 22px;
+      border-radius: 980px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .status-pill {
+      display: inline-block;
+      padding: 3px 11px;
+      border-radius: 980px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .status-pill.active { background: var(--ok-bg); color: var(--ok); }
+    .status-pill.canceled { background: var(--warn-bg); color: var(--warn); }
+    .alert { padding: 16px; border-radius: 14px; margin-top: 18px; font-size: 14px; display: none; }
+    .alert.show { display: block; background: var(--ok-bg); color: var(--ok); }
+    .pane { display: none; }
+    .pane.active { display: block; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-bar">
+      <a href="index.html" class="brand-title">Zamboni Explica</a>
+      <div class="nav-meta">
+        Domingo, 08h00 <a href="index.html">&lsaquo; Voltar ao Início</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="masthead">
+      <span class="eyebrow">Edição Semanal · Texto &amp; Áudio</span>
+      <h1>O caso da semana, pela lei.</h1>
+      <p class="tagline">Analisado com critério, e não com camisa de time.</p>
+    </div>
+
+    <!-- Segmented Switcher -->
+    <nav class="tabs" aria-label="Seções">
+      <button class="tab-btn active" onclick="showPane('ed1', this)">Edição #001 · Hotel</button>
+      <button class="tab-btn" onclick="showPane('ed2', this)">Edição #002 · Passaportes</button>
+      <button class="tab-btn" onclick="showPane('acervo', this)">Como Funciona</button>
+      <button class="tab-btn" onclick="showPane('conta', this)">Assinatura</button>
+    </nav>
+
+    <!-- ABA 1: EDIÇÃO #001 -->
+    <section id="pane-ed1" class="pane active">
+      <article class="card">
+        <span class="eyebrow">Edição #001 · Responsabilidade Civil &amp; Perícia</span>
+        <h2 class="article-title">A janela do sétimo andar: o hotel tem o dever de indenizar?</h2>
+        <p class="byline">Por <strong>Alexandre Zamboni</strong> · Leitura de 5 minutos</p>
+
+        <!-- Apple Podcasts Style Audio Player -->
+        <div class="audio-bar">
+          <div class="audio-meta">
+            <img src="assets/perfil-800.jpg" alt="Prof. Alexandre Zamboni">
+            <div>
+              <strong>Ouvir na voz do Prof. Zamboni</strong>
+              <span>Narração oficial · Velocidade padrão 1.25x</span>
+            </div>
+          </div>
+          <div class="audio-controls">
+            <audio id="audio-ed1" controls preload="metadata" onplay="ensureRate(this)" style="height:36px; max-width:220px;">
+              <source src="edicao-001.mp3" type="audio/mpeg">
+            </audio>
+            <div class="speed-group">
+              <button type="button" class="speed-btn" onclick="setAudioRate('audio-ed1', 1.0, this)">1x</button>
+              <button type="button" class="speed-btn active" onclick="setAudioRate('audio-ed1', 1.25, this)">1.25x</button>
+              <button type="button" class="speed-btn" onclick="setAudioRate('audio-ed1', 1.5, this)">1.5x</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-box">
+          <h3>O que aconteceu? (A história completa em 1 minuto, para quem chegou agora)</h3>
+          <p>
+            Madrugada de <strong>3 de novembro, 1h30 da manhã</strong>, em <strong>São Luís (MA)</strong>. A jovem paraense <strong>Renata Rebeca</strong>, de 26 anos, mãe de dois filhos pequenos, voltava de um passeio com o namorado para o <strong>Rio Poty Hotel</strong>, onde estavam hospedados.
+          </p>
+          <p>
+            Eles subiram de elevador até o <strong>corredor do 7º andar</strong>. Enquanto o namorado procurava a chave na porta do quarto, Renata foi até uma janela do corredor para esperar, <strong>sentou-se no parapeito de costas para a rua e apoiou o corpo na estrutura de alumínio da janela</strong>. Naquele segundo, <strong>a peça de alumínio se soltou e cedeu para trás</strong>. Renata caiu do sétimo andar e morreu no local.
+          </p>
+          <p>
+            <strong>Por que o caso dividiu o país ao meio?</strong> As câmeras do corredor provaram que não houve crime nem empurrão. Mas a internet virou um tribunal dividido em duas torcidas: metade dizendo que a culpa era 100% dela por sentar na janela, e a outra metade dizendo que o hotel tinha responsabilidade total porque uma janela no 7º andar jamais poderia despencar. Veja como a lei brasileira resolve isso:
+          </p>
+        </div>
+
+        <h3 class="section-sub">As 6 Perguntas do Método</h3>
+        <div class="q-step">
+          <strong class="q-num"><span>01</span> Qual é a pergunta certa a fazer?</strong>
+          Se uma hóspede faz algo arriscado (sentar no batente), mas a estrutura da janela cede e despenca, o hotel responde pela morte mesmo assim?
+        </div>
+        <div class="q-step">
+          <strong class="q-num"><span>02</span> O que já está provado (e de onde veio)?</strong>
+          Pelas câmeras e pela Polícia Civil, Renata sentou no batente, encostou na peça de alumínio e ela se soltou. Após o acidente, o hotel fechou o vão com madeira e os Bombeiros aplicaram multa administrativa por certificado de incêndio vencido (sem relação direta com a janela). O laudo oficial da perícia (SSP-MA) ainda aguarda conclusão.
+        </div>
+        <div class="q-step">
+          <strong class="q-num"><span>03</span> O que é fato, relato ou conclusão apressada?</strong>
+          É fato gravado que a estrutura de alumínio cedeu. É relato que o casal havia bebido. Já dizer que "ela caiu porque bebeu" ou que "tapar a janela com madeira é confissão de culpa" são conclusões apressadas: álcool não solta alumínio da parede sozinho, e interditar um vão aberto após acidente é dever básico de segurança.
+        </div>
+        <div class="q-step">
+          <strong class="q-num"><span>04</span> Quais são os 3 caminhos possíveis na lei?</strong>
+          <strong>Caminho A (Defeito do hotel):</strong> Se a janela estava mal fixada ou sem trava exigida em andar alto, há defeito de segurança.<br>
+          <strong>Caminho B (Culpa exclusiva da vítima):</strong> Se a esquadria era íntegra e segura e só cedeu por uso totalmente impróprio.<br>
+          <strong>Caminho C (Culpa concorrente):</strong> Quando a imprudência ao sentar no parapeito e uma falha de manutenção na janela concorrem juntas para o acidente.
+        </div>
+        <div class="q-step">
+          <strong class="q-num"><span>05</span> O que ainda falta descobrir?</strong>
+          O laudo pericial oficial sobre os parafusos, trilhos, altura do parapeito e estado de conservação daquela esquadria.
+        </div>
+        <div class="q-step">
+          <strong class="q-num"><span>06</span> O que concluir com critério agora?</strong>
+          Pelo <strong>Código de Defesa do Consumidor (art. 14)</strong>, o hotel responde pela segurança da sua estrutura e só se isenta se provar que não havia defeito algum e que a culpa foi exclusiva da vítima. Já pelo <strong>Código Civil (art. 945)</strong>, se a perícia apontar que os dois contribuíram (risco assumido por ela + falha na janela), aplica-se a <strong>culpa concorrente</strong>: o dever de indenizar existe, mas o juiz reduz o valor na proporção de cada conduta.
+        </div>
+
+        <div class="lunch-box">
+          <strong>Na mesa do almoço (em 3 frases)</strong>
+          <p>
+            "Sentar na janela foi arriscado, mas isso não responde se a janela do hotel era segura. Pela lei do consumidor (CDC, art. 14), o hotel responde se a estrutura falhou na segurança esperada; já a imprudência da vítima pode diminuir o valor da indenização (Código Civil, art. 945), sem necessariamente zerar a conta. Quem vai dizer qual dos dois pesou mais é o laudo da perícia, não a torcida."
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ABA 2: EDIÇÃO #002 -->
+    <section id="pane-ed2" class="pane">
+      <article class="card">
+        <span class="eyebrow">Edição #002 · Processo Penal &amp; Casos Reais no STF</span>
+        <h2 class="article-title">Passaporte retido pela Polícia Federal: por que o STF devolveu o de Silas Malafaia e manteve o de Jair Bolsonaro?</h2>
+        <p class="byline">Por <strong>Alexandre Zamboni</strong> · Leitura de 6 minutos</p>
+
+        <!-- Apple Podcasts Style Audio Player -->
+        <div class="audio-bar">
+          <div class="audio-meta">
+            <img src="assets/perfil-800.jpg" alt="Prof. Alexandre Zamboni">
+            <div>
+              <strong>Ouvir na voz do Prof. Zamboni</strong>
+              <span>Narração oficial · Velocidade padrão 1.25x</span>
+            </div>
+          </div>
+          <div class="audio-controls">
+            <audio id="audio-ed2" controls preload="metadata" onplay="ensureRate(this)" style="height:36px; max-width:220px;">
+              <source src="edicao-002.mp3" type="audio/mpeg">
+            </audio>
+            <div class="speed-group">
+              <button type="button" class="speed-btn" onclick="setAudioRate('audio-ed2', 1.0, this)">1x</button>
+              <button type="button" class="speed-btn active" onclick="setAudioRate('audio-ed2', 1.25, this)">1.25x</button>
+              <button type="button" class="speed-btn" onclick="setAudioRate('audio-ed2', 1.5, this)">1.5x</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-box">
+          <h3>O que aconteceu? (A história completa em 1 minuto, com nomes e datas)</h3>
+          <p>
+            Para entender a retenção de passaporte no Brasil sem camisa de time, basta comparar dois desfechos opostos no próprio Supremo Tribunal Federal (STF):
+          </p>
+          <p>
+            <strong>Caso 1 (Silas Malafaia e Marcos do Val — Devolvidos):</strong> Em agosto de 2025, o pastor Silas Malafaia teve o passaporte apreendido ao desembarcar no Galeão (RJ), em apuração sobre suposta obstrução de justiça. Em outubro de 2026, a própria PGR concluiu que não havia elementos para denunciá-lo, e o ministro Edson Fachin determinou a devolução do passaporte (assim como ocorreu com o senador Marcos do Val em maio de 2026).
+          </p>
+          <p>
+            <strong>Caso 2 (Jair Bolsonaro — Mantido retido):</strong> Já o ex-presidente Jair Bolsonaro, que entregou o passaporte em fevereiro de 2024 (Operação <em>Tempus Veritatis</em>), pediu a liberação para viajar a Israel e aos Estados Unidos, mas a 1ª Turma do STF negou por unanimidade, mantendo a restrição.
+          </p>
+        </div>
+
+        <h3 class="section-sub">As 6 Perguntas do Método</h3>
+        <div class="q-step">
+          <strong class="q-num"><span>01</span> Qual é a dúvida jurídica central?</strong>
+          Quando a lei autoriza reter o passaporte de quem ainda não foi condenado, e por que em um caso o tribunal devolve e no outro mantém retido?
+        </div>
+        <div class="q-step">
+          <strong class="q-num"><span>02</span> O que diz o Código de Processo Penal?</strong>
+          Desde a Lei 12.403/2011, o <strong>artigo 320 do CPP</strong> autoriza proibir a saída do país e ordenar a entrega do passaporte em 24 horas como medida intermediária para evitar a prisão preventiva.
+        </div>
+        <div class="q-step">
+          <strong class="q-num"><span>03</span> Os dois mitos das redes sociais:</strong>
+          Não é condenação antecipada (tanto que o de Malafaia foi devolvido após a apuração) e devolver não significa que a retenção inicial foi erro: pelo <strong>art. 282, § 5º do CPP</strong>, se o motivo atual cessar, o juiz é obrigado por lei a revogar a medida.
+        </div>
+        <div class="q-step">
+          <strong class="q-num"><span>04</span> Qual é a trava contra excessos?</strong>
+          Pelo <strong>artigo 282 do CPP</strong>, o juiz não pode decretar a medida de ofício na investigação (exige requerimento da Polícia ou do MP) e precisa demonstrar perigo concreto e atual de fuga ou prejuízo à instrução.
+        </div>
+
+        <div class="lunch-box">
+          <strong>Na mesa do almoço (em 3 frases)</strong>
+          <p>
+            "Reter passaporte em 24 horas está na lei brasileira desde 2011 (CPP, art. 320) para que o juiz não precise prender alguém quando basta impedir uma viagem internacional. Mas não é pena antecipada nem medida eterna: só vale enquanto existir risco atual para o processo. Por isso, quando a PGR apontou que o risco continuava (caso Bolsonaro), o STF manteve retido; e quando o motivo cessou (casos Silas Malafaia e Marcos do Val), o próprio STF devolveu."
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ABA 3: ACERVO COMO FUNCIONA -->
+    <section id="pane-acervo" class="pane">
+      <div class="card">
+        <span class="eyebrow">Acervo Permanente</span>
+        <h2 class="article-title">Dicionário "Como Funciona"</h2>
+        <p class="byline">Conceitos jurídicos recorrentes traduzidos para o português claro.</p>
+        <div class="grid-2">
+          <div class="concept-card">
+            <strong>1. Responsabilidade Objetiva (CDC, art. 14)</strong>
+            <p>Quando uma empresa responde pelo defeito de segurança do seu serviço independentemente de intenção.</p>
+          </div>
+          <div class="concept-card">
+            <strong>2. Culpa Exclusiva vs. Concorrente</strong>
+            <p>Se só a vítima causou o evento, não há dever de indenizar. Se ambos contribuíram, a indenização é reduzida proporcionalmente.</p>
+          </div>
+          <div class="concept-card">
+            <strong>3. Cautelar vs. Condenação</strong>
+            <p>Medidas cautelares (prisão preventiva ou retenção de passaporte) servem apenas para proteger o processo, não para punir antes da sentença.</p>
+          </div>
+          <div class="concept-card">
+            <strong>4. Foro por Prerrogativa de Função</strong>
+            <p>Regra constitucional que define qual tribunal julga atos praticados no exercício do cargo e em razão dele.</p>
+          </div>
+          <div class="concept-card">
+            <strong>5. Decisão Monocrática vs. Colegiada</strong>
+            <p>Quando um relator decide liminarmente sozinho e quando o caso é submetido ao voto da Turma ou do Plenário.</p>
+          </div>
+          <div class="concept-card">
+            <strong>6. Esferas Independentes</strong>
+            <p>Por que o mesmo fato pode gerar multa administrativa, ação civil de indenização e inquérito policial de forma independente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABA 4: MINHA ASSINATURA -->
+    <section id="pane-conta" class="pane">
+      <div class="card">
+        <span class="eyebrow">Gestão Transparente</span>
+        <h2 class="article-title">Sua Assinatura</h2>
+        <p style="margin:16px 0;">
+          Acesso: <span id="pill-access" class="status-pill active">Ativo</span> &nbsp;·&nbsp;
+          Renovação: <span id="pill-rec" class="status-pill active">Ativa (R$ 9,90/mês)</span>
+        </p>
+        <p style="color:var(--muted); margin-bottom:24px;">
+          Você pode cancelar a renovação futura a qualquer momento com um clique, sem multa, mantendo seu acesso integral até o fim do período já pago.
+        </p>
+        <button id="btn-cancelar" class="btn-pill" type="button">Cancelar renovação futura</button>
+        <div id="cancel-feedback" class="alert" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function setTheme(themeName, btn) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('zamboni_color_theme', themeName);
+      if (btn && btn.parentElement) {
+        Array.from(btn.parentElement.querySelectorAll('.theme-btn')).forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+      }
+    }
+    (function() {
+      document.documentElement.setAttribute('data-theme', 'oxford');
+      localStorage.setItem('zamboni_color_theme', 'oxford');
+    })();
+    function ensureRate(audioEl) {
+      if (!audioEl.dataset.rateSet) {
+        audioEl.defaultPlaybackRate = 1.25;
+        audioEl.playbackRate = 1.25;
+        audioEl.dataset.rateSet = '1';
+      }
+    }
+    function setAudioRate(audioId, rate, btn) {
+      var audioEl = document.getElementById(audioId);
+      if (audioEl) {
+        audioEl.defaultPlaybackRate = rate;
+        audioEl.playbackRate = rate;
+        audioEl.dataset.rateSet = '1';
+      }
+      if (btn && btn.parentElement) {
+        Array.from(btn.parentElement.children).forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+      }
+    }
+    document.querySelectorAll('audio').forEach(function(a) {
+      a.defaultPlaybackRate = 1.25;
+      a.playbackRate = 1.25;
+    });
+    function showPane(id, btn) {
+      document.querySelectorAll('.pane').forEach(function(p) { p.classList.remove('active'); });
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.getElementById('pane-' + id).classList.add('active');
+      btn.classList.add('active');
+    }
+    document.getElementById('btn-cancelar').addEventListener('click', function() {
+      var pillRec = document.getElementById('pill-rec');
+      var fb = document.getElementById('cancel-feedback');
+      pillRec.className = 'status-pill canceled';
+      pillRec.textContent = 'Cancelada ao fim do ciclo';
+      fb.className = 'alert show';
+      fb.textContent = 'Renovação futura cancelada. Seu acesso permanece ativo até o término do período já pago.';
+    });
+  </script>
+</body>
+</html>

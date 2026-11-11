@@ -2,7 +2,9 @@
 const CONFIG = {
   // Link do checkout da assinatura na Kiwify (plano Assinante fundador, R$ 9,90/mês).
   CHECKOUT_URL: "https://pay.kiwify.com.br/kOr6u1x",
-  ABRE:  "2026-12-01T00:00:00-03:00",   // início da pré-venda (Brasília)
+  // Link do checkout do Plano Anual na Kiwify (R$ 99,00/ano — 2 meses grátis).
+  CHECKOUT_ANNUAL_URL: "https://pay.kiwify.com.br/xlNLeB4",
+  ABRE:  "2026-11-10T00:00:00-03:00",   // vendas abertas a partir de hoje (Brasília)
   FECHA: "2026-12-07T23:59:59-03:00",   // fim da pré-venda (Brasília)
 };
 
