@@ -1,8 +1,8 @@
 // ===== Configuração (único lugar para editar) =====
 const CONFIG = {
-  // Link do checkout da assinatura na Kiwify (plano Assinante fundador, R$ 9,90/mês).
   CHECKOUT_URL: "https://pay.kiwify.com.br/kOr6u1x",
   CHECKOUT_ANNUAL_URL: "https://pay.kiwify.com.br/xlNLeB4",
+  VIP_TELEGRAM_URL: "https://t.me/ZamboniExplicaBot?start=lista_fundador",
   ABRE:  "2026-12-01T00:00:00-03:00",   // início da pré-venda (Brasília)
   FECHA: "2026-12-07T23:59:59-03:00",   // fim da pré-venda (Brasília)
 };
@@ -20,31 +20,59 @@ function estadoAtual(){
 function aplicarEstado(){
   const est = estadoAtual();
   const status = document.getElementById("status");
-  const ctas = document.querySelectorAll(".btn.cta");
+  const mainCtas = document.querySelectorAll(".btn.cta-main");
+  const btnMensal = document.getElementById("btn-plan-mensal");
+  const btnAnual = document.getElementById("btn-plan-anual");
+  const waitlistBox = document.getElementById("waitlist-box");
   const label = (b, txt) => { b.innerHTML = txt + ' <span class="arr">→</span>'; };
 
   if (est === "antes"){
-    status.innerHTML = 'A pré-venda de fundador abre em <b>1º de dezembro</b> · primeira edição no domingo, 13/12, às 8h';
-    ctas.forEach(b => {
-      b.href = "#amostra";
-      if (!b.closest(".dock")) label(b, "A pré-venda abre em 1º de dezembro · ver a amostra");
-      else label(b, "Ver amostra");
+    status.innerHTML = 'Pré-venda de fundador abre em <b>1º de dezembro</b> · entre na Lista Prioritária gratuita';
+    if (waitlistBox) waitlistBox.classList.add("active");
+    mainCtas.forEach(b => {
+      b.href = "#oferta";
+      if (!b.closest(".dock")) label(b, '<span>Entrar na Lista Prioritária de Fundador<span class="px"> — R$ 9,90/mês</span></span>');
+      else label(b, "Lista VIP");
     });
+    if (btnMensal){
+      btnMensal.href = CONFIG.VIP_TELEGRAM_URL;
+      btnMensal.target = "_blank";
+      btnMensal.rel = "noopener";
+      label(btnMensal, "📲 Ser avisado no Telegram (1º/12)");
+    }
+    if (btnAnual){
+      btnAnual.href = CONFIG.VIP_TELEGRAM_URL;
+      btnAnual.target = "_blank";
+      btnAnual.rel = "noopener";
+      label(btnAnual, "📲 Reservar vaga anual no Telegram");
+    }
     document.querySelectorAll(".cta-note").forEach(n => {
-      n.innerHTML = 'Pré-venda de fundador de 1º a 7 de dezembro, por R$ 9,90/mês. Para ser avisado, ative as notificações do <a class="link" href="https://www.instagram.com/profalexandrezamboni/" target="_blank" rel="noopener">@profalexandrezamboni</a>.';
+      n.innerHTML = 'A pré-venda com preço congelado (R$ 9,90/mês ou R$ 99/ano) abre de <b>1º a 7 de dezembro</b>. Entre na Lista Prioritária em 1 toque para receber o link de abertura.';
     });
   } else if (est === "aberta"){
-    const boxAnual = document.getElementById("box-anual");
-    if (boxAnual) boxAnual.style.display = "block";
-    status.innerHTML = 'Pré-venda de fundador aberta <b>até segunda, 7/12, às 23h59</b> · primeira edição no domingo, 13/12, às 8h';
-    ctas.forEach(b => {
-      if (CONFIG.CHECKOUT_URL){ b.href = CONFIG.CHECKOUT_URL; b.rel = "noopener"; }
-      else { b.href = "#oferta"; b.dataset.semCheckout = "1"; }
+    if (waitlistBox) waitlistBox.classList.remove("active");
+    status.innerHTML = 'Pré-venda de fundador aberta <b>até segunda, 7/12, às 23h59</b> · acesso imediato ao portal + edição todo domingo às 8h';
+    mainCtas.forEach(b => {
+      b.href = "#oferta";
+      if (!b.closest(".dock")) label(b, '<span>Quero ser assinante fundador<span class="px"> — R$ 9,90/mês</span></span>');
+      else label(b, "Assinar");
     });
+    if (btnMensal){
+      btnMensal.href = CONFIG.CHECKOUT_URL;
+      btnMensal.rel = "noopener";
+      label(btnMensal, "Assinar Mensal — R$ 9,90/mês");
+    }
+    if (btnAnual){
+      btnAnual.href = CONFIG.CHECKOUT_ANNUAL_URL;
+      btnAnual.rel = "noopener";
+      label(btnAnual, "Assinar Anual — R$ 99/ano");
+    }
   } else {
+    if (waitlistBox) waitlistBox.classList.remove("active");
     status.innerHTML = 'A pré-venda de fundador foi encerrada · obrigado a quem entrou';
-    ctas.forEach(b => {
-      b.removeAttribute("href"); b.setAttribute("aria-disabled","true");
+    [...mainCtas, btnMensal, btnAnual].filter(Boolean).forEach(b => {
+      b.removeAttribute("href");
+      b.setAttribute("aria-disabled","true");
       b.innerHTML = b.closest(".dock") ? "Encerrada" : "Pré-venda encerrada";
     });
     document.querySelectorAll(".cta-note").forEach(n => {
@@ -53,31 +81,57 @@ function aplicarEstado(){
   }
 }
 
-// ===== As seis perguntas, aplicadas ao caso do hotel =====
+// ===== As seis perguntas (Degustação aberta nas 1-3 + Suspense editorial nas 4-6) =====
 const PERGUNTAS = [
-  ["Qual é a afirmação exata?",
-   "Nas redes, o caso virou duas frases prontas: “o hotel matou a hóspede” e “ela sentou na janela, a culpa é dela”. Repare que nenhuma das duas responde à pergunta que importa. A meu ver, ela é mais precisa: se uma hóspede se senta no batente e uma peça da estrutura cede, o hotel responde, mesmo com o risco que ela assumiu?"],
-  ["O que sabemos e de qual fonte?",
-   "Antes de opinar, a gente separa o que se sabe de onde veio cada informação. As câmeras mostram que ela se sentou no batente, apoiou as costas numa estrutura de alumínio e a peça cedeu. A polícia investiga a morte como acidental e apura se o hotel tem responsabilidade. E perceba: a perícia ainda não concluiu a causa.",
-   "Fontes citadas na edição: Polícia Civil e SSP-MA, segundo g1 e Metrópoles."],
-  ["O que é fato, relato, inferência ou opinião?",
-   "É aqui que a maioria das discussões se perde. Fato: a peça cedeu, e as câmeras mostram isso. Relato: o namorado disse que os dois tinham bebido. Inferência: “ela caiu porque bebeu” e, da mesma forma, “a janela era irregular”, enquanto a perícia não disser. Opinião qualificada: um engenheiro que analisou o vídeo, mas sem laudo."],
-  ["Que outras explicações cabem nos dados?",
-   "Eu vejo pelo menos três: uma falha da instalação, se a peça funcionava como proteção contra queda; um uso incompatível com a função, se ela era só parte da janela; ou as duas coisas juntas. E essa última, a meu ver, é a que mais gente esquece."],
-  ["O que falta saber e poderia mudar a conclusão?",
-   "Se você me perguntar o que eu precisaria saber: qual era a função da peça que cedeu, como estava fixada, a altura do peitoril, que força provocou o desprendimento e, principalmente, o laudo da perícia. Qualquer um desses itens, sozinho, pode virar a análise de lado."],
-  ["O que é responsável concluir agora?",
-   "Pelo Código de Defesa do Consumidor, o hotel responde por defeito do serviço independentemente de culpa, mas pode se defender provando que não havia defeito ou que a conduta da vítima foi a causa exclusiva. E, se as duas coisas contribuíram, a indenização pode ser reduzida. A meu ver, hoje não dá para cravar nem uma coisa nem outra.",
-   "Base legal citada na edição: CDC, art. 14; Código Civil, arts. 945 e 948."],
+  [
+    "Qual é a afirmação exata?",
+    "Nas redes, o caso virou duas frases prontas: “o hotel matou a hóspede” e “ela sentou na janela, a culpa é dela”. Repare que nenhuma das duas responde à pergunta que importa. A meu ver, ela é mais precisa: se uma hóspede se senta no batente e uma peça da estrutura cede, o hotel responde, mesmo com o risco que ela assumiu?",
+    "Amostra aberta · Pergunta 1 de 6",
+    false
+  ],
+  [
+    "O que sabemos e de qual fonte?",
+    "Antes de opinar, a gente separa o que se sabe de onde veio cada informação. As câmeras mostram que ela se sentou no batente, apoiou as costas numa estrutura de alumínio e a peça cedeu. A polícia investiga a morte como acidental e apura se o hotel tem responsabilidade. E perceba: a perícia ainda não concluiu a causa.",
+    "Fontes citadas na edição: Polícia Civil e SSP-MA, segundo g1 e Metrópoles.",
+    false
+  ],
+  [
+    "O que é fato, relato, inferência ou opinião?",
+    "É aqui que a maioria das discussões se perde. Fato: a peça cedeu, e as câmeras mostram isso. Relato: o namorado disse que os dois tinham bebido. Inferência: “ela caiu porque bebeu” e, da mesma forma, “a janela era irregular”, enquanto a perícia não disser. Opinião qualificada: um engenheiro que analisou o vídeo, mas sem laudo.",
+    "Amostra aberta · Pergunta 3 de 6",
+    false
+  ],
+  [
+    "Que outras explicações cabem nos dados?",
+    "Na edição completa, examinamos as normas técnicas de engenharia (ABNT NBR 14718 para guarda-corpos vs. NBR 10821 para esquadrias) e a hipótese que quase todo mundo esquece nas redes quando dois fatores acontecem ao mesmo tempo.",
+    "",
+    true
+  ],
+  [
+    "O que falta saber e poderia mudar a conclusão?",
+    "Listamos os 5 pontos técnicos exatos que a perícia precisa responder — e mostramos por que um único detalhe sobre a função daquela peça de alumínio vira o resultado jurídico de ponta-cabeça.",
+    "",
+    true
+  ],
+  [
+    "O que é responsável concluir agora?",
+    "Cruzamos o art. 14 do Código de Defesa do Consumidor com os arts. 945 e 948 do Código Civil em um fluxograma visual passo a passo: quando o hotel fica isento, quando indeniza integralmente e como funciona a divisão proporcional.",
+    "",
+    true
+  ],
 ];
 
 function initPerguntas(){
   const btns = [...document.querySelectorAll(".qbtn")];
   const panel = document.getElementById("qpanel");
+  if (!btns.length || !panel) return;
   const show = (i, focus) => {
     btns.forEach((b,j) => { b.setAttribute("aria-selected", j===i ? "true":"false"); b.tabIndex = j===i ? 0 : -1; });
-    const [t, p, s] = PERGUNTAS[i];
-    panel.innerHTML = `<div class="fade"><div class="kicker">Pergunta ${i+1} · no caso do hotel</div><h3>${t}</h3><p>${p}</p>${s ? `<div class="src">${s}</div>` : ""}</div>`;
+    const [t, p, s, locked] = PERGUNTAS[i];
+    const lockHtml = locked
+      ? `<div class="locked-cta"><b>🔒 Desfecho completo exclusivo na Área do Assinante</b>Ao entrar como assinante fundador (R$ 9,90/mês), você lê e ouve imediatamente as 6 perguntas completas desta edição + o Dicionário de 20 Conceitos.<br><a href="#oferta">Ver oferta de fundador →</a></div>`
+      : "";
+    panel.innerHTML = `<div class="fade"><div class="kicker">Pergunta ${i+1} · no caso do hotel</div><h3>${t}</h3><p>${p}</p>${s ? `<div class="src">${s}</div>` : ""}${lockHtml}</div>`;
     if (focus) btns[i].focus();
   };
   btns.forEach((b,i) => {
@@ -89,6 +143,24 @@ function initPerguntas(){
   });
   show(0);
 }
+
+// ===== Teste Rápido Interativo de 10 Segundos na Amostra =====
+window.answerSampleQuiz = function(btn, isCorrect){
+  const wrap = btn.closest(".sample-quiz");
+  if (!wrap) return;
+  wrap.querySelectorAll(".sq-btn").forEach(b => {
+    b.classList.remove("correct", "wrong");
+  });
+  btn.classList.add(isCorrect ? "correct" : "wrong");
+  const fb = wrap.querySelector(".sq-feedback");
+  if (!fb) return;
+  fb.classList.add("show");
+  if (isCorrect){
+    fb.innerHTML = `<b>✅ Na mosca! Você pensou como a lei pensa.</b> No Direito do Consumidor, o risco assumido pela vítima não apaga automaticamente um eventual defeito da estrutura — os dois fatores entram numa regra específica do Código Civil. <a href="#oferta">Desbloqueie a explicação completa + áudio na Área do Assinante →</a>`;
+  } else {
+    fb.innerHTML = `<b>🧐 Quase todo mundo responde isso nas redes — mas a lei olha diferente!</b> Nem o hotel responde no automático por tudo, nem o risco da hóspede anula sozinho uma eventual falha da estrutura. Há uma terceira chave no Código Civil que decide esse impasse. <a href="#oferta">Veja o desfecho completo na Área do Assinante →</a>`;
+  }
+};
 
 // ===== FAQ com animação =====
 function initFaq(){
@@ -126,6 +198,7 @@ function initScroll(){
 
   const dock = document.getElementById("dock");
   const hero = document.querySelector(".hero"), oferta = document.getElementById("oferta");
+  if (!dock || !hero || !oferta) return;
   const onScroll = () => {
     const pastHero = hero.getBoundingClientRect().bottom < 0;
     const r = oferta.getBoundingClientRect();
