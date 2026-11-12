@@ -625,10 +625,11 @@
       <p class="tagline">Analisado com critério, e não com camisa de time.</p>
     </div>
 
-    <!-- Segmented Switcher (6 Abas Completas) -->
+    <!-- Segmented Switcher (7 Abas Completas) -->
     <nav class="tabs" aria-label="Seções da Área do Assinante">
       <button class="tab-btn active" onclick="showPane('ed1', this)">Edição #001 · Hotel</button>
       <button class="tab-btn" onclick="showPane('ed2', this)">Edição #002 · Passaportes</button>
+      <button class="tab-btn" onclick="showPane('linhadireta', this)">📩 Pedir um Caso</button>
       <button class="tab-btn" onclick="showPane('acervo', this)">Como Funciona (20)</button>
       <button class="tab-btn" onclick="showPane('bonus', this)">Bônus Checklist</button>
       <button class="tab-btn" onclick="showPane('urna', this)">Urna do Mês</button>
@@ -1058,7 +1059,61 @@
     </section>
 
     <!-- =================================================================== -->
-    <!-- ABA 6: MINHA ASSINATURA (+ UPGRADE ANUAL COM 2 MESES GRÁTIS)        -->
+    <!-- ABA NOVA: LINHA DIRETA "ZAMBONI, EXPLICA ESSE CASO!"                -->
+    <!-- =================================================================== -->
+    <section id="pane-linhadireta" class="pane">
+      <div class="card">
+        <span class="eyebrow">Linha Direta Exclusiva dos Assinantes</span>
+        <h2 class="article-title">“Zamboni, explica esse caso?”</h2>
+        <p class="article-lead">
+          Viu uma notícia polêmica no jornal, uma decisão que dividiu o grupo da família ou um vídeo viral e quer saber <strong>o que a lei realmente diz, sem torcida</strong>? Mande o caso direto para a nossa Redação abaixo e receba a resposta no seu e-mail em até 48h úteis!
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; margin:20px 0 24px;">
+          <div style="background:var(--bg-alt); border:1px solid var(--hairline); border-radius:16px; padding:16px 18px;">
+            <strong style="display:block; font-size:14px; color:var(--blue); margin-bottom:4px;">☕ Plano Mensal (R$ 9,90/mês)</strong>
+            <span style="font-size:14px; color:var(--muted);">Direito a enviar até <strong>2 casos públicos por mês</strong> para análise por e-mail.</span>
+          </div>
+          <div style="background:#edf4fc; border:1px solid rgba(27,77,137,0.25); border-radius:16px; padding:16px 18px;">
+            <strong style="display:block; font-size:14px; color:var(--blue); margin-bottom:4px;">★ Plano Anual (R$ 99/ano)</strong>
+            <span style="font-size:14px; color:var(--muted);">Dobro de cota: até <strong>4 casos públicos por mês + Fila Prioritária</strong> na Redação.</span>
+          </div>
+        </div>
+
+        <div style="background:#fffdf6; border:1px solid #e6d8a8; border-radius:16px; padding:16px 20px; margin-bottom:24px; font-size:14px; color:var(--ink);">
+          <strong>⚖️ Regra de Ouro (Ética OAB):</strong> Analisamos com todo prazer <strong>qualquer notícia pública da imprensa, decisão pública de tribunal ou dúvida conceitual sobre como a lei funciona</strong>. Por dever ético perante a OAB, <strong>não analisamos processos pessoais, familiares ou casos particulares</strong> (que exigem um advogado constituído para o seu caso).
+        </div>
+
+        <div style="background:var(--bg-alt); border:1px solid var(--hairline); border-radius:20px; padding:24px;">
+          <label for="ld-url" style="display:block; font-size:14px; font-weight:700; margin-bottom:6px;">1. Link da notícia pública ou nome do caso que saiu na imprensa:</label>
+          <input id="ld-url" type="text" placeholder="Ex.: Link do g1 / UOL / Instagram sobre o caso..." style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:16px; background:#fff;" />
+
+          <label for="ld-duvida" style="display:block; font-size:14px; font-weight:700; margin-bottom:6px;">2. O que você gostaria de entender pela lei nesse caso?</label>
+          <textarea id="ld-duvida" rows="3" placeholder="Ex.: Professor, nesse caso a pessoa responde por crime doloso ou culposo? Como o juiz avalia isso?" style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:18px; background:#fff; resize:vertical;"></textarea>
+
+          <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+            <button type="button" class="btn-blue" onclick="sendLinhaDiretaEmail()">📩 Abrir no Meu E-mail e Enviar (1 toque)</button>
+            <button type="button" class="btn-pill" onclick="copyLinhaDireta(this)">📋 Ou copiar p/ colar no Gmail (zamboniexplica@gmail.com)</button>
+          </div>
+          <div id="ld-feedback" class="alert" role="status" aria-live="polite"></div>
+        </div>
+
+        <div style="margin-top:34px;">
+          <span class="eyebrow">📡 Radar da Redação</span>
+          <h3 style="font-size:20px; font-weight:700; margin-bottom:12px;">Como os casos mais pedidos pelos assinantes ganham vida</h3>
+          <div class="concept-card">
+            <span class="c-cat">Exemplo de Resposta da Linha Direta · Pedido por Assinantes</span>
+            <strong>“Legítima defesa vale quando alguém reage a um assalto usando o próprio carro?”</strong>
+            <p style="font-size:14.5px; color:var(--muted); margin-top:6px;">
+              <strong>Como respondemos no seu e-mail:</strong> Separamos o que o vídeo mostra do que depende do inquérito, explicamos os 3 requisitos do art. 25 do Código Penal (<em>agressão injusta, atual ou iminente, e uso moderado dos meios necessários</em>) e mostramos onde termina a defesa legítima e onde começa o excesso punível — em 3 parágrafos claros para você explicar na mesa de domingo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- ABA 7: MINHA ASSINATURA (+ UPGRADE ANUAL COM 2 MESES GRÁTIS)        -->
     <!-- =================================================================== -->
     <section id="pane-conta" class="pane">
       <div class="card">
@@ -1072,9 +1127,9 @@
         <!-- Alavanca do Agente #09: Convite Elegante para o Plano Anual -->
         <div style="background:#edf4fc; border:1px solid rgba(27,77,137,0.2); border-radius:20px; padding:24px 26px; margin:24px 0;">
           <span class="eyebrow" style="margin-bottom:4px;">Benefício para Assinantes</span>
-          <h3 style="font-size:19px; font-weight:700; margin-bottom:6px;">Quer ganhar 2 meses de presente no Plano Anual?</h3>
+          <h3 style="font-size:19px; font-weight:700; margin-bottom:6px;">Quer ganhar 2 meses de presente + o dobro de casos na Linha Direta?</h3>
           <p style="font-size:15px; color:var(--muted); margin-bottom:14px;">
-            Migrando para o <strong>Plano Anual (R$ 99,00/ano)</strong>, você garante 52 edições de domingo + todo o acervo de áudio e texto com economia equivalente a 2 mensalidades gratuitas.
+            Migrando para o <strong>Plano Anual (R$ 99,00/ano)</strong>, você garante 52 edições de domingo, economiza o equivalente a 2 mensalidades e dobra sua cota na <strong>Linha Direta para até 4 casos públicos por mês com Fila Prioritária</strong>.
           </p>
           <a href="https://pay.kiwify.com.br/xlNLeB4" target="_blank" rel="noopener" class="btn-blue">Migrar para o Plano Anual (R$ 99/ano) &rsaquo;</a>
         </div>
@@ -1187,6 +1242,40 @@
       var fb = document.getElementById('poll-feedback');
       fb.className = 'alert show';
       fb.textContent = 'Voto registrado na Urna da Redação! O tema vencedor entra na Edição Extra do Mês.';
+    }
+
+    function sendLinhaDiretaEmail() {
+      var url = (document.getElementById('ld-url').value || '').trim();
+      var duvida = (document.getElementById('ld-duvida').value || '').trim();
+      var fb = document.getElementById('ld-feedback');
+      if (!url && !duvida) {
+        fb.className = 'alert show';
+        fb.textContent = 'Preencha o link/nome da notícia pública e a sua dúvida antes de enviar!';
+        return;
+      }
+      var subject = '[Linha Direta Assinante] Zamboni, explica esse caso!';
+      var body = 'Olá, Redação do Zamboni Explica!\n\n'
+        + '📰 Notícia pública / Caso na imprensa:\n' + (url || '(informado abaixo)') + '\n\n'
+        + '⚖️ O que gostaria de entender pela lei:\n' + (duvida || '(ver link acima)') + '\n\n'
+        + '(Confirmo que se trata de notícia pública / dúvida geral sobre a lei, e não de processo pessoal.)';
+      window.location.href = 'mailto:zamboniexplica@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      fb.className = 'alert show';
+      fb.textContent = 'Abrimos seu aplicativo de e-mail já preenchido para zamboniexplica@gmail.com! Basta clicar em Enviar.';
+    }
+
+    function copyLinhaDireta(btn) {
+      var url = (document.getElementById('ld-url').value || '').trim();
+      var duvida = (document.getElementById('ld-duvida').value || '').trim();
+      var fb = document.getElementById('ld-feedback');
+      var text = 'Para: zamboniexplica@gmail.com\n'
+        + 'Assunto: [Linha Direta Assinante] Zamboni, explica esse caso!\n\n'
+        + 'Notícia pública / Caso: ' + (url || '') + '\n'
+        + 'Dúvida sobre o que a lei diz: ' + (duvida || '');
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+      }
+      fb.className = 'alert show';
+      fb.textContent = '✅ Copiado! Agora é só enviar para zamboniexplica@gmail.com que nossa Redação responde em até 48h úteis.';
     }
 
     document.getElementById('btn-cancelar').addEventListener('click', function() {
