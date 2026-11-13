@@ -51,24 +51,24 @@ function aplicarEstado(){
     });
   } else if (est === "aberta"){
     if (waitlistBox) waitlistBox.classList.remove("active");
-    status.innerHTML = 'Inscrições de Assinante Fundador <b>abertas agora</b> · acesso imediato à Área do Assinante + edição todo domingo às 8h';
+    status.innerHTML = 'Meu primeiro projeto social de educação jurídica cidadã · <b>inscrições abertas agora</b> por um valor simbólico (R$ 9,90/mês — 33 centavos/dia)';
     mainCtas.forEach(b => {
       b.href = "#oferta";
-      if (!b.closest(".dock")) label(b, '<span>Quero ser assinante fundador<span class="px"> — R$ 9,90/mês</span></span>');
-      else label(b, "Assinar");
+      if (!b.closest(".dock")) label(b, '<span>Quero fazer parte do projeto<span class="px"> — R$ 9,90/mês</span></span>');
+      else label(b, "Fazer parte");
     });
     if (btnMensal){
       btnMensal.href = CONFIG.CHECKOUT_URL;
       btnMensal.rel = "noopener";
-      label(btnMensal, "Assinar Mensal — R$ 9,90/mês");
+      label(btnMensal, "Entrar no Mensal — R$ 9,90/mês");
     }
     if (btnAnual){
       btnAnual.href = CONFIG.CHECKOUT_ANNUAL_URL;
       btnAnual.rel = "noopener";
-      label(btnAnual, "Assinar Anual — R$ 99/ano");
+      label(btnAnual, "Entrar no Anual — R$ 99/ano");
     }
     document.querySelectorAll(".cta-note").forEach(n => {
-      n.innerHTML = 'Inscrições abertas agora com preço de Fundador congelado (<b>R$ 9,90/mês</b> ou <b>R$ 99/ano</b> com 2 meses grátis) + acesso imediato ao portal e Semana Especial de Fundador (1º a 7/12).';
+      n.innerHTML = 'Inscrições abertas agora por um valor simbólico para manter viva a estrutura (<b>R$ 9,90/mês</b> ou <b>R$ 99/ano</b> com 2 meses grátis) + acesso imediato ao portal.';
     });
   } else {
     if (waitlistBox) waitlistBox.classList.remove("active");
