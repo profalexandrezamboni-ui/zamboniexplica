@@ -3,8 +3,8 @@ const CONFIG = {
   CHECKOUT_URL: "https://pay.kiwify.com.br/kOr6u1x",
   CHECKOUT_ANNUAL_URL: "https://pay.kiwify.com.br/xlNLeB4",
   VIP_TELEGRAM_URL: "https://t.me/ZamboniExplicaBot?start=lista_fundador",
-  ABRE:  "2026-12-01T00:00:00-03:00",   // início da pré-venda (Brasília)
-  FECHA: "2026-12-07T23:59:59-03:00",   // fim da pré-venda (Brasília)
+  ABRE:  "2026-11-10T00:00:00-03:00",   // vendas abertas imediatamente (modelo perpétuo)
+  FECHA: "2099-12-31T23:59:59-03:00",   // carrinho sempre aberto (perpétuo)
 };
 
 // Permite conferir os estados: ?estado=antes | aberta | encerrada
@@ -51,7 +51,7 @@ function aplicarEstado(){
     });
   } else if (est === "aberta"){
     if (waitlistBox) waitlistBox.classList.remove("active");
-    status.innerHTML = 'Pré-venda de fundador aberta <b>até segunda, 7/12, às 23h59</b> · acesso imediato ao portal + edição todo domingo às 8h';
+    status.innerHTML = 'Inscrições de Assinante Fundador <b>abertas agora</b> · acesso imediato à Área do Assinante + edição todo domingo às 8h';
     mainCtas.forEach(b => {
       b.href = "#oferta";
       if (!b.closest(".dock")) label(b, '<span>Quero ser assinante fundador<span class="px"> — R$ 9,90/mês</span></span>');
@@ -67,6 +67,9 @@ function aplicarEstado(){
       btnAnual.rel = "noopener";
       label(btnAnual, "Assinar Anual — R$ 99/ano");
     }
+    document.querySelectorAll(".cta-note").forEach(n => {
+      n.innerHTML = 'Inscrições abertas agora com preço de Fundador congelado (<b>R$ 9,90/mês</b> ou <b>R$ 99/ano</b> com 2 meses grátis) + acesso imediato ao portal e Semana Especial de Fundador (1º a 7/12).';
+    });
   } else {
     if (waitlistBox) waitlistBox.classList.remove("active");
     status.innerHTML = 'A pré-venda de fundador foi encerrada · obrigado a quem entrou';
