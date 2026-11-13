@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vale-Presente de Natal — 1 Ano de Zamboni Explica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B192C;
+      --navy-light: #162A45;
+      --gold: #C5A059;
+      --gold-soft: #E5D1A7;
+      --paper: #FAF8F5;
+      --ink: #1C252C;
+      --muted: #5A6570;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      padding: 32px 16px 64px;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .back-link {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .intro-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(11, 25, 44, 0.12);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(11, 25, 44, 0.05);
+    }
+    h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2.3rem;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin-bottom: 22px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #D0D7DE;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: transform 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-gold {
+      background: linear-gradient(135deg, #C5A059 0%, #DFBD78 100%);
+      color: #0B192C;
+    }
+    .btn-navy {
+      background: var(--navy);
+      color: #FFFFFF;
+    }
+
+    /* Certificado Imprimível */
+    .certificate {
+      background: var(--navy);
+      color: #FAF8F5;
+      border-radius: 20px;
+      padding: 44px 38px;
+      border: 2px solid var(--gold);
+      position: relative;
+      box-shadow: 0 20px 45px rgba(11, 25, 44, 0.18);
+    }
+    .certificate-inner {
+      border: 1px solid rgba(197, 160, 89, 0.45);
+      border-radius: 14px;
+      padding: 36px 32px;
+      text-align: center;
+    }
+    .cert-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      border: 1px solid rgba(197, 160, 89, 0.45);
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .cert-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .cert-recipient-label {
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      margin-top: 16px;
+    }
+    .cert-recipient-name {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2.1rem;
+      color: var(--gold);
+      margin: 6px 0 18px;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.35);
+      display: inline-block;
+      padding: 0 24px 6px;
+      min-width: 260px;
+    }
+    .cert-body {
+      max-width: 580px;
+      margin: 0 auto 24px;
+      font-size: 1.02rem;
+      color: rgba(250, 248, 245, 0.92);
+      line-height: 1.7;
+    }
+    .cert-quote {
+      max-width: 540px;
+      margin: 22px auto;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid var(--gold);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--gold-soft);
+      text-align: left;
+    }
+    .cert-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(197, 160, 89, 0.25);
+      flex-wrap: wrap;
+      gap: 16px;
+      text-align: left;
+    }
+    .cert-sig-name {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.45rem;
+      color: var(--gold);
+    }
+    .cert-sig-role {
+      font-size: 0.82rem;
+      color: rgba(250, 248, 245, 0.75);
+    }
+
+    @media print {
+      body { background: #FFFFFF; padding: 0; }
+      .top-bar, .intro-card { display: none !important; }
+      .certificate { box-shadow: none; border-width: 2px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <a href="area-assinante.html" class="back-link">← Voltar para a Área do Assinante</a>
+      <span style="font-size:0.85rem; color:var(--muted);">Zamboni Explica • Edição Especial de Presente Familiar</span>
+    </div>
+
+    <div class="intro-card">
+      <h1>🎄 Presenteie quem você ama com 1 Ano de Zamboni Explica</h1>
+      <p class="subtitle">
+        Um presente com propósito para o seu pai, sua mãe, seu filho(a) ou amigo querido: <strong>52 manhãs de domingo</strong> entendendo os grandes casos do Brasil pelo que a lei realmente diz, e não com camisa de time.
+      </p>
+
+      <div class="form-grid">
+        <div>
+          <label for="to-name">Nome de quem vai ganhar o presente:</label>
+          <input type="text" id="to-name" placeholder="Ex.: Meu Pai, Carlos Eduardo" value="Meu Pai, Carlos Eduardo" oninput="updateCert()" />
+        </div>
+        <div>
+          <label for="from-name">Presente oferecido com carinho por:</label>
+          <input type="text" id="from-name" placeholder="Ex.: Sua filha Mariana" value="Sua família" oninput="updateCert()" />
+        </div>
+        <div>
+          <label for="to-email">E-mail do presenteado (para ativar no dia 25/12 ou imediato):</label>
+          <input type="email" id="to-email" placeholder="emaildofamiliar@exemplo.com" />
+        </div>
+      </div>
+
+      <div class="actions">
+        <a href="https://t.me/ZamboniExplicaBot?start=presente_natal_anual" target="_blank" rel="noopener" class="btn btn-gold">
+          🎁 Garantir 1 Ano de Presente (R$ 99 à vista • 2 Meses Grátis)
+        </a>
+        <button type="button" class="btn btn-navy" onclick="window.print()">
+          🖨️ Salvar / Imprimir Cartão-Presente em PDF
+        </button>
+      </div>
+    </div>
+
+    <div class="certificate" id="gift-certificate">
+      <div class="certificate-inner">
+        <span class="cert-badge">★ Certificado Oficial de Assinatura Anual • Membro Fundador ★</span>
+        <h2 class="cert-title">Zamboni Explica</h2>
+        <p style="color:var(--gold-soft); font-size:0.95rem;">O caso da semana explicado pela lei, não pela torcida</p>
+
+        <p class="cert-recipient-label">Este Certificado garante 1 Ano Completo (52 Edições de Domingo + Linha Direta) para:</p>
+        <div class="cert-recipient-name" id="preview-to">Meu Pai, Carlos Eduardo</div>
+
+        <p class="cert-body">
+          A partir de agora, todas as manhãs de domingo você receberá a análise clara, sóbria e sem juridiquês do caso mais comentado do Brasil — além do acesso ao Dicionário <em>Como Funciona</em>, aos resumos em áudio e à nossa <em>Linha Direta</em> para sugerir casos públicos do noticiário.
+        </p>
+
+        <div class="cert-quote">
+          "Para que os nossos almoços de domingo tenham sempre boa conversa, respeito e critério. Quando alguém explica um caso pelo que a lei realmente diz, e não pelo lado de quem ganha, as pessoas param para ouvir."
+        </div>
+
+        <div class="cert-footer">
+          <div>
+            <div style="font-size:0.8rem; color:var(--gold-soft);">Um presente escolhido com carinho por:</div>
+            <div style="font-size:1.1rem; font-weight:600; color:#FFFFFF; margin-top:2px;" id="preview-from">Sua família</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="cert-sig-name">Prof. Alexandre Zamboni</div>
+            <div class="cert-sig-role">Professor de Direito Penal • Fundador do Zamboni Explica</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateCert() {
+      var toVal = document.getElementById('to-name').value.trim() || 'Pessoa Especial';
+      var fromVal = document.getElementById('from-name').value.trim() || 'Alguém que admira você';
+      document.getElementById('preview-to').textContent = toVal;
+      document.getElementById('preview-from').textContent = fromVal;
+    }
+  </script>
+</body>
+</html>
