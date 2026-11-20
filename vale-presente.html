@@ -239,11 +239,14 @@
       </div>
 
       <div class="actions">
-        <a href="https://t.me/ZamboniExplicaBot?start=presente_natal_anual" target="_blank" rel="noopener" class="btn btn-gold">
-          🎁 Garantir 1 Ano de Presente (R$ 99 à vista • 2 Meses Grátis)
+        <a href="https://pay.kiwify.com.br/xlNLeB4?src=vale-presente-natal" target="_blank" rel="noopener" class="btn btn-gold">
+          🎁 Garantir 1 Ano de Presente na Kiwify (R$ 99 à vista • 2 Meses Grátis)
         </a>
         <button type="button" class="btn btn-navy" onclick="window.print()">
           🖨️ Salvar / Imprimir Cartão-Presente em PDF
+        </button>
+        <button type="button" class="btn btn-navy" style="background:#1F7A4C;" onclick="shareGiftWhatsApp()">
+          📲 Enviar Mensagem de Presente no WhatsApp
         </button>
       </div>
     </div>
@@ -258,7 +261,7 @@
         <div class="cert-recipient-name" id="preview-to">Meu Pai, Carlos Eduardo</div>
 
         <p class="cert-body">
-          A partir de agora, todas as manhãs de domingo você receberá a análise clara, sóbria e sem juridiquês do caso mais comentado do Brasil — além do acesso ao Dicionário <em>Como Funciona</em>, aos resumos em áudio e à nossa <em>Linha Direta</em> para sugerir casos públicos do noticiário.
+          A partir de agora, todas as manhãs de domingo você receberá a análise clara, sóbria e sem juridiquês do caso mais comentado do Brasil, além do acesso completo à Área do Assinante 2.0, ao Dicionário <em>Como Funciona</em>, às edições narradas em áudio e à nossa <em>Linha Direta</em> para tirar dúvidas sobre casos e sobre o funcionamento da lei.
         </p>
 
         <div class="cert-quote">
@@ -285,6 +288,16 @@
       var fromVal = document.getElementById('from-name').value.trim() || 'Alguém que admira você';
       document.getElementById('preview-to').textContent = toVal;
       document.getElementById('preview-from').textContent = fromVal;
+    }
+
+    function shareGiftWhatsApp() {
+      var toVal = document.getElementById('to-name').value.trim() || 'você';
+      var fromVal = document.getElementById('from-name').value.trim() || 'sua família';
+      var msg = "🎄🎁 *Presente Especial de Natal para " + toVal + "!*\n\n"
+        + "Preparei para você *1 Ano Completo de Assinatura Fundador do Zamboni Explica* (52 manhãs de domingo entendendo os grandes casos do Brasil pelo que a lei realmente diz, sem torcida, com texto, áudio e Linha Direta do Prof. Alexandre Zamboni).\n\n"
+        + "Com carinho, *" + fromVal + "*.\n"
+        + "👉 Acesse a Área do Assinante: https://zamboniexplica.com.br/area-assinante.html";
+      window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(msg), "_blank");
     }
   </script>
 </body>

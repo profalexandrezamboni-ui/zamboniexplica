@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zamboni Explica — Área do Assinante (Edições, Áudio 1.25x &amp; Acervo)</title>
+  <title>Zamboni Explica — Café de Domingo com o Professor (Área do Assinante)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
   <style>
-    /* OPÇÃO 1 (Padrão): AREIA EDITORIAL & AZUL OXFORD (Tom exato de "A Causa") */
     :root, [data-theme="oxford"] {
       --bg: #f4f0e6;
       --bg-alt: #ebe5d8;
       --surface: #fbf9f4;
-      --nav-glass: rgba(244, 240, 230, 0.88);
+      --nav-glass: rgba(244, 240, 230, 0.9);
       --ink: #191918;
       --muted: #5e5b54;
       --subtle: #78746b;
@@ -23,31 +25,32 @@
       --warn-bg: #fff5eb;
       --err: #b3261e;
       --wa: #128c7e;
+      --serif: "Source Serif 4", Georgia, Cambria, serif;
+      --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: var(--sans);
       background: var(--bg);
       color: var(--ink);
-      line-height: 1.6;
+      line-height: 1.65;
       font-size: 17px;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Apple Frosted Glass Header */
     header.site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      height: 54px;
+      height: 56px;
       background: var(--nav-glass);
       backdrop-filter: saturate(180%) blur(20px);
       -webkit-backdrop-filter: saturate(180%) blur(20px);
       border-bottom: 1px solid var(--hairline);
     }
     .nav-bar {
-      max-width: 880px;
+      max-width: 860px;
       height: 100%;
       margin: 0 auto;
       padding: 0 22px;
@@ -56,14 +59,15 @@
       align-items: center;
     }
     .brand-title {
+      font-family: var(--serif);
       font-weight: 700;
-      font-size: 1.05rem;
-      letter-spacing: -0.02em;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
       color: var(--ink);
       text-decoration: none;
     }
     .nav-meta {
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--muted);
     }
     .nav-meta a {
@@ -74,54 +78,68 @@
     }
 
     .wrap {
-      max-width: 860px;
+      max-width: 820px;
       margin: 0 auto;
-      padding: 48px 20px 88px;
+      padding: 36px 20px 88px;
     }
 
-    .masthead {
-      text-align: center;
-      margin-bottom: 32px;
+    /* Bilhete Pessoal de Boas-Vindas do Professor */
+    .welcome-letter {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 24px;
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.025);
     }
-    .eyebrow {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .welcome-letter img {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--blue);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .welcome-letter p {
+      font-family: var(--serif);
+      font-size: 17.5px;
+      line-height: 1.58;
+      color: #262523;
+    }
+    .welcome-letter .sig {
+      display: block;
+      margin-top: 6px;
+      font-family: var(--sans);
+      font-size: 13.5px;
+      font-weight: 600;
       color: var(--blue);
-      margin-bottom: 10px;
     }
-    .masthead h1 {
-      font-size: clamp(2.1rem, 4.4vw, 3.1rem);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-      line-height: 1.08;
-      margin-bottom: 8px;
-    }
-    .tagline {
-      font-size: 18px;
-      color: var(--muted);
+    @media (max-width: 600px) {
+      .welcome-letter { flex-direction: column; padding: 20px; gap: 12px; }
     }
 
-    /* Segmented Pill Switcher */
+    /* Abas Conversacionais (Visíveis por inteiro, sem cortar texto) */
     .tabs {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       background: #e4ded0;
-      padding: 5px;
-      border-radius: 980px;
-      gap: 4px;
-      margin-bottom: 38px;
-      overflow-x: auto;
+      padding: 6px;
+      border-radius: 22px;
+      gap: 6px;
+      margin-bottom: 32px;
     }
     .tab-btn {
-      flex: 1;
       white-space: nowrap;
-      padding: 10px 16px;
+      padding: 9px 15px;
       border: none;
       background: transparent;
       color: var(--muted);
-      border-radius: 980px;
+      border-radius: 16px;
       font-weight: 600;
       cursor: pointer;
       font-size: 13.5px;
@@ -134,11 +152,11 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
-    /* Article Card */
+    /* Carta / Edição de Domingo */
     .card {
       background: var(--surface);
       border-radius: 28px;
-      padding: 48px 44px;
+      padding: 46px 44px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.035);
       border: 1px solid var(--hairline);
       margin-bottom: 28px;
@@ -146,20 +164,29 @@
     @media (max-width: 640px) {
       .card { padding: 28px 20px; border-radius: 22px; }
     }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
     .article-title {
-      font-size: clamp(1.65rem, 3.2vw, 2.3rem);
-      line-height: 1.16;
-      letter-spacing: -0.03em;
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 3.4vw, 2.4rem);
+      line-height: 1.18;
+      letter-spacing: -0.015em;
       font-weight: 700;
-      margin: 6px 0 10px;
+      margin: 4px 0 10px;
+      color: var(--ink);
     }
     .byline {
-      font-size: 14px;
+      font-size: 14.5px;
       color: var(--muted);
       margin-bottom: 26px;
     }
 
-    /* Audio Player Bar */
+    /* Player de Áudio Acolhedor */
     .audio-bar {
       background: var(--bg-alt);
       border-radius: 20px;
@@ -190,7 +217,7 @@
       color: var(--ink);
     }
     .audio-meta span {
-      font-size: 12.5px;
+      font-size: 13px;
       color: var(--muted);
     }
     .audio-controls {
@@ -221,82 +248,62 @@
       color: #fff;
     }
 
-    /* Narrative Intro */
-    .story-box {
-      background: var(--bg-alt);
-      border-radius: 22px;
-      padding: 30px 32px;
-      margin-bottom: 36px;
+    /* Prosa Editorial Conversacional */
+    .editorial-prose p {
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.74;
+      color: #22211f;
+      margin-bottom: 20px;
     }
-    .story-box h3 {
-      font-size: 18px;
+    .editorial-prose h3 {
+      font-family: var(--serif);
+      font-size: 23px;
       font-weight: 700;
-      letter-spacing: -0.015em;
       color: var(--ink);
-      margin-bottom: 12px;
-    }
-    .story-box p {
-      font-size: 16.5px;
-      line-height: 1.65;
-      color: #2c2c2e;
-      margin-bottom: 14px;
-    }
-    .story-box p:last-child { margin-bottom: 0; }
-
-    .section-sub {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      margin-bottom: 12px;
-    }
-    .q-step {
+      margin: 34px 0 12px;
+      padding-top: 24px;
       border-top: 1px solid var(--hairline);
-      padding: 22px 0;
-      font-size: 16.5px;
-      line-height: 1.65;
-      color: #2c2c2e;
+      line-height: 1.3;
     }
-    .q-num {
-      display: block;
-      font-weight: 700;
-      color: var(--ink);
-      font-size: 18px;
-      letter-spacing: -0.015em;
-      margin-bottom: 6px;
+    .editorial-prose ul {
+      font-family: var(--serif);
+      font-size: 18.5px;
+      line-height: 1.7;
+      color: #22211f;
+      margin: 0 0 22px 22px;
     }
-    .q-num span {
-      color: var(--blue);
-      margin-right: 6px;
+    .editorial-prose li {
+      margin-bottom: 10px;
     }
 
-    /* + Para Guardar: Como Funciona */
+    /* Quadros de Conversa Final */
     .keep-box {
       background: #f6f3eb;
       border-left: 4px solid var(--blue);
-      border-radius: 16px;
-      padding: 22px 26px;
-      margin-top: 24px;
+      border-radius: 18px;
+      padding: 24px 26px;
+      margin-top: 32px;
     }
     .keep-box .keep-tag {
-      font-size: 11.5px;
+      font-size: 13px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
       color: var(--blue);
       display: block;
       margin-bottom: 6px;
     }
     .keep-box h4 {
-      font-size: 17.5px;
+      font-family: var(--serif);
+      font-size: 20px;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .keep-box p {
-      font-size: 15.5px;
-      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.62;
+      color: #3a3834;
     }
 
-    /* Melhoria 2: Teste Rápido de 10 Segundos */
     .quiz-box {
       background: var(--bg-alt);
       border-radius: 22px;
@@ -306,16 +313,16 @@
     }
     .quiz-tag {
       display: inline-block;
-      font-size: 11.5px;
+      font-size: 13px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
       color: #9e221b;
       margin-bottom: 6px;
     }
     .quiz-box h4 {
-      font-size: 18px;
+      font-family: var(--serif);
+      font-size: 19.5px;
       font-weight: 700;
+      line-height: 1.45;
       margin-bottom: 16px;
     }
     .quiz-opts {
@@ -351,16 +358,15 @@
     .quiz-ans {
       display: none;
       margin-top: 14px;
-      padding: 14px 18px;
+      padding: 16px 18px;
       border-radius: 14px;
       background: var(--surface);
-      font-size: 15px;
-      line-height: 1.55;
+      font-size: 15.5px;
+      line-height: 1.6;
       color: var(--ink);
     }
     .quiz-ans.show { display: block; }
 
-    /* Melhoria 1: Na Mesa do Almoço + Botão WhatsApp 1 Toque + Card Compartilhável */
     .lunch-box {
       background: #edf4fc;
       border-radius: 22px;
@@ -369,17 +375,15 @@
     }
     .lunch-box strong.lunch-kicker {
       display: block;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      font-size: 14px;
       color: var(--blue);
       margin-bottom: 8px;
     }
     .lunch-box p {
-      font-size: 17px;
-      line-height: 1.6;
+      font-family: var(--serif);
+      font-size: 18.5px;
+      line-height: 1.65;
       color: var(--ink);
-      font-weight: 500;
       margin-bottom: 18px;
     }
     .share-actions {
@@ -415,7 +419,6 @@
       cursor: pointer;
     }
 
-    /* Card Visual de Domingo para Grupo da Família */
     .family-card-wrap {
       margin-top: 26px;
       padding-top: 24px;
@@ -468,10 +471,8 @@
       padding-top: 10px;
     }
 
-    /* Melhoria 4: Dicionário Como Funciona com Busca Instantânea (20 Verbetes) */
-    .search-bar-wrap {
-      margin: 18px 0 14px;
-    }
+    /* Dicionário da Lei */
+    .search-bar-wrap { margin: 18px 0 14px; }
     .search-input {
       width: 100%;
       padding: 15px 20px;
@@ -483,16 +484,8 @@
       color: var(--ink);
       outline: none;
     }
-    .search-input:focus {
-      border-color: var(--blue);
-      background: #fff;
-    }
-    .filter-pills {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
+    .search-input:focus { border-color: var(--blue); background: #fff; }
+    .filter-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
     .filter-pill {
       border: 1px solid var(--hairline);
       background: var(--bg-alt);
@@ -503,11 +496,7 @@
       font-weight: 600;
       cursor: pointer;
     }
-    .filter-pill.active {
-      background: var(--blue);
-      color: #fff;
-      border-color: var(--blue);
-    }
+    .filter-pill.active { background: var(--blue); color: #fff; border-color: var(--blue); }
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -521,10 +510,8 @@
       border: 1px solid var(--hairline);
     }
     .concept-card .c-cat {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
       color: var(--blue);
       display: block;
       margin-bottom: 4px;
@@ -538,10 +525,9 @@
     .concept-card p {
       font-size: 14.5px;
       color: var(--muted);
-      line-height: 1.52;
+      line-height: 1.55;
     }
 
-    /* Melhoria 5: Urna da Redação */
     .poll-option {
       display: flex;
       justify-content: space-between;
@@ -557,18 +543,9 @@
       transition: all 0.18s ease;
     }
     .poll-option:hover { border-color: var(--blue); }
-    .poll-option.voted {
-      background: #edf4fc;
-      border-color: var(--blue);
-      font-weight: 700;
-    }
-    .poll-pct {
-      font-size: 13.5px;
-      font-weight: 700;
-      color: var(--blue);
-    }
+    .poll-option.voted { background: #edf4fc; border-color: var(--blue); font-weight: 700; }
+    .poll-pct { font-size: 13.5px; font-weight: 700; color: var(--blue); white-space: nowrap; margin-left: 14px; flex-shrink: 0; }
 
-    /* Botões Gerais e Status */
     .btn-pill {
       display: inline-block;
       background: var(--err);
@@ -613,50 +590,59 @@
     <div class="nav-bar">
       <a href="index.html" class="brand-title">Zamboni Explica</a>
       <div class="nav-meta">
-        Domingo, 08h00 <a href="index.html">&lsaquo; Voltar ao Início</a>
+        Café de Domingo <a href="index.html">&lsaquo; Página Inicial</a>
       </div>
     </div>
   </header>
 
   <main class="wrap">
-    <div class="masthead">
-      <span class="eyebrow">Área do Assinante · Texto, Áudio 1.25x &amp; Acervo</span>
-      <h1>O caso da semana, pela lei.</h1>
-      <p class="tagline">Analisado com critério, e não com camisa de time.</p>
+    <!-- Bilhete Pessoal de Boas-Vindas do Professor (Tira a cara de painel e acolhe o aluno) -->
+    <div class="welcome-letter">
+      <img src="assets/perfil-800.jpg" alt="Prof. Alexandre Zamboni">
+      <div>
+        <p>
+          Bom dia. Que bom ter você aqui comigo em mais um domingo. Preparei a nossa conversa da semana para você ler com calma enquanto toma o seu café, ou ouvir na minha voz se estiver na rua. E se algum caso da semana (ou alguma situação que você esteja vivendo) tiver deixado você com dúvida, é só me escrever ali na <strong>Linha Direta</strong>.
+        </p>
+        <span class="sig">Um abraço, Alexandre Zamboni</span>
+        <div style="margin-top:14px;">
+          <a href="https://chat.whatsapp.com/HBRhuBX6sSYEYeR36vvUvS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:9px 15px; border-radius:999px; background:#e8f5ee; color:#115e38; border:1px solid #b7e2cb; font-size:13.5px; font-weight:600; text-decoration:none;">
+            📲 Entrar na Comunidade Silenciosa de Avisos no WhatsApp (domingo às 8h) →
+          </a>
+        </div>
+      </div>
     </div>
 
-    <!-- Segmented Switcher (7 Abas Completas) -->
-    <nav class="tabs" aria-label="Seções da Área do Assinante">
-      <button class="tab-btn active" onclick="showPane('ed1', this)">Edição #001 · Hotel</button>
-      <button class="tab-btn" onclick="showPane('ed2', this)">Edição #002 · Passaportes</button>
-      <button class="tab-btn" onclick="showPane('linhadireta', this)">📩 Pedir um Caso</button>
-      <button class="tab-btn" onclick="showPane('acervo', this)">Como Funciona (20)</button>
-      <button class="tab-btn" onclick="showPane('bonus', this)">Bônus Checklist</button>
-      <button class="tab-btn" onclick="showPane('urna', this)">Urna do Mês</button>
-      <button class="tab-btn" onclick="showPane('conta', this)">Assinatura</button>
+    <!-- Navegação Conversacional (Nome único: Linha Direta) -->
+    <nav class="tabs" aria-label="Conversas da Semana">
+      <button class="tab-btn active" id="tab-ed1" onclick="showPane('ed1', this)">Edição #001 · Caso do Hotel</button>
+      <button class="tab-btn" id="tab-ed2" onclick="showPane('ed2', this)">Edição #002 · Passaportes</button>
+      <button class="tab-btn" id="tab-ed3" onclick="showPane('ed3', this)">Edição #003 · Golpes do Pix</button>
+      <button class="tab-btn" id="tab-linhadireta" onclick="showPane('linhadireta', this)">📩 Linha Direta</button>
+      <button class="tab-btn" id="tab-acervo" onclick="showPane('acervo', this)">📖 Dicionário da Lei</button>
+      <button class="tab-btn" id="tab-bonus" onclick="showPane('bonus', this)">🎁 Guias &amp; Bônus</button>
+      <button class="tab-btn" id="tab-urna" onclick="showPane('urna', this)">🗳️ Próximo Tema</button>
+      <button class="tab-btn" id="tab-conta" onclick="showPane('conta', this)">Minha Conta</button>
     </nav>
 
     <!-- =================================================================== -->
-    <!-- ABA 1: EDIÇÃO #001 (CASO DO HOTEL EM SÃO LUÍS)                      -->
+    <!-- ABA 1: EDIÇÃO #001 (CONVERSACIONAL E FLUIDA NA VOZ DO PROFESSOR)    -->
     <!-- =================================================================== -->
     <section id="pane-ed1" class="pane active">
       <article class="card">
-        <span class="eyebrow">Edição #001 · Responsabilidade Civil &amp; Perícia</span>
-        <h2 class="article-title">A janela do sétimo andar: o hotel tem o dever de indenizar?</h2>
-        <p class="byline">Por <strong>Alexandre Zamboni</strong> · Leitura de 5 minutos</p>
+        <span class="eyebrow">Edição #001 · Conversa de Domingo</span>
+        <h2 class="article-title">A janela do sétimo andar em São Luís: o hotel tem o dever de indenizar?</h2>
+        <p class="byline">Escrito e narrado por <strong>Alexandre Zamboni</strong> · Leitura de 5 minutos</p>
 
-        <!-- Player de Áudio Oficial 1.25x -->
         <div class="audio-bar">
           <div class="audio-meta">
             <img src="assets/perfil-800.jpg" alt="Prof. Alexandre Zamboni">
             <div>
-              <strong>Ouvir na voz do Prof. Zamboni</strong>
-              <span>Narração oficial · Ritmo dinâmico 1.25x</span>
+              <strong>Prefere ouvir? Eu narrei esta edição para você</strong>
+              <span>Toque no play abaixo (você pode escolher o ritmo normal 1x ou mais dinâmico em 1.25x)</span>
             </div>
           </div>
           <div class="audio-controls">
             <audio id="audio-ed1" controls preload="metadata" onplay="ensureRate(this)" style="height:36px; max-width:220px;">
-              <source src="edicao-001.mp3" type="audio/mpeg">
               <source src="audio/edicao-001.mp3" type="audio/mpeg">
             </audio>
             <div class="speed-group">
@@ -667,70 +653,85 @@
           </div>
         </div>
 
-        <div class="story-box">
-          <h3>O que aconteceu? (A história completa em 1 minuto, para quem chegou agora)</h3>
+        <div class="editorial-prose">
           <p>
-            Madrugada de <strong>3 de novembro, 1h30 da manhã</strong>, em <strong>São Luís (MA)</strong>. A jovem paraense <strong>Renata Rebeca</strong>, de 26 anos, mãe de dois filhos pequenos, voltava de um passeio com o namorado para o <strong>Rio Poty Hotel</strong>, onde estavam hospedados.
+            Antes de qualquer coisa, quero que você guarde um nome: <strong>Renata Rebeca Negrão Saldanha dos Santos</strong>. Ela tinha 26 anos, morava em Ananindeua, no Pará, e deixou dois filhos pequenos. Na conversa de hoje nós vamos falar de responsabilidade civil, de perícia e do que diz a lei, mas sem esquecer em nenhum instante que existe uma família em luto. É por respeito a essa família, inclusive, que não reproduzimos aqui as imagens da queda.
           </p>
           <p>
-            Eles subiram de elevador até o <strong>corredor do 7º andar</strong>. Enquanto o namorado procurava a chave na porta do quarto, Renata foi até uma janela do corredor para esperar, <strong>sentou-se no parapeito de costas para a rua e apoiou o corpo na estrutura de alumínio da janela</strong>. Naquele segundo, <strong>a peça de alumínio se soltou e cedeu para trás</strong>. Renata caiu do sétimo andar e morreu no local.
+            Para quem não acompanhou o caso desde o início, a história aconteceu na madrugada de 3 de novembro, por volta de uma e meia da manhã, em São Luís, no Maranhão. Renata e o namorado voltavam para o Rio Poty Hotel, onde estavam hospedados, e subiram até o corredor do sétimo andar. Enquanto ele procurava a chave na porta do quarto, ela foi até uma janela do corredor para esperar, sentou-se no batente de costas para a rua e apoiou o corpo na estrutura de alumínio da janela. Naquele segundo, a peça de alumínio se soltou da parede e cedeu para trás.
+          </p>
+
+          <h3>1. A pergunta que quase ninguém está fazendo nas redes</h3>
+          <p>
+            Se você abriu os comentários das notícias nesta semana, provavelmente viu o episódio resumido em duas frases prontas. De um lado, quem diz que "o hotel matou a hóspede". Do outro, quem sentencia que "ela sentou na janela, então a culpa é toda dela".
           </p>
           <p>
-            <strong>Por que o caso dividiu o país ao meio?</strong> As câmeras do corredor provaram que não houve crime nem empurrão. Mas a internet virou um tribunal dividido em duas torcidas: metade dizendo que a culpa era 100% dela por sentar na janela, e a outra metade dizendo que o hotel tinha responsabilidade total porque uma janela no 7º andar jamais poderia despencar. Veja como a lei brasileira resolve isso:
+            Agora, repare numa coisa: nenhuma dessas duas frases responde ao que realmente importa para o Direito. Cada lado escolhe metade da cena e finge que a outra metade não aconteceu. Quem culpa apenas a jovem esquece de perguntar por que uma estrutura no sétimo andar de um hotel se soltou da parede tão facilmente; e quem olha apenas para o hotel ignora que sentar no parapeito não é o uso normal de uma janela.
+          </p>
+          <p>
+            Por isso, a meu ver, a pergunta certa que precisamos fazer à lei brasileira é bem mais precisa: <strong>quando uma hóspede assume um risco ao se sentar no batente, mas a estrutura da janela cede e despenca, o hotel responde pela tragédia mesmo assim?</strong>
+          </p>
+
+          <h3>2. O que já sabemos de verdade (e de qual fonte veio cada informação)</h3>
+          <p>
+            Antes de formar qualquer juízo, vale colocar na mesa apenas o que já foi confirmado oficialmente até aqui, separando os fatos da fofoca:
+          </p>
+          <ul>
+            <li><strong>O instante da queda:</strong> as câmeras do corredor do sétimo andar mostram o momento exato em que Renata se senta no batente, encosta na estrutura de alumínio e a peça se desprende. <em>(Fonte: Polícia Civil do Maranhão e imagens divulgadas pelo g1)</em>.</li>
+            <li><strong>Sem suspeita de agressão:</strong> o delegado George Marques esclareceu que o namorado estava distante, na porta do quarto, e que não houve empurrão nem briga. Ele não é investigado como suspeito. <em>(Fonte: Polícia Civil ao g1)</em>.</li>
+            <li><strong>O foco do inquérito policial:</strong> a morte é investigada como acidente, e a polícia apura se houve falha do hotel nas condições de fixação e manutenção daquela janela. <em>(Fonte: Polícia Civil ao Metrópoles)</em>.</li>
+            <li><strong>A vistoria do dia seguinte:</strong> após o acidente, o hotel fechou o vão com uma placa de madeira. Os Bombeiros autuaram o prédio por estar com o certificado geral contra incêndio vencido, uma infração administrativa que não tem relação direta com a janela. <em>(Fonte: Corpo de Bombeiros ao g1)</em>.</li>
+            <li><strong>O que ainda falta chegar:</strong> os peritos do Instituto de Criminalística examinaram o local, mas o laudo técnico oficial sobre a causa do desprendimento ainda aguarda conclusão. <em>(Fonte: Secretaria de Segurança Pública do Maranhão)</em>.</li>
+          </ul>
+
+          <h3>3. Separando o que é fato provado do que é palpite apressado</h3>
+          <p>
+            É aqui que a maioria das conversas de domingo se perde. Quando olhamos o caso com calma, vemos que nem tudo tem o mesmo peso:
+          </p>
+          <p>
+            Que ela se sentou no batente e que a peça de alumínio se soltou é um <strong>fato registrado</strong> em vídeo. Já a informação de que o casal havia bebido antes de voltar ao hotel e os comentários de amigos sobre a conservação do prédio são <strong>relatos</strong>, que ajudam a investigação mas não substituem a perícia.
+          </p>
+          <p>
+            Por outro lado, dizer que "ela caiu porque tinha bebido" é uma <strong>inferência apressada</strong>: o álcool pode até explicar a decisão de sentar ali, mas o álcool não solta parafuso nem arranca esquadria de alumínio da parede sozinho. E vale o cuidado com outra armadilha comum na internet: o fato de o hotel ter fechado o buraco com madeira no dia seguinte <strong>não é confissão de culpa</strong>. Interditar um vão aberto no sétimo andar após uma tragédia é o dever mínimo de prudência para evitar outro acidente.
+          </p>
+
+          <h3>4. Os três caminhos que cabem nos dados e a peça que falta</h3>
+          <p>
+            Para a Justiça bater o martelo, tudo vai depender das respostas que o laudo do Instituto de Criminalística trouxer sobre aquela janela: qual era a altura do parapeito em relação ao piso do corredor, se existia limitador de abertura ou grade de proteção exigida para andar alto e como aquela peça de alumínio estava parafusada na alvenaria.
+          </p>
+          <p>
+            Dependendo desse laudo, abrem-se três cenários jurídicos: se a esquadria estava frouxa, oxidada ou fora das normas técnicas para o sétimo andar, há defeito de segurança do hotel; se a estrutura era perfeitamente segura e cedeu unicamente por um esforço incompatível, haveria culpa exclusiva da vítima; e se os dois fatores somaram forças (imprudência ao sentar no batente somada a uma janela mal fixada ou sem trava), entramos no terceiro caminho, que quase ninguém lembra nas redes sociais.
+          </p>
+
+          <h3>5. O veredito da lei brasileira: onde o Código do Consumidor encontra o Código Civil</h3>
+          <p>
+            Quando alguém se hospeda em um hotel, aplica-se o <strong>artigo 14 do Código de Defesa do Consumidor</strong>. Essa regra estabelece que o hotel responde objetivamente pela segurança das suas instalações e só fica inteiramente livre de indenizar se provar que não houve defeito algum no prédio e que a culpa foi exclusiva da hóspede.
+          </p>
+          <p>
+            Mas e se a perícia mostrar que os dois lados falharam juntos? Na internet, muita gente imagina que qualquer imprudência da vítima zera a responsabilidade da empresa. Na lei brasileira não é assim. O <strong>artigo 945 do Código Civil</strong> prevê a chamada <strong>culpa concorrente</strong>: quando a vítima concorre para o acidente, mas o estabelecimento também falha no seu dever de segurança, o dever de indenizar a família (incluindo danos morais e pensão aos filhos menores) continua existindo, apenas com o valor reduzido pelo juiz na proporção da contribuição de cada lado.
           </p>
         </div>
 
-        <h3 class="section-sub">As 6 Perguntas do Método</h3>
-        <div class="q-step">
-          <strong class="q-num"><span>01</span> Qual é a afirmação exata?</strong>
-          Se uma hóspede faz algo arriscado (sentar no batente), mas a estrutura da janela cede e despenca, o hotel responde pela morte mesmo assim?
-        </div>
-        <div class="q-step">
-          <strong class="q-num"><span>02</span> O que sabemos e de qual fonte?</strong>
-          Pelas câmeras e pela Polícia Civil (SSP-MA), Renata sentou no batente, encostou na peça de alumínio e ela se soltou. Após o acidente, o hotel fechou o vão com madeira e os Bombeiros aplicaram multa administrativa por certificado de incêndio vencido (sem relação direta com a janela). O laudo oficial da perícia (ICRIM-MA) ainda aguarda conclusão.
-        </div>
-        <div class="q-step">
-          <strong class="q-num"><span>03</span> O que é fato, relato, inferência ou opinião?</strong>
-          É fato gravado que a estrutura de alumínio cedeu. É relato que o casal havia bebido. Já dizer que "ela caiu porque bebeu" ou que "tapar a janela com madeira é confissão de culpa" são conclusões apressadas: álcool não solta alumínio da parede sozinho, e interditar um vão aberto após acidente é dever básico de segurança.
-        </div>
-        <div class="q-step">
-          <strong class="q-num"><span>04</span> Que outras explicações cabem nos dados?</strong>
-          <strong>Caminho A (Defeito do hotel):</strong> Se a janela estava mal fixada ou sem trava exigida em andar alto, há defeito de segurança.<br>
-          <strong>Caminho B (Culpa exclusiva da vítima):</strong> Se a esquadria era íntegra e segura e só cedeu por uso totalmente impróprio.<br>
-          <strong>Caminho C (Culpa concorrente — art. 945 do CC):</strong> Quando a imprudência ao sentar no parapeito e uma falha de manutenção na janela concorrem juntas para o acidente.
-        </div>
-        <div class="q-step">
-          <strong class="q-num"><span>05</span> O que falta saber e poderia mudar a conclusão?</strong>
-          O laudo pericial oficial sobre os parafusos, trilhos, função da peça de alumínio, altura do peitoril e estado de conservação daquela esquadria.
-        </div>
-        <div class="q-step">
-          <strong class="q-num"><span>06</span> O que é responsável concluir agora?</strong>
-          Pelo <strong>Código de Defesa do Consumidor (art. 14)</strong>, o hotel responde pela segurança da sua estrutura e só se isenta se provar que não havia defeito algum e que a culpa foi exclusiva da vítima. Já pelo <strong>Código Civil (art. 945)</strong>, se a perícia apontar que os dois contribuíram (risco assumido por ela + falha na janela), aplica-se a <strong>culpa concorrente</strong>: o dever de indenizar existe, mas o juiz reduz o valor na proporção de cada conduta.
-        </div>
-
-        <!-- + Para Guardar: Como Funciona -->
         <div class="keep-box">
-          <span class="keep-tag">+ Para guardar · Como Funciona</span>
-          <h4>Culpa Exclusiva vs. Culpa Concorrente (Art. 945 do Código Civil)</h4>
-          <p>No Direito brasileiro, um acidente não precisa ter apenas um culpado. Se a vítima agiu com imprudência, mas o estabelecimento também falhou no dever de segurança, o juiz reconhece a <strong>culpa concorrente</strong>: o dever de indenizar continua existindo, mas o valor é reduzido proporcionalmente ao grau de contribuição de cada lado.</p>
+          <span class="keep-tag">Para guardar desta nossa conversa</span>
+          <h4>Qual a diferença entre Culpa Exclusiva e Culpa Concorrente?</h4>
+          <p>Na <strong>culpa exclusiva</strong>, o estabelecimento cumpriu todas as normas de segurança e o acidente decorreu unicamente da conduta da vítima (não há indenização). Já na <strong>culpa concorrente (art. 945 do Código Civil)</strong>, a imprudência da vítima e a falha de segurança do local somam forças: a empresa continua obrigada a indenizar, mas o juiz abate o valor proporcionalmente.</p>
         </div>
 
-        <!-- Melhoria 2: Teste Rápido Interativo de 10 Segundos -->
         <div class="quiz-box">
-          <span class="quiz-tag">Teste Rápido · 10 Segundos</span>
-          <h4>Para conferir se ficou claro: se o laudo provar que a janela do hotel estava com os parafusos enferrujados e frouxos, o fato de a hóspede ter sentado no batente livra o hotel de pagar qualquer indenização?</h4>
+          <span class="quiz-tag">Vamos ver se ficou claro na prática?</span>
+          <h4>Imagine que o laudo da perícia comprove que a janela do hotel estava com os parafusos enferrujados e frouxos. O fato de a hóspede ter sentado no batente livra o hotel de pagar qualquer indenização?</h4>
           <div class="quiz-opts">
-            <button type="button" class="quiz-btn" onclick="answerQuiz('q1', false, this)">A) Sim, o hotel fica 100% livre, porque janela não foi feita para sentar.</button>
-            <button type="button" class="quiz-btn" onclick="answerQuiz('q1', true, this)">B) Não livra por completo: entra a culpa concorrente (art. 945 do CC), em que o hotel indeniza, mas com valor reduzido.</button>
+            <button type="button" class="quiz-btn" onclick="answerQuiz('q1', false, this)">A) Sim, o hotel fica totalmente livre, porque janela não foi feita para sentar.</button>
+            <button type="button" class="quiz-btn" onclick="answerQuiz('q1', true, this)">B) Não livra por completo: entra a culpa concorrente (art. 945 do Código Civil), em que o hotel indeniza, mas com valor reduzido.</button>
           </div>
           <div id="quiz-ans-q1" class="quiz-ans">
-            <strong>Explicação do Prof. Zamboni:</strong> Na mosca. O hotel só fica 100% livre se provar que a estrutura era perfeitamente segura e que a conduta da hóspede foi a <em>única</em> causa (culpa exclusiva). Se havia defeito na janela + imprudência dela, aplica-se a culpa concorrente (art. 945 do Código Civil).
+            <strong>Meu comentário:</strong> Exatamente isso. O hotel só ficaria livre de qualquer indenização se provasse que a estrutura era 100% íntegra e segura. Havendo falha de segurança na janela somada à imprudência dela, aplica-se o artigo 945 do Código Civil.
           </div>
         </div>
 
-        <!-- Melhoria 1: Na Mesa do Almoço + Botão WhatsApp 1 Toque + Card da Família -->
         <div class="lunch-box">
-          <strong class="lunch-kicker">Na mesa do almoço (em 3 frases)</strong>
+          <strong class="lunch-kicker">Se esse assunto surgir no almoço de hoje (em 3 frases)</strong>
           <p id="lunch-text-1">"Sentar na janela foi arriscado, mas isso não responde se a janela do hotel era segura. Pela lei do consumidor (CDC, art. 14), o hotel responde se a estrutura falhou na segurança esperada; já a imprudência da vítima pode diminuir o valor da indenização (Código Civil, art. 945), sem necessariamente zerar a conta. Quem vai dizer qual dos dois pesou mais é o laudo da perícia, não a torcida."</p>
           <div class="share-actions">
             <button type="button" class="btn-wa" onclick="shareWhatsApp('ed1')">📲 Mandar no WhatsApp da Família (1 toque)</button>
@@ -738,7 +739,7 @@
           </div>
 
           <div class="family-card-wrap">
-            <span class="eyebrow" style="margin-bottom:4px;">Card pronto para o grupo da família</span>
+            <span class="eyebrow" style="margin-bottom:4px;">Resumo visual para o grupo da família</span>
             <div class="family-card">
               <div class="fc-top">Zamboni Explica · O Caso da Semana</div>
               <h4>Janela do 7º andar cede em hotel: de quem é a responsabilidade pela lei?</h4>
@@ -757,44 +758,41 @@
           </div>
         </div>
 
-        <!-- Melhoria #4 do Agente #19: Quadro Fixo "Da Linha Direta desta Semana" -->
         <div class="keep-box" style="margin-top:26px; background:#FAF8F5; border-color:rgba(11,25,44,0.14);">
-          <span class="keep-tag">📬 Da Linha Direta desta Semana · Dúvida de Assinante</span>
-          <h4>Caso da padaria em Curitiba/PR: quando o empurrão é legítima defesa e quando vira excesso?</h4>
-          <p style="margin-bottom:10px; font-size:14px; color:var(--muted);">
-            <em>Pergunta enviada pelo assinante <strong>Carlos Eduardo (Curitiba/PR)</strong> via Linha Direta:</em>
+          <span class="keep-tag">Uma conversa que tivemos na Linha Direta nesta semana</span>
+          <h4>Caso da padaria em Curitiba/PR: até onde vai a legítima defesa e onde começa o excesso?</h4>
+          <p style="margin-bottom:10px; font-size:14.5px; color:var(--muted);">
+            <em>Dúvida enviada pelo nosso assinante <strong>Carlos Eduardo (Curitiba/PR)</strong>:</em>
           </p>
-          <p style="font-size:15px; line-height:1.65; color:var(--ink);">
-            Pelo artigo 25 do Código Penal, a legítima defesa exige agressão injusta, atual ou iminente, e o uso moderado dos meios necessários apenas para fazer o ataque cessar. No caso registrado pelas câmeras da padaria em Curitiba, o primeiro momento em que o cliente desarma o assaltante e o empurra para afastar o perigo enquadra-se, em tese, na proteção da própria vida. Já o segundo momento — caso a perícia confirme que o assaltante já estava caído, desarmado e sem oferecer risco quando recebeu novos golpes na cabeça — ultrapassa a fronteira da defesa e entra no chamado excesso punível (parágrafo único do artigo 25 do Código Penal), em que o cidadão responde apenas pelo que excedeu depois que o perigo havia terminado.
+          <p style="font-size:16px; line-height:1.68; color:var(--ink);">
+            Pelo artigo 25 do Código Penal, a legítima defesa exige uma agressão injusta, atual ou iminente, e o uso moderado dos meios necessários apenas para fazer o ataque cessar. No caso gravado pelas câmeras da padaria em Curitiba, o primeiro momento em que o cliente consegue desarmar o assaltante e o empurra para afastar o risco à própria vida encontra amparo na legítima defesa. Já o segundo momento, caso a perícia confirme que o assaltante já estava caído, desarmado e sem oferecer perigo atual quando recebeu novos golpes, ultrapassa a fronteira da proteção e entra na análise do excesso (parágrafo único do artigo 25 do Código Penal).
           </p>
-          <div style="margin-top:12px;">
-            <button type="button" class="btn-copy" onclick="showPane('linhadireta', document.querySelectorAll('.tab-btn')[2])">📩 Quer sugerir um caso público? Envie na Linha Direta &rsaquo;</button>
+          <div style="margin-top:14px;">
+            <button type="button" class="btn-copy" onclick="showPane('linhadireta', document.getElementById('tab-linhadireta'))">💬 Quer conversar comigo sobre algum caso? Escreva aqui &rsaquo;</button>
           </div>
         </div>
       </article>
     </section>
 
     <!-- =================================================================== -->
-    <!-- ABA 2: EDIÇÃO #002 (PASSAPORTES NO STF — 6 PERGUNTAS COMPLETAS)     -->
+    <!-- ABA 2: EDIÇÃO #002 (PASSAPORTES NO STF — CONVERSACIONAL)            -->
     <!-- =================================================================== -->
     <section id="pane-ed2" class="pane">
       <article class="card">
-        <span class="eyebrow">Edição #002 · Processo Penal &amp; Casos Reais no STF</span>
+        <span class="eyebrow">Edição #002 · Conversa de Domingo</span>
         <h2 class="article-title">Passaporte retido pela Polícia Federal: por que o STF devolveu o de Silas Malafaia e manteve o de Jair Bolsonaro?</h2>
-        <p class="byline">Por <strong>Alexandre Zamboni</strong> · Leitura de 6 minutos</p>
+        <p class="byline">Escrito e narrado por <strong>Alexandre Zamboni</strong> · Leitura de 6 minutos</p>
 
-        <!-- Player de Áudio Oficial 1.25x -->
         <div class="audio-bar">
           <div class="audio-meta">
             <img src="assets/perfil-800.jpg" alt="Prof. Alexandre Zamboni">
             <div>
-              <strong>Ouvir na voz do Prof. Zamboni</strong>
-              <span>Narração oficial · Ritmo dinâmico 1.25x</span>
+              <strong>Prefere ouvir? Eu narrei esta edição para você</strong>
+              <span>Toque no play abaixo (você pode escolher o ritmo normal 1x ou mais dinâmico em 1.25x)</span>
             </div>
           </div>
           <div class="audio-controls">
             <audio id="audio-ed2" controls preload="metadata" onplay="ensureRate(this)" style="height:36px; max-width:220px;">
-              <source src="edicao-002.mp3" type="audio/mpeg">
               <source src="audio/edicao-002.mp3" type="audio/mpeg">
             </audio>
             <div class="speed-group">
@@ -805,68 +803,56 @@
           </div>
         </div>
 
-        <div class="story-box">
-          <h3>O que aconteceu? (A história completa em 1 minuto, com nomes e datas)</h3>
+        <div class="editorial-prose">
           <p>
-            Para entender a retenção de passaporte no Brasil sem camisa de time, basta comparar dois desfechos opostos no próprio Supremo Tribunal Federal (STF):
+            Toda vez que o noticiário anuncia que a Polícia Federal reteve o passaporte de alguém conhecido, ou que o Supremo Tribunal Federal devolveu o passaporte de um investigado e negou o de outro, a mesa de domingo se divide na hora. De um lado, há quem diga que tomar passaporte sem condenação definitiva é abuso; do outro, quem ache que devolver o documento significa que a apreensão inicial foi um erro.
           </p>
           <p>
-            <strong>Caso 1 (Silas Malafaia e Marcos do Val — Devolvidos):</strong> Em agosto de 2025, o pastor Silas Malafaia teve o passaporte apreendido ao desembarcar no Galeão (RJ), em apuração sobre suposta obstrução de justiça. Em outubro de 2026, a própria PGR concluiu que não havia elementos para denunciá-lo, e o ministro Edson Fachin determinou a devolução do passaporte (assim como ocorreu com o senador Marcos do Val em maio de 2026).
+            Para a gente conversar sobre isso sem camisa de time, vale olhar para dois desfechos reais e recentes no próprio STF. No primeiro, o pastor Silas Malafaia teve o passaporte apreendido em agosto de 2025 no aeroporto do Galeão, em investigação sobre suposta obstrução de justiça; meses depois, quando a Procuradoria-Geral da República concluiu que não havia elementos para denunciá-lo, o ministro relator determinou a devolução do passaporte (assim como ocorreu com o senador Marcos do Val). Já no segundo caso, o ex-presidente Jair Bolsonaro, que entregou o passaporte em fevereiro de 2024, pediu autorização para viajar ao exterior, mas a Primeira Turma do STF negou por unanimidade e manteve a restrição.
+          </p>
+
+          <h3>1. O que a lei brasileira diz sobre reter passaporte antes do julgamento?</h3>
+          <p>
+            A primeira dúvida natural de quem não é da área jurídica é saber se existe uma lei autorizando reter o passaporte de uma pessoa que ainda não foi condenada. E a resposta é sim: essa regra está escrita com todas as letras no <strong>artigo 320 do Código de Processo Penal</strong> desde a reforma de 2011 (Lei nº 12.403/2011).
           </p>
           <p>
-            <strong>Caso 2 (Jair Bolsonaro — Mantido retido):</strong> Já o ex-presidente Jair Bolsonaro, que entregou o passaporte em fevereiro de 2024 (Operação <em>Tempus Veritatis</em>), pediu a liberação para viajar a Israel e aos Estados Unidos, mas a 1ª Turma do STF negou por unanimidade, mantendo a restrição.
+            Naquele ano, o Congresso Nacional criou uma lista de medidas cautelares intermediárias justamente para que o juiz não precisasse decretar a prisão preventiva de alguém quando uma medida menos grave, como proibir a saída do país e recolher o passaporte em 24 horas, fosse suficiente para proteger o processo.
+          </p>
+
+          <h3>2. As travas da lei: o juiz pode fazer isso sozinho?</h3>
+          <p>
+            Para que essa medida não vire um cheque em branco, o <strong>artigo 282 do Código de Processo Penal</strong> impõe duas travas muito claras. A primeira é que a retenção precisa ser necessária para a aplicação da lei penal ou para a investigação, diante de risco concreto ligado à saída do país. A segunda trava, reforçada em 2019 pelo Pacote Anticrime (artigo 282, parágrafo 2º), proíbe o juiz de decretar qualquer medida cautelar por conta própria (de ofício) durante a fase de inquérito policial: é obrigatório que exista requerimento da Polícia ou do Ministério Público.
+          </p>
+
+          <h3>3. Por que um passaporte é devolvido e o outro continua retido?</h3>
+          <p>
+            Aqui está a chave que explica os dois casos sem paixão partidária. Pelo <strong>artigo 282, parágrafo 5º, do Código de Processo Penal</strong>, nenhuma medida cautelar é eterna nem funciona como pena antecipada. Ela dura exatamente enquanto durar o motivo que a justificou.
+          </p>
+          <p>
+            Quando a própria Procuradoria-Geral da República pediu o arquivamento da apuração em relação a Silas Malafaia, deixou de existir investigação ativa que justificasse manter o documento retido, e o dever legal do relator passou a ser devolver o passaporte. Já no caso de Jair Bolsonaro, o colegiado da Primeira Turma entendeu que a persecução penal seguia em andamento e que permaneciam presentes os fundamentos de cautela apontados pela PGR. Ou seja: é a mesma regra do artigo 282 do CPP funcionando nos dois sentidos, conforme o estado atual de cada processo.
           </p>
         </div>
 
-        <h3 class="section-sub">As 6 Perguntas do Método</h3>
-        <div class="q-step">
-          <strong class="q-num"><span>01</span> Qual é a afirmação exata?</strong>
-          Quando a lei autoriza reter o passaporte de quem ainda não foi condenado, e por que em um caso o tribunal devolve e no outro mantém retido?
-        </div>
-        <div class="q-step">
-          <strong class="q-num"><span>02</span> O que sabemos e de qual fonte?</strong>
-          Desde a Lei 12.403/2011, os <strong>artigos 282 e 320 do Código de Processo Penal</strong> autorizam proibir a saída do país e ordenar a entrega do passaporte em 24 horas como medida cautelar intermediária para evitar a prisão preventiva.
-        </div>
-        <div class="q-step">
-          <strong class="q-num"><span>03</span> O que é fato, relato, inferência ou opinião?</strong>
-          É fato legal que a medida não é pena antecipada (tanto que o documento de Malafaia foi devolvido após o arquivamento pedido pela PGR). E devolver não significa que a retenção inicial foi ilegal: pelo <strong>art. 282, § 5º do CPP</strong>, a medida é provisória e o juiz é obrigado a revogá-la assim que cessar o motivo que a justificou.
-        </div>
-        <div class="q-step">
-          <strong class="q-num"><span>04</span> Que caminhos e travas existem na lei?</strong>
-          Pelo <strong>artigo 282, § 2º do CPP</strong> (com a redação do Pacote Anticrime), o juiz não pode decretar a medida de ofício na fase de investigação (exige pedido da Polícia ou do Ministério Público) e precisa fundamentar o perigo concreto e atual de fuga ou prejuízo à instrução criminal.
-        </div>
-        <div class="q-step">
-          <strong class="q-num"><span>05</span> O que falta saber ou o que mudaria a decisão?</strong>
-          Como toda medida cautelar depende da situação atual do processo (cláusula <em>rebus sic stantibus</em>), se o processo for arquivado, se a instrução encerrar sem risco de fuga ou se surgir necessidade humanitária/médica comprovada sem perigo à aplicação da lei penal, a retenção pode e deve ser revista.
-        </div>
-        <div class="q-step">
-          <strong class="q-num"><span>06</span> O que é responsável concluir agora?</strong>
-          A diferença entre os casos de Silas Malafaia/Marcos do Val e o de Jair Bolsonaro não é capricho sem lei: nos dois primeiros, a etapa investigativa que justificava a restrição se encerrou (ou teve arquivamento pedido pela própria PGR), acionando o dever de devolução do <strong>art. 282, § 5º do CPP</strong>; no terceiro, o colegiado entendeu que a persecução penal e o risco processual seguiam ativos.
-        </div>
-
-        <!-- + Para Guardar: Como Funciona -->
         <div class="keep-box">
-          <span class="keep-tag">+ Para guardar · Como Funciona</span>
-          <h4>Por que uma medida cautelar pode mudar no meio do caminho? (Art. 282, § 5º, CPP)</h4>
-          <p>Diferente de uma sentença definitiva, medidas cautelares (como retenção de passaporte, tornozeleira ou prisão preventiva) só duram enquanto durar a necessidade que as criou. Se o motivo desaparece, a lei obriga o juiz a revogar; se o motivo surge ou persiste, a medida é mantida.</p>
+          <span class="keep-tag">Para guardar desta nossa conversa</span>
+          <h4>Por que uma medida cautelar pode mudar no meio do caminho?</h4>
+          <p>Diferente de uma sentença definitiva, medidas cautelares (como retenção de passaporte, tornozeleira eletrônica ou prisão preventiva) obedecem ao <strong>artigo 282, § 5º, do CPP</strong>: se o motivo que exigia a cautela desaparece ou o inquérito é arquivado, o juiz tem o dever legal de revogar a restrição.</p>
         </div>
 
-        <!-- Melhoria 2: Teste Rápido Interativo de 10 Segundos -->
         <div class="quiz-box">
-          <span class="quiz-tag">Teste Rápido · 10 Segundos</span>
-          <h4>Para conferir de cabeça: um juiz pode mandar apreender o passaporte de um investigado por conta própria (de ofício), durante o inquérito policial, sem que a Polícia ou o Ministério Público tenham pedido?</h4>
+          <span class="quiz-tag">Vamos ver se ficou claro na prática?</span>
+          <h4>Durante o inquérito policial, um juiz pode mandar apreender o passaporte de um investigado por iniciativa própria (de ofício), mesmo sem pedido da Polícia ou do Ministério Público?</h4>
           <div class="quiz-opts">
-            <button type="button" class="quiz-btn" onclick="answerQuiz('q2', false, this)">A) Sim, o juiz tem poder geral para prender ou reter passaporte sozinho na investigação.</button>
-            <button type="button" class="quiz-btn" onclick="answerQuiz('q2', true, this)">B) Não: durante a investigação, o art. 282, § 2º do CPP proíbe o juiz de agir de ofício; é obrigatório pedido da Polícia ou do MP.</button>
+            <button type="button" class="quiz-btn" onclick="answerQuiz('q2', false, this)">A) Sim, o juiz tem poder geral para decretar cautelares sozinho durante a investigação.</button>
+            <button type="button" class="quiz-btn" onclick="answerQuiz('q2', true, this)">B) Não: na fase de investigação, o art. 282, § 2º do CPP proíbe o juiz de agir de ofício; é obrigatório pedido da Polícia ou do MP.</button>
           </div>
           <div id="quiz-ans-q2" class="quiz-ans">
-            <strong>Explicação do Prof. Zamboni:</strong> Perfeito. Desde a Lei 13.964/2019 (Pacote Anticrime), o sistema acusatório proíbe o juiz de decretar medidas cautelares de ofício na fase de investigação policial. Sem requerimento da autoridade policial ou do Ministério Público, a medida é nula.
+            <strong>Meu comentário:</strong> Perfeito. Desde a Lei 13.964/2019 (Pacote Anticrime), o juiz não pode decretar medidas cautelares de ofício durante a investigação policial. Sem pedido da Polícia ou do Ministério Público, a decisão é nula.
           </div>
         </div>
 
-        <!-- Melhoria 1: Na Mesa do Almoço + Botão WhatsApp 1 Toque + Card da Família -->
         <div class="lunch-box">
-          <strong class="lunch-kicker">Na mesa do almoço (em 3 frases)</strong>
+          <strong class="lunch-kicker">Se esse assunto surgir no almoço de hoje (em 3 frases)</strong>
           <p id="lunch-text-2">"Reter passaporte em 24 horas está na lei brasileira desde 2011 (CPP, art. 320) para que o juiz não precise prender alguém quando basta impedir uma viagem internacional. Mas não é pena antecipada nem medida eterna: só vale enquanto existir risco atual para o processo. Por isso, quando a PGR apontou que o risco continuava (caso Bolsonaro), o STF manteve retido; e quando o motivo cessou (casos Silas Malafaia e Marcos do Val), o próprio STF devolveu."</p>
           <div class="share-actions">
             <button type="button" class="btn-wa" onclick="shareWhatsApp('ed2')">📲 Mandar no WhatsApp da Família (1 toque)</button>
@@ -874,7 +860,7 @@
           </div>
 
           <div class="family-card-wrap">
-            <span class="eyebrow" style="margin-bottom:4px;">Card pronto para o grupo da família</span>
+            <span class="eyebrow" style="margin-bottom:4px;">Resumo visual para o grupo da família</span>
             <div class="family-card">
               <div class="fc-top">Zamboni Explica · O Caso da Semana</div>
               <h4>Passaporte retido no STF: por que um foi devolvido e o outro mantido?</h4>
@@ -892,38 +878,224 @@
           </div>
         </div>
 
-        <!-- Melhoria #4 do Agente #19: Quadro Fixo "Da Linha Direta desta Semana" -->
         <div class="keep-box" style="margin-top:26px; background:#FAF8F5; border-color:rgba(11,25,44,0.14);">
-          <span class="keep-tag">📬 Da Linha Direta desta Semana · Dúvida de Assinante</span>
+          <span class="keep-tag">Uma conversa que tivemos na Linha Direta nesta semana</span>
           <h4>Golpes de Pix fora do padrão da conta: quando o banco tem o dever de ressarcir segundo o STJ?</h4>
-          <p style="margin-bottom:10px; font-size:14px; color:var(--muted);">
-            <em>Pergunta enviada pela assinante <strong>Mariana L. (Recife/PE)</strong> via Linha Direta:</em>
+          <p style="margin-bottom:10px; font-size:14.5px; color:var(--muted);">
+            <em>Dúvida enviada pela nossa assinante <strong>Mariana L. (Recife/PE)</strong>:</em>
           </p>
-          <p style="font-size:15px; line-height:1.65; color:var(--ink);">
-            Pela Súmula 479 do Superior Tribunal de Justiça e pelo artigo 14 do Código de Defesa do Consumidor, as instituições financeiras respondem objetivamente por fraudes praticadas por terceiros quando há falha no dever de segurança do sistema bancário (o chamado fortuito interno). Na jurisprudência do STJ, isso se caracteriza especialmente quando o sistema do banco aprova em sequência transferências elevadas ou empréstimos que fogem por completo ao perfil histórico de movimentação do correntista sem acionar travas preventivas, distinguindo-se das situações em que a operação está dentro do padrão habitual do cliente e decorre exclusivamente de negociação particular externa.
+          <p style="font-size:16px; line-height:1.68; color:var(--ink);">
+            Pela Súmula 479 do Superior Tribunal de Justiça e pelo artigo 14 do Código de Defesa do Consumidor, as instituições financeiras respondem objetivamente por fraudes praticadas por terceiros quando há falha no dever de segurança do sistema bancário. Na jurisprudência do STJ, isso fica evidente quando o banco aprova em sequência transferências elevadas ou empréstimos que fogem por completo ao perfil histórico de movimentação do correntista sem acionar travas preventivas.
           </p>
-          <div style="margin-top:12px;">
-            <button type="button" class="btn-copy" onclick="showPane('linhadireta', document.querySelectorAll('.tab-btn')[2])">📩 Quer sugerir um caso público? Envie na Linha Direta &rsaquo;</button>
+          <div style="margin-top:14px;">
+            <button type="button" class="btn-copy" onclick="showPane('linhadireta', document.getElementById('tab-linhadireta'))">💬 Quer conversar comigo sobre algum caso? Escreva aqui &rsaquo;</button>
           </div>
         </div>
       </article>
     </section>
 
     <!-- =================================================================== -->
-    <!-- ABA 3: DICIONÁRIO "COMO FUNCIONA" (BUSCA INSTANTÂNEA + 20 VERBETES) -->
+    <!-- ABA 3: EDIÇÃO #003 (GOLPES DE PIX — CONVERSACIONAL E FLUIDA)        -->
+    <!-- =================================================================== -->
+    <section id="pane-ed3" class="pane">
+      <article class="card">
+        <span class="eyebrow">Edição #003 · Conversa de Domingo</span>
+        <h2 class="article-title">Golpe do Pix e da falsa central: quando o banco é obrigado pela Justiça a devolver o dinheiro?</h2>
+        <p class="byline">Escrito e narrado por <strong>Alexandre Zamboni</strong> · Leitura de 5 minutos</p>
+
+        <div class="audio-bar">
+          <div class="audio-meta">
+            <img src="assets/perfil-800.jpg" alt="Prof. Alexandre Zamboni">
+            <div>
+              <strong>Prefere ouvir? Eu narrei esta edição para você</strong>
+              <span>Toque no play abaixo (narração fluida na minha voz)</span>
+            </div>
+          </div>
+          <div class="audio-controls">
+            <audio id="audio-ed3" controls preload="metadata" onplay="ensureRate(this)" style="height:36px; max-width:220px;">
+              <source src="audio/edicao-003.mp3" type="audio/mpeg">
+            </audio>
+            <div class="speed-group">
+              <button type="button" class="speed-btn active" onclick="setAudioRate('audio-ed3', 1.0, this)">1x</button>
+              <button type="button" class="speed-btn" onclick="setAudioRate('audio-ed3', 1.25, this)">1.25x</button>
+              <button type="button" class="speed-btn" onclick="setAudioRate('audio-ed3', 1.5, this)">1.5x</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-prose">
+          <p>
+            Quase toda semana alguém na mesa de almoço conta a história de um parente, vizinho ou colega de trabalho que teve a conta limpa num golpe de Pix ou numa ligação da chamada falsa central de segurança do banco. E quase sempre surgem duas opiniões extremas na conversa: de um lado, quem ache que "o banco tem dinheiro sobrando e a lei obriga a devolver tudo sempre"; do outro, quem sentencie que "se a própria pessoa digitou a senha e autorizou o Pix, perdeu, porque a Justiça nunca manda devolver".
+          </p>
+          <p>
+            Quando a gente abre a lei e olha para o que o <strong>Superior Tribunal de Justiça (STJ)</strong> vem decidindo na prática, percebe que nenhuma dessas duas frases conta a história inteira. Vamos conversar com calma sobre onde exatamente a lei traça a linha entre o prejuízo que o banco é obrigado a ressarcir e o prejuízo que não recai sobre ele.
+          </p>
+
+          <h3>1. A pergunta que decide o jogo nos tribunais</h3>
+          <p>
+            Para o Direito brasileiro, a discussão nunca é sobre quem tem mais dinheiro, mas sim uma pergunta objetiva de segurança do serviço: <strong>houve uma falha no dever de segurança do sistema do banco (o que a jurisprudência chama de fortuito interno) ou a transferência aconteceu inteiramente dentro do padrão normal do cliente, sem nenhuma falha de vigilância da instituição financeira?</strong>
+          </p>
+
+          <h3>2. As três regras que todo correntista precisa conhecer</h3>
+          <p>
+            Para responder a essa pergunta sem achismo, os juízes aplicam três bases muito claras:
+          </p>
+          <ul>
+            <li><strong>O artigo 14 do Código de Defesa do Consumidor:</strong> estabelece que o banco responde, independentemente de culpa, pelos danos causados por defeitos na segurança do serviço que presta.</li>
+            <li><strong>A Súmula 479 do STJ:</strong> fixa que as instituições financeiras respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes e delitos praticados por terceiros no âmbito de operações bancárias.</li>
+            <li><strong>O Mecanismo Especial de Devolução (MED) do Banco Central:</strong> criado pela Resolução BCB nº 103/2021, obriga os bancos a acionarem um protocolo de bloqueio cautelar na conta recebedora assim que o cliente comunica uma fundada suspeita de fraude por Pix.</li>
+          </ul>
+
+          <h3>3. Quando o banco é condenado a devolver (e quando não é)</h3>
+          <p>
+            Imagine um aposentado que, durante anos, só fez transferências de duzentos ou trezentos reais durante o dia. Certa noite, após cair numa ligação fraudulenta ou ter o aparelho invadido, o aplicativo do banco aprova em dez minutos um empréstimo de trinta mil reais e cinco transferências seguidas que esvaziam a conta.
+          </p>
+          <p>
+            Nesse cenário, ainda que o cliente tenha sido induzido a erro para digitar a senha, o STJ tem entendido que <strong>o banco responde pelo prejuízo</strong>, porque falhou no dever básico de monitorar e travar preventivamente operações que destoavam por completo do perfil histórico daquele consumidor. O mesmo ocorre quando os criminosos demonstram conhecer detalhes internos das últimas compras do cartão que só poderiam ter vazado do ambiente de dados da instituição.
+          </p>
+          <p>
+            A conclusão muda quando o próprio correntista, durante o dia e dentro da sua faixa habitual de gastos, faz um Pix voluntário de quinhentos reais para comprar um produto anunciado por um falso vendedor em rede social. Ali não houve falha do sistema antifraude do banco de origem nem operação fora do perfil, razão pela qual os tribunais costumam afastar o dever de indenizar do banco do cliente, salvo se o banco de destino tiver falhado grosseiramente na abertura de uma conta fraudulenta ou deixado de cumprir o bloqueio do MED.
+          </p>
+        </div>
+
+        <div class="keep-box">
+          <span class="keep-tag">Para guardar desta nossa conversa</span>
+          <h4>O que significa "Fortuito Interno" nos bancos? (Súmula 479 do STJ)</h4>
+          <p>Para a lei, se um banco lucra oferecendo transferências e empréstimos digitais instantâneos, o risco de tentativa de fraude faz parte da própria atividade dele (fortuito interno). Por isso, oferecer segurança e travar movimentações nitidamente fora do perfil do cliente é obrigação jurídica do banco.</p>
+        </div>
+
+        <div class="quiz-box">
+          <span class="quiz-tag">Vamos ver se ficou claro na prática?</span>
+          <h4>Se um cliente que nunca movimentou mais de R$ 300 por mês cai no golpe da falsa central e o banco aprova na mesma hora um empréstimo de R$ 25 mil seguido de esvaziamento da conta, o fato de ele ter digitado a senha isenta o banco automaticamente?</h4>
+          <div class="quiz-opts">
+            <button type="button" class="quiz-btn" onclick="answerQuiz('q3', false, this)">A) Sim, se digitou a senha a culpa é sempre exclusiva do cliente.</button>
+            <button type="button" class="quiz-btn" onclick="answerQuiz('q3', true, this)">B) Não: pela Súmula 479 e pela jurisprudência do STJ, aprovar empréstimo e esvaziamento totalmente fora do perfil sem trava configura falha de segurança do banco.</button>
+          </div>
+          <div id="quiz-ans-q3" class="quiz-ans">
+            <strong>Meu comentário:</strong> Exato. O STJ entende que o dever de segurança do banco inclui monitorar o perfil de consumo do correntista. Quando operações completamente atípicas passam sem bloqueio preventivo, caracteriza-se defeito do serviço (art. 14 do CDC e Súmula 479 do STJ).
+          </div>
+        </div>
+
+        <div class="lunch-box">
+          <strong class="lunch-kicker">Se esse assunto surgir no almoço de hoje (em 3 frases)</strong>
+          <p id="lunch-text-3">"Digitar a senha num golpe não encerra a discussão na Justiça: pela Súmula 479 do STJ, se o banco deixou passar transferências ou empréstimos totalmente fora do padrão histórico do cliente sem travar a conta, há falha no dever de segurança da instituição. Quando o golpista ainda usa dados internos das compras do cartão para enganar a vítima, pesa mais ainda a responsabilidade objetiva do banco (art. 14 do CDC). E se acontecer com alguém da família, o primeiro passo imediato é exigir no banco a abertura do MED (Mecanismo Especial de Devolução do Banco Central) e registrar boletim de ocorrência."</p>
+          <div class="share-actions">
+            <button type="button" class="btn-wa" onclick="shareWhatsApp('ed3')">📲 Mandar no WhatsApp da Família (1 toque)</button>
+            <button type="button" class="btn-copy" onclick="copyLunch('lunch-text-3', this)">📋 Copiar as 3 frases</button>
+          </div>
+
+          <div class="family-card-wrap">
+            <span class="eyebrow" style="margin-bottom:4px;">Resumo visual para o grupo da família</span>
+            <div class="family-card">
+              <div class="fc-top">Zamboni Explica · O Caso da Semana</div>
+              <h4>Golpe do Pix: quando o banco é obrigado pela Justiça a devolver o valor?</h4>
+              <div class="fc-bar"></div>
+              <ul>
+                <li>Pela <strong>Súmula 479 do STJ</strong>, o banco responde quando falha o dever de segurança do sistema.</li>
+                <li>Transferências seguidas ou empréstimos totalmente fora do perfil do cliente que o banco não travou geram dever de indenizar.</li>
+                <li>Em caso de golpe, peça na hora o acionamento do <strong>MED do Banco Central</strong> e guarde todos os protocolos.</li>
+              </ul>
+              <div class="fc-foot">
+                <span>Sem torcida. Com fonte.</span>
+                <span>@profalexandrezamboni</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="keep-box" style="margin-top:26px; background:#FAF8F5; border-color:rgba(11,25,44,0.14);">
+          <span class="keep-tag">Está passando de perto por uma situação parecida?</span>
+          <h4>Conte comigo na nossa Linha Direta</h4>
+          <p style="font-size:16px; line-height:1.68; color:var(--ink);">
+            Se você ou alguém da sua família sofreu uma fraude bancária ou está vivendo qualquer situação que despertou dúvida ou angústia jurídica, me escreva aqui na <strong>Linha Direta</strong>. Além de te explicar como a lei funciona em linhas gerais, posso ver com você se é o caso de te encaminhar para um advogado ou uma advogada da minha lista pessoal de confiança.
+          </p>
+          <div style="margin-top:14px;">
+            <button type="button" class="btn-copy" onclick="showPane('linhadireta', document.getElementById('tab-linhadireta'))">💬 Escrever para o Zamboni agora &rsaquo;</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- ABA 4: LINHA DIRETA ("ZAMBONI, EXPLICA ESSE CASO?")                 -->
+    <!-- =================================================================== -->
+    <section id="pane-linhadireta" class="pane">
+      <div class="card">
+        <span class="eyebrow">Linha Direta Exclusiva dos Assinantes</span>
+        <h2 class="article-title">“Zamboni, explica esse caso?”</h2>
+        <div class="editorial-prose" style="margin-top:12px;">
+          <p>
+            Abri a <strong>Linha Direta</strong> porque sei que, muitas vezes, você vê uma notícia polêmica na semana ou escuta uma discussão acalorada em casa e pensa: <em>"queria saber o que a lei realmente diz sobre isso, sem torcida"</em>.
+          </p>
+          <p>
+            Mas também sei que, em outros momentos, quem me escreve não está apenas curioso com o noticiário: está vivendo um anseio real, um problema na família, no trabalho ou no banco, e se sente perdido sem saber a quem recorrer.
+          </p>
+          <p>
+            Por isso, quero que você se sinta muito à vontade para escrever aqui na Linha Direta nos dois casos. Pelas regras éticas da OAB, eu não posso analisar processos individuais nem substituir o advogado do caso, mas faço questão de nunca deixar você na mão: nós sempre fazemos o seu <strong>acolhimento inicial</strong> (explicando em linhas gerais como a lei funciona naquele tema) e, se a sua situação realmente precisar de um advogado ou de uma advogada, eu verifico com você se é do seu interesse que eu faça o encaminhamento para um profissional da minha lista pessoal de confiança.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; margin:22px 0 14px;">
+          <div style="background:var(--bg-alt); border:1px solid var(--hairline); border-radius:16px; padding:16px 18px;">
+            <strong style="display:block; font-size:14px; color:var(--blue); margin-bottom:4px;">☕ No Plano Mensal (R$ 9,90/mês)</strong>
+            <span style="font-size:14px; color:var(--muted);">Direito a pedir a explicação de <strong>até 2 casos do noticiário por mês</strong>.</span>
+          </div>
+          <div style="background:#edf4fc; border:1px solid rgba(27,77,137,0.25); border-radius:16px; padding:16px 18px;">
+            <strong style="display:block; font-size:14px; color:var(--blue); margin-bottom:4px;">★ No Plano Anual (R$ 99/ano)</strong>
+            <span style="font-size:14px; color:var(--muted);">Dobro de envios: <strong>até 4 casos do noticiário por mês</strong> com fila prioritária.</span>
+          </div>
+        </div>
+
+        <div style="background:#fffdf6; border:1.5px solid #e6d8a8; border-radius:16px; padding:15px 18px; margin-bottom:24px; font-size:14.5px; color:var(--ink); line-height:1.55;">
+          <strong style="color:#8A6421;">🤝 Precisa de indicação de um(a) advogado(a)? Isso não gasta a sua cota!</strong><br>
+          Se você estiver passando por um problema pessoal e quiser nosso acolhimento inicial e a indicação de um(a) advogado(a) da lista de confiança do Professor, <strong>pode escrever a qualquer momento: esse pedido é livre e não desconta dos seus 2 (ou 4) casos do mês</strong>.
+        </div>
+
+        <div style="background:var(--bg-alt); border:1px solid var(--hairline); border-radius:22px; padding:26px;">
+          <label for="ld-tipo" style="display:block; font-size:15px; font-weight:700; margin-bottom:8px;">Sobre o que você quer conversar comigo hoje?</label>
+          <select id="ld-tipo" onchange="toggleLinhaDiretaReferralFields()" style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:18px; background:#fff;">
+            <option value="curiosidade">📰 Quero entender um caso do noticiário / dúvida sobre a lei (usa 1 envio da sua cota do mês)</option>
+            <option value="acolhimento">🤝 Estou passando por um problema real e quero saber se preciso de advogado(a) (livre · não gasta sua cota)</option>
+          </select>
+
+          <label for="ld-url" style="display:block; font-size:15px; font-weight:700; margin-bottom:8px;">Qual é a notícia ou o assunto principal?</label>
+          <input id="ld-url" type="text" placeholder="Pode colar o link da notícia ou escrever uma frase dizendo o tema..." style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:18px; background:#fff;" />
+
+          <label for="ld-duvida" style="display:block; font-size:15px; font-weight:700; margin-bottom:8px;">Me conte com calma a sua dúvida ou o que está acontecendo:</label>
+          <textarea id="ld-duvida" rows="4" placeholder="Escreva como se estivesse conversando comigo..." style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:16px; background:#fff; resize:vertical;"></textarea>
+
+          <div id="ld-referral-extra" style="display:none; background:#fff; border:1px solid rgba(27,77,137,0.22); border-radius:14px; padding:16px; margin-bottom:18px;">
+            <strong style="display:block; font-size:14px; color:var(--blue); margin-bottom:8px;">🤝 Se quiser que eu já saiba de onde você é para eventual indicação de advogado(a) da minha confiança (opcional):</strong>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:10px;">
+              <input id="ld-cidade" type="text" placeholder="Sua Cidade e Estado (ex.: Recife/PE)" style="width:100%; padding:11px 14px; border-radius:10px; border:1px solid var(--hairline); font-family:inherit; font-size:14px;" />
+              <input id="ld-whatsapp" type="text" placeholder="Seu WhatsApp com DDD (opcional)" style="width:100%; padding:11px 14px; border-radius:10px; border:1px solid var(--hairline); font-family:inherit; font-size:14px;" />
+            </div>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+            <button type="button" class="btn-blue" onclick="sendLinhaDiretaEmail()">📩 Enviar Minha Mensagem por E-mail (1 toque)</button>
+            <button type="button" class="btn-pill" onclick="copyLinhaDireta(this)">📋 Ou copiar texto para mandar no Gmail (zamboniexplica@gmail.com)</button>
+          </div>
+          <div id="ld-feedback" class="alert" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- ABA 5: DICIONÁRIO DA LEI (BUSCA INSTANTÂNEA + 20 CONCEITOS)         -->
     <!-- =================================================================== -->
     <section id="pane-acervo" class="pane">
       <div class="card">
-        <span class="eyebrow">Acervo Permanente · Google Jurídico de Bolso</span>
-        <h2 class="article-title">Dicionário "Como Funciona"</h2>
-        <p class="byline">Os 20 conceitos jurídicos mais perguntados no noticiário brasileiro, traduzidos para o português claro. Digite abaixo para filtrar na hora:</p>
+        <span class="eyebrow">Para consultar sempre que aparecer uma palavra difícil no jornal</span>
+        <h2 class="article-title">O Dicionário da Lei (Sem Juridiquês)</h2>
+        <p class="byline">Separei os 20 termos que mais aparecem nas notícias da televisão e traduzi cada um para o português claro. Digite abaixo o que quer entender:</p>
 
         <div class="search-bar-wrap">
           <input id="input-busca-acervo" type="search" class="search-input" placeholder="🔎 Digite sua dúvida (ex.: foro privilegiado, prisão preventiva, fiança, segredo de justiça...)" oninput="filterConcepts()">
         </div>
 
         <div class="filter-pills">
-          <button type="button" class="filter-pill active" onclick="setCategoryFilter('all', this)">Todos (20)</button>
+          <button type="button" class="filter-pill active" onclick="setCategoryFilter('all', this)">Todos os 20 termos</button>
           <button type="button" class="filter-pill" onclick="setCategoryFilter('Penal & Prisões', this)">Penal &amp; Prisões</button>
           <button type="button" class="filter-pill" onclick="setCategoryFilter('STF & Processo', this)">STF &amp; Processo</button>
           <button type="button" class="filter-pill" onclick="setCategoryFilter('Dia a Dia & Civil', this)">Dia a Dia &amp; Civil</button>
@@ -968,87 +1140,87 @@
           <div class="concept-card" data-cat="Penal & Prisões">
             <span class="c-cat">Penal &amp; Prisões</span>
             <strong>8. Audiência de Custódia (em 24 horas)</strong>
-            <p>Não julga se o preso é culpado ou inocente do crime: o juiz verifica apenas se a prisão foi legal, se houve agressão policial e se a pessoa deve aguardar o processo presa ou solta.</p>
+            <p>Não julga se a pessoa é culpada ou inocente do crime: o juiz verifica apenas se a prisão foi legal, se houve agressão policial e se o preso deve aguardar o processo preso ou solto.</p>
           </div>
           <div class="concept-card" data-cat="Penal & Prisões">
             <span class="c-cat">Penal &amp; Prisões</span>
             <strong>9. Dolo Eventual vs. Culpa Consciente</strong>
-            <p>Na culpa consciente, o motorista/agente faz algo perigoso acreditando sinceramente que não vai causar o acidente; no dolo eventual, ele enxerga o risco de matar e pensa "se acontecer, paciência" (indo a Júri Popular).</p>
+            <p>Na culpa consciente, a pessoa faz algo imprudente acreditando sinceramente que nada vai dar errado; no dolo eventual, ela enxerga o risco de matar e pensa "se acontecer, paciência" (indo a Júri Popular).</p>
           </div>
           <div class="concept-card" data-cat="STF & Processo">
             <span class="c-cat">STF &amp; Processo</span>
             <strong>10. Segredo de Justiça</strong>
-            <p>Regra que restringe o acesso ao processo apenas às partes e advogados para proteger a intimidade de vítimas (ex.: crimes sexuais/menores) ou não frustrar diligências policiais em andamento.</p>
+            <p>Exceção legal em que o processo não fica aberto ao público geral para proteger a intimidade das vítimas (ex.: crimes familiares/sexuais) ou para não estragar uma investigação em andamento.</p>
           </div>
           <div class="concept-card" data-cat="STF & Processo">
             <span class="c-cat">STF &amp; Processo</span>
             <strong>11. Habeas Corpus (HC)</strong>
-            <p>Remédio constitucional rápido (e gratuito) acionado sempre que alguém sofre ou está ameaçado de sofrer restrição ilegal na sua liberdade de locomoção.</p>
+            <p>Ação constitucional gratuita e urgente usada sempre que alguém sofre ou corre risco imediato de sofrer uma prisão ou restrição ilegal na sua liberdade de ir e vir.</p>
           </div>
           <div class="concept-card" data-cat="STF & Processo">
             <span class="c-cat">STF &amp; Processo</span>
-            <strong>12. Prova Ilícita e "Frutos da Árvore Envenenada"</strong>
-            <p>Se a polícia obtém uma prova violando a lei (ex.: escuta sem ordem judicial), tanto essa prova quanto tudo o que foi descoberto exclusivamente por causa dela são anulados do processo.</p>
+            <strong>12. Prova Ilícita ("Teoria dos Frutos da Árvore Envenenada")</strong>
+            <p>Se uma prova foi obtida violando a lei (ex.: escuta clandestina sem ordem judicial), ela é anulada e contamina todas as outras provas que nasceram a partir dela (CPP, art. 157).</p>
           </div>
           <div class="concept-card" data-cat="Penal & Prisões">
             <span class="c-cat">Penal &amp; Prisões</span>
-            <strong>13. Colaboração ("Delação") Premiada</strong>
-            <p>Acordo regulado pela Lei 12.850/2013 em que o investigado confessa e entrega provas de outros crimes/autores. A palavra do delator, sozinha, nunca pode condenar ninguém sem provas externas.</p>
+            <strong>13. Colaboração Premiada ("Delação")</strong>
+            <p>Acordo previsto na Lei 12.850/2013 em que o investigado ajuda a revelar coautores e recuperar valores em troca de redução de pena. A palavra do delator sozinha nunca basta para condenar ninguém.</p>
           </div>
           <div class="concept-card" data-cat="Penal & Prisões">
             <span class="c-cat">Penal &amp; Prisões</span>
             <strong>14. Prescrição Penal</strong>
-            <p>O Estado tem um prazo máximo na lei para investigar, julgar e punir. Se o Estado demorar além desse limite legal, perde o direito de aplicar a pena.</p>
+            <p>É a perda do direito de o Estado punir alguém porque demorou além do prazo máximo previsto no Código Penal para investigar ou julgar o caso.</p>
           </div>
           <div class="concept-card" data-cat="Penal & Prisões">
             <span class="c-cat">Penal &amp; Prisões</span>
-            <strong>15. Fiança Criminal: quem tem direito?</strong>
-            <p>Valor caução para responder ao processo em liberdade. Crimes graves como racismo, tortura, tráfico e crimes hediondos são inafiançáveis pela própria Constituição.</p>
+            <strong>15. Fiança Criminal vs. Crimes Inafiançáveis</strong>
+            <p>Valor pago como garantia para responder ao processo em liberdade. Crimes como racismo, tortura, tráfico e crimes hediondos são inafiançáveis pela Constituição (mas mesmo neles o juiz pode conceder liberdade provisória sem fiança se não houver motivo para prisão preventiva).</p>
           </div>
           <div class="concept-card" data-cat="Penal & Prisões">
             <span class="c-cat">Penal &amp; Prisões</span>
-            <strong>16. Legítima Defesa (Art. 25 do Código Penal)</strong>
-            <p>Exige agressão injusta, atual ou iminente, e o uso moderado dos meios necessários para cessar o ataque. Se a pessoa continua atacando depois que o perigo já acabou, responde pelo excesso.</p>
+            <strong>16. Legítima Defesa vs. Excesso Punível (CP, art. 25)</strong>
+            <p>Usar os meios necessários e moderados para parar uma agressão injusta atual ou iminente é legítima defesa. Continuar batendo depois que o agressor já foi contido vira excesso punível.</p>
           </div>
           <div class="concept-card" data-cat="STF & Processo">
             <span class="c-cat">STF &amp; Processo</span>
-            <strong>17. Pedido de Vista no Tribunal</strong>
-            <p>Quando um ministro ou desembargador pede mais tempo para estudar os autos antes de votar. Hoje no STF há prazo regimental de 90 dias para devolução automática ao julgamento.</p>
+            <strong>17. Pedido de Vista nos Tribunais</strong>
+            <p>Quando um ministro ou desembargador pede mais tempo para estudar o processo antes de votar, pausando temporariamente o julgamento colegiado (hoje com prazo regimental de até 90 dias no STF).</p>
           </div>
           <div class="concept-card" data-cat="STF & Processo">
             <span class="c-cat">STF &amp; Processo</span>
             <strong>18. Trânsito em Julgado</strong>
-            <p>Momento em que não cabe mais nenhum recurso contra a decisão judicial, tornando a sentença definitiva e iniciando o cumprimento da pena fechada.</p>
+            <p>Momento em que não cabe mais nenhum recurso contra a decisão judicial, tornando a condenação ou absolvição definitiva (CF, art. 5º, LVII).</p>
           </div>
           <div class="concept-card" data-cat="Dia a Dia & Civil">
             <span class="c-cat">Dia a Dia &amp; Civil</span>
             <strong>19. Calúnia vs. Difamação vs. Injúria</strong>
-            <p>Calúnia é acusar falsamente alguém de um crime ("fulano roubou"); Difamação é espalhar um fato ofensivo à reputação; Injúria é o xingamento direto à honra da pessoa.</p>
+            <p>Calúnia é acusar falsamente alguém de um crime ("fulano roubou"); Difamação é espalhar um fato específico que mancha a reputação; Injúria é o xingamento direto que ofende a honra pessoal.</p>
           </div>
           <div class="concept-card" data-cat="Dia a Dia & Civil">
             <span class="c-cat">Dia a Dia &amp; Civil</span>
-            <strong>20. Bloqueio de Passaporte e CNH por Dívida Civil (STF, Tema 1.137)</strong>
-            <p>O STF decidiu que o juiz cível pode usar medidas atípicas contra devedor que oculta patrimônio e ostenta padrão de vida incompatível, desde que haja contraditório e proporcionalidade.</p>
+            <strong>20. Danos Morais vs. Danos Materiais</strong>
+            <p>Dano material é o prejuízo financeiro comprovado no bolso (conserto, hospital, o que deixou de ganhar); Dano moral é a compensação pela violação grave à dignidade, à honra ou pela dor de uma perda.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =================================================================== -->
-    <!-- ABA 4: BÔNUS DE FUNDADOR (CHECKLIST "ANTES DE TOMAR PARTIDO")       -->
+    <!-- ABA 6: GUIAS DE BOLSO, CHECKLIST E PRESENTES                        -->
     <!-- =================================================================== -->
     <section id="pane-bonus" class="pane">
       <div class="card">
-        <span class="eyebrow">Presente Exclusivo · Assinante Fundador</span>
-        <h2 class="article-title">Checklist "Antes de Tomar Partido"</h2>
-        <p class="byline">As 6 perguntas em uma única folha para você guardar no celular e aplicar a qualquer notícia antes de opinar no grupo da família.</p>
+        <span class="eyebrow">Seus Materiais de Bolso para Guardar e Imprimir</span>
+        <h2 class="article-title">O Checklist "Antes de Tomar Partido" e os nossos Guias Especiais</h2>
+        <p class="byline">Você pode salvar no celular, imprimir em uma folha ou enviar para quem você gosta:</p>
 
-        <div style="margin-bottom: 24px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="assets/checklist.jpg" download="Checklist-Antes-de-Tomar-Partido-Zamboni-Explica.jpg" class="btn-blue">📥 Baixar Folha Oficial no Celular (JPG)</a>
-          <a href="manual-20-conceitos.html" class="btn-pill" style="background:#0B192C;">📘 Abrir Manual: Os 20 Conceitos da Lei (PDF)</a>
-          <a href="guia-golpes-pix.html" class="btn-pill" style="background:#1B4D89;">🛡️ Abrir Guia de Bolso #01: Golpes de Pix e STJ</a>
-          <a href="dossie-historico-01.html" class="btn-pill" style="background:#2C3E50;">🏛️ Abrir Dossiê Histórico #01: Tribunal do Júri</a>
-          <a href="vale-presente.html" class="btn-pill" style="background:#8A6421;">🎄 Gerar Cartão Vale-Presente de Natal</a>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:24px;">
+          <button class="btn-blue" type="button" onclick="window.print()">🖨️ Imprimir / Salvar Checklist em PDF</button>
+          <a href="manual-20-conceitos.html" class="btn-pill" style="background:var(--ink);">📘 Manual: Os 20 Conceitos da Lei</a>
+          <a href="guia-golpes-pix.html" class="btn-pill" style="background:#1F7A4C;">🛡️ Guia #01: Golpes do Pix &amp; STJ</a>
+          <a href="dossie-historico-01.html" class="btn-pill" style="background:#2C3E50;">🏛️ Dossiê #01: Tribunal do Júri</a>
+          <a href="vale-presente.html" class="btn-pill" style="background:#8A6421;">🎄 Cartão Vale-Presente de Natal</a>
         </div>
 
         <div style="background:var(--bg-alt); padding:24px; border-radius:22px; text-align:center;">
@@ -1059,147 +1231,97 @@
           <div class="concept-card">
             <span class="c-cat">Manual Oficial de Bolso</span>
             <strong>Os 20 Conceitos da Lei que Todo Cidadão Precisa Conhecer</strong>
-            <p style="margin-bottom:12px;">Versão completa para leitura e impressão em PDF com a base legal exata de cada conceito.</p>
-            <a href="manual-20-conceitos.html" class="btn-blue" style="font-size:13.5px; padding:9px 18px;">Ler / Salvar em PDF &rsaquo;</a>
+            <p style="margin-bottom:12px;">Versão completa para leitura rápida e impressão em PDF com a base legal de cada conceito.</p>
+            <a href="manual-20-conceitos.html" class="btn-blue" style="font-size:13.5px; padding:9px 18px;">Abrir Manual &rsaquo;</a>
           </div>
           <div class="concept-card">
-            <span class="c-cat">Coleção Guias de Bolso do Cidadão · Vol. #01</span>
+            <span class="c-cat">Guia Prático do Cidadão · Vol. #01</span>
             <strong>Golpes Digitais, Pix e Fraudes Bancárias: O Que a Lei e o STJ Dizem</strong>
-            <p style="margin-bottom:12px;">A diferença entre furto mediante fraude e estelionato digital, a Súmula 479 do STJ e o funcionamento do MED do Banco Central.</p>
-            <a href="guia-golpes-pix.html" class="btn-blue" style="font-size:13.5px; padding:9px 18px;">Ler / Salvar em PDF &rsaquo;</a>
+            <p style="margin-bottom:12px;">Como funcionam a Súmula 479 do STJ, o MED do Banco Central e os 4 passos imediatos na primeira hora.</p>
+            <a href="guia-golpes-pix.html" class="btn-blue" style="font-size:13.5px; padding:9px 18px;">Abrir Guia &rsaquo;</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =================================================================== -->
-    <!-- ABA 5: URNA DA REDAÇÃO (VOTAÇÃO DAS PERGUNTAS DOS ASSINANTES)       -->
+    <!-- ABA 7: QUAL O PRÓXIMO TEMA? (ESCOLHA DOS ASSINANTES)                -->
     <!-- =================================================================== -->
     <section id="pane-urna" class="pane">
       <div class="card">
-        <span class="eyebrow">Edição Extra do Mês · Participação dos Assinantes</span>
-        <h2 class="article-title">Urna da Redação: Qual tema público você quer ver destrinchado?</h2>
-        <p class="byline">Uma vez por mês, o Prof. Alexandre Zamboni responde por escrito às dúvidas mais votadas pelos assinantes sobre casos públicos e conceitos da lei. Toque na sua escolha:</p>
+        <span class="eyebrow">Construído junto com você</span>
+        <h2 class="article-title">Sobre qual destes temas você quer que eu escreva na Edição Extra do Mês?</h2>
+        <p class="byline">Uma vez por mês, eu preparo uma edição extra respondendo ao tema mais escolhido por vocês aqui. Toque na opção que mais te interessa:</p>
 
         <div id="poll-container">
           <div class="poll-option" onclick="votePoll(0, this)">
             <span>1. Quando um print de WhatsApp vale (ou é anulado) como prova na Justiça?</span>
-            <span class="poll-pct" data-base="38">Votar &rsaquo;</span>
+            <span class="poll-pct" data-base="38">Escolher este &rsaquo;</span>
           </div>
           <div class="poll-option" onclick="votePoll(1, this)">
             <span>2. Por que certos réus confessos respondem em liberdade até o julgamento final?</span>
-            <span class="poll-pct" data-base="29">Votar &rsaquo;</span>
+            <span class="poll-pct" data-base="29">Escolher este &rsaquo;</span>
           </div>
           <div class="poll-option" onclick="votePoll(2, this)">
             <span>3. Companhia aérea cancela voo por mau tempo: quando há dever de indenizar?</span>
-            <span class="poll-pct" data-base="21">Votar &rsaquo;</span>
+            <span class="poll-pct" data-base="21">Escolher este &rsaquo;</span>
           </div>
           <div class="poll-option" onclick="votePoll(3, this)">
-            <span>4. Golpe do Pix: em quais casos o banco é obrigado pela Justiça a devolver o dinheiro?</span>
-            <span class="poll-pct" data-base="12">Votar &rsaquo;</span>
+            <span>4. Herança e inventário em vida: o que a lei permite e o que a lei proíbe?</span>
+            <span class="poll-pct" data-base="12">Escolher este &rsaquo;</span>
           </div>
         </div>
         <div id="poll-feedback" class="alert" role="status" aria-live="polite"></div>
 
-        <p style="font-size:13.5px; color:var(--muted); margin-top:20px;">
-          <strong>Nota ética (OAB):</strong> O Zamboni Explica analisa apenas casos públicos e conceitos gerais da lei brasileira. Não analisamos processos pessoais nem prestamos consultoria jurídica individual.
+        <p style="font-size:14px; color:var(--muted); margin-top:20px;">
+          <strong>Dica:</strong> Se você estiver vivendo uma situação pessoal hoje e precisar de acolhimento inicial sobre a lei ou de indicação de um(a) advogado(a) da minha lista de confiança, não precisa esperar a votação do mês: basta me escrever na aba <strong>📩 Linha Direta</strong>.
         </p>
       </div>
     </section>
 
     <!-- =================================================================== -->
-    <!-- ABA NOVA: LINHA DIRETA "ZAMBONI, EXPLICA ESSE CASO!"                -->
-    <!-- =================================================================== -->
-    <section id="pane-linhadireta" class="pane">
-      <div class="card">
-        <span class="eyebrow">Linha Direta Exclusiva dos Assinantes</span>
-        <h2 class="article-title">“Zamboni, explica esse caso?”</h2>
-        <p class="article-lead">
-          Viu uma notícia polêmica no jornal, uma decisão que dividiu o grupo da família ou um vídeo viral e quer saber <strong>o que a lei realmente diz, sem torcida</strong>? Mande o caso direto para a nossa Redação abaixo e receba a resposta no seu e-mail em até 48h úteis!
-        </p>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; margin:20px 0 24px;">
-          <div style="background:var(--bg-alt); border:1px solid var(--hairline); border-radius:16px; padding:16px 18px;">
-            <strong style="display:block; font-size:14px; color:var(--blue); margin-bottom:4px;">☕ Plano Mensal (R$ 9,90/mês)</strong>
-            <span style="font-size:14px; color:var(--muted);">Direito a enviar até <strong>2 casos públicos por mês</strong> para análise por e-mail.</span>
-          </div>
-          <div style="background:#edf4fc; border:1px solid rgba(27,77,137,0.25); border-radius:16px; padding:16px 18px;">
-            <strong style="display:block; font-size:14px; color:var(--blue); margin-bottom:4px;">★ Plano Anual (R$ 99/ano)</strong>
-            <span style="font-size:14px; color:var(--muted);">Dobro de cota: até <strong>4 casos públicos por mês + Fila Prioritária</strong> na Redação.</span>
-          </div>
-        </div>
-
-        <div style="background:#fffdf6; border:1px solid #e6d8a8; border-radius:16px; padding:16px 20px; margin-bottom:24px; font-size:14px; color:var(--ink);">
-          <strong>⚖️ Regra de Ouro (Ética OAB):</strong> Analisamos com todo prazer <strong>qualquer notícia pública da imprensa, decisão pública de tribunal ou dúvida conceitual sobre como a lei funciona</strong>. Por dever ético perante a OAB, <strong>não analisamos processos pessoais, familiares ou casos particulares</strong> (que exigem um advogado constituído para o seu caso).
-        </div>
-
-        <div style="background:var(--bg-alt); border:1px solid var(--hairline); border-radius:20px; padding:24px;">
-          <label for="ld-url" style="display:block; font-size:14px; font-weight:700; margin-bottom:6px;">1. Link da notícia pública ou nome do caso que saiu na imprensa:</label>
-          <input id="ld-url" type="text" placeholder="Ex.: Link do g1 / UOL / Instagram sobre o caso..." style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:16px; background:#fff;" />
-
-          <label for="ld-duvida" style="display:block; font-size:14px; font-weight:700; margin-bottom:6px;">2. O que você gostaria de entender pela lei nesse caso?</label>
-          <textarea id="ld-duvida" rows="3" placeholder="Ex.: Professor, nesse caso a pessoa responde por crime doloso ou culposo? Como o juiz avalia isso?" style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:18px; background:#fff; resize:vertical;"></textarea>
-
-          <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
-            <button type="button" class="btn-blue" onclick="sendLinhaDiretaEmail()">📩 Abrir no Meu E-mail e Enviar (1 toque)</button>
-            <button type="button" class="btn-pill" onclick="copyLinhaDireta(this)">📋 Ou copiar p/ colar no Gmail (zamboniexplica@gmail.com)</button>
-          </div>
-          <div id="ld-feedback" class="alert" role="status" aria-live="polite"></div>
-        </div>
-
-        <div style="margin-top:34px;">
-          <span class="eyebrow">📡 Padrão da Nossa Redação</span>
-          <h3 style="font-size:20px; font-weight:700; margin-bottom:12px;">Como você recebe a resposta no seu e-mail</h3>
-          <div class="concept-card">
-            <span class="c-cat">Carta Completa em Texto Corrido · Assinada pelo Professor</span>
-            <strong>Uma explicação inteira, cordial e sem pressa sobre o caso que você enviou</strong>
-            <p style="font-size:14.5px; color:var(--muted); margin-top:6px;">
-              Nada de respostinhas automáticas em tópicos frios: quando você envia uma notícia pública na Linha Direta, recebe no seu e-mail uma carta completa em texto corrido, cordial e didática, separando com calma o que já está provado nos fatos públicos do que ainda depende de perícia e explicando passo a passo como a lei brasileira enxerga aquele caso.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================================================================== -->
-    <!-- ABA 7: MINHA ASSINATURA (+ UPGRADE ANUAL COM 2 MESES GRÁTIS)        -->
+    <!-- ABA 8: MINHA CONTA                                                  -->
     <!-- =================================================================== -->
     <section id="pane-conta" class="pane">
       <div class="card">
-        <span class="eyebrow">Gestão Transparente</span>
-        <h2 class="article-title">Sua Assinatura</h2>
+        <span class="eyebrow">Sua Participação no Projeto Social</span>
+        <h2 class="article-title">Minha Conta de Assinante Fundador</h2>
         <p style="margin:16px 0;">
-          Acesso: <span id="pill-access" class="status-pill active">Ativo</span> &nbsp;·&nbsp;
-          Renovação: <span id="pill-rec" class="status-pill active">Ativa (R$ 9,90/mês)</span>
+          Situação: <span id="pill-access" class="status-pill active">Ativo</span> &nbsp;·&nbsp;
+          Contribuição: <span id="pill-rec" class="status-pill active">Ativa (R$ 9,90/mês)</span>
         </p>
 
-        <!-- Alavanca do Agente #09: Convite Elegante para o Plano Anual -->
         <div style="background:#edf4fc; border:1px solid rgba(27,77,137,0.2); border-radius:20px; padding:24px 26px; margin:24px 0;">
-          <span class="eyebrow" style="margin-bottom:4px;">Benefício para Assinantes</span>
-          <h3 style="font-size:19px; font-weight:700; margin-bottom:6px;">Quer ganhar 2 meses de presente + o dobro de casos na Linha Direta?</h3>
+          <span class="eyebrow" style="margin-bottom:4px;">Convite para Assinantes do Plano Mensal</span>
+          <h3 style="font-size:19px; font-weight:700; margin-bottom:6px;">Quer ganhar 2 meses de presente e dobrar seus envios na Linha Direta?</h3>
           <p style="font-size:15px; color:var(--muted); margin-bottom:14px;">
-            Migrando para o <strong>Plano Anual (R$ 99,00/ano)</strong>, você garante 52 edições de domingo, economiza o equivalente a 2 mensalidades e dobra sua cota na <strong>Linha Direta para até 4 casos públicos por mês com Fila Prioritária</strong>.
+            Migrando para o <strong>Plano Anual (R$ 99,00/ano)</strong>, você garante as 52 edições de domingo do ano inteiro, economiza o equivalente a duas mensalidades e dobra a sua cota na <strong>Linha Direta (até 4 casos por mês com prioridade)</strong>.
           </p>
-          <a href="https://pay.kiwify.com.br/xlNLeB4" target="_blank" rel="noopener" class="btn-blue">Migrar para o Plano Anual (R$ 99/ano) &rsaquo;</a>
+          <a href="https://pay.kiwify.com.br/xlNLeB4" target="_blank" rel="noopener" class="btn-blue">Mudar para o Plano Anual (R$ 99/ano) &rsaquo;</a>
         </div>
 
-        <!-- Melhoria #3 do Agente #19: Vale-Presente de Natal Familiar -->
         <div style="background:#fffdf6; border:1.5px solid #e6d8a8; border-radius:20px; padding:24px 26px; margin:24px 0;">
           <span class="eyebrow" style="margin-bottom:4px; color:#8A6421;">🎄 Especial de Natal &amp; Família</span>
           <h3 style="font-size:19px; font-weight:700; margin-bottom:6px;">Presenteie seu Pai, Mãe ou Filho(a) com 1 Ano de Zamboni Explica</h3>
           <p style="font-size:15px; color:var(--muted); margin-bottom:14px;">
-            Um presente elegante e cheio de propósito para quem você ama: <strong>52 manhãs de domingo</strong> entendendo os grandes casos do Brasil pela lei, sem camisa de time. Gere na hora um <strong>Certificado de Natal Nominal em PDF</strong> assinado pelo Prof. Alexandre Zamboni para entregar na noite de Natal!
+            Um presente elegante e cheio de propósito para quem você ama: <strong>52 manhãs de domingo</strong> entendendo os grandes casos do Brasil pela lei, sem camisa de time. Gere na hora um <strong>Certificado de Natal Nominal em PDF</strong> assinado por mim para entregar na noite de Natal.
           </p>
           <a href="vale-presente.html" class="btn-pill" style="background:#0B192C;">🎁 Personalizar Cartão Vale-Presente de Natal (R$ 99) &rsaquo;</a>
         </div>
 
         <p style="color:var(--muted); margin-bottom:24px;">
-          Você pode cancelar a renovação futura a qualquer momento com um clique, sem multa, mantendo seu acesso integral até o fim do período já pago.
+          Aqui você tem liberdade total: pode cancelar a renovação futura a qualquer momento com um clique, sem multa e sem burocracia, mantendo o seu acesso integral até o fim do período já pago.
         </p>
         <button id="btn-cancelar" class="btn-pill" type="button">Cancelar renovação futura</button>
         <div id="cancel-feedback" class="alert" role="status" aria-live="polite"></div>
       </div>
     </section>
+
+    <!-- Rodapé de Transparência Ética (OAB) visível em todas as abas da Área do Assinante -->
+    <footer style="margin-top: 28px; padding: 22px 26px; background: var(--surface); border: 1px solid var(--hairline); border-radius: 20px; font-size: 13.5px; color: var(--muted); line-height: 1.6;">
+      <strong style="color: var(--ink);">⚖️ Nota de Transparência e Ética (OAB):</strong> O <em>Zamboni Explica</em> tem caráter estritamente informativo e educativo sobre casos públicos do noticiário e sobre o funcionamento geral da lei brasileira (em conformidade com o Estatuto da Advocacia e o Provimento nº 205/2021 da OAB), não constituindo consultoria jurídica nem análise de processos individuais. Se você estiver passando por uma situação concreta e precisar de acolhimento inicial ou da indicação gratuita de um(a) advogado(a) da lista pessoal de confiança do Prof. Alexandre Zamboni, utilize a aba <strong>📩 Linha Direta</strong>.<br>
+      <span style="display:block; margin-top:6px; font-size:12.5px;">Fornecedor: A Zamboni Lins Filho Serviços de Informação Ltda. · CNPJ 67.166.139/0001-80 · Suporte: <a href="mailto:zamboniexplica@gmail.com" style="color:var(--blue);">zamboniexplica@gmail.com</a></span>
+    </footer>
   </main>
 
   <script>
@@ -1209,8 +1331,8 @@
 
     function ensureRate(audioEl) {
       if (!audioEl.dataset.rateSet) {
-        audioEl.defaultPlaybackRate = 1.25;
-        audioEl.playbackRate = 1.25;
+        audioEl.defaultPlaybackRate = 1.0;
+        audioEl.playbackRate = 1.0;
         audioEl.dataset.rateSet = '1';
       }
     }
@@ -1231,15 +1353,15 @@
     }
 
     document.querySelectorAll('audio').forEach(function(a) {
-      a.defaultPlaybackRate = 1.25;
-      a.playbackRate = 1.25;
+      a.defaultPlaybackRate = 1.0;
+      a.playbackRate = 1.0;
     });
 
     function showPane(id, btn) {
       document.querySelectorAll('.pane').forEach(function(p) { p.classList.remove('active'); });
       document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
       document.getElementById('pane-' + id).classList.add('active');
-      btn.classList.add('active');
+      if (btn) btn.classList.add('active');
     }
 
     function answerQuiz(qId, isCorrect, btn) {
@@ -1256,6 +1378,8 @@
       var text = "";
       if (edCode === 'ed1') {
         text = "⚖️ *Resumo de Domingo (Zamboni Explica)* — *Caso da Janela do Hotel em São Luís:*\n\n\"Sentar na janela foi arriscado, mas isso não responde se a janela do hotel era segura. Pela lei do consumidor (CDC, art. 14), o hotel responde se a estrutura falhou na segurança esperada; já a imprudência da vítima pode diminuir o valor da indenização (Código Civil, art. 945), sem necessariamente zerar a conta. Quem vai dizer qual dos dois pesou mais é o laudo da perícia, não a torcida.\"\n\n👉 _Explicado pela lei, sem camisa de time, pelo Prof. Alexandre Zamboni:_ https://zamboniexplica.com.br";
+      } else if (edCode === 'ed3') {
+        text = "⚖️ *Resumo de Domingo (Zamboni Explica)* — *Golpe do Pix e Responsabilidade do Banco (STJ):*\n\n\"Digitar a senha num golpe não encerra a discussão na Justiça: pela Súmula 479 do STJ, se o banco deixou passar transferências ou empréstimos totalmente fora do padrão histórico do cliente sem travar a conta, há falha no dever de segurança da instituição. Quando o golpista ainda usa dados internos das compras do cartão para enganar a vítima, pesa mais ainda a responsabilidade objetiva do banco (art. 14 do CDC). E se acontecer com alguém da família, o primeiro passo imediato é exigir no banco a abertura do MED (Mecanismo Especial de Devolução do Banco Central) e registrar boletim de ocorrência.\"\n\n👉 _Explicado pela lei, sem camisa de time, pelo Prof. Alexandre Zamboni:_ https://zamboniexplica.com.br";
       } else {
         text = "⚖️ *Resumo de Domingo (Zamboni Explica)* — *Retenção de Passaporte no STF:*\n\n\"Reter passaporte em 24 horas está na lei brasileira desde 2011 (CPP, art. 320) para que o juiz não precise prender alguém quando basta impedir uma viagem internacional. Mas não é pena antecipada nem medida eterna: só vale enquanto existir risco atual para o processo. Por isso, quando a PGR apontou que o risco continuava (caso Bolsonaro), o STF manteve retido; e quando o motivo cessou (casos Silas Malafaia e Marcos do Val), o próprio STF devolveu.\"\n\n👉 _Explicado pela lei, sem camisa de time, pelo Prof. Alexandre Zamboni:_ https://zamboniexplica.com.br";
       }
@@ -1300,41 +1424,61 @@
       });
       var fb = document.getElementById('poll-feedback');
       fb.className = 'alert show';
-      fb.textContent = 'Voto registrado na Urna da Redação! O tema vencedor entra na Edição Extra do Mês.';
+      fb.textContent = 'Obrigado por votar! O tema mais escolhido entra na nossa Edição Extra do Mês.';
+    }
+
+    function toggleLinhaDiretaReferralFields() {
+      var tipo = document.getElementById('ld-tipo').value;
+      var box = document.getElementById('ld-referral-extra');
+      if (box) {
+        box.style.display = (tipo === 'acolhimento') ? 'block' : 'none';
+      }
     }
 
     function sendLinhaDiretaEmail() {
+      var tipo = (document.getElementById('ld-tipo') ? document.getElementById('ld-tipo').value : 'curiosidade');
       var url = (document.getElementById('ld-url').value || '').trim();
       var duvida = (document.getElementById('ld-duvida').value || '').trim();
+      var cidade = (document.getElementById('ld-cidade') ? document.getElementById('ld-cidade').value : '').trim();
+      var whatsapp = (document.getElementById('ld-whatsapp') ? document.getElementById('ld-whatsapp').value : '').trim();
       var fb = document.getElementById('ld-feedback');
       if (!url && !duvida) {
         fb.className = 'alert show';
-        fb.textContent = 'Preencha o link/nome da notícia pública e a sua dúvida antes de enviar!';
+        fb.textContent = 'Preencha o tema e a sua dúvida antes de enviar.';
         return;
       }
-      var subject = '[Linha Direta Assinante] Zamboni, explica esse caso!';
-      var body = 'Olá, Redação do Zamboni Explica!\n\n'
-        + '📰 Notícia pública / Caso na imprensa:\n' + (url || '(informado abaixo)') + '\n\n'
-        + '⚖️ O que gostaria de entender pela lei:\n' + (duvida || '(ver link acima)') + '\n\n'
-        + '(Confirmo que se trata de notícia pública / dúvida geral sobre a lei, e não de processo pessoal.)';
+      var isAcolhimento = (tipo === 'acolhimento');
+      var subject = isAcolhimento
+        ? '[Linha Direta · Acolhimento] Zamboni, me explica esse caso?'
+        : '[Linha Direta Assinante] Zamboni, me explica esse caso?';
+      var body = 'Olá, Prof. Alexandre Zamboni!\n\n'
+        + 'Sobre o que quero conversar: ' + (isAcolhimento ? 'Estou passando por uma situação real e gostaria de acolhimento inicial (e de avaliar indicação de advogado)' : 'Notícia pública / Curiosidade sobre a lei') + '\n'
+        + 'Assunto ou link:\n' + (url || '(informado abaixo)') + '\n\n'
+        + 'Minha dúvida / O que está acontecendo:\n' + (duvida || '(ver acima)')
+        + (cidade || whatsapp ? '\n\nMeus dados caso eu precise de encaminhamento para advogado(a) da sua confiança:\nCidade/UF: ' + (cidade || 'não informado') + '\nWhatsApp: ' + (whatsapp || 'não informado') : '');
       window.location.href = 'mailto:zamboniexplica@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       fb.className = 'alert show';
-      fb.textContent = 'Abrimos seu aplicativo de e-mail já preenchido para zamboniexplica@gmail.com! Basta clicar em Enviar.';
+      fb.textContent = 'Abrimos seu aplicativo de e-mail já preenchido para zamboniexplica@gmail.com. Basta tocar em Enviar.';
     }
 
     function copyLinhaDireta(btn) {
+      var tipo = (document.getElementById('ld-tipo') ? document.getElementById('ld-tipo').value : 'curiosidade');
       var url = (document.getElementById('ld-url').value || '').trim();
       var duvida = (document.getElementById('ld-duvida').value || '').trim();
+      var cidade = (document.getElementById('ld-cidade') ? document.getElementById('ld-cidade').value : '').trim();
+      var whatsapp = (document.getElementById('ld-whatsapp') ? document.getElementById('ld-whatsapp').value : '').trim();
       var fb = document.getElementById('ld-feedback');
       var text = 'Para: zamboniexplica@gmail.com\n'
-        + 'Assunto: [Linha Direta Assinante] Zamboni, explica esse caso!\n\n'
-        + 'Notícia pública / Caso: ' + (url || '') + '\n'
-        + 'Dúvida sobre o que a lei diz: ' + (duvida || '');
+        + 'Assunto: [Linha Direta Assinante] Zamboni, me explica esse caso?\n\n'
+        + 'Tipo: ' + (tipo === 'acolhimento' ? 'Acolhimento inicial + avaliar indicação de advogado(a)' : 'Notícia pública / Curiosidade sobre a lei') + '\n'
+        + 'Assunto / Link: ' + (url || '') + '\n'
+        + 'Minha dúvida / Relato: ' + (duvida || '')
+        + (cidade || whatsapp ? '\nCidade/UF: ' + cidade + ' | WhatsApp: ' + whatsapp : '');
       if (navigator.clipboard) {
         navigator.clipboard.writeText(text);
       }
       fb.className = 'alert show';
-      fb.textContent = '✅ Copiado! Agora é só enviar para zamboniexplica@gmail.com que nossa Redação responde em até 48h úteis.';
+      fb.textContent = '✅ Copiado! Agora é só colar e enviar para zamboniexplica@gmail.com.';
     }
 
     document.getElementById('btn-cancelar').addEventListener('click', function() {

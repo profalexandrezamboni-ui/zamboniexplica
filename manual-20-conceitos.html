@@ -128,6 +128,10 @@
       <p>Explicados em português claro, sem juridiquês e com a fonte exata na lei brasileira para você consultar no celular sempre que um grande caso aparecer no noticiário. Por <strong>Prof. Alexandre Zamboni</strong>.</p>
     </div>
 
+    <div style="margin-bottom: 20px;" class="top-bar">
+      <input type="search" id="search-manual" oninput="filterManualConcepts()" placeholder="🔎 Digite uma palavra ou tema para filtrar os 20 conceitos na hora (ex.: prisão, Pix, júri, foro, fiança...)" style="width:100%; padding:14px 18px; border-radius:14px; border:1px solid rgba(11,25,44,0.18); font-family:inherit; font-size:0.98rem; background:#fff; box-shadow:0 4px 14px rgba(11,25,44,0.04);" />
+    </div>
+
     <div class="concept-item">
       <span class="num">Conceito 01 • Direito do Consumidor</span>
       <h2>Responsabilidade Objetiva (Quando a empresa responde mesmo sem ter tido intenção)</h2>
@@ -268,9 +272,23 @@
       <div class="law">Base na lei: Súmula 479 do STJ e artigo 14 do Código de Defesa do Consumidor.</div>
     </div>
 
-    <p style="font-size:0.85rem; color:var(--muted); text-align:center; margin-top:28px;">
-      <strong>Aviso Ético (OAB):</strong> Material estritamente educativo e informativo sobre o funcionamento geral da legislação brasileira. Não substitui a atuação de advogado constituído para análise de casos particulares.
-    </p>
+    <div class="concept-item" style="background:#fffdf6; border-color:#e6d8a8; margin-top:24px;">
+      <span class="num" style="color:#8A6421;">🤝 Canal Aberto aos Assinantes • Linha Direta</span>
+      <h2>Ficou com dúvida em algum caso ou precisa de indicação de advogado(a)?</h2>
+      <p>Este manual tem caráter educativo e informativo sobre o funcionamento geral da lei brasileira (respeitando as normas éticas da OAB). Mas se você estiver passando por uma situação concreta e precisar de orientação inicial sobre como a lei funciona ou desejar ser encaminhado(a) a um advogado ou advogada da lista pessoal de confiança do Prof. Alexandre Zamboni, escreva para a nossa <strong>Linha Direta</strong> direto na <a href="area-assinante.html" style="color:#1B4D89; font-weight:700;">Área do Assinante</a> ou em <strong>zamboniexplica@gmail.com</strong>.</p>
+    </div>
   </div>
+  <script>
+    function filterManualConcepts() {
+      var q = (document.getElementById('search-manual').value || '').toLowerCase().trim();
+      document.querySelectorAll('.concept-item').forEach(function(item) {
+        if (!q || item.innerText.toLowerCase().indexOf(q) !== -1) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
