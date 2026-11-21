@@ -1309,11 +1309,22 @@
           <a href="vale-presente.html" class="btn-pill" style="background:#0B192C;">🎁 Personalizar Cartão Vale-Presente de Natal (R$ 99) &rsaquo;</a>
         </div>
 
-        <p style="color:var(--muted); margin-bottom:24px;">
-          Aqui você tem liberdade total: pode cancelar a renovação futura a qualquer momento com um clique, sem multa e sem burocracia, mantendo o seu acesso integral até o fim do período já pago.
-        </p>
-        <button id="btn-cancelar" class="btn-pill" type="button">Cancelar renovação futura</button>
-        <div id="cancel-feedback" class="alert" role="status" aria-live="polite"></div>
+        <div style="background:#f8fafc; border:1px solid var(--hairline); border-radius:20px; padding:24px 26px; margin-top:24px;">
+          <span class="eyebrow" style="margin-bottom:4px;">Cancelamento livre e transparente</span>
+          <h3 style="font-size:19px; font-weight:700; margin-bottom:8px;">Como gerenciar ou cancelar sua assinatura na Kiwify</h3>
+          <p style="color:var(--muted); font-size:15px; margin-bottom:14px;">
+            Aqui você tem liberdade total, sem multa e sem fidelidade. Como o pagamento é processado com segurança pela <strong>Kiwify</strong>, o cancelamento da renovação futura deve ser feito diretamente por lá (o acesso continua normal até o fim do período já pago):
+          </p>
+          <ol style="color:var(--ink); font-size:14.5px; line-height:1.7; padding-left:20px; margin:0 0 18px 0;">
+            <li><strong>Pelo e-mail da Kiwify (mais rápido):</strong> abra qualquer e-mail da Kiwify sobre sua assinatura e clique em <strong>“Gerenciar assinatura”</strong> &rarr; <strong>“Cancelar assinatura”</strong>.</li>
+            <li><strong>Pelo painel oficial da Kiwify:</strong> acesse <a href="https://dashboard.kiwify.com.br/minhas-compras" target="_blank" rel="noopener" style="color:var(--blue); font-weight:600;">dashboard.kiwify.com.br/minhas-compras</a> com o e-mail usado na compra, clique no <strong>Zamboni Explica</strong> &rarr; <strong>Gerenciar Assinatura</strong> &rarr; <strong>Cancelar Assinatura</strong>.</li>
+            <li><strong>Precisa de ajuda ou reembolso nos 7 dias de garantia?</strong> Envie um e-mail para <a href="mailto:zamboniexplica@gmail.com?subject=Ajuda%20com%20minha%20assinatura%20Zamboni%20Explica" style="color:var(--blue); font-weight:600;">zamboniexplica@gmail.com</a> que nossa equipe resolve com você em até 24h úteis.</li>
+          </ol>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a href="https://dashboard.kiwify.com.br/minhas-compras" target="_blank" rel="noopener" class="btn-pill">Gerenciar ou cancelar na Kiwify &rsaquo;</a>
+            <a href="mailto:zamboniexplica@gmail.com?subject=Ajuda%20com%20minha%20assinatura%20Zamboni%20Explica" class="btn-blue" style="background:transparent; color:var(--blue); border:1px solid rgba(27,77,137,0.35);">Pedir ajuda por e-mail</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1481,14 +1492,7 @@
       fb.textContent = '✅ Copiado! Agora é só colar e enviar para zamboniexplica@gmail.com.';
     }
 
-    document.getElementById('btn-cancelar').addEventListener('click', function() {
-      var pillRec = document.getElementById('pill-rec');
-      var fb = document.getElementById('cancel-feedback');
-      pillRec.className = 'status-pill canceled';
-      pillRec.textContent = 'Cancelada ao fim do ciclo';
-      fb.className = 'alert show';
-      fb.textContent = 'Renovação futura cancelada. Seu acesso permanece ativo até o término do período já pago.';
-    });
+
   </script>
 </body>
 </html>
