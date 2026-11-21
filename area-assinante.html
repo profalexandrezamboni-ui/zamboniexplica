@@ -1256,19 +1256,19 @@
         <div id="poll-container">
           <div class="poll-option" onclick="votePoll(0, this)">
             <span>1. Quando um print de WhatsApp vale (ou é anulado) como prova na Justiça?</span>
-            <span class="poll-pct" data-base="38">Escolher este &rsaquo;</span>
+            <span class="poll-pct">Enviar meu voto &rsaquo;</span>
           </div>
           <div class="poll-option" onclick="votePoll(1, this)">
             <span>2. Por que certos réus confessos respondem em liberdade até o julgamento final?</span>
-            <span class="poll-pct" data-base="29">Escolher este &rsaquo;</span>
+            <span class="poll-pct">Enviar meu voto &rsaquo;</span>
           </div>
           <div class="poll-option" onclick="votePoll(2, this)">
             <span>3. Companhia aérea cancela voo por mau tempo: quando há dever de indenizar?</span>
-            <span class="poll-pct" data-base="21">Escolher este &rsaquo;</span>
+            <span class="poll-pct">Enviar meu voto &rsaquo;</span>
           </div>
           <div class="poll-option" onclick="votePoll(3, this)">
             <span>4. Herança e inventário em vida: o que a lei permite e o que a lei proíbe?</span>
-            <span class="poll-pct" data-base="12">Escolher este &rsaquo;</span>
+            <span class="poll-pct">Enviar meu voto &rsaquo;</span>
           </div>
         </div>
         <div id="poll-feedback" class="alert" role="status" aria-live="polite"></div>
@@ -1425,17 +1425,28 @@
       });
     }
 
+    var POLL_TOPICS = [
+      '1. Quando um print de WhatsApp vale (ou é anulado) como prova na Justiça?',
+      '2. Por que certos réus confessos respondem em liberdade até o julgamento final?',
+      '3. Companhia aérea cancela voo por mau tempo: quando há dever de indenizar?',
+      '4. Herança e inventário em vida: o que a lei permite e o que a lei proíbe?'
+    ];
+
     function votePoll(idx, el) {
+      var topic = POLL_TOPICS[idx] || 'Tema sugerido';
       var opts = document.querySelectorAll('#poll-container .poll-option');
       opts.forEach(function(o, i) {
         o.classList.toggle('voted', i === idx);
         var pctEl = o.querySelector('.poll-pct');
-        var base = parseInt(pctEl.getAttribute('data-base'), 10);
-        pctEl.textContent = (i === idx ? (base + 1) : base) + '% dos votos';
+        pctEl.textContent = (i === idx) ? 'Selecionado ✓' : 'Enviar meu voto ›';
       });
+      var subject = '[Voto Edição Extra] ' + topic;
+      var body = 'Olá, Prof. Alexandre Zamboni!\n\nMeu voto para a Edição Extra do Mês é:\n' + topic + '\n\nUm abraço!';
+      var mailto = 'mailto:zamboniexplica@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.location.href = mailto;
       var fb = document.getElementById('poll-feedback');
       fb.className = 'alert show';
-      fb.textContent = 'Obrigado por votar! O tema mais escolhido entra na nossa Edição Extra do Mês.';
+      fb.innerHTML = 'Abrimos seu aplicativo de e-mail com o voto pronto para <strong>zamboniexplica@gmail.com</strong>. Basta tocar em <strong>Enviar</strong> para que a redação contabilize seu voto real.';
     }
 
     function toggleLinhaDiretaReferralFields() {
