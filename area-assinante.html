@@ -614,9 +614,9 @@
 
     <!-- Navegação Conversacional (Nome único: Linha Direta) -->
     <nav class="tabs" aria-label="Conversas da Semana">
-      <button class="tab-btn active" id="tab-ed1" onclick="showPane('ed1', this)">Edição #001 · Caso do Hotel</button>
-      <button class="tab-btn" id="tab-ed2" onclick="showPane('ed2', this)">Edição #002 · Passaportes</button>
-      <button class="tab-btn" id="tab-ed3" onclick="showPane('ed3', this)">Edição #003 · Golpes do Pix</button>
+      <button class="tab-btn active" id="tab-ed1" onclick="showPane('ed1', this)">Acervo #001 · Caso do Hotel</button>
+      <button class="tab-btn" id="tab-ed2" onclick="showPane('ed2', this)">Acervo #002 · Passaportes</button>
+      <button class="tab-btn" id="tab-ed3" onclick="showPane('ed3', this)">Acervo #003 · Golpes do Pix</button>
       <button class="tab-btn" id="tab-linhadireta" onclick="showPane('linhadireta', this)">📩 Linha Direta</button>
       <button class="tab-btn" id="tab-acervo" onclick="showPane('acervo', this)">📖 Dicionário da Lei</button>
       <button class="tab-btn" id="tab-bonus" onclick="showPane('bonus', this)">🎁 Guias &amp; Bônus</button>
@@ -1004,13 +1004,13 @@
         </div>
 
         <div class="keep-box" style="margin-top:26px; background:#FAF8F5; border-color:rgba(11,25,44,0.14);">
-          <span class="keep-tag">Está passando de perto por uma situação parecida?</span>
-          <h4>Conte comigo na nossa Linha Direta</h4>
+          <span class="keep-tag">⚖️ Nota de Orientação Institucional (OAB)</span>
+          <h4>Tem uma dúvida geral sobre a lei ou quer sugerir uma notícia pública?</h4>
           <p style="font-size:16px; line-height:1.68; color:var(--ink);">
-            Se você ou alguém da sua família sofreu uma fraude bancária ou está vivendo qualquer situação que despertou dúvida ou angústia jurídica, me escreva aqui na <strong>Linha Direta</strong>. Além de te explicar como a lei funciona em linhas gerais, posso ver com você se é o caso de te encaminhar para um advogado ou uma advogada da minha lista pessoal de confiança.
+            Este material explica em tese o que dizem o Código Penal, o Banco Central (MED) e a Súmula 479 do STJ. Se você ou alguém da sua família enfrentou uma fraude bancária concreta e precisa de avaliação profissional, após registrar o MED no banco e o Boletim de Ocorrência, procure sempre um(a) advogado(a) de sua livre confiança inscrito(a) na OAB ou a Defensoria Pública do seu Estado. Para enviar notícias públicas ou dúvidas conceituais em tese, escreva na nossa <strong>Linha Direta</strong>.
           </p>
           <div style="margin-top:14px;">
-            <button type="button" class="btn-copy" onclick="showPane('linhadireta', document.getElementById('tab-linhadireta'))">💬 Escrever para o Zamboni agora &rsaquo;</button>
+            <button type="button" class="btn-copy" onclick="showPane('linhadireta', document.getElementById('tab-linhadireta'))">💬 Enviar caso público na Linha Direta &rsaquo;</button>
           </div>
         </div>
       </article>
@@ -1025,55 +1025,44 @@
         <h2 class="article-title">“Zamboni, explica esse caso?”</h2>
         <div class="editorial-prose" style="margin-top:12px;">
           <p>
-            Abri a <strong>Linha Direta</strong> porque sei que, muitas vezes, você vê uma notícia polêmica na semana ou escuta uma discussão acalorada em casa e pensa: <em>"queria saber o que a lei realmente diz sobre isso, sem torcida"</em>.
+            Abri a <strong>Linha Direta</strong> porque sei que, muitas vezes, você vê uma notícia polêmica na semana ou escuta uma discussão acalorada no almoço de domingo e pensa: <em>"queria saber o que a lei realmente diz sobre isso, sem torcida"</em>.
           </p>
           <p>
-            Mas também sei que, em outros momentos, quem me escreve não está apenas curioso com o noticiário: está vivendo um anseio real, um problema na família, no trabalho ou no banco, e se sente perdido sem saber a quem recorrer.
-          </p>
-          <p>
-            Por isso, quero que você se sinta muito à vontade para escrever aqui na Linha Direta nos dois casos. Pelas regras éticas da OAB, eu não posso analisar processos individuais nem substituir o advogado do caso, mas faço questão de nunca deixar você na mão: nós sempre fazemos o seu <strong>acolhimento inicial</strong> (explicando em linhas gerais como a lei funciona naquele tema) e, se a sua situação realmente precisar de um advogado ou de uma advogada, eu verifico com você se é do seu interesse que eu faça o encaminhamento para um profissional da minha lista pessoal de confiança.
+            Sempre que um caso público chamar a sua atenção — ou quando você quiser entender um conceito jurídico em tese — basta enviar o link da notícia ou a sua pergunta geral aqui abaixo. Nossa Redação analisa com o meu crivo e responde no seu e-mail em até 48h úteis, com fonte e linguagem clara.
           </p>
         </div>
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; margin:22px 0 14px;">
           <div style="background:var(--bg-alt); border:1px solid var(--hairline); border-radius:16px; padding:16px 18px;">
             <strong style="display:block; font-size:14px; color:var(--blue); margin-bottom:4px;">☕ No Plano Mensal (R$ 9,90/mês)</strong>
-            <span style="font-size:14px; color:var(--muted);">Direito a pedir a explicação de <strong>até 2 casos do noticiário por mês</strong>.</span>
+            <span style="font-size:14px; color:var(--muted);">Direito a pedir a explicação de <strong>até 2 casos públicos do noticiário por mês</strong>.</span>
           </div>
           <div style="background:#edf4fc; border:1px solid rgba(27,77,137,0.25); border-radius:16px; padding:16px 18px;">
             <strong style="display:block; font-size:14px; color:var(--blue); margin-bottom:4px;">★ No Plano Anual (R$ 99/ano)</strong>
-            <span style="font-size:14px; color:var(--muted);">Dobro de envios: <strong>até 4 casos do noticiário por mês</strong> com fila prioritária.</span>
+            <span style="font-size:14px; color:var(--muted);">Dobro de envios: <strong>até 4 casos públicos do noticiário por mês</strong> com fila prioritária.</span>
           </div>
         </div>
 
         <div style="background:#fffdf6; border:1.5px solid #e6d8a8; border-radius:16px; padding:15px 18px; margin-bottom:24px; font-size:14.5px; color:var(--ink); line-height:1.55;">
-          <strong style="color:#8A6421;">🤝 Precisa de indicação de um(a) advogado(a)? Isso não gasta a sua cota!</strong><br>
-          Se você estiver passando por um problema pessoal e quiser nosso acolhimento inicial e a indicação de um(a) advogado(a) da lista de confiança do Professor, <strong>pode escrever a qualquer momento: esse pedido é livre e não desconta dos seus 2 (ou 4) casos do mês</strong>.
+          <strong style="color:#8A6421;">⚖️ Aviso importante de ética e privacidade (OAB e LGPD):</strong><br>
+          A Linha Direta é dedicada exclusivamente a <strong>notícias públicas e dúvidas gerais sobre conceitos da lei em tese</strong>. Para preservar o seu sigilo e cumprir o Estatuto da Advocacia e a LGPD, não envie documentos pessoais, números de processo ou relatos de casos particulares — diante de uma situação concreta, procure sempre um(a) advogado(a) de sua livre escolha regularmente inscrito(a) na OAB ou a Defensoria Pública do seu Estado.
         </div>
 
         <div style="background:var(--bg-alt); border:1px solid var(--hairline); border-radius:22px; padding:26px;">
-          <label for="ld-tipo" style="display:block; font-size:15px; font-weight:700; margin-bottom:8px;">Sobre o que você quer conversar comigo hoje?</label>
-          <select id="ld-tipo" onchange="toggleLinhaDiretaReferralFields()" style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:18px; background:#fff;">
-            <option value="curiosidade">📰 Quero entender um caso do noticiário / dúvida sobre a lei (usa 1 envio da sua cota do mês)</option>
-            <option value="acolhimento">🤝 Estou passando por um problema real e quero saber se preciso de advogado(a) (livre · não gasta sua cota)</option>
+          <label for="ld-tipo" style="display:block; font-size:15px; font-weight:700; margin-bottom:8px;">Qual é o tipo do seu pedido?</label>
+          <select id="ld-tipo" style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:18px; background:#fff;">
+            <option value="noticia">📰 Quero entender um caso público do noticiário</option>
+            <option value="conceito">📚 Tenho uma dúvida geral sobre um conceito da lei (em tese)</option>
           </select>
 
-          <label for="ld-url" style="display:block; font-size:15px; font-weight:700; margin-bottom:8px;">Qual é a notícia ou o assunto principal?</label>
-          <input id="ld-url" type="text" placeholder="Pode colar o link da notícia ou escrever uma frase dizendo o tema..." style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:18px; background:#fff;" />
+          <label for="ld-url" style="display:block; font-size:15px; font-weight:700; margin-bottom:8px;">Qual é a notícia pública ou o tema jurídico?</label>
+          <input id="ld-url" type="text" placeholder="Cole o link da notícia pública ou escreva o tema geral da lei..." style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:18px; background:#fff;" />
 
-          <label for="ld-duvida" style="display:block; font-size:15px; font-weight:700; margin-bottom:8px;">Me conte com calma a sua dúvida ou o que está acontecendo:</label>
-          <textarea id="ld-duvida" rows="4" placeholder="Escreva como se estivesse conversando comigo..." style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:16px; background:#fff; resize:vertical;"></textarea>
-
-          <div id="ld-referral-extra" style="display:none; background:#fff; border:1px solid rgba(27,77,137,0.22); border-radius:14px; padding:16px; margin-bottom:18px;">
-            <strong style="display:block; font-size:14px; color:var(--blue); margin-bottom:8px;">🤝 Se quiser que eu já saiba de onde você é para eventual indicação de advogado(a) da minha confiança (opcional):</strong>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:10px;">
-              <input id="ld-cidade" type="text" placeholder="Sua Cidade e Estado (ex.: Recife/PE)" style="width:100%; padding:11px 14px; border-radius:10px; border:1px solid var(--hairline); font-family:inherit; font-size:14px;" />
-              <input id="ld-whatsapp" type="text" placeholder="Seu WhatsApp com DDD (opcional)" style="width:100%; padding:11px 14px; border-radius:10px; border:1px solid var(--hairline); font-family:inherit; font-size:14px;" />
-            </div>
-          </div>
+          <label for="ld-duvida" style="display:block; font-size:15px; font-weight:700; margin-bottom:8px;">Qual é a sua pergunta geral sobre esse caso ou conceito?</label>
+          <textarea id="ld-duvida" rows="4" placeholder="Escreva sua dúvida sobre o caso público ou sobre a regra da lei (sem incluir dados pessoais ou processos particulares)..." style="width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--hairline); font-family:inherit; font-size:15px; margin-bottom:16px; background:#fff; resize:vertical;"></textarea>
 
           <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
-            <button type="button" class="btn-blue" onclick="sendLinhaDiretaEmail()">📩 Enviar Minha Mensagem por E-mail (1 toque)</button>
+            <button type="button" class="btn-blue" onclick="sendLinhaDiretaEmail()">📩 Enviar Minha Pergunta por E-mail (1 toque)</button>
             <button type="button" class="btn-pill" onclick="copyLinhaDireta(this)">📋 Ou copiar texto para mandar no Gmail (zamboniexplica@gmail.com)</button>
           </div>
           <div id="ld-feedback" class="alert" role="status" aria-live="polite"></div>
@@ -1217,10 +1206,8 @@
 
         <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:24px;">
           <button class="btn-blue" type="button" onclick="window.print()">🖨️ Imprimir / Salvar Checklist em PDF</button>
-          <a href="manual-20-conceitos.html" class="btn-pill" style="background:var(--ink);">📘 Manual: Os 20 Conceitos da Lei</a>
-          <a href="guia-golpes-pix.html" class="btn-pill" style="background:#1F7A4C;">🛡️ Guia #01: Golpes do Pix &amp; STJ</a>
-          <a href="dossie-historico-01.html" class="btn-pill" style="background:#2C3E50;">🏛️ Dossiê #01: Tribunal do Júri</a>
-          <a href="vale-presente.html" class="btn-pill" style="background:#8A6421;">🎄 Cartão Vale-Presente de Natal</a>
+          <a href="vale-presente.html" class="btn-pill" style="background:#8A6421;">🎄 Cartão Vale-Presente de Natal (R$ 99)</a>
+          <a href="https://pay.kiwify.com.br/xlNLeB4" target="_blank" rel="noopener" class="btn-pill" style="background:var(--ink);">★ Desbloquear Bônus no Plano Anual</a>
         </div>
 
         <div style="background:var(--bg-alt); padding:24px; border-radius:22px; text-align:center;">
@@ -1229,16 +1216,16 @@
 
         <div class="grid-2" style="margin-top:24px;">
           <div class="concept-card">
-            <span class="c-cat">Manual Oficial de Bolso</span>
-            <strong>Os 20 Conceitos da Lei que Todo Cidadão Precisa Conhecer</strong>
-            <p style="margin-bottom:12px;">Versão completa para leitura rápida e impressão em PDF com a base legal de cada conceito.</p>
-            <a href="manual-20-conceitos.html" class="btn-blue" style="font-size:13.5px; padding:9px 18px;">Abrir Manual &rsaquo;</a>
+            <span class="c-cat">Material Adicional · Inclusivo no Plano Anual</span>
+            <strong>Manual de Bolso: Os 20 Conceitos da Lei (+ Áudio-Guia Oficial)</strong>
+            <p style="margin-bottom:12px;">Versão integral com os 20 termos que mais aparecem no jornal e áudio narrado pelo Prof. Alexandre Zamboni. Se você adquiriu no checkout da Kiwify, seu link direto já foi enviado no e-mail da compra; assinantes do <strong>Plano Anual</strong> recebem acesso incluído.</p>
+            <a href="https://pay.kiwify.com.br/xlNLeB4" target="_blank" rel="noopener" class="btn-blue" style="font-size:13.5px; padding:9px 18px;">Garantir no Plano Anual (R$ 99/ano) &rsaquo;</a>
           </div>
           <div class="concept-card">
-            <span class="c-cat">Guia Prático do Cidadão · Vol. #01</span>
-            <strong>Golpes Digitais, Pix e Fraudes Bancárias: O Que a Lei e o STJ Dizem</strong>
-            <p style="margin-bottom:12px;">Como funcionam a Súmula 479 do STJ, o MED do Banco Central e os 4 passos imediatos na primeira hora.</p>
-            <a href="guia-golpes-pix.html" class="btn-blue" style="font-size:13.5px; padding:9px 18px;">Abrir Guia &rsaquo;</a>
+            <span class="c-cat">Coleção Especial · Estreia Janeiro/2027</span>
+            <strong>Guias de Bolso &amp; Dossiês Históricos (Pix/STJ e Tribunal do Júri)</strong>
+            <p style="margin-bottom:12px;">Nossa coleção especial de aprofundamento (<em>Guia de Bolso #01: Golpes do Pix &amp; STJ</em> e <em>Dossiê Histórico #01: Grandes Julgamentos no Júri</em>) será aberta a partir de janeiro de 2027 com condição especial e bônus exclusivos para assinantes anuais.</p>
+            <span class="btn-pill" style="font-size:13px; padding:8px 14px; background:var(--bg-alt); color:var(--muted); border:1px solid var(--border); cursor:default;">🔒 Abertura programada para Janeiro/2027</span>
           </div>
         </div>
       </div>
@@ -1274,7 +1261,7 @@
         <div id="poll-feedback" class="alert" role="status" aria-live="polite"></div>
 
         <p style="font-size:14px; color:var(--muted); margin-top:20px;">
-          <strong>Dica:</strong> Se você estiver vivendo uma situação pessoal hoje e precisar de acolhimento inicial sobre a lei ou de indicação de um(a) advogado(a) da minha lista de confiança, não precisa esperar a votação do mês: basta me escrever na aba <strong>📩 Linha Direta</strong>.
+          <strong>Dica:</strong> Quer sugerir um caso público do noticiário que acabou de acontecer sem esperar a votação do mês? Escreva para nós na aba <strong>📩 Linha Direta</strong>.
         </p>
       </div>
     </section>
@@ -1330,7 +1317,7 @@
 
     <!-- Rodapé de Transparência Ética (OAB) visível em todas as abas da Área do Assinante -->
     <footer style="margin-top: 28px; padding: 22px 26px; background: var(--surface); border: 1px solid var(--hairline); border-radius: 20px; font-size: 13.5px; color: var(--muted); line-height: 1.6;">
-      <strong style="color: var(--ink);">⚖️ Nota de Transparência e Ética (OAB):</strong> O <em>Zamboni Explica</em> tem caráter estritamente informativo e educativo sobre casos públicos do noticiário e sobre o funcionamento geral da lei brasileira (em conformidade com o Estatuto da Advocacia e o Provimento nº 205/2021 da OAB), não constituindo consultoria jurídica nem análise de processos individuais. Se você estiver passando por uma situação concreta e precisar de acolhimento inicial ou da indicação gratuita de um(a) advogado(a) da lista pessoal de confiança do Prof. Alexandre Zamboni, utilize a aba <strong>📩 Linha Direta</strong>.<br>
+      <strong style="color: var(--ink);">⚖️ Nota de Transparência e Ética (OAB):</strong> O <em>Zamboni Explica</em> tem caráter estritamente informativo e educativo sobre casos públicos do noticiário e sobre o funcionamento geral da lei brasileira (em conformidade com o Estatuto da Advocacia e o Provimento nº 205/2021 da OAB), não constituindo consultoria jurídica nem atendimento de processos individuais. Diante de uma situação concreta, procure sempre um(a) advogado(a) regularmente inscrito(a) na OAB ou a Defensoria Pública do seu Estado.<br>
       <span style="display:block; margin-top:6px; font-size:12.5px;">Fornecedor: A Zamboni Lins Filho Serviços de Informação Ltda. · CNPJ 67.166.139/0001-80 · Suporte: <a href="mailto:zamboniexplica@gmail.com" style="color:var(--blue);">zamboniexplica@gmail.com</a></span>
     </footer>
   </main>
@@ -1449,53 +1436,36 @@
       fb.innerHTML = 'Abrimos seu aplicativo de e-mail com o voto pronto para <strong>zamboniexplica@gmail.com</strong>. Basta tocar em <strong>Enviar</strong> para que a redação contabilize seu voto real.';
     }
 
-    function toggleLinhaDiretaReferralFields() {
-      var tipo = document.getElementById('ld-tipo').value;
-      var box = document.getElementById('ld-referral-extra');
-      if (box) {
-        box.style.display = (tipo === 'acolhimento') ? 'block' : 'none';
-      }
-    }
-
     function sendLinhaDiretaEmail() {
-      var tipo = (document.getElementById('ld-tipo') ? document.getElementById('ld-tipo').value : 'curiosidade');
+      var tipo = (document.getElementById('ld-tipo') ? document.getElementById('ld-tipo').value : 'noticia');
       var url = (document.getElementById('ld-url').value || '').trim();
       var duvida = (document.getElementById('ld-duvida').value || '').trim();
-      var cidade = (document.getElementById('ld-cidade') ? document.getElementById('ld-cidade').value : '').trim();
-      var whatsapp = (document.getElementById('ld-whatsapp') ? document.getElementById('ld-whatsapp').value : '').trim();
       var fb = document.getElementById('ld-feedback');
       if (!url && !duvida) {
         fb.className = 'alert show';
-        fb.textContent = 'Preencha o tema e a sua dúvida antes de enviar.';
+        fb.textContent = 'Preencha o tema e a sua pergunta antes de enviar.';
         return;
       }
-      var isAcolhimento = (tipo === 'acolhimento');
-      var subject = isAcolhimento
-        ? '[Linha Direta · Acolhimento] Zamboni, me explica esse caso?'
-        : '[Linha Direta Assinante] Zamboni, me explica esse caso?';
+      var subject = '[Linha Direta Assinante] Zamboni, me explica esse caso?';
       var body = 'Olá, Prof. Alexandre Zamboni!\n\n'
-        + 'Sobre o que quero conversar: ' + (isAcolhimento ? 'Estou passando por uma situação real e gostaria de acolhimento inicial (e de avaliar indicação de advogado)' : 'Notícia pública / Curiosidade sobre a lei') + '\n'
-        + 'Assunto ou link:\n' + (url || '(informado abaixo)') + '\n\n'
-        + 'Minha dúvida / O que está acontecendo:\n' + (duvida || '(ver acima)')
-        + (cidade || whatsapp ? '\n\nMeus dados caso eu precise de encaminhamento para advogado(a) da sua confiança:\nCidade/UF: ' + (cidade || 'não informado') + '\nWhatsApp: ' + (whatsapp || 'não informado') : '');
+        + 'Tipo de pedido: ' + (tipo === 'conceito' ? 'Dúvida geral sobre um conceito da lei (em tese)' : 'Caso público do noticiário') + '\n'
+        + 'Notícia pública ou tema:\n' + (url || '(informado abaixo)') + '\n\n'
+        + 'Minha pergunta geral:\n' + (duvida || '(ver acima)');
       window.location.href = 'mailto:zamboniexplica@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       fb.className = 'alert show';
       fb.textContent = 'Abrimos seu aplicativo de e-mail já preenchido para zamboniexplica@gmail.com. Basta tocar em Enviar.';
     }
 
     function copyLinhaDireta(btn) {
-      var tipo = (document.getElementById('ld-tipo') ? document.getElementById('ld-tipo').value : 'curiosidade');
+      var tipo = (document.getElementById('ld-tipo') ? document.getElementById('ld-tipo').value : 'noticia');
       var url = (document.getElementById('ld-url').value || '').trim();
       var duvida = (document.getElementById('ld-duvida').value || '').trim();
-      var cidade = (document.getElementById('ld-cidade') ? document.getElementById('ld-cidade').value : '').trim();
-      var whatsapp = (document.getElementById('ld-whatsapp') ? document.getElementById('ld-whatsapp').value : '').trim();
       var fb = document.getElementById('ld-feedback');
       var text = 'Para: zamboniexplica@gmail.com\n'
         + 'Assunto: [Linha Direta Assinante] Zamboni, me explica esse caso?\n\n'
-        + 'Tipo: ' + (tipo === 'acolhimento' ? 'Acolhimento inicial + avaliar indicação de advogado(a)' : 'Notícia pública / Curiosidade sobre a lei') + '\n'
-        + 'Assunto / Link: ' + (url || '') + '\n'
-        + 'Minha dúvida / Relato: ' + (duvida || '')
-        + (cidade || whatsapp ? '\nCidade/UF: ' + cidade + ' | WhatsApp: ' + whatsapp : '');
+        + 'Tipo: ' + (tipo === 'conceito' ? 'Dúvida geral sobre um conceito da lei (em tese)' : 'Caso público do noticiário') + '\n'
+        + 'Notícia pública / Tema: ' + (url || '') + '\n'
+        + 'Minha pergunta geral: ' + (duvida || '');
       if (navigator.clipboard) {
         navigator.clipboard.writeText(text);
       }

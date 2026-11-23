@@ -15,6 +15,7 @@
       --ink: #1C252C;
       --muted: #5A6570;
       --border: rgba(11, 25, 44, 0.12);
+      --blue: #1B4D89;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -24,7 +25,7 @@
       line-height: 1.72;
       padding: 32px 16px 64px;
     }
-    .container { max-width: 780px; margin: 0 auto; }
+    .container { max-width: 840px; margin: 0 auto; }
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -50,7 +51,7 @@
       border-radius: 22px;
       padding: 42px 36px;
       border: 2px solid var(--gold);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .cover .badge {
       display: inline-block;
@@ -73,38 +74,174 @@
     .cover p {
       color: rgba(255, 255, 255, 0.88);
       font-size: 1.02rem;
+      max-width: 680px;
     }
-    .chapter {
+    .audio-card {
       background: #fff;
-      border: 1px solid var(--border);
+      border: 1.5px solid rgba(197, 160, 89, 0.55);
       border-radius: 18px;
-      padding: 28px 30px;
-      margin-bottom: 18px;
+      padding: 22px 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 20px rgba(11, 25, 44, 0.05);
     }
-    .chapter .kicker {
+    .audio-card .kicker {
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: #1B4D89;
+      color: #8A6421;
       display: block;
       margin-bottom: 6px;
     }
-    .chapter h2 {
+    .audio-card h2 {
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .audio-card p {
+      font-size: 0.94rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .audio-card audio { width: 100%; height: 42px; }
+    .search-box {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 0.98rem;
+      font-family: inherit;
+      margin-bottom: 20px;
+      outline: none;
+    }
+    .search-box:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27, 77, 137, 0.12); }
+    .card-block {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 28px;
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+    .card-block .kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .card-block h2 {
       font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 1.75rem;
+      font-size: 1.72rem;
       font-weight: 400;
       color: var(--navy);
       margin-bottom: 12px;
+      line-height: 1.22;
     }
-    .chapter p {
-      font-size: 1rem;
+    .card-block h3 {
+      font-size: 1.08rem;
+      color: var(--navy);
+      margin: 18px 0 8px;
+    }
+    .card-block p {
+      font-size: 0.99rem;
       color: var(--ink);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
-    .chapter p:last-child { margin-bottom: 0; }
+    .card-block p:last-child { margin-bottom: 0; }
+    .card-block ul, .card-block ol {
+      margin: 10px 0 14px 22px;
+    }
+    .card-block li {
+      font-size: 0.97rem;
+      margin-bottom: 8px;
+    }
+    .lunch-box {
+      margin-top: 14px;
+      background: #F4F7FB;
+      border-left: 4px solid var(--blue);
+      padding: 12px 16px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.94rem;
+      color: var(--navy);
+    }
+    .callout {
+      background: #FFFDF6;
+      border: 1px solid #E6D8A8;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.95rem;
+      color: #3A2E14;
+    }
+    .table-wrap { overflow-x: auto; margin: 14px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #F4F6F9; color: var(--navy); font-weight: 700; }
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .flow-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+    .flow-box.accent-green { background: #F2FAF5; border-color: rgba(31, 122, 76, 0.3); }
+    .flow-box.accent-amber { background: #FFFBF0; border-color: rgba(197, 160, 89, 0.45); }
+    .flow-box strong { display: block; color: var(--navy); margin-bottom: 6px; font-size: 0.96rem; }
+    .flow-box p { font-size: 0.9rem; margin-bottom: 0; }
+    .oab-footer {
+      background: #FFFDF6;
+      border: 1px solid #E6D8A8;
+      border-radius: 18px;
+      padding: 24px 26px;
+      margin-top: 24px;
+    }
+    .oab-footer .kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8A6421;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .oab-footer h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .oab-footer p { font-size: 0.94rem; color: var(--ink); margin-bottom: 10px; }
+    .oab-footer p:last-child { margin-bottom: 0; }
+    .oab-meta {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(11, 25, 44, 0.1);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    code {
+      background: #F1F4F8;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
     @media print {
-      .top-bar { display: none !important; }
+      .top-bar, .search-box, .audio-card { display: none !important; }
       body { background: #fff; padding: 0; }
     }
   </style>
@@ -112,54 +249,129 @@
 <body>
   <div class="container">
     <div class="top-bar">
-      <a href="area-assinante.html">← Voltar para a Área do Assinante</a>
+      <a href="area-assinante.html">← Ir para a Área do Assinante</a>
       <button class="btn-print" onclick="window.print()">🖨️ Salvar / Imprimir Guia em PDF</button>
     </div>
 
     <div class="cover">
-      <span class="badge">Coleção Guias de Bolso do Cidadão • Volume #01</span>
+      <span class="badge">Coleção Guias de Bolso do Cidadão • Volume #01 (Edição Integral)</span>
       <h1>Golpes Digitais, Pix e Fraudes Bancárias: O Que a Lei e o STJ Realmente Dizem</h1>
-      <p>Como o Direito Penal classifica as fraudes eletrônicas, o que diz a Súmula 479 do Superior Tribunal de Justiça sobre a responsabilidade dos bancos e como funciona o Mecanismo Especial de Devolução do Banco Central. Por <strong>Prof. Alexandre Zamboni</strong>.</p>
+      <p>Entenda a fronteira entre furto eletrônico e estelionato digital (Lei 14.155/2021), quando o banco responde pelo prejuízo (Súmula 479 do STJ), como funciona o MED do Banco Central e a preservação de provas digitais.</p>
     </div>
 
-    <div class="chapter">
-      <span class="kicker">Parte 1 • A Lente do Direito Penal</span>
-      <h2>Furto Mediante Fraude Eletrônica vs. Estelionato Digital</h2>
-      <p>Quando o dinheiro sai da conta de um cidadão por meio de uma fraude na internet, a primeira distinção técnica que a lei penal faz diz respeito a como o criminoso teve acesso aos valores. Embora no vocabulário popular tudo seja chamado de golpe, o Código Penal brasileiro separa duas condutas bastante diferentes.</p>
-      <p>No furto qualificado mediante fraude por meio de dispositivo eletrônico ou informático, previsto no artigo 155, parágrafo 4º-B, do Código Penal (incluído pela Lei nº 14.155 de 2021), a fraude serve para burlar a vigilância da vítima ou o sistema de segurança do banco e subtrair o valor sem que o titular tenha entregado voluntariamente o dinheiro. É o que ocorre, por exemplo, quando criminosos invadem o aplicativo bancário após o furto de um aparelho celular ou instalam programas maliciosos que realizam transferências ocultas. A pena base prevista na lei varia de quatro a oito anos de reclusão, podendo ser aumentada se o crime é praticado mediante servidor mantido fora do país ou contra pessoa idosa.</p>
-      <p>Já na fraude eletrônica do artigo 171, parágrafo 2º-A, do Código Penal, modalidade específica de estelionato, o criminoso utiliza informações fornecidas pela própria vítima ou por terceiros induzidos em erro por meio de redes sociais, contatos telefônicos ou envio de correio eletrônico fraudulento. Nesse cenário, a vítima, acreditando estar diante de um familiar, de uma loja idônea ou de um funcionário do banco, digita a própria senha e autoriza a transferência. A pena prevista na lei também é de quatro a oito anos de reclusão e multa, com aumento relevante quando a vítima é idosa ou vulnerável.</p>
-    </div>
+    <article class="card-block">
+      <span class="kicker">Capítulo 01</span>
+      <h2>Introdução: O Cenário Jurídico das Fraudes Digitais no Brasil</h2>
+      <p>A digitalização acelerada dos meios de pagamento transformou a rotina econômica do Brasil. Operações que há uma década exigiam deslocamento físico até uma agência bancária, espera em fila e compensação em dias úteis hoje se concluem em segundos, vinte e quatro horas por dia, inclusive aos domingos e feriados, na tela do telefone celular. O sistema de pagamentos instantâneos (<strong>Pix</strong>), criado e gerido pelo Banco Central do Brasil (BCB), trouxe eficiência inquestionável à circulação de riqueza, mas também deslocou o foco da criminalidade patrimonial das ruas para o ambiente cibernético.</p>
+      <p>Para o cidadão comum, a sofisticação técnica dessas fraudes — que combinam engenharia social psicológica, clonagem de contas de mensagens, centrais telefônicas falsas (<em>spoofing</em> de número oficial) e programas maliciosos — gera uma sensação de desamparo jurídico. Quando ocorre um desfalque patrimonial, o correntista frequentemente recebe respostas padronizadas das instituições financeiras afirmando que <em>&quot;a transação foi realizada mediante uso de credenciais pessoais e intransferíveis&quot;</em>, ao mesmo tempo em que lê notícias sobre decisões judiciais que condenaram bancos a restituir integralmente valores subtraídos por golpistas.</p>
+      <p>Por que dois casos aparentemente parecidos de golpe via Pix podem ter desfechos opostos nos tribunais brasileiros? A resposta não está na sorte nem na opinião pessoal de cada juiz, mas na aplicação de <strong>quatro pilares normativos objetivos</strong> que todo cidadão precisa compreender:</p>
+      <ol><li>A tipificação criminal exata da conduta no <strong>Código Penal</strong> (a fronteira entre o furto mediante fraude eletrônica e o estelionato eletrônico, introduzida pela Lei nº 14.155/2021);</li><li>O regime de responsabilidade civil das instituições financeiras no <strong>Código de Defesa do Consumidor</strong> e na <strong>Súmula 479 do Superior Tribunal de Justiça (STJ)</strong> (a distinção técnica entre <em>fortuito interno</em> e <em>culpa exclusiva da vítima</em>);</li><li>O funcionamento normativo do <strong>Mecanismo Especial de Devolução (MED)</strong> do Banco Central do Brasil (Resolução BCB nº 103/2021);</li><li>As regras públicas de <strong>cadeia de custódia e preservação da prova digital</strong> previstas no Código de Processo Penal e no Marco Civil da Internet.</li></ol>
+      <p>Nas páginas a seguir, examinaremos cada um desses quatro pilares com rigor técnico, linguagem limpa e fidelidade estrita ao que está provado na lei e na jurisprudência consolidada.</p>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Capítulo 02</span>
+      <h2>O Que Diz o Código Penal: Furto Mediante Fraude Eletrônica vs. Estelionato Eletrônico (Lei nº 14.155/2021)</h2>
+      <p>No vocabulário popular, qualquer perda financeira sofrida pela internet ou pelo celular costuma ser chamada genericamente de &quot;golpe&quot; ou &quot;roubo digital&quot;. Na lei penal brasileira, contudo, as palavras têm peso exato. Em 27 de maio de 2021, o Congresso Nacional promulgou a <strong>Lei nº 14.155/2021</strong>, que reformou profundamente o Código Penal para dar tratamento severo aos crimes patrimoniais cometidos por meio de dispositivos eletrônicos ou informáticos, elevando as penas base para <strong>reclusão de 4 a 8 anos e multa</strong> (além de causas de aumento de pena de um terço ao dobro se o crime for praticado contra idoso ou vulnerável, ou mediante servidor mantido fora do território nacional).</p>
+      <p>Para entender como a lei enxerga cada episódio, é fundamental distinguir os dois crimes centrais: o <strong>furto qualificado mediante fraude eletrônica</strong> (art. 155, § 4º-B, do Código Penal) e o <strong>estelionato mediante fraude eletrônica</strong> (art. 171, § 2º-A, do Código Penal).</p>
+      <h3>2.1. Furto Mediante Fraude Eletrônica (Art. 155, § 4º-B, do Código Penal)</h3>
+      <p>No crime de <strong>furto</strong>, o núcleo da conduta é <strong>subtrair</strong> (retirar, tomar para si ou para outrem) coisa alheia móvel <strong>sem o consentimento da vítima</strong>. Mas qual é o papel da fraude no furto qualificado? No furto mediante fraude, o artifício enganoso é utilizado pelo criminoso <strong>para burlar a vigilância da vítima ou neutralizar os mecanismos de segurança do sistema</strong>, permitindo que o próprio agente criminoso (ou um programa automatizado comandado por ele) retire o dinheiro da conta sem que o titular tenha manifestado vontade consciente de transferir aquele valor.</p>
+      <p>O § 4º-B do artigo 155 do Código Penal define que essa forma qualificada ocorre quando o furto mediante fraude é cometido <em>&quot;por meio de dispositivo eletrônico ou informático, conectado ou não à rede de computadores, com ou sem a violação de mecanismo de segurança ou a utilização de programa malicioso, ou por meio de dados fornecidos pela vítima ou por terceiro induzido a erro&quot;</em>.</p>
+      <p>São exemplos clássicos de <strong>furto mediante fraude eletrônica</strong> na prática forense:</p>
+      <ul><li>A instalação oculta de programas maliciosos (<em>malware</em>, trojans bancários ou aplicativos de acesso remoto disfarçados de atualização de segurança) que assumem o controle do aparelho ou sobrepõem a tela do aplicativo bancário para desviar valores sem que o correntista perceba;</li><li>O acesso não autorizado à conta bancária após o furto ou roubo do aparelho celular da vítima, valendo-se de falhas de bloqueio, recuperação indevida de senhas por e-mail/SMS ou quebra dos mecanismos de autenticação;</li><li>O golpe conhecido como <em>SIM Swap</em> (clonagem ou portabilidade fraudulenta do chip telefônico junto à operadora), pelo qual o criminoso sequestra a linha telefônica da vítima para interceptar códigos de validação e esvaziar as contas bancárias à revelia do titular;</li><li>As situações em que o criminoso induz a vítima a digitar um código ou clicar em um link achando que está apenas &quot;cancelando uma compra indevida&quot; ou &quot;atualizando o token de segurança&quot;, quando na verdade o sistema está executando uma subtração patrimonial não consentida.</li></ul>
+      <h3>2.2. Estelionato Mediante Fraude Eletrônica (Art. 171, § 2º-A, do Código Penal)</h3>
+      <p>No crime de <strong>estelionato</strong>, a dinâmica psicológica e material é diferente. Aqui não há invasão técnica clandestina para subtrair o valor contra a vontade do titular: o criminoso constrói uma mentira convincente (ardil ou meio fraudulento) que <strong>vicia a vontade da vítima</strong>, fazendo com que a própria vítima, acreditando estar diante de um negócio verdadeiro ou de uma emergência real, <strong>entregue voluntariamente o dinheiro ou realize a transferência por conta própria</strong>.</p>
+      <p>O § 2º-A do artigo 171 do Código Penal tipifica a fraude eletrônica quando a vantagem ilícita é obtida <em>&quot;com a utilização de informações fornecidas pela vítima ou por terceiro induzido a erro por meio de redes sociais, contatos telefônicos ou envio de correio eletrônico fraudulento, ou por qualquer outro meio fraudulento análogo&quot;</em>.</p>
+      <p>São exemplos típicos de <strong>estelionato eletrônico</strong>:</p>
+      <ul><li>O golpe do &quot;falso parente no WhatsApp&quot; (em que o criminoso usa a foto de um filho ou sobrinho dizendo que trocou de número e pede um Pix urgente para pagar uma conta);</li><li>A compra de produtos inexistentes em perfis falsos de redes sociais, sites clonados de comércio eletrônico ou falsos leilões de veículos, nos quais o comprador faz o Pix espontaneamente para a conta indicada pelo golpista achando que receberá a mercadoria;</li><li>O golpe do &quot;falso investimento com retorno garantido&quot; ou da &quot;falsa tabela do Pix Multiplicado&quot;.</li></ul>
+      <h3>2.3. Onde o Crime Deve Ser Investigado? (A Regra de Competência do Art. 70, § 4º, do CPP)</h3>
+      <p>Uma dificuldade histórica que desanimava as vítimas de crimes digitais era descobrir em qual cidade o caso seria investigado, já que o golpista quase sempre abre a conta recebedora em outro Estado da Federação. A Lei nº 14.155/2021 resolveu esse impasse ao incluir o § 4º no artigo 70 do Código de Processo Penal: nos crimes de estelionato praticados mediante depósito, transferência de valores ou qualquer operação financeira, <strong>a competência será definida pelo local do domicílio da vítima</strong> (e, em caso de pluralidade de vítimas, pela prevenção). Essa regra garante que o cidadão lesado possa registrar a ocorrência e acompanhar a apuração na sua própria cidade, sem depender de deslocamentos para a comarca onde a conta fraudulenta foi aberta.</p>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Capítulo 03</span>
+      <h2>A Súmula 479 do STJ: Quando o Banco Responde pelo Prejuízo e Quando Não Responde?</h2>
+      <p>Se na esfera criminal o Estado busca identificar e punir o autor da fraude, na esfera cível a pergunta central do cidadão é patrimonial: <strong>a instituição financeira tem o dever legal de restituir os valores subtraídos da conta ou os empréstimos contratados em nome da vítima?</strong></p>
+      <p>A trave mestra que governa esse tema no Brasil é a <strong>Súmula 479 do Superior Tribunal de Justiça (STJ)</strong>, aprovada pela Segunda Seção da Corte com base no artigo 14 do Código de Defesa do Consumidor (Lei nº 8.078/1990) e no artigo 927, parágrafo único, do Código Civil (teoria do risco do empreendimento):</p>
+      <div class="callout"><strong>Súmula 479 do STJ:</strong> <em>&quot;As instituições financeiras respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes e delitos praticados por terceiros no âmbito de operações bancárias.&quot;</em></div>
+      <p>Para não cair nem em ilusões nem em desinformação, precisamos traduzir cada expressão técnica dessa súmula e mostrar como as Turmas de Direito Privado do STJ (Terceira e Quarta Turmas) aplicam essa regra nos julgamentos reais.</p>
+      <h3>3.1. O Que Significa &quot;Responsabilidade Objetiva por Fortuito Interno&quot;?</h3>
+      <p>Responsabilidade objetiva significa que o consumidor não precisa provar que um funcionário específico do banco agiu com má-fé ou negligência intencional; basta demonstrar o <strong>defeito na prestação do serviço de segurança bancária</strong>, o <strong>dano patrimonial sofrido</strong> e o <strong>nexo de causalidade</strong> entre ambos.</p>
+      <p>Já o conceito de <strong>fortuito interno</strong> refere-se aos riscos que fazem parte da própria natureza do negócio bancário. Como os bancos lucram com a circulação massiva de crédito e escolheram substituir as agências físicas por aplicativos digitais (reduzindo custos operacionais com pessoal e transporte de valores), a lei e o STJ entendem que cabe às instituições financeiras investir continuamente em sistemas de inteligência, biometria, geolocalização e bloqueio preventivo de transações suspeitas. Quando um criminoso explora uma vulnerabilidade desse ecossistema bancário, o evento não é visto como um acidente externo imprevisível, mas como um <strong>risco interno do próprio serviço financeiro</strong>.</p>
+      <h3>3.2. As 4 Hipóteses em que a Jurisprudência do STJ Reconhece a Falha de Segurança do Banco (Dever de Ressarcir / Anular Dívida)</h3>
+      <p>A análise dos acórdãos recentes do Superior Tribunal de Justiça revela quatro cenários principais nos quais a Corte reconhece o defeito do serviço bancário e aplica a Súmula 479:</p>
+      <ol><li><strong>Movimentações Atípicas e Fora do Perfil do Correntista (Falha no Dever de Monitoramento e Bloqueio Preventivo):</strong><br>Cada correntista possui um padrão histórico de movimentação financeira (valores médios de Pix, horários habituais de uso, limite de transferências, histórico de nunca contratar empréstimos de alto valor pelo celular). Segundo a jurisprudência reiterada do STJ (a exemplo dos julgados no REsp 2.095.413/SP, REsp 1.995.458/SP e AgInt no AREsp 2.288.000/SP), <strong>as instituições financeiras têm o dever legal de manter sistemas automatizados capazes de detectar e travar preventivamente operações que destoem de modo gritante do perfil de consumo do titular</strong>. Quando, em poucos minutos (especialmente após o roubo do celular ou durante uma fraude), a conta realiza dezenas de transferências seguidas, esvazia aplicações de longo prazo e contrata empréstimos pré-aprovados de dezenas de milhares de reais sem que o sistema de segurança do banco dispare um alerta de bloqueio cautelar, o STJ reconhece a falha na prestação do serviço — ainda que tenha havido digitação de senha ou validação no aparelho.</li><li><strong>Golpe da Falsa Central de Atendimento com Vazamento de Dados Sigilosos Bancários:</strong><br>Uma das fraudes mais graves ocorre quando a vítima recebe uma ligação telefônica (muitas vezes com máscara eletrônica que exibe no visor o número oficial de 0800 ou 4004 escrito no verso do cartão) e o falso atendente demonstra conhecer <strong>dados bancários internos protegidos por sigilo</strong> — como o valor exato da última compra autêntica feita no cartão de crédito, os limites da conta, o endereço completo e o nome do gerente. O STJ tem decidido (ex.: REsp 2.052.228/DF e julgados correlatos da 3ª Turma) que, quando o golpe só se torna crível aos olhos do consumidor porque houve vazamento prévio de dados pessoais e financeiros sob guarda da instituição (violando a Lei Geral de Proteção de Dados — Lei nº 13.709/2018), configura-se fortuito interno e defeito de segurança, atraindo a responsabilidade da instituição financeira.</li><li><strong>Abertura Fraudulenta de &quot;Conta Laranja&quot; Destinatária sem Cautelas Mínimas de Identificação:</strong><br>O dinheiro de um golpe no Pix sempre vai parar em uma conta bancária aberta em alguma instituição financeira ou instituição de pagamento. A Súmula 479 do STJ nasceu justamente de casos em que bancos permitiram a abertura de contas correntes com documentos falsos ou sem checagem mínima de identidade e capacidade financeira. Quando a instituição recebedora abre contas em nome de terceiros fraudadores (&quot;contas de passagem&quot; ou &quot;contas laranjas&quot;) sem observar as normas rigorosas de prevenção à fraude e lavagem de dinheiro do Banco Central (Resolução BCB nº 96/2021 e Resolução CMN nº 4.753/2019), a jurisprudência reconhece a responsabilidade solidária pela falha no dever de verificação cadastral.</li><li><strong>Falhas Técnicas de Autenticação em Aparelhos Roubados ou Furtados:</strong><br>Quando o consumidor tem seu aparelho celular subtraído na rua e os criminosos conseguem, mesmo sem conhecer a senha bancária original, redefinir credenciais de acesso dentro do aplicativo do banco, contratar crédito imediato e elevar limites instantaneamente sem exigir biometria facial íntegra ou prazo de carência regulatório (que o Banco Central fixou em 24 a 48 horas para aumento de limites no Pix), resta caracterizada a falha nos mecanismos de segurança do aplicativo.</li></ol>
+      <h3>3.3. Quando o STJ Afasta a Responsabilidade do Banco? (Fortuito Externo e Culpa Exclusiva da Vítima — Art. 14, § 3º, II, do CDC)</h3>
+      <p>Com a mesma honestidade intelectual com que mostramos quando o banco responde, é indispensável explicar quando o STJ <strong>afasta</strong> o dever de indenizar da instituição financeira.</p>
+      <p>O artigo 14, § 3º, inciso II, do Código de Defesa do Consumidor estabelece que o fornecedor de serviços não será responsabilizado quando provar a <strong>culpa exclusiva do consumidor ou de terceiro</strong>. Na jurisprudência do STJ, configura-se o chamado <strong>fortuito externo</strong> (que rompe o nexo de causalidade com a atividade bancária) quando três elementos aparecem juntos:</p>
+      <ol><li>A fraude ocorreu <strong>inteiramente fora do ambiente do banco</strong> (por exemplo, uma negociação privada no WhatsApp, um anúncio falso de veículo ou eletrodoméstico em rede social, ou um boleto falso baixado em site externo que não imitava o canal do banco);</li><li>O próprio correntista, no uso normal do seu aparelho e sem falha de segurança do aplicativo bancário, autenticou pessoalmente a transação com sua senha ou biometria; e</li><li><strong>O valor e a natureza da operação estavam totalmente dentro do perfil habitual de movimentação daquele cliente</strong>, de modo que o sistema antifraude do banco não tinha como adivinhar que o destinatário escolhido voluntariamente pelo correntista não entregaria o produto prometido.</li></ol>
+      <p>Compreender essa linha divisória evita que o cidadão alimente falsas expectativas ou ingresse em aventuras judiciais sem critério: <strong>o STJ não transforma o banco em seguradora universal de maus negócios feitos em redes sociais, mas cobra rigorosamente do banco quando o sistema de segurança falha em bloquear operações fora do perfil, quando há vazamento de dados sigilosos ou quando o aplicativo permite invasões e contratações anômalas</strong>.</p>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Capítulo 04</span>
+      <h2>Como Funciona o Mecanismo Especial de Devolução (MED) do Banco Central (Resolução BCB nº 103/2021)</h2>
+      <p>Antes do final de 2021, recuperar administrativamente um valor transferido via Pix em caso de fraude era quase impossível, pois as instituições financeiras alegavam que uma ordem de pagamento instantânea liquidada não podia ser estornada sem ordem judicial. Para enfrentar esse problema estrutural, o Banco Central do Brasil editou a <strong>Resolução BCB nº 103, de 8 de junho de 2021</strong>, alterando o Regulamento do Pix (anexo à Resolução BCB nº 1/2020) para instituir o <strong>Mecanismo Especial de Devolução (MED)</strong>.</p>
+      <p>Todo brasileiro que utiliza o Pix precisa conhecer as quatro regras oficiais de funcionamento do MED:</p>
+      <ol><li><strong>Quando o MED pode ser acionado:</strong><br>O MED aplica-se exclusivamente a duas hipóteses previstas no Regulamento do Pix: <strong>(a) casos em que exista fundada suspeita do uso do arranjo para a prática de fraude</strong> (tanto por invasão/furto eletrônico quanto por golpe/estelionato); e <strong>(b) casos em que se verifique falha operacional no sistema de qualquer dos participantes envolvidos na transação</strong> (como duplicidade de envio por erro do aplicativo).<br><em>Atenção:</em> O MED <strong>não pode ser usado</strong> para casos de simples <strong>desacordo comercial</strong> entre partes de boa-fé (por exemplo, quando você faz um Pix para um prestador de serviço verdadeiro e depois se arrepende da compra ou discorda da qualidade do serviço) nem para erros de digitação de chave Pix para um destinatário legítimo sem fraude.</li><li><strong>O Prazo Regulamentar e o Bloqueio Cautelar Imediato:</strong><br>A reclamação pode ser aberta pelo usuário pagador na sua própria instituição financeira em até <strong>80 dias</strong> após a data da transação Pix. Contudo, na prática financeira, <strong>os primeiros minutos e horas são absolutamente críticos</strong>, pois os criminosos costumam pulverizar o dinheiro em várias contas em questão de minutos.<br>Assim que o usuário registra a notificação de fraude no canal oficial do seu banco (pelo chat de suporte, botão de contestação do extrato Pix ou central telefônica oficial), a instituição do pagador registra uma <strong>notificação de infração</strong> no sistema do Banco Central, que <strong>bloqueia preventivamente os recursos disponíveis na conta do recebedor suspeito</strong> até o valor da transação reclamada (incluindo bloqueios parciais ou múltiplos conforme entra saldo naquela conta).</li><li><strong>O Prazo de Análise (7 + 7 Dias):</strong><br>Aberto o procedimento do MED, as duas instituições financeiras (a do pagador vítima e a do recebedor suspeito) têm o prazo regulamentar de até <strong>7 dias corridos</strong> para avaliar se há indícios consistentes de fraude.<br>• Se a fraude for confirmada, a instituição do recebedor efetua a <strong>devolução dos valores bloqueados</strong> diretamente para a conta da vítima em até <strong>96 horas</strong> após o encerramento da avaliação (totalizando o ciclo máximo de 11 dias);<br>• Se a fraude for confirmada, mas o golpista já tiver sacado ou transferido parte do dinheiro antes do bloqueio, a instituição do recebedor realiza devoluções parciais e mantém o monitoramento da conta fraudadora por até <strong>90 dias</strong> após a transação original para capturar eventuais novos valores que ingressem naquela conta até completar o ressarcimento.</li><li><strong>O Que Fazer Quando o MED Devolve &quot;Zero Reais&quot; por Saldo Vazio:</strong><br>É muito comum que o consumidor acione o MED corretamente, a fraude seja reconhecida no sistema do Banco Central (marcando a chave Pix do criminoso no diretório de fraudes do BCB), mas a resposta final informe que <em>&quot;não havia saldo suficiente na conta de destino no momento do bloqueio&quot;</em>.<br>Do ponto de vista jurídico e probatório, esse protocolo do MED <strong>não foi inútil</strong>: pelo contrário, o comprovante de abertura do MED e o resultado de confirmação da notificação de infração servem como <strong>prova documental oficial</strong> de que a vítima agiu de boa-fé e comunicou imediatamente a fraude ao sistema financeiro, elemento que será examinado caso haja discussão administrativa ou judicial sobre falha de segurança (Súmula 479 do STJ).</li></ol>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Capítulo 05</span>
+      <h2>Fluxograma Visual de Decisão Jurídica: A Régua da Lei nas Fraudes de Pix</h2>
+      <p>Veja de forma visual como a legislação penal, o Banco Central e o STJ analisam cada episódio de fraude no Pix:</p>
+      <div class="flow-grid">
+        <div class="flow-box">
+          <strong>1A. Invasão, malware, celular furtado ou link sem consentimento</strong>
+          <p><strong>Furto Mediante Fraude Eletrônica</strong> (Código Penal, art. 155, § 4º-B — pena de 4 a 8 anos de reclusão).</p>
+        </div>
+        <div class="flow-box">
+          <strong>1B. Engenharia social externa (falso parente / anúncio falso)</strong>
+          <p><strong>Estelionato Eletrônico</strong> (Código Penal, art. 171, § 2º-A — pena de 4 a 8 anos de reclusão).</p>
+        </div>
+        <div class="flow-box accent-amber">
+          <strong>2. Ação Regulatória Imediata (Em Ambos os Casos)</strong>
+          <p>Acionamento do <strong>MED</strong> (Resolução BCB nº 103/2021) com o <code>EndToEndId</code> do comprovante: bloqueio cautelar na conta recebedora + análise em até 7 dias corridos.</p>
+        </div>
+        <div class="flow-box accent-green">
+          <strong>3A. Fortuito Interno (Súmula 479/STJ)</strong>
+          <p>Operação fora do perfil habitual, empréstimo atípico, vazamento de dados sigilosos ou falha de autenticação → <strong>jurisprudência reconhece falha de segurança e dever de restituição</strong>.</p>
+        </div>
+        <div class="flow-box">
+          <strong>3B. Fortuito Externo (CDC, art. 14, § 3º, II)</strong>
+          <p>Operação única dentro do padrão habitual, autenticada normalmente em golpe externo sem falha do banco → <strong>jurisprudência tende a afastar responsabilidade do banco pagador</strong> (mantendo busca via MED na conta recebedora).</p>
+        </div>
+      </div>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Capítulo 06</span>
+      <h2>Cronologia Factual e Legal de Preservação de Provas Digitais (O Que a Lei Prevê)</h2>
+      <div class="callout"><strong>Nota Ética Obrigatória (OAB):</strong> O roteiro informativo abaixo descreve exclusivamente <strong>o funcionamento público dos canais regulatórios e as regras de documentação probatória previstas na legislação brasileira</strong> (Código de Processo Penal, arts. 158-A a 158-F; Resolução BCB nº 103/2021; Lei nº 14.155/2021). Não se trata de aconselhamento para caso concreto. Diante de qualquer situação real, busque imediatamente um(a) advogado(a) de sua confiança ou a Defensoria Pública.</div>
+      <p>Quando a legislação processual brasileira e os regulamentos do Banco Central tratam de crimes cibernéticos e fraudes bancárias, a validade das informações depende da <strong>integridade e tempestividade dos registros documentais</strong>. Abaixo está a ordem lógica dos instrumentos públicos existentes no Brasil:</p>
+      <h3>Etapa 1 — Registro Regulatório para Acionamento do MED e Bloqueio de Credenciais (Canal Oficial da Instituição Financeira)</h3>
+      <p>Pela Resolução BCB nº 103/2021, o bloqueio cautelar dos valores via Mecanismo Especial de Devolução (MED) só é disparado no Diretório de Identificadores de Contas Transacionais (DICT) do Banco Central quando o correntista formaliza a contestação da transação por fraude junto à sua instituição financeira.</p>
+      <ul><li><strong>Dado técnico essencial de rastreamento:</strong> todo Pix possui um código público único chamado <strong>ID da Transação (EndToEndId)</strong>, composto por 32 caracteres que começam sempre com a letra <strong><code>E</code></strong> seguida do ISPB do banco, data, hora e sequência alfanumérica (ex.: <code>E1234567820261112...</code>), visível no comprovante detalhado. É esse código que identifica a operação de ponta a ponta no Sistema de Pagamentos Instantâneos (SPI) do Banco Central, juntamente com o <strong>número de protocolo de atendimento</strong> e o pedido expresso de <strong>&quot;Acionamento do MED — Resolução BCB 103/2021&quot;</strong>.</li></ul>
+      <h3>Etapa 2 — Preservação de Vestígios Digitais (Arts. 158-A a 158-F do Código de Processo Penal)</h3>
+      <p>No direito processual penal, conversas de aplicativos, telas de erro e registros de chamadas são <strong>vestígios digitais</strong> sujeitos à verificação de autenticidade. Um erro comum que enfraquece investigações policiais é apagar a conversa com o golpista por raiva ou bloquear/excluir o contato de um modo que elimine o histórico do aparelho.</p>
+      <ul><li>O que a técnica probatória documenta:</li></ul>
+      <ol><li>A <strong>exportação integral da conversa</strong> em arquivo texto/mídia com os metadados de data, hora e o <strong>número de telefone real (ou identificador de conta)</strong> do interlocutor visível no cabeçalho (e não apenas um nome salvo na agenda);</li><li>O <strong>registro de chamadas recebidas</strong> (data, horário exato e duração da ligação em casos de golpe da falsa central telefônica);</li><li>Os <strong>extratos bancários dos últimos 90 a 180 dias</strong> anteriores ao evento (documento público utilizado nos processos cíveis para demonstrar objetivamente qual era o <strong>perfil histórico de movimentação do correntista</strong>, permitindo comprovar se a operação fraudulenta foi totalmente atípica e fora do padrão habitual).</li></ol>
+      <h3>Etapa 3 — Notícia de Fato à Polícia Judiciária (Boletim de Ocorrência — Art. 5º do CPP e Art. 70, § 4º, do CPP)</h3>
+      <p>O registro do Boletim de Ocorrência (físico ou pela Delegacia Eletrônica da Polícia Civil do Estado de domicílio da vítima) é o ato formal que comunica a infração penal ao Estado e também o documento exigido pelas instituições financeiras para concluir a análise do MED.</p>
+      <ul><li>Para que o registro policial permita o rastreamento bancário pelo delegado de polícia, a descrição objetiva nos autos costuma conter: (a) a narrativa cronológica exata com horários; (b) o <strong>ID da Transação Pix (<code>EndToEndId</code>)</strong>; (c) o nome completo, CPF/CNPJ parcial e a instituição financeira da conta recebedora que constam no comprovante do Pix; e (d) se houve entrega de senha sob engano (art. 171, § 2º-A, do CP) ou subtração sem consentimento / invasão / furto de aparelho (art. 155, § 4º-B, do CP).</li></ul>
+      <h3>Etapa 4 — Instâncias Administrativas de Fiscalização Pública (Ouvidoria, Banco Central e Consumidor.gov.br)</h3>
+      <p>Caso a primeira resposta do atendimento comum da instituição financeira seja padronizada ou deixe de informar o resultado fundamentado da análise do MED (ou se recuse a fornecer os logs de acesso, endereço IP e identificação do dispositivo que validou a transação, dados cuja guarda por 6 meses é obrigatória pelo art. 15 do Marco Civil da Internet — Lei nº 12.965/2014), o sistema regulatório brasileiro dispõe de três canais oficiais gratuitos de supervisão:</p>
+      <ol><li>A <strong>Ouvidoria da própria instituição financeira</strong> (canal de segunda instância interna regulado pelo Conselho Monetário Nacional);</li><li>O sistema <strong>Meu BC / Registro de Reclamação contra Instituição Supervisionada no Banco Central do Brasil</strong> (<code>bcb.gov.br</code>), que fiscaliza o cumprimento das normas do MED e de segurança cibernética;</li><li>A plataforma pública <strong><code>consumidor.gov.br</code></strong>, monitorada pela Secretaria Nacional do Consumidor (Senacon/Ministério da Justiça) e pelos Procons.</li></ol>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Capítulo 07</span>
+      <h2>Resumo <code>+ Na Mesa do Almoço</code>: 3 Frases para Explicar o Tema sem Mitos</h2>
+      <p>Se o assunto &quot;golpe do Pix&quot; surgir no almoço de família, você pode resumir o estado atual da lei brasileira com três frases precisas:</p>
+      <ol><li><em>&quot;Para a lei penal (Lei 14.155/2021), invadir o celular ou usar link malicioso para tirar dinheiro sem a pessoa querer é <strong>furto mediante fraude eletrônica</strong>, enquanto enganar a pessoa no WhatsApp para ela mesma fazer o Pix é <strong>estelionato eletrônico</strong> — e ambos têm pena pesada de 4 a 8 anos de prisão.&quot;</em></li><li><em>&quot;Pela <strong>Súmula 479 do STJ</strong>, o banco responde pelo prejuízo quando falha no dever de segurança — como ao permitir transferências e empréstimos totalmente fora do perfil habitual do cliente ou quando há vazamento de dados sigilosos na falsa central —, mas não responde quando o próprio cliente faz uma transferência normal dentro do seu padrão para um anúncio falso na internet.&quot;</em></li><li><em>&quot;O <strong>MED (Mecanismo Especial de Devolução do Banco Central)</strong> permite bloquear o dinheiro na conta do golpista em caso de fraude, mas só funciona na prática se a vítima acionar imediatamente o banco com o código ID da transação e registrar o Boletim de Ocorrência.&quot;</em></li></ol>
+    </article>
 
-    <div class="chapter">
-      <span class="kicker">Parte 2 • A Lente do STJ e do Direito do Consumidor</span>
-      <h2>Quando o Banco Responde pelo Prejuízo? (A Súmula 479 do STJ)</h2>
-      <p>A pergunta que mais divide conversas de família diante de uma fraude bancária é saber se o prejuízo recai inteiramente sobre o correntista ou se a instituição financeira tem o dever legal de ressarcir os valores. A resposta não depende de simpatia, mas da aplicação conjunta do artigo 14 do Código de Defesa do Consumidor e da Súmula 479 do Superior Tribunal de Justiça.</p>
-      <p>A Súmula 479 do STJ estabelece que as instituições financeiras respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes e delitos praticados por terceiros no âmbito de operações bancárias. Em linguagem clara, fortuito interno significa um risco que faz parte da própria atividade bancária moderna: se o banco oferece operações digitais rápidas, tem o dever jurídico de manter barreiras de segurança capazes de detectar movimentações completamente fora do padrão habitual do cliente.</p>
-      <p>Por essa razão, a jurisprudência do STJ costuma reconhecer a falha na prestação do serviço quando o sistema do banco aprova, em poucos minutos e sem bloqueio preventivo, transferências seguidas em valores elevados, contratação de empréstimos atípicos ou esvaziamento de conta que destoam inteiramente do perfil histórico daquele consumidor, ou ainda quando a fraude decorre de vazamento de dados cadastrais sob guarda da instituição.</p>
-      <p>Por outro lado, o próprio STJ diferencia o fortuito interno da chamada culpa exclusiva do consumidor ou de terceiros (artigo 14, parágrafo 3º, inciso II, do CDC). Quando a operação realizada está dentro do perfil cotidiano de gastos do cliente, sem nenhuma falha nos mecanismos de autenticação do banco e sem vazamento de dados bancários, tendo a transferência ocorrido unicamente porque o titular pagou por um produto inexistente em negociação particular fora do ambiente bancário, os tribunais tendem a afastar o dever de indenizar da instituição financeira, salvo se houver falha na abertura ou manutenção de conta fraudulenta usada apenas para receber golpes.</p>
-    </div>
-
-    <div class="chapter">
-      <span class="kicker">Parte 3 • O Mecanismo Regulatório do Banco Central</span>
-      <h2>Como Funciona o MED (Mecanismo Especial de Devolução do Pix)</h2>
-      <p>Desde a Resolução BCB nº 103 de 2021 do Banco Central do Brasil, o sistema financeiro conta com um procedimento administrativo padronizado para casos de fundada suspeita de fraude ou falha operacional no arranjo Pix: o Mecanismo Especial de Devolução, conhecido pela sigla MED.</p>
-      <p>Quando o correntista comunica formalmente a fraude ao seu banco, a instituição registra a notificação de infração no sistema do Banco Central, o que permite o bloqueio cautelar imediato dos recursos que ainda estejam disponíveis na conta recebedora da transferência suspeita. A partir desse bloqueio, as instituições envolvidas têm o prazo regulamentar de até sete dias para analisar os indícios da fraude e, confirmada a irregularidade, efetuar a devolução administrativa dos valores bloqueados à conta de origem em até noventa dias quando entram novos recursos.</p>
-    </div>
-
-    <div class="chapter">
-      <span class="kicker">Parte 4 • Roteiro Prático de Primeiras Providências</span>
-      <h2>Os 4 Passos Imediatos que Preservam o Direito e a Prova na Primeira Hora</h2>
-      <p>Quando ocorre uma transferência fraudulenta ou invasão de conta, o tempo e a organização documental pesam decisivamente tanto na esfera administrativa quanto em eventual ação judicial. Veja a sequência recomendada pelas normas do Banco Central e pela prática dos tribunais:</p>
-      <p><strong>1. Acionamento formal imediato do MED no banco de origem:</strong> Entre em contato na mesma hora pelos canais oficiais do seu banco, relate a fraude e peça expressamente a abertura de notificação de infração pelo Mecanismo Especial de Devolução do Pix (Resolução BCB nº 103/2021), anotando o número do protocolo, a data e o horário exato do atendimento.</p>
-      <p><strong>2. Registro de Boletim de Ocorrência detalhado:</strong> Registre o boletim na delegacia eletrônica do seu estado informando os horários exatos de cada transação, os valores, o nome e o CPF ou CNPJ que aparecem nos comprovantes de destino e a descrição fiel de como o contato fraudulento aconteceu.</p>
-      <p><strong>3. Preservação da prova da atipicidade de perfil:</strong> Salve em PDF os comprovantes das transferências contestadas, os prints das mensagens ou ligações recebidas e o extrato bancário dos últimos doze meses (que comprova qual era o seu padrão habitual de movimentação antes da fraude).</p>
-      <p><strong>4. Notificação no Consumidor.gov.br e no Banco Central:</strong> Caso o banco recuse administrativamente a devolução mesmo diante de operações nitidamente fora do seu perfil de uso, o registro formal da reclamação com os protocolos anexados documenta a tentativa de solução administrativa.</p>
-    </div>
-
-    <div class="chapter" style="background:#fffdf6; border-color:#e6d8a8;">
-      <span class="kicker" style="color:#8A6421;">🤝 Acolhimento na Linha Direta • Zamboni Explica</span>
-      <h2>Passou por uma situação assim ou precisa de indicação de advogado(a)?</h2>
-      <p>Este guia possui caráter informativo e educativo sobre a legislação brasileira e a jurisprudência pública dos tribunais superiores (em respeito às normas éticas da OAB). Porém, se você ou alguém da sua família foi vítima de uma fraude bancária e precisa de avaliação profissional para o caso concreto, escreva para a nossa <strong>Linha Direta</strong> na <a href="area-assinante.html" style="color:#1B4D89; font-weight:700;">Área do Assinante</a> (ou em <strong>zamboniexplica@gmail.com</strong>). Além do acolhimento inicial, o Prof. Alexandre Zamboni pode verificar se é do seu interesse ser encaminhado(a) a um advogado ou advogada da lista pessoal de confiança dele.</p>
+    <div class="oab-footer">
+      <span class="kicker">⚖️ Nota de Transparência, Ética e Educação Jurídica (OAB)</span>
+      <h2>Natureza educativa deste guia e onde buscar assistência em caso concreto</h2>
+      <p>Este guia possui caráter estritamente informativo e educativo sobre a legislação brasileira, as normas públicas do Banco Central e a jurisprudência dos tribunais superiores, em observância ao Estatuto da Advocacia e às normas éticas da OAB. Ele não constitui consultoria jurídica nem substitui a avaliação técnica individualizada. Se você ou alguém da sua família foi vítima de fraude bancária e precisa avaliar medidas judiciais ou extrajudiciais para o caso concreto, após adotar os registros imediatos nos canais oficiais (banco/MED, delegacia e Banco Central), procure um(a) advogado(a) de sua livre confiança regularmente inscrito(a) na OAB ou a Defensoria Pública do seu Estado. Para enviar notícias públicas ou dúvidas gerais sobre o funcionamento da lei em tese, conte com a nossa <strong>Linha Direta</strong> na <a href="area-assinante.html" style="color:#1B4D89; font-weight:700;">Área do Assinante</a> ou em <strong>zamboniexplica@gmail.com</strong>.</p>
+      <div class="oab-meta">
+        <strong>Zamboni Explica</strong> — A Zamboni Lins Filho Serviços de Informação Ltda. (CNPJ 67.166.139/0001-80) · Suporte editorial e pedidos de temas públicos: <strong>zamboniexplica@gmail.com</strong>
+      </div>
     </div>
   </div>
 </body>

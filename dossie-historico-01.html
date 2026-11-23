@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dossiê Histórico #01: Tribunal do Júri, Caso Boate Kiss e Prova Indiciária — Zamboni Explica</title>
+  <title>Dossiê Histórico #01: Grandes Julgamentos no Tribunal do Júri — Zamboni Explica</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
       --ink: #1C252C;
       --muted: #5A6570;
       --border: rgba(11, 25, 44, 0.12);
+      --blue: #1B4D89;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -24,7 +25,7 @@
       line-height: 1.72;
       padding: 32px 16px 64px;
     }
-    .container { max-width: 780px; margin: 0 auto; }
+    .container { max-width: 840px; margin: 0 auto; }
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -50,7 +51,7 @@
       border-radius: 22px;
       padding: 42px 36px;
       border: 2px solid var(--gold);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .cover .badge {
       display: inline-block;
@@ -73,38 +74,174 @@
     .cover p {
       color: rgba(255, 255, 255, 0.88);
       font-size: 1.02rem;
+      max-width: 680px;
     }
-    .chapter {
+    .audio-card {
       background: #fff;
-      border: 1px solid var(--border);
+      border: 1.5px solid rgba(197, 160, 89, 0.55);
       border-radius: 18px;
-      padding: 28px 30px;
-      margin-bottom: 18px;
+      padding: 22px 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 20px rgba(11, 25, 44, 0.05);
     }
-    .chapter .kicker {
+    .audio-card .kicker {
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: #1B4D89;
+      color: #8A6421;
       display: block;
       margin-bottom: 6px;
     }
-    .chapter h2 {
+    .audio-card h2 {
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .audio-card p {
+      font-size: 0.94rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .audio-card audio { width: 100%; height: 42px; }
+    .search-box {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 0.98rem;
+      font-family: inherit;
+      margin-bottom: 20px;
+      outline: none;
+    }
+    .search-box:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27, 77, 137, 0.12); }
+    .card-block {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 28px;
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+    .card-block .kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .card-block h2 {
       font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 1.75rem;
+      font-size: 1.72rem;
       font-weight: 400;
       color: var(--navy);
       margin-bottom: 12px;
+      line-height: 1.22;
     }
-    .chapter p {
-      font-size: 1rem;
+    .card-block h3 {
+      font-size: 1.08rem;
+      color: var(--navy);
+      margin: 18px 0 8px;
+    }
+    .card-block p {
+      font-size: 0.99rem;
       color: var(--ink);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
-    .chapter p:last-child { margin-bottom: 0; }
+    .card-block p:last-child { margin-bottom: 0; }
+    .card-block ul, .card-block ol {
+      margin: 10px 0 14px 22px;
+    }
+    .card-block li {
+      font-size: 0.97rem;
+      margin-bottom: 8px;
+    }
+    .lunch-box {
+      margin-top: 14px;
+      background: #F4F7FB;
+      border-left: 4px solid var(--blue);
+      padding: 12px 16px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.94rem;
+      color: var(--navy);
+    }
+    .callout {
+      background: #FFFDF6;
+      border: 1px solid #E6D8A8;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.95rem;
+      color: #3A2E14;
+    }
+    .table-wrap { overflow-x: auto; margin: 14px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #F4F6F9; color: var(--navy); font-weight: 700; }
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .flow-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+    .flow-box.accent-green { background: #F2FAF5; border-color: rgba(31, 122, 76, 0.3); }
+    .flow-box.accent-amber { background: #FFFBF0; border-color: rgba(197, 160, 89, 0.45); }
+    .flow-box strong { display: block; color: var(--navy); margin-bottom: 6px; font-size: 0.96rem; }
+    .flow-box p { font-size: 0.9rem; margin-bottom: 0; }
+    .oab-footer {
+      background: #FFFDF6;
+      border: 1px solid #E6D8A8;
+      border-radius: 18px;
+      padding: 24px 26px;
+      margin-top: 24px;
+    }
+    .oab-footer .kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8A6421;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .oab-footer h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .oab-footer p { font-size: 0.94rem; color: var(--ink); margin-bottom: 10px; }
+    .oab-footer p:last-child { margin-bottom: 0; }
+    .oab-meta {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(11, 25, 44, 0.1);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    code {
+      background: #F1F4F8;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
     @media print {
-      .top-bar { display: none !important; }
+      .top-bar, .search-box, .audio-card { display: none !important; }
       body { background: #fff; padding: 0; }
     }
   </style>
@@ -112,48 +249,99 @@
 <body>
   <div class="container">
     <div class="top-bar">
-      <a href="area-assinante.html">← Voltar para a Área do Assinante</a>
+      <a href="area-assinante.html">← Ir para a Área do Assinante</a>
       <button class="btn-print" onclick="window.print()">🖨️ Salvar / Imprimir Dossiê em PDF</button>
     </div>
 
     <div class="cover">
-      <span class="badge">Dossiê Histórico de Colecionador • Edição Especial #01</span>
-      <h1>Grandes Julgamentos no Tribunal do Júri: Caso Boate Kiss e a Prova Indiciária</h1>
-      <p>Como a lei brasileira separa dolo eventual de culpa consciente, por que um júri popular foi anulado no TJRS e no STJ mas restabelecido no STF, e como funciona a condenação por prova pericial e indiciária. Por <strong>Prof. Alexandre Zamboni</strong>.</p>
+      <span class="badge">Dossiê Histórico de Colecionador • Volume #01 (Edição Integral)</span>
+      <h1>Grandes Julgamentos que Pararam o Brasil: Tribunal do Júri, Caso Boate Kiss e Prova Pericial</h1>
+      <p>Analisados pelas 6 Perguntas do Método "Antes de tomar partido", sem sensacionalismo: dolo eventual vs. culpa consciente, nulidades processuais no STF, Tema 1068 e o paralelo pericial do Caso Nardoni.</p>
     </div>
 
-    <div class="chapter">
-      <span class="kicker">Perguntas 01 e 02 • O Que Está em Jogo na Lei</span>
-      <h2>Dolo Eventual vs. Culpa Consciente: Quem Vai a Júri Popular?</h2>
-      <p>Pelo artigo 5º, inciso XXXVIII, da Constituição Federal, o Tribunal do Júri tem competência para julgar os crimes dolosos contra a vida. Isso explica por que a fronteira técnica entre a culpa consciente e o dolo eventual (artigo 18, incisos I e II, do Código Penal) foi o ponto mais debatido durante anos no processo da tragédia de Santa Maria, ocorrida em janeiro de 2013.</p>
-      <p>Na culpa consciente, o agente prevê que sua conduta imprudente pode causar um resultado trágico, mas acredita sinceramente que ele não ocorrerá. No dolo eventual, o agente enxerga o risco concreto de produzir o resultado morte e prossegue assumindo esse risco com indiferença. Quando os tribunais superiores confirmaram a pronúncia por dolo eventual (diante da combinação de artefato pirotécnico inadequado para ambiente fechado, espuma inflamável, superlotação e obstáculos nas saídas), o julgamento passou constitucionalmente para as mãos de sete cidadãos leigos no Conselho de Sentença.</p>
-    </div>
+    <article class="card-block">
+      <span class="kicker">Parte 01</span>
+      <h2>Contexto Histórico e Jurídico: Quando uma Tragédia Se Torna o Julgamento Mais Complexo da Década</h2>
+      <p>Na madrugada de 27 de janeiro de 2013, um incêndio no interior da casa noturna Boate Kiss, localizada em Santa Maria (RS), resultou na morte de 242 pessoas — em sua maioria estudantes universitários — e deixou mais de 600 feridos por inalação de gases tóxicos (cianeto de hidrogênio e monóxido de carbono liberados pela queima de espuma acústica de poliuretano atingida por centelhas de um artefato pirotécnico acionado no palco).</p>
+      <p>No plano humano, o episódio consolidou-se como uma das maiores tragédias da história brasileira, levando à aprovação, anos depois, da chamada <strong>Lei Kiss (Lei Federal nº 13.425/2017)</strong>, que endureceu nacionalmente as normas de prevenção e combate a incêndio e a fiscalização de estabelecimentos de grande concentração de público.</p>
+      <p>No plano estritamente jurídico, o processo criminal instaurado para apurar a responsabilidade penal de dois sócios da casa noturna e de dois integrantes da banda musical tornou-se <strong>o caso mais emblemático do Direito Penal e Processual Penal brasileiro contemporâneo sobre quatro temas centrais</strong>:</p>
+      <ol><li>A fronteira dogmática entre <strong>dolo eventual</strong> e <strong>culpa consciente</strong> em desastres coletivos sem intenção direta de matar;</li><li>O alcance da <strong>soberania constitucional dos veredictos do Tribunal do Júri</strong> (art. 5º, XXXVIII, &quot;c&quot;, da CF/88);</li><li>O regime das <strong>nulidades processuais no Júri</strong> e a vedação à chamada <em>&quot;nulidade de algibeira&quot;</em> (guardar uma irregularidade sem reclamar na hora para invocá-la apenas em caso de derrota);</li><li>A constitucionalidade da <strong>prisão imediata após condenação pelo Tribunal do Júri</strong> (Tema 1068 do STF).</li></ol>
+      <p>Abaixo, dissecamos o caso aplicando rigorosamente a estrutura das <strong>6 Perguntas do Método <em>&quot;Antes de tomar partido&quot;</strong></em>.</p>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Parte 02</span>
+      <h2>Análise pelas 6 Perguntas do Método <em>&quot;Antes de Tomar Partido&quot;</em></h2>
+      <h3>Pergunta 1 — Qual é a afirmação jurídica exata em disputa?</h3>
+      <p>Ao contrário do que ocorre em crimes passionais ou em homicídios com motivação direta (nos quais se discute <em>quem</em> disparou a arma ou <em>quem</em> esteve na cena do crime, como ocorreu no histórico julgamento do <strong>Caso Nardoni</strong>, em 2010), no julgamento do Caso Boate Kiss a autoria material dos atos antecedentes não era o ponto central de controvérsia. Sabia-se quem administrava o estabelecimento, quem havia instalado o revestimento acústico e quem havia adquirido e acionado o artefato pirotécnico.</p>
+      <p>A <strong>afirmação jurídica exata</strong> que dividiu acusação e defesa durante mais de uma década foi dupla:</p>
+      <ul><li><strong>No Direito Penal Material:</strong> As condutas dos quatro acusados configuraram <strong>242 homicídios simples e 636 tentativas de homicídio com dolo eventual</strong> (art. 121, <em>caput</em>, c/c art. 18, I, segunda parte, do Código Penal — competência do Tribunal do Júri), por terem previsto o resultado letal e assumido o risco de produzi-lo em busca de economia financeira e realização do espetáculo? Ou configuraram <strong>homicídio culposo e incêndio culposo</strong> (imprudência, negligência e imperícia — art. 121, § 3º, do Código Penal, de competência do juiz singular), nos quais os agentes agiram de forma gravemente descuidada, mas acreditavam sinceramente que nenhum incêndio ocorreria, até porque eles próprios estavam dentro da boate no momento do fato?</li><li><strong>No Direito Processual Penal:</strong> O julgamento realizado pelo Tribunal do Júri de Porto Alegre entre 1º e 10 de dezembro de 2021 — que condenou os quatro réus a penas entre 18 e 22 anos e 6 meses de reclusão — foi válido e protegido pela <strong>soberania dos veredictos</strong>, ou continha <strong>nulidades formais insanáveis</strong> que obrigavam a realização de um novo júri?</li></ul>
+      <h3>Pergunta 2 — O que sabemos e de qual fonte? (Cronologia Processual Oficial)</h3>
+      <p>Para compreender o caminho do processo sem cair em versões parciais, é indispensável observar os marcos documentados nos autos públicos do Poder Judiciário:</p>
+      <ol><li><strong>Fevereiro a Março de 2013 (Inquérito Policial e Denúncia):</strong> A Polícia Civil do Rio Grande do Sul conclui o inquérito pericial e o Ministério Público do Estado do Rio Grande do Sul (MPRS) oferece denúncia contra quatro réus por homicídio consumado (242 vezes) e tentado (mais de 600 vezes) na modalidade de <strong>dolo eventual</strong>.</li><li><strong>Julho de 2016 (Sentença de Pronúncia — 1ª Instância):</strong> O juízo de Santa Maria julga procedente a fase de admissibilidade (<em>pronúncia</em> — art. 413 do CPP), decidindo que havia prova da materialidade e indícios suficientes para que o caso fosse decidido pelo Tribunal do Júri.</li><li><strong>2017 a 2019 (Conflito sobre o Dolo Eventual no TJRS e no STJ):</strong> Em 2017, a 1ª Câmara Criminal do TJRS acolhe parcialmente recurso da defesa para desclassificar o caso (retirando-o do Júri), mas, em embargos infringentes, o 1º Grupo Criminal do TJRS mantém o júri. Em <strong>junho de 2019</strong>, a <strong>Sexta Turma do Superior Tribunal de Justiça (REsp 1.790.039/RS)</strong> confirma por unanimidade a decisão de pronúncia, assentando que, na fase de envio ao Júri, havendo plausibilidade na tese de dolo eventual descrita na denúncia, cabe aos jurados — e não ao tribunal — decidir se houve dolo eventual ou culpa consciente.</li><li><strong>Setembro de 2020 (Desaforamento):</strong> O TJRS defere o pedido de <strong>desaforamento</strong> (art. 427 do CPP), transferindo o local do julgamento de Santa Maria para a comarca da capital, Porto Alegre, a fim de assegurar a imparcialidade do corpo de jurados e a estrutura logística do plenário.</li><li><strong>1º a 10 de Dezembro de 2021 (O Julgamento no Tribunal do Júri de Porto Alegre):</strong> Após 10 dias de sessão (o júri mais longo da história do Judiciário gaúcho), o Conselho de Sentença condena os quatro réus por homicídio com dolo eventual. As penas são fixadas pelo Juiz Presidente em <strong>22 anos e 6 meses de reclusão</strong> (para os dois sócios da boate) e <strong>18 anos de reclusão</strong> (para os dois integrantes da banda).</li><li><strong>Agosto de 2022 (Anulação do Júri pela 1ª Câmara Criminal do TJRS):</strong> Por 2 votos a 1, o TJRS acolhe apelação das defesas (art. 593, III, &quot;a&quot;, do CPP) e <strong>anula o julgamento do Júri</strong>, apontando irregularidades formais (sorteio complementar de jurados fora do prazo legal, reunião reservada do juiz presidente com os jurados sem presença do MP e das defesas, e redação de quesitos). Os réus são colocados em liberdade.</li><li><strong>Setembro de 2023 (Manutenção da Anulação pela 6ª Turma do STJ):</strong> Por 4 votos a 1, a Sexta Turma do STJ (REsp 2.050.615/RS) mantém a decisão do TJRS que havia anulado o júri, determinando a realização de novo julgamento.</li><li><strong>Setembro de 2024 e Fevereiro de 2025 (Decisão do STF Restabelecendo a Condenação do Júri):</strong> Ao julgar o recurso extraordinário do Ministério Público (<strong>RE 1.486.671 / Rcl 64.086</strong>), o Ministro Dias Toffoli e a <strong>Segunda Turma do Supremo Tribunal Federal</strong> reformam os acórdãos do TJRS e do STJ, <strong>restabelecem a validade do julgamento do Tribunal do Júri de dezembro de 2021</strong> e determinam o recolhimento imediato dos condenados à prisão (em aplicação do Tema 1068 da Repercussão Geral). Posteriormente, no reexame da dosimetria da pena determinado para ajuste técnico de cálculo, as penas ficam consolidadas entre <strong>11 e 12 anos de reclusão</strong>, mantendo-se intacto o veredicto soberano de condenação dos jurados.</li></ol>
+      <h3>Pergunta 3 — O que é Fato Pericial, Relato, Inferência Jurídica ou Opinião?</h3>
+      <p>Uma das maiores utilidades do método do <em>Zamboni Explica</em> em grandes julgamentos históricos é separar em colunas visuais aquilo que ninguém pode negar (porque está provado por perícia física e química) daquilo que é construção argumentativa das partes:</p>
+      <div class="table-wrap"><table><thead><tr><th>Categoria</th><th>Conteúdo Documentado nos Autos do Caso</th><th>Como a Lei Trata Este Elemento</th></tr></thead><tbody><tr><td><strong>FATO PROVADO (Perícia Oficial IGP/RS)</strong></td><td>1. O incêndio iniciou-se pela ignição da espuma acústica de poliuretano no teto do palco após contato com fagulhas de artefato pirotécnico (&quot;chuva de prata&quot; de uso externo, mais barato que o modelo de uso interno <em>indoor</em>).<br>2. A queima do poliuretano liberou gás cianídrico altamente letal em menos de 3 minutos.<br>3. A casa noturna não possuía exaustão funcional para a fumaça, tinha apenas uma porta de acesso/saída com grades metálicas de contenção de fila (&quot;guarda-corpos&quot;) e os extintores junto ao palco não funcionaram a tempo.</td><td>Constitui a <strong>materialidade delitiva</strong> e o <strong>nexo causal físico</strong> (art. 13 e art. 158 do CPP — exame de corpo de delito e perícia de local). São dados objetivos incontroversos.</td></tr><tr><td><strong>INFERÊNCIA JURÍDICA DA ACUSAÇÃO (MPRS)</strong></td><td>A soma consciente de múltiplos fatores de risco (espuma inflamável sem tratamento antichamas + pirotecnia inadequada escolhida pelo menor custo + superlotação + obstáculos físicos na saída) demonstra que os agentes previram a possibilidade de tragédia e <strong>assumiram o risco de produzir o resultado morte</strong> (<em>dolo eventual</em>).</td><td>Tese jurídica submetida aos 7 jurados nos <strong>quesitos do Tribunal do Júri</strong> (arts. 482 e 483 do CPP) e acolhida pela maioria do Conselho de Sentença.</td></tr><tr><td><strong>INFERÊNCIA JURÍDICA DA DEFESA</strong></td><td>Os acusados jamais aceitaram ou se conformaram com o resultado morte — tanto que estavam trabalhando dentro da própria boate no momento do fogo (e um integrante da banda morreu no incêndio). Teria havido, no máximo, erro de avaliação técnica ou imprudência (<strong>culpa consciente</strong>), além de falhas de fiscalização de órgãos públicos nos alvarás.</td><td>Tese defensiva de <strong>desclassificação</strong> do crime doloso para culposo (art. 419 e art. 492, § 1º, do CPP), rejeitada pela maioria dos jurados no plenário de 2021.</td></tr><tr><td><strong>OPINIÃO / CLAMOR EXTERNO</strong></td><td>Comentários em redes sociais afirmando que &quot;os réus queriam matar&quot; (confundindo dolo eventual com dolo direto) ou, no extremo oposto, que &quot;no Brasil qualquer acidente vira homicídio doloso&quot;.</td><td><strong>Fora dos autos.</strong> O juiz e os tribunais não podem julgar com base em manchetes, mas apenas nas provas e nos limites dos quesitos votados.</td></tr></tbody></table></div>
+      <h3>Pergunta 4 — Que outras explicações jurídicas cabiam nos dados? (O Coração Técnico da Disputa entre TJRS/STJ e STF)</h3>
+      <p>Por que juízes altamente qualificados do Tribunal de Justiça do Rio Grande do Sul e ministros do Superior Tribunal de Justiça votaram por <strong>anular</strong> o júri de 2021, enquanto ministros do Supremo Tribunal Federal votaram por <strong>manter</strong> o júri e restabelecer as condenações?</p>
+      <p>Aqui não havia &quot;torcida&quot; entre os tribunais; havia um choque clássico entre <strong>duas leituras constitucionais legítimas sobre o processo penal do Júri</strong>:</p>
+      <ol><li><strong>A Leitura Garantista-Formal (adotada pela maioria do TJRS e da 6ª Turma do STJ):</strong><br>No Tribunal do Júri, os sete jurados decidem por <strong>íntima convicção</strong> (depositando na urna uma cédula com &quot;SIM&quot; ou &quot;NÃO&quot;, sem precisar escrever uma sentença fundamentando o porquê do seu voto). Justamente porque os jurados não fundamentam seus votos por escrito, a lei exige que todo o <strong>procedimento preparatório e o ritual do plenário</strong> sejam seguidos com rigor cirúrgico. Quando o TJRS e o STJ constataram que houve um terceiro sorteio de jurados fora do prazo ordinário do art. 433 do CPP e que o juiz realizou uma rápida reunião de esclarecimento administrativo com os jurados sem a presença dos advogados e promotores, entenderam que o <strong>devido processo legal formal</strong> havia sido quebrado, gerando nulidade absoluta que exigia a repetição do julgamento.</li><li><strong>A Leitura da Soberania Constitucional e da Preclusão (adotada pelo STF no RE 1.486.671):</strong><br>O Supremo Tribunal Federal olhou para o mesmo processo a partir do artigo 5º, inciso XXXVIII, alínea &quot;c&quot;, da Constituição Federal (<em>soberania dos veredictos</em>) combinado com os artigos 563 e 571, inciso VIII, do Código de Processo Penal. O Código de Processo Penal estabelece duas regras de ouro sobre nulidades:<br>• <strong>Art. 563 do CPP (<em>Pas de nullité sans grief</em>):</strong> <em>&quot;Nenhum ato será declarado nulo, se da nulidade não resultar prejuízo para a acusação ou para a defesa&quot;</em>;<br>• <strong>Art. 571, VIII, do CPP (Regra da Preclusão em Plenário):</strong> as eventuais nulidades ocorridas em sessão de julgamento do Tribunal do Júri <strong>devem ser arguidas (reclamadas e registradas em ata) imediatamente, logo depois de ocorrerem</strong>, sob pena de <strong>preclusão</strong> (perda do direito de reclamar depois).<br>O STF demonstrou que as defesas estavam presentes na sessão de dez dias, tinham conhecimento do sorteio de jurados e foram comunicadas pelo juiz sobre a conversa administrativa com o conselho de sentença, mas <strong>não registraram impugnação em ata naquele momento</strong>, aguardando o resultado final do veredicto para só então alegar a nulidade na apelação. Para a Suprema Corte, anular um júri histórico de dez dias com base em irregularidades que não causaram prejuízo comprovado e que não foram impugnadas na hora violava diretamente a <strong>soberania constitucional do Tribunal do Júri</strong>.</li></ol>
+      <h3>Pergunta 5 — Paralelo Comparativo: A Prova Técnica e Indiciária no Caso Nardoni (2008–2010)</h3>
+      <p>Para enriquecer a nossa compreensão sobre como funcionam os grandes júris brasileiros, vale comparar o dilema jurídico do Caso Boate Kiss com outro julgamento que parou o país três anos antes: <strong>o Caso Isabella Nardoni</strong> (ocorrido em março de 2008 em São Paulo e julgado pelo Tribunal do Júri de Santana em março de 2010).</p>
+      <p>Se no Caso Kiss o grande debate era psicológico-normativo (<em>dolo eventual vs. culpa consciente</em>), no <strong>Caso Nardoni</strong> os acusados negavam a própria <strong>autoria material</strong> do crime, sustentando a tese de que uma terceira pessoa desconhecida teria invadido o apartamento e arremessado a criança de cinco anos pela janela do sexto andar. Não havia testemunha ocular presencial dentro do apartamento além do pai, da madrasta e dos dois irmãos menores.</p>
+      <p>Como o Direito Processual Penal brasileiro resolve um caso grave em que <strong>não há testemunha ocular direta nem confissão</strong>, mas um conjunto maciço de vestígios científicos? A resposta está na combinação entre a <strong>prova pericial científica</strong> (arts. 158 e 159 do CPP) e a <strong>prova indiciária concatenada</strong> (art. 239 do CPP):</p>
+      <ul><li><strong>O conceito legal de indício (Art. 239 do CPP):</strong> <em>&quot;Considera-se indício a circunstância conhecida e provada, que, tendo relação com o fato, autorize, por indução, concluir-se a existência de outra ou outras circunstâncias.&quot;</em></li><li>No julgamento de 2010, a perícia técnico-científica do Instituto de Criminalística e do IML de São Paulo provou uma cadeia fechada de fatos físicos e biológicos: (1) a cronometria exata entre a parada do veículo na garagem do prédio e a queda (intervalo de poucos minutos que tornava fisicamente impossível a entrada, agressão, corte da tela e fuga silenciosa de um terceiro invasor sem deixar vestígios); (2) as manchas de sangue e marcas de asfixia mecânica prévia no interior do imóvel; (3) as fibras da tela de proteção cortada compatíveis com o instrumento encontrado no apartamento; e (4) a marca da malha da tela de proteção impressa na camiseta usada pelo pai naquela noite.</li></ul>
+      <p>O Superior Tribunal de Justiça e o Supremo Tribunal Federal, ao confirmarem a condenação daquele júri (que transitou em julgado), consolidaram uma lição fundamental do direito probatório brasileiro: <strong>um indício isolado é mera suspeita e jamais autoriza uma condenação; porém, uma cadeia plural, harmônica e convergente de provas periciais e indícios científicos que exclui logicamente qualquer outra hipótese fática tem o mesmo valor jurídico da prova direta</strong>.</p>
+      <h3>Pergunta 6 — O que é responsável concluir sobre esses Grandes Julgamentos hoje?</h3>
+      <p>Olhando para o desfecho institucional desses dois grandes casos históricos sem paixão e com a régua da lei na mão, três conclusões jurídicas sólidas emergem para o cidadão brasileiro:</p>
+      <ol><li><strong>O Tribunal do Júri é soberano sobre os fatos, mas não é uma terra sem lei:</strong> A decisão dos sete cidadãos sorteados na comunidade prevalece sobre o mérito da culpa ou inocência nos crimes dolosos contra a vida. Os tribunais superiores não podem anular um júri por discordarem da severidade do veredicto ou por formalismos que não geraram prejuízo real às partes; por outro lado, cabe aos tribunais superiores ajustar tecnicamente o cálculo matemático da pena (<em>dosimetria</em>) quando o juiz presidente comete erro técnico na fixação dos anos de prisão.</li><li><strong>No Júri Popular, a condenação gera execução imediata da pena (Tema 1068 do STF):</strong> Diferentemente dos crimes comuns julgados por juiz singular (nos quais a prisão-pena aguarda o esgotamento dos recursos e o trânsito em julgado, salvo prisão preventiva fundamentada), nas condenações proferidas pelo Tribunal do Júri o Supremo Tribunal Federal definiu que a soberania constitucional dos veredictos autoriza o início imediato do cumprimento da pena.</li><li><strong>A fronteira entre Dolo Eventual e Culpa Consciente exige exame das circunstâncias externas:</strong> Como nenhum juiz ou jurado consegue abrir a mente humana para ler pensamentos, a diferença entre &quot;confiar sinceramente que nada vai acontecer&quot; (<em>culpa consciente</em>) e &quot;assumir o risco com indiferença pela vida alheia&quot; (<em>dolo eventual</em>) é aferida pelos <strong>indicadores objetivos externos</strong> — como a soma deliberada de ilegalidades de segurança para reduzir custos ou aumentar o lucro.</li></ol>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Parte 03</span>
+      <h2>Fluxograma Visual do Rito do Tribunal do Júri no Brasil (Arts. 406 a 497 do CPP)</h2>
+      <p>Veja o caminho constitucional completo de um processo de competência do Tribunal do Júri no Brasil (arts. 406 a 497 do CPP):</p>
+      <div class="flow-grid">
+        <div class="flow-box">
+          <strong>1ª Fase — Sumário da Culpa (Juiz Togado)</strong>
+          <p>Inquérito + denúncia do MP + provas + defesa. Ao final, o juiz decide entre <em>Pronúncia</em> (manda a júri), <em>Desclassificação</em> (juiz singular), <em>Impronúncia</em> ou <em>Absolvição Sumária</em>.</p>
+        </div>
+        <div class="flow-box accent-amber">
+          <strong>2ª Fase — Plenário do Júri (7 Jurados Cidadãos)</strong>
+          <p>Sorteio de 7 jurados (Conselho de Sentença), debates orais de acusação e defesa e votação secreta dos quesitos na sala especial.</p>
+        </div>
+        <div class="flow-box accent-green">
+          <strong>Veredicto por Maioria Simples (4 votos)</strong>
+          <p>Se <strong>absolvido</strong>: liberdade imediata (soberania dos veredictos). Se <strong>condenado</strong>: dosimetria da pena pelo Juiz Presidente + <strong>execução imediata da pena (Tema 1068/STF)</strong>.</p>
+        </div>
+      </div>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Parte 04</span>
+      <h2>Bloco <code>+ Para Guardar: Como Funciona o Quesito Genérico de Absolvição no Júri</code></h2>
+      <p>Um detalhe fascinante do Tribunal do Júri brasileiro que quase ninguém fora do Direito conhece é a regra do <strong>artigo 483, inciso III e § 2º, do Código de Processo Penal</strong>.</p>
+      <p>Na hora de votar na sala secreta, os sete jurados respondem com cédulas de <strong>&quot;SIM&quot;</strong> ou <strong>&quot;NÃO&quot;</strong> a perguntas objetivas (<em>quesitos</em>) na seguinte ordem obrigatória:</p>
+      <ol><li><strong>1º Quesito (Materialidade):</strong> O fato aconteceu? (Ex.: <em>A vítima faleceu em decorrência das lesões descritas no laudo?</em>)</li><li><strong>2º Quesito (Autoria ou Participação):</strong> O réu concorreu para a prática do fato?</li><li><strong>3º Quesito (O Quesito Obrigatório de Absolvição):</strong> Se os jurados responderem &quot;SIM&quot; aos dois primeiros quesitos, o juiz é obrigado por lei a fazer sempre a mesma terceira pergunta: <strong><em>&quot;O jurado absolve o acusado?&quot;</em></strong></li></ol>
+      <p>Como os jurados decidem por íntima convicção e o voto é secreto (sendo que a contagem para assim que um lado atinge <strong>4 votos</strong>, nos termos do art. 483, § 1º, do CPP, para preservar o sigilo da votação), eles podem responder &quot;SIM&quot; ao terceiro quesito por qualquer razão jurídica ou humanitária apresentada pela defesa — inclusive por clemência ou por entenderem que não houve dolo. Porém, se a absolvição contrariar de forma manifesta e absurda todas as provas do processo, o Tribunal de Justiça pode determinar, <strong>uma única vez</strong>, a realização de um novo júri (art. 593, III, &quot;d&quot;, e § 3º, do CPP) — salvo, segundo jurisprudência da 2ª Turma do STF (RHC 117.076 e HC 185.068), quando a absolvição tiver se fundado em clemência/compaixão apresentada pela defesa, hipótese que hoje é objeto do Tema 1087 da Repercussão Geral no Plenário do STF.</p>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Parte 05</span>
+      <h2>Bloco <code>+ Teste Rápido</code>: Você Entendeu a Regra da Lei?</h2>
+      <p><strong>Pergunta:</strong> Por que, no julgamento do Caso Boate Kiss, os quatro réus foram julgados por sete cidadãos comuns no Tribunal do Júri em vez de serem julgados apenas por um juiz de direito, se ninguém sustentou que eles planejaram ou desejaram diretamente a morte dos frequentadores?</p>
+      <ul><li><strong>(A)</strong> Porque no Brasil qualquer crime que tenha mais de dez vítimas vai automaticamente para o Tribunal do Júri.</li><li><strong>(B)</strong> Porque a Constituição Federal (art. 5º, XXXVIII, &quot;d&quot;) atribui ao Tribunal do Júri a competência para julgar os crimes <strong>dolosos contra a vida</strong>, e para o Código Penal (art. 18, I) o crime é considerado doloso não apenas quando o agente quer diretamente o resultado (<em>dolo direto</em>), mas também quando prevê o resultado letal e <strong>assume o risco de produzi-lo</strong> (<em>dolo eventual</em>).</li><li><strong>(C)</strong> Porque as famílias das vítimas podem escolher se preferem juiz togado ou júri popular em qualquer processo criminal.</li></ul>
+      <div class="callout"><strong>Gabarito Comentado:</strong> <strong>Alternativa (B).</strong> Para a lei penal brasileira, o <em>dolo eventual</em> (assumir o risco de produzir o resultado morte previsto, agindo com indiferença diante do bem jurídico vida) é uma espécie de crime doloso. Por isso, todo homicídio imputado a título de dolo eventual é julgado pelo Tribunal do Júri, cabendo aos sete jurados decidir se houve mesmo dolo eventual ou se o crime deve ser desclassificado para homicídio culposo.</div>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Parte 06</span>
+      <h2>Bloco <code>+ Na Mesa do Almoço</code>: 3 Frases para Explicar Este Julgamento Histórico</h2>
+      <ol><li><em>&quot;No Caso Boate Kiss, os réus foram a Júri Popular não porque queriam matar alguém (dolo direto), mas porque a lei considera crime doloso contra a vida também o <strong>dolo eventual</strong> — quando a pessoa prevê o risco letal de suas escolhas e assume esse risco.&quot;</em></li><li><em>&quot;O TJRS e o STJ chegaram a anular o júri de 2021 por falhas formais no procedimento, mas o STF restabeleceu a condenação porque a defesa não havia reclamado daquelas falhas na hora em que aconteceram e porque a Constituição protege a <strong>soberania do veredicto dos jurados</strong>.&quot;</em></li><li><em>&quot;Pelo <strong>Tema 1068 do STF</strong>, quem é condenado pelo Tribunal do Júri começa a cumprir a pena imediatamente, porque nenhum tribunal superior pode substituir o voto dos jurados sobre a culpa do réu.&quot;</em></li></ol>
+    </article>
 
-    <div class="chapter">
-      <span class="kicker">Perguntas 03 e 04 • Nulidades Processuais vs. Soberania dos Veredictos</span>
-      <h2>Por Que o TJRS e o STJ Anularam o Júri de 2021, e Por Que o STF o Restabeleceu?</h2>
-      <p>Em dezembro de 2021, o Tribunal do Júri de Porto Alegre condenou os quatro réus. A defesa recorreu apontando nulidades formais no sorteio de jurados, em reunião reservada do juiz presidente e na formulação dos quesitos. Em 2022, o Tribunal de Justiça do Rio Grande do Sul acolheu parte dessas preliminares e anulou o júri, decisão mantida por maioria na Sexta Turma do Superior Tribunal de Justiça em 2023.</p>
-      <p>No entanto, ao julgar o Recurso Extraordinário 1.486.671, o Supremo Tribunal Federal reverteu a anulação e restabeleceu a validade do veredicto popular. O fundamento central da decisão apoia-se em duas regras expressas do Código de Processo Penal brasileiro: o artigo 563, segundo o qual nenhum ato será declarado nulo se da nulidade não resultar prejuízo comprovado para a acusação ou para a defesa, e o artigo 571, inciso VIII, que determina que as nulidades ocorridas em plenário devem ser arguidas imediatamente na própria sessão, sob pena de preclusão.</p>
-    </div>
-
-    <div class="chapter">
-      <span class="kicker">Perguntas 05 e 06 • Execução da Pena e Prova Técnica</span>
-      <h2>O Tema 1068 do STF e a Força da Prova Pericial no Caso Nardoni</h2>
-      <p>Outro ponto técnico decisivo nos grandes julgamentos do Tribunal do Júri foi fixado pelo Plenário do Supremo Tribunal Federal no julgamento do Tema 1068 da Repercussão Geral: em respeito à soberania constitucional dos veredictos do Tribunal do Júri (artigo 5º, inciso XXXVIII, alínea "c", da Constituição), a condenação imposta pelos jurados autoriza a execução imediata da pena, independentemente do total da pena aplicada.</p>
-      <p>De modo semelhante, o estudo técnico do Caso Nardoni (2008) demonstra um princípio fundamental do processo penal moderno: a ausência de confissão ou de testemunha visual direta dentro de um imóvel não impede a elucidação jurídica quando há uma cadeia convergente de provas periciais e indícios (artigo 239 do Código de Processo Penal). Naquele julgamento, a cronologia milimétrica dos exames de local de crime, marcas em tela de proteção, vestígios sanguíneos e tempos de deslocamento formou um conjunto probatório técnico capaz de excluir hipóteses alternativas e sustentar o veredicto soberano dos jurados.</p>
-    </div>
-
-    <div class="chapter">
-      <span class="kicker">Quadro Síntese • Para Guardar e Consultar</span>
-      <h2>Como Funciona o Rito Bifásico do Tribunal do Júri no Brasil</h2>
-      <p><strong>1ª Fase (Sumário da Culpa / Juízo de Admissibilidade):</strong> Conduzida por um juiz togado, serve para verificar se há prova da materialidade do crime e indícios suficientes de autoria de crime doloso contra a vida. Ao final desta fase, o juiz pode proferir quatro decisões distintas: <em>pronúncia</em> (envia o réu a júri popular), <em>impronúncia</em> (julga improcedente a denúncia por falta de indícios suficientes), <em>desclassificação</em> (remete a outro juiz por entender que não houve crime doloso contra a vida) ou <em>absolvição sumária</em> (quando provada de plano a inocência ou causa excludente).</p>
-      <p><strong>2ª Fase (Plenário do Júri / Juízo da Causa):</strong> Dos 25 cidadãos alistados, sete são sorteados para formar o Conselho de Sentença. Vige o princípio da incomunicabilidade entre os jurados, e a decisão é tomada por maioria simples de votos secretos (basta o 4º voto no mesmo sentido para definir cada quesito), protegida pela soberania constitucional dos veredictos.</p>
-    </div>
-
-    <div class="chapter" style="background:#fffdf6; border-color:#e6d8a8;">
-      <span class="kicker" style="color:#8A6421;">🤝 Acolhimento na Linha Direta • Zamboni Explica</span>
-      <h2>Quer sugerir um grande caso ou precisa de indicação de advogado(a)?</h2>
-      <p>Este dossiê possui finalidade histórica, informativa e educativa a partir de decisões públicas dos tribunais brasileiros (em respeito às normas éticas da OAB). Se você quiser sugerir um novo caso para análise ou estiver vivendo uma situação jurídica que exija acolhimento inicial e eventual encaminhamento para um advogado ou advogada da lista de confiança do Prof. Alexandre Zamboni, acesse a nossa <strong>Linha Direta</strong> na <a href="area-assinante.html" style="color:#1B4D89; font-weight:700;">Área do Assinante</a>.</p>
+    <div class="oab-footer">
+      <span class="kicker">⚖️ Nota de Transparência, Ética e Educação Jurídica (OAB)</span>
+      <h2>Quer sugerir um grande julgamento histórico ou um caso público para análise?</h2>
+      <p>Este dossiê possui finalidade estritamente histórica, informativa e educativa, elaborada a partir de legislação vigente e decisões públicas dos tribunais brasileiros, em observância ao Estatuto da Advocacia e às normas éticas da OAB, não constituindo consultoria jurídica nem análise de processos individuais. Se você quiser sugerir outro julgamento marcante ou um caso público do noticiário para estudo em tese, acesse a nossa <strong>Linha Direta</strong> na <a href="area-assinante.html" style="color:#1B4D89; font-weight:700;">Área do Assinante</a>. Caso esteja vivendo uma situação jurídica particular que exija análise de documentos ou defesa técnica, procure sempre um(a) advogado(a) de sua livre confiança regularmente inscrito(a) na OAB ou a Defensoria Pública do seu Estado.</p>
+      <div class="oab-meta">
+        <strong>Zamboni Explica</strong> — A Zamboni Lins Filho Serviços de Informação Ltda. (CNPJ 67.166.139/0001-80) · Suporte editorial e pedidos de temas públicos: <strong>zamboniexplica@gmail.com</strong>
+      </div>
     </div>
   </div>
 </body>

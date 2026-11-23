@@ -15,16 +15,17 @@
       --ink: #1C252C;
       --muted: #5A6570;
       --border: rgba(11, 25, 44, 0.12);
+      --blue: #1B4D89;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--paper);
       color: var(--ink);
-      line-height: 1.65;
+      line-height: 1.72;
       padding: 32px 16px 64px;
     }
-    .container { max-width: 820px; margin: 0 auto; }
+    .container { max-width: 840px; margin: 0 auto; }
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -50,7 +51,7 @@
       border-radius: 22px;
       padding: 42px 36px;
       border: 2px solid var(--gold);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .cover .badge {
       display: inline-block;
@@ -65,52 +66,182 @@
     }
     .cover h1 {
       font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 2.5rem;
+      font-size: 2.45rem;
       font-weight: 400;
-      line-height: 1.12;
+      line-height: 1.14;
       margin-bottom: 12px;
     }
     .cover p {
-      color: rgba(255, 255, 255, 0.86);
+      color: rgba(255, 255, 255, 0.88);
       font-size: 1.02rem;
-      max-width: 640px;
+      max-width: 680px;
     }
-    .concept-item {
+    .audio-card {
       background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 22px 24px;
-      margin-bottom: 14px;
-      page-break-inside: avoid;
+      border: 1.5px solid rgba(197, 160, 89, 0.55);
+      border-radius: 18px;
+      padding: 22px 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 20px rgba(11, 25, 44, 0.05);
     }
-    .concept-item .num {
+    .audio-card .kicker {
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: #1B4D89;
+      color: #8A6421;
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
-    .concept-item h2 {
-      font-size: 1.18rem;
+    .audio-card h2 {
+      font-size: 1.15rem;
       color: var(--navy);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
-    .concept-item p {
-      font-size: 0.96rem;
+    .audio-card p {
+      font-size: 0.94rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .audio-card audio { width: 100%; height: 42px; }
+    .search-box {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 0.98rem;
+      font-family: inherit;
+      margin-bottom: 20px;
+      outline: none;
+    }
+    .search-box:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27, 77, 137, 0.12); }
+    .card-block {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 28px;
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+    .card-block .kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .card-block h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.72rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.22;
+    }
+    .card-block h3 {
+      font-size: 1.08rem;
+      color: var(--navy);
+      margin: 18px 0 8px;
+    }
+    .card-block p {
+      font-size: 0.99rem;
       color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .card-block p:last-child { margin-bottom: 0; }
+    .card-block ul, .card-block ol {
+      margin: 10px 0 14px 22px;
+    }
+    .card-block li {
+      font-size: 0.97rem;
       margin-bottom: 8px;
     }
-    .concept-item .law {
+    .lunch-box {
+      margin-top: 14px;
+      background: #F4F7FB;
+      border-left: 4px solid var(--blue);
+      padding: 12px 16px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.94rem;
+      color: var(--navy);
+    }
+    .callout {
+      background: #FFFDF6;
+      border: 1px solid #E6D8A8;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.95rem;
+      color: #3A2E14;
+    }
+    .table-wrap { overflow-x: auto; margin: 14px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #F4F6F9; color: var(--navy); font-weight: 700; }
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .flow-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+    .flow-box.accent-green { background: #F2FAF5; border-color: rgba(31, 122, 76, 0.3); }
+    .flow-box.accent-amber { background: #FFFBF0; border-color: rgba(197, 160, 89, 0.45); }
+    .flow-box strong { display: block; color: var(--navy); margin-bottom: 6px; font-size: 0.96rem; }
+    .flow-box p { font-size: 0.9rem; margin-bottom: 0; }
+    .oab-footer {
+      background: #FFFDF6;
+      border: 1px solid #E6D8A8;
+      border-radius: 18px;
+      padding: 24px 26px;
+      margin-top: 24px;
+    }
+    .oab-footer .kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8A6421;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .oab-footer h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .oab-footer p { font-size: 0.94rem; color: var(--ink); margin-bottom: 10px; }
+    .oab-footer p:last-child { margin-bottom: 0; }
+    .oab-meta {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(11, 25, 44, 0.1);
       font-size: 0.85rem;
       color: var(--muted);
-      background: #F4F6F9;
-      padding: 8px 12px;
-      border-radius: 8px;
+    }
+    code {
+      background: #F1F4F8;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.9em;
     }
     @media print {
-      .top-bar { display: none !important; }
+      .top-bar, .search-box, .audio-card { display: none !important; }
       body { background: #fff; padding: 0; }
     }
   </style>
@@ -118,175 +249,223 @@
 <body>
   <div class="container">
     <div class="top-bar">
-      <a href="area-assinante.html">← Voltar para a Área do Assinante</a>
+      <a href="area-assinante.html">← Ir para a Área do Assinante</a>
       <button class="btn-print" onclick="window.print()">🖨️ Salvar / Imprimir Manual em PDF</button>
     </div>
 
     <div class="cover">
-      <span class="badge">Edição Oficial de Bolso • Zamboni Explica</span>
-      <h1>Os 20 Conceitos da Lei que Todo Cidadão Precisa Conhecer</h1>
-      <p>Explicados em português claro, sem juridiquês e com a fonte exata na lei brasileira para você consultar no celular sempre que um grande caso aparecer no noticiário. Por <strong>Prof. Alexandre Zamboni</strong>.</p>
+      <span class="badge">Manual Oficial de Bolso • Edição Integral</span>
+      <h1>Os 20 Conceitos da Lei que Todo Brasileiro Precisa Conhecer</h1>
+      <p>Explicados pela lei, sem juridiquês e sem camisa de time, pelo Prof. Alexandre Zamboni. Salve no celular ou imprima para consultar antes de qualquer conversa no almoço de domingo.</p>
     </div>
 
-    <div style="margin-bottom: 20px;" class="top-bar">
-      <input type="search" id="search-manual" oninput="filterManualConcepts()" placeholder="🔎 Digite uma palavra ou tema para filtrar os 20 conceitos na hora (ex.: prisão, Pix, júri, foro, fiança...)" style="width:100%; padding:14px 18px; border-radius:14px; border:1px solid rgba(11,25,44,0.18); font-family:inherit; font-size:0.98rem; background:#fff; box-shadow:0 4px 14px rgba(11,25,44,0.04);" />
+    <div class="audio-card">
+      <span class="kicker">🎧 Áudio-Guia Oficial • Voz do Prof. Alexandre Zamboni</span>
+      <h2>As 3 Chaves Mestras dos 20 Conceitos (ouça em 4 minutos)</h2>
+      <p>Dê o play para ouvir o Prof. Alexandre Zamboni apresentar as três chaves que conectam todos os 20 verbetes deste Manual.</p>
+      <audio controls preload="metadata" src="audio/manual-20-conceitos.mp3">
+        Seu navegador não suporta reprodução de áudio embutido. <a href="audio/manual-20-conceitos.mp3">Baixar o Áudio-Guia (MP3)</a>.
+      </audio>
     </div>
 
-    <div class="concept-item">
-      <span class="num">Conceito 01 • Direito do Consumidor</span>
-      <h2>Responsabilidade Objetiva (Quando a empresa responde mesmo sem ter tido intenção)</h2>
-      <p>No dia a dia entre pessoas comuns, quem causa um dano geralmente só indeniza se agiu com culpa. Já nas relações de consumo (hotéis, bancos, hospitais, companhias aéreas), a regra muda: a empresa responde pela segurança do serviço independentemente de culpa. Ela só se isenta se provar que o defeito não existiu ou que a culpa foi exclusiva do consumidor ou de terceiro.</p>
-      <div class="law">Base na lei: Código de Defesa do Consumidor (Lei nº 8.078/1990), artigo 14, caput e § 3º.</div>
-    </div>
+    <input id="search-manual" class="search-box" type="search" placeholder="🔎 Buscar um conceito na hora (ex.: prisão preventiva, foro, prescrição, delação, júri...)" oninput="filterManualConcepts()" />
 
-    <div class="concept-item">
-      <span class="num">Conceito 02 • Direito Civil</span>
-      <h2>Culpa Exclusiva vs. Culpa Concorrente</h2>
-      <p>Um acidente não precisa ter apenas um responsável. Quando a vítima age com imprudência, mas o estabelecimento também falha no seu dever de manutenção ou segurança, a lei reconhece a culpa concorrente: o dever de indenizar permanece, mas o juiz reduz o valor proporcionalmente à contribuição de cada lado.</p>
-      <div class="law">Base na lei: Código Civil (Lei nº 10.406/2002), artigo 945.</div>
-    </div>
+    <article class="card-block">
+      <span class="kicker">Apresentação • Por Que Este Manual Existe</span>
+      <h2>Apresentação: Por Que Este Manual Existe</h2>
+      <p>No Brasil, o vocabulário dos tribunais invadiu a sala de jantar. Expressões técnicas que antes ficavam restritas aos autos processuais — como <em>prisão preventiva</em>, <em>foro por prerrogativa de função</em>, <em>dolo eventual</em>, <em>delação premiada</em>, <em>decisão monocrática</em> e <em>trânsito em julgado</em> — passaram a abrir os telejornais e a pautar discussões acaloradas entre familiares e amigos.</p>
+      <p>Essa presença constante do Direito na vida cotidiana seria uma excelente notícia para a cidadania se não viesse acompanhada de dois obstáculos graves. O primeiro é o <strong>juridiquês</strong>: a tendência histórica de explicar regras públicas com palavras desnecessariamente difíceis, afastando o cidadão comum do entendimento das leis que regem a sua própria vida. O segundo é a <strong>torcida</strong>: o hábito de avaliar decisões judiciais não pelo que está escrito na Constituição e nos Códigos, mas por quem foi beneficiado ou prejudicado naquele dia.</p>
+      <p>Este <em>Manual de Bolso do Cidadão</em> reúne os <strong>20 conceitos jurídicos mais recorrentes no noticiário brasileiro</strong>. Cada verbete foi construído em texto corrido, sóbrio e direto, respondendo exatamente ao que você precisa saber em menos de dois minutos de leitura: o que o instituto significa na letra da lei, quais são os requisitos objetivos para que ele se aplique e qual é o equívoco mais comum que você ouvirá por aí — para que você nunca mais dependa de boatos na hora de formar a sua própria conclusão.</p>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 01 de 20</span>
+      <h2>Prisão em Flagrante, Temporária, Preventiva e Após Condenação</h2>
+      <p>Poucas notícias causam tanta indignação popular quanto aquela que anuncia que alguém foi preso em um dia e colocado em liberdade na tarde seguinte, após a chamada audiência de custódia. Para a maioria das pessoas, essa sequência transmite a sensação de que &quot;a polícia prende e a Justiça solta&quot;. Na lei brasileira, porém, a palavra <em>prisão</em> designa quatro figuras jurídicas completamente distintas, com finalidades e prazos que não se confundem.</p>
+      <p>A <strong>prisão em flagrante</strong> (art. 302 do Código de Processo Penal) não é uma pena nem um julgamento antecipado. Ela é um ato administrativo e imediato de contenção: ocorre no instante em que o crime está sendo cometido, acaba de ser cometido ou quando o suspeito é perseguido logo após o fato com objetos que façam presumir sua autoria. A função do flagrante é apenas interromper o delito, colher os primeiros elementos e apresentar o detido a um juiz em até 24 horas (na audiência de custódia). Nesse momento, o juiz não julga se a pessoa é culpada ou inocente do crime; ele verifica se a prisão foi legal e se existe motivo para converter aquele flagrante em prisão preventiva ou se o investigado deve responder ao processo em liberdade, com ou sem medidas cautelares (como tornozeleira eletrônica ou proibição de frequentar certos lugares).</p>
+      <p>A <strong>prisão temporária</strong> (Lei nº 7.960/1989) existe exclusivamente para proteger a fase de investigação policial em uma lista fechada de crimes graves (como homicídio doloso, extorsão mediante sequestro, estupro e organização criminosa). Ela tem prazo curto e determinado — 5 dias, prorrogáveis por mais 5 em crimes comuns, ou 30 dias, prorrogáveis por mais 30, em crimes hediondos — e, segundo entendimento vinculante do Supremo Tribunal Federal (ADIs 3360 e 4109), só pode ser decretada quando for comprovadamente indispensável para a investigação policial e houver fundadas razões de autoria, jamais podendo servir como meio de pressionar o investigado a confessar.</p>
+      <p>A <strong>prisão preventiva</strong> (arts. 312 e 313 do Código de Processo Penal), por sua vez, não tem prazo fixo em dias na lei, mas exige revisão obrigatória da sua necessidade a cada 90 dias (art. 316, parágrafo único, do CPP). Ela cabe tanto durante o inquérito quanto durante o processo judicial, desde que haja prova da existência do crime, indícios suficientes de autoria e, cumulativamente, um <strong>perigo atual gerado pelo estado de liberdade do imputado</strong> — seja para garantir a ordem pública (evitar reiteração criminosa concreta), por conveniência da instrução criminal (impedir que o réu ameace testemunhas ou destrua provas) ou para assegurar a aplicação da lei penal (evitar fuga concreta). A gravidade abstrata do crime ou o clamor das redes sociais, isoladamente, não autorizam a prisão preventiva.</p>
+      <p>Por fim, a <strong>prisão-pena (após condenação definitiva)</strong> é o cumprimento da sanção imposta na sentença após o esgotamento dos recursos ordinários e o trânsito em julgado (art. 5º, LVII, da Constituição Federal e art. 283 do CPP, conforme o julgamento das ADCs 43, 44 e 54 pelo STF), com a ressalva específica das condenações pelo Tribunal do Júri, nas quais o STF (Tema 1068 da Repercussão Geral) reconheceu a execução imediata da pena diante da soberania constitucional dos veredictos populares.</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Ser solto após o flagrante não significa ser absolvido; significa apenas que o Estado vai processar e julgar o acusado sem precisar mantê-lo trancado antes da sentença final.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 02 de 20</span>
+      <h2>Foro por Prerrogativa de Função (&quot;Foro Privilegiado&quot;): Quem Tem e Quando Acaba</h2>
+      <p>Popularmente conhecido como &quot;foro privilegiado&quot;, o nome técnico previsto na Constituição Federal é <strong>foro por prerrogativa de função</strong>. A diferença no nome explica a lógica original da regra: a Constituição não criou um privilégio para proteger a pessoa física do político ou da autoridade, mas uma regra de competência para proteger o exercício do cargo público contra pressões locais, ao mesmo tempo em que evita que um juiz de primeira instância sofra intimidação ao julgar o governador do seu próprio Estado, um ministro de Estado ou um parlamentar federal.</p>
+      <p>Pela Constituição (arts. 53, § 1º, e 102, I, &quot;b&quot; e &quot;c&quot;), deputados federais, senadores, o Presidente da República, o Vice-Presidente, os Ministros de Estado, os Comandantes das Forças Armadas, o Procurador-Geral da República e os membros dos Tribunais Superiores são processados e julgados, nas infrações penais comuns, perante o <strong>Supremo Tribunal Federal (STF)</strong>. Governadores de Estado e desembargadores respondem perante o <strong>Superior Tribunal de Justiça (STJ)</strong> (art. 105, I, &quot;a&quot;), enquanto prefeitos respondem perante os respectivos <strong>Tribunais de Justiça ou Tribunais Regionais Federais</strong>, conforme a matéria (art. 29, X).</p>
+      <p>O ponto que mais gera dúvida no noticiário é saber <strong>quais crimes entram no foro e o que acontece quando a autoridade deixa o cargo</strong>. Em 2018, ao julgar a Questão de Ordem na Ação Penal 937, o STF estabeleceu que o foro por prerrogativa de função aplica-se apenas aos <strong>crimes cometidos durante o exercício do cargo e em razão das funções a ele relacionadas</strong> (<em>propter officium</em>). Posteriormente, no julgamento do Habeas Corpus 232.627 (2025), o Plenário do STF firmou a tese de que a prerrogativa de foro para crimes praticados no cargo e em razão dele <strong>subsiste mesmo após o afastamento ou o término do mandato</strong>, evitando que renúncias estratégicas de última hora sejam usadas para deslocar processos já maduros e adiar o julgamento por anos. Já os crimes comuns sem nenhuma relação com o mandato (como um delito de trânsito ou um crime praticado antes da posse) continuam tramitando na primeira instância comum.</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> O foro especial só vale para crimes ligados ao exercício do mandato e não é um salvo-conduto; na verdade, no foro especial não existe duplo grau de jurisdição comum, pois a decisão do tribunal já é única naquela instância.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 03 de 20</span>
+      <h2>Liberdade de Expressão vs. Crimes Contra a Honra (Calúnia, Difamação e Injúria)</h2>
+      <p>A Constituição Federal de 1988 garante, no artigo 5º, incisos IV e IX, e no artigo 220, a livre manifestação do pensamento e a vedação a qualquer espécie de censura prévia. No entanto, logo no inciso X do mesmo artigo 5º, a Constituição declara invioláveis a intimidade, a vida privada, a honra e a imagem das pessoas, assegurando o direito à indenização pelo dano material ou moral decorrente de sua violação. Na arquitetura da lei brasileira, portanto, você é livre para falar sem pedir autorização prévia ao Estado, mas responde civil e criminalmente se usar a palavra para cometer um ilícito.</p>
+      <p>No Código Penal (arts. 138 a 140), os chamados <strong>crimes contra a honra</strong> dividem-se em três condutas muito precisas, que no dia a dia costumam ser misturadas como se fossem sinônimos:</p>
+      <ul><li><strong>Calúnia (art. 138 do CP):</strong> é atribuir falsamente a alguém um <strong>fato determinado definido como crime</strong>. Não basta xingar alguém de &quot;ladrão&quot; de forma genérica; caluniar é afirmar, sabendo ser mentira, que determinada pessoa furtou determinado valor em tal dia. Por atingir a honra objetiva com a imputação de um delito, é o mais grave dos três (detenção de 6 meses a 2 anos e multa), e também pune quem propaga ou divulga a calúnia sabendo que a imputação é falsa.</li><li><strong>Difamação (art. 139 do CP):</strong> é imputar a alguém um <strong>fato determinado ofensivo à sua reputação</strong>, ainda que esse fato não seja crime (e, em regra, ainda que seja verdadeiro, salvo exceção da verdade quando o ofendido é funcionário público e o fato se relaciona ao exercício de suas funções). O foco aqui é manchar o bom nome da pessoa perante a comunidade.</li><li><strong>Injúria (art. 140 do CP):</strong> não descreve um fato determinado; trata-se de um <strong>insulto, xingamento ou atribuição de qualidade negativa</strong> que ofende a dignidade ou o decoro da vítima (a chamada honra subjetiva, aquilo que a pessoa pensa de si mesma). Quando a injúria utiliza elementos referentes a religião ou à condição de pessoa idosa ou com deficiência, a pena é qualificada (art. 140, § 3º); já a antiga injúria racial foi equiparada e tipificada autonomamente na Lei de Crimes Raciais (Lei nº 7.716/1989, art. 2º-A, incluído pela Lei nº 14.532/2023), sendo imprescritível e inafiançável.</li></ul>
+      <p>Vale notar ainda que o Código Penal prevê aumento de pena (art. 141, § 2º) quando qualquer desses crimes contra a honra é cometido ou divulgado em <strong>redes sociais da internet</strong>, justamente pelo potencial multiplicador do dano à reputação.</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Crítica dura a ideias ou à atuação pública é liberdade de expressão; atribuir falsamente um crime a alguém é calúnia, e nenhum direito constitucional serve de escudo para destruir ilegalmente a honra alheia.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 04 de 20</span>
+      <h2>Segredo de Justiça: Por Que Alguns Processos Não São Públicos</h2>
+      <p>A regra geral da democracia brasileira é a <strong>publicidade dos atos processuais</strong> (art. 5º, LX, e art. 93, IX, da Constituição Federal). A razão dessa transparência é simples: o cidadão tem o direito de fiscalizar como os juízes, promotores e policiais exercem o seu poder. Contudo, a própria Constituição estabelece duas exceções expressas em que a lei pode restringir a publicidade dos atos processuais: <strong>quando a defesa da intimidade o exigir</strong> ou <strong>quando o interesse social ou a segurança de diligências em andamento o justificarem</strong>.</p>
+      <p>No campo cível (art. 189 do Código de Processo Civil), tramitam em segredo de justiça os processos que dizem respeito a casamento, separação, divórcio, filiação, alimentos e guarda de crianças e adolescentes, bem como aqueles em que constem dados protegidos pelo direito constitucional à intimidade (como prontuários médicos ou declarações completas de imposto de renda).</p>
+      <p>No campo criminal (art. 20 e art. 792, § 1º, do Código de Processo Penal, além da Lei de Interceptação Telefônica — Lei nº 9.296/1996), o sigilo recai especialmente sobre dois tipos de situações. A primeira envolve <strong>crimes contra a dignidade sexual</strong> (art. 234-B do Código Penal) ou processos que exponham vítimas menores de idade, para evitar que a publicidade do processo cause uma segunda violência (<em>revitimização</em>) à pessoa ofendida. A segunda envolve <strong>investigações e medidas cautelares em curso</strong> — como uma busca e apreensão ou uma interceptação telefônica autorizada judicialmente. É intuitivo perceber que, se um mandado de busca ou de escuta fosse público antes de ser cumprido, a diligência seria totalmente inútil. Assim que a prova é colhida e documentada nos autos, a Súmula Vinculante nº 14 do STF garante ao defensor do investigado amplo acesso a todos os elementos de prova já documentados para o exercício do direito de defesa.</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Segredo de justiça não existe para esconder o trabalho do juiz, mas para proteger a intimidade de famílias e vítimas ou para evitar que um investigado seja avisado antes de uma operação policial acontecer.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 05 de 20</span>
+      <h2>Prova Ilícita e a Teoria dos Frutos da Árvore Envenenada</h2>
+      <p>Por que um tribunal superior às vezes anula um processo inteiro mesmo quando os jornais divulgaram gravações ou documentos que pareciam comprometedores? A resposta está no artigo 5º, inciso LVI, da Constituição Federal: <strong>&quot;são inadmissíveis, no processo, as provas obtidas por meios ilícitos&quot;</strong>, regra detalhada no artigo 157 do Código de Processo Penal.</p>
+      <p>Uma <strong>prova ilícita</strong> é aquela colhida mediante violação de normas constitucionais ou legais — por exemplo, uma confissão arrancada mediante tortura ou coação, uma invasão policial em domicílio sem mandado judicial e sem situação real de flagrante delito, ou um grampo telefônico feito de forma clandestina sem autorização de um juiz competente. Quando isso ocorre, a lei determina que a prova seja desentranhada (retirada) do processo e inutilizada, não podendo ser usada pelo juiz na sentença.</p>
+      <p>Mais do que isso, o direito brasileiro adota a chamada <strong>teoria dos frutos da árvore envenenada</strong> (<em>fruits of the poisonous tree</em>, prevista no art. 157, § 1º, do CPP). Segundo essa regra, se a &quot;árvore&quot; (a prova inicial) é ilícita, todos os &quot;frutos&quot; (as provas derivadas que só foram descobertas por causa daquela ilegalidade inicial) também ficam contaminados e são nulos — salvo quando não houver nexo de causalidade entre umas e outras, ou quando as provas derivadas pudessem ser obtidas por uma fonte independente que já seguia os trâmites normais da investigação. Na mesma linha, a legislação exige o respeito à <strong>cadeia de custódia da prova</strong> (arts. 158-A a 158-F do CPP): o registro documentado de todo o caminho que um vestígio físico ou arquivo digital percorreu desde a coleta até a perícia, garantindo que aquele material não foi adulterado, editado ou selecionado parcialmente no meio do caminho.</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> No Estado de Direito, os fins não justificam os meios; se o Estado viola a lei para produzir uma prova, essa prova não vale no processo, porque a lei obriga o acusador a ser tão legalista quanto exige que o cidadão seja.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 06 de 20</span>
+      <h2>O Que Faz a Polícia (Inquérito), o Ministério Público (Denúncia) e o Juiz (Sentença)</h2>
+      <p>No noticiário cotidiano, é muito comum ler frases como &quot;a Polícia Federal denunciou o empresário&quot; ou &quot;o juiz abriu investigação contra o suspeito&quot;. Tecnicamente, ambas as frases estão erradas na arquitetura atual do processo penal brasileiro, que adota o <strong>sistema acusatório</strong> (art. 129, I, da Constituição Federal e art. 3º-A do Código de Processo Penal), no qual as funções de investigar, acusar e julgar são rigorosamente separadas em órgãos distintos.</p>
+      <ul><li><strong>A Polícia Judiciária (Polícia Civil nos Estados e Polícia Federal na esfera da União):</strong> tem a missão de <strong>investigar</strong>. Ela conduz o <strong>inquérito policial</strong>, que é um procedimento administrativo preparatório destinado a apurar a materialidade (se o crime aconteceu) e os indícios de autoria (quem o praticou). Ao final do inquérito, o delegado de polícia não &quot;denuncia&quot; nem &quot;condena&quot; ninguém: ele elabora um relatório final e pode <strong>indiciar</strong> o investigado (apontar formalmente que os elementos reunidos indicam aquela pessoa como provável autora), remetendo os autos em seguida.</li><li><strong>O Ministério Público (Promotores de Justiça nos Estados e Procuradores da República na esfera federal):</strong> é o titular exclusivo da ação penal pública. Ao receber o inquérito policial (ou elementos de investigação próprios), o membro do Ministério Público tem três caminhos: pedir novas diligências imprescindíveis, promover o arquivamento se não houver base legal para acusar, ou oferecer a <strong>denúncia</strong> — que é a peça formal de acusação que dá início ao processo judicial.</li><li><strong>O Juiz (Poder Judiciário):</strong> é o órgão imparcial que <strong>julga</strong>. O juiz não investiga por conta própria nem substitui o promotor na produção de provas de acusação. Ele analisa se a denúncia preenche os requisitos mínimos para ser recebida (tornando o denunciado formalmente <strong>réu</strong>), garante que acusação e defesa produzam suas provas em igualdade de condições e, ao final, profere a <strong>sentença</strong>, absolvendo ou condenando o acusado com base exclusivamente nas provas produzidas sob o contraditório judicial.</li></ul>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Delegado investiga e indicia; promotor acusa e denuncia; juiz ouve os dois lados e julga. Quando cada um fica no seu quadrado, o julgamento é justo.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 07 de 20</span>
+      <h2>Habeas Corpus: O Que É e Quando Cabe</h2>
+      <p>O <em>habeas corpus</em> (expressão em latim que significa literalmente <em>&quot;que tenhas o teu corpo&quot;</em>) é o mais antigo e célebre remédio constitucional de proteção da liberdade individual. Previsto no artigo 5º, inciso LXVIII, da Constituição Federal e nos artigos 647 a 667 do Código de Processo Penal, ele é concedido <strong>&quot;sempre que alguém sofrer ou se achar ameaçado de sofrer violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder&quot;</strong>.</p>
+      <p>Existem duas grandes modalidades de <em>habeas corpus</em>: o <strong>liberatório (ou repressivo)</strong>, utilizado quando a pessoa já está presa ilegalmente e busca recuperar sua liberdade, e o <strong>preventivo</strong>, utilizado quando a pessoa ainda está solta, mas sofre uma ameaça concreta e iminente de prisão ilegal (caso em que o tribunal expede um documento chamado <em>salvo-conduto</em>). Além de discutir prisões em si, a jurisprudência brasileira admite o uso do <em>habeas corpus</em> para <strong>trancar inquéritos policiais ou ações penais</strong> quando há uma ilegalidade manifesta e perceptível de plano (sem necessidade de revolver provas complexas), pois todo processo penal pode, ao final, resultar na privação da liberdade de ir e vir do cidadão.</p>
+      <p>Uma característica notável deste instrumento é a sua absoluta acessibilidade democrática: o <em>habeas corpus</em> é gratuito (art. 5º, LXXVII, da CF) e pode ser impetrado por qualquer pessoa em seu próprio favor ou em favor de terceiros, independentemente de ser advogado (embora, na prática dos tribunais superiores, a defesa técnica qualificada seja essencial para demonstrar a coação ilegal).</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> <em>Habeas corpus</em> não serve para declarar se alguém é uma pessoa de bem ou não; serve apenas para cortar imediatamente qualquer prisão ou processo que esteja fora das regras da lei.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 08 de 20</span>
+      <h2>Prescrição Penal: Quando o Estado Perde o Direito de Punir pelo Tempo</h2>
+      <p>O Estado tem o poder-dever de investigar, processar e punir quem comete um crime, mas não pode exercer esse poder de forma eterna, mantendo uma espada pendurada sobre a cabeça do cidadão por décadas a fio por ineficiência da própria máquina pública. O instituto que estabelece o prazo de validade para o Estado julgar ou executar uma pena chama-se <strong>prescrição penal</strong> (arts. 107, IV, e 109 a 119 do Código Penal).</p>
+      <p>A tabela de prazos de prescrição no Brasil varia diretamente conforme a gravidade do crime, medida pela pena máxima prevista na lei (antes da sentença definitiva) ou pela pena concretamente aplicada pelo juiz (depois que a acusação não recorre mais):</p>
+      <ul><li>Se a pena máxima é superior a 12 anos (como no homicídio), o crime prescreve em <strong>20 anos</strong>;</li><li>Se a pena máxima é superior a 8 até 12 anos, prescreve em <strong>16 anos</strong>;</li><li>Se é superior a 4 até 8 anos, prescreve em <strong>12 anos</strong>;</li><li>Se é superior a 2 até 4 anos, prescreve em <strong>8 anos</strong>;</li><li>Se a pena é de 1 a 2 anos, prescreve em <strong>4 anos</strong>; e se é inferior a 1 ano, prescreve em <strong>3 anos</strong> (sendo que esses prazos são reduzidos pela metade quando o agente era menor de 21 anos na data do fato ou maior de 70 anos na data da sentença, conforme o art. 115 do CP).</li></ul>
+      <p>O relógio da prescrição não corre de uma vez só do crime até o fim do processo: ele <strong>zera e começa a contar de novo</strong> em marcos interruptivos previstos na lei (art. 117 do CP), como no dia em que o juiz recebe a denúncia e no dia da publicação da sentença ou acórdão condenatório recorrível. Vale lembrar que a Constituição Federal define apenas duas categorias de crimes <strong>imprescritíveis</strong> (que nunca perdem a validade pelo tempo): a prática do <strong>racismo</strong> (incluída a injúria racial, art. 5º, XLII) e a <strong>ação de grupos armados, civis ou militares, contra a ordem constitucional e o Estado Democrático</strong> (art. 5º, XLIV).</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Quando um processo prescreve, a culpa do encerramento não é da defesa que recorreu dentro da lei, mas do Estado que não conseguiu julgar dentro do prazo que a própria lei fixou.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 09 de 20</span>
+      <h2>Colaboração Premiada (&quot;Delação&quot;): Requisitos e Valor Probatório</h2>
+      <p>Popularizada no noticiário sob o nome de &quot;delação premiada&quot;, seu nome técnico na Lei das Organizações Criminosas (Lei nº 12.850/2013, arts. 3º-A a 7º, profundamente aperfeiçoada pela Lei nº 13.964/2019) é <strong>colaboração premiada</strong>. Trata-se de um negócio jurídico processual e <strong>meio de obtenção de prova</strong> pelo qual um investigado ou réu que participou de infração penal confessa sua participação e coopera voluntariamente com a Justiça para alcançar resultados concretos previstos na lei — como identificar os demais coautores e partícipes da organização criminosa, revelar a estrutura hierárquica do grupo, prevenir novas infrações, recuperar total ou parcialmente o produto financeiro do crime ou localizar eventual vítima com integridade física preservada. Em troca dessa ajuda efetiva, a lei autoriza benefícios legais que vão desde a redução da pena em até dois terços ou substituição por pena restritiva de direitos até, em hipóteses excepcionais, o perdão judicial.</p>
+      <p>O ponto mais importante — e frequentemente esquecido nas manchetes de jornal — está escrito com todas as letras no artigo 4º, § 16, da Lei nº 12.850/2013: <strong>nenhuma medida cautelar (como prisão ou busca e apreensão), nenhum recebimento de denúncia e nenhuma sentença condenatória podem ser decretados ou proferidos com fundamento apenas nas declarações do colaborador</strong>.</p>
+      <p>Isso significa que a palavra do delator, sozinha, <strong>não é prova suficiente para condenar ninguém</strong>. O acordo de colaboração apenas aponta o caminho onde as provas independentes (documentos bancários, perícias, registros telefônicos, notas fiscais, testemunhas externas) estão escondidas. Cabe ao juiz homologar a regularidade, legalidade e voluntariedade do acordo, mas o mérito das declarações só terá valor na sentença final se for confirmado por provas autônomas (a chamada <em>corroboração externa</em>). Além disso, mentir na colaboração para incriminar um inocente é crime específico punido com reclusão de 1 a 4 anos (art. 19 da Lei nº 12.850/2013), além de implicar a perda dos benefícios do acordo.</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Delação não é prova pronta nem sentença; na lei brasileira, ninguém pode ser preso, virar réu ou ser condenado apenas porque um delator falou seu nome sem apresentar provas externas que confirmem o relato.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 10 de 20</span>
+      <h2>Bloqueio de Bens e Medidas Assecuratórias Antes do Fim do Processo</h2>
+      <p>Quando uma operação policial é deflagrada, é comum lermos que o juiz determinou o bloqueio de contas bancárias, o sequestro de imóveis ou a apreensão de veículos de investigados que ainda nem sequer foram julgados. Surge então a dúvida legítima: se a pessoa ainda é presumida inocente até o trânsito em julgado, como o Estado pode travar o patrimônio dela logo no início do caso?</p>
+      <p>A resposta está na distinção entre <strong>confisco definitivo (perda de bens)</strong> e <strong>medidas assecuratórias cautelares</strong> (arts. 125 a 144-A do Código de Processo Penal). A perda definitiva dos bens em favor da União ou do Estado é um efeito da condenação criminal que só se consuma após a sentença transitada em julgado (art. 91, II, &quot;b&quot;, do Código Penal). No entanto, se o Poder Judiciário esperasse cinco ou seis anos de processo para só então procurar o dinheiro desviado ou os bens comprados com recursos ilícitos, é evidente que esse patrimônio já teria sido ocultado, vendido a terceiros de boa-fé ou enviado ao exterior.</p>
+      <p>Por essa razão, a lei autoriza três medidas cautelares patrimoniais durante a investigação ou o processo, sempre mediante decisão judicial fundamentada:</p>
+      <ol><li><strong>Sequestro de bens (arts. 125 a 132 do CPP):</strong> recai sobre bens móveis ou imóveis específicos adquiridos pelo investigado com os <strong>proventos da infração</strong> (o lucro ilícito do crime), bastando a existência de indícios veementes da proveniência ilícita;</li><li><strong>Arresto e Hipoteca Legal (arts. 134 a 137 do CPP):</strong> recaem sobre o <strong>patrimônio lícito</strong> do acusado com a finalidade de garantir que, ao final do processo, haja recursos suficientes para indenizar a vítima do dano causado pelo crime e pagar as penas pecuniárias e custas processuais;</li><li><strong>Bloqueio de ativos financeiros (via sistema SISBAJUD):</strong> congela temporariamente valores em contas bancárias até o limite estimado do prejuízo apurado.</li></ol>
+      <p>Durante o processo, os bens bloqueados não passam a pertencer ao Estado; eles ficam apenas indisponíveis para venda ou dilapidação. Se ao final o réu for absolvido ou o processo arquivado, todos os bens e valores (corrigidos monetariamente) são integralmente liberados e devolvidos ao proprietário.</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Bloquear bens no início da investigação não é tomar o patrimônio em definitivo; é congelar a fotografia financeira do caso para que, se houver condenação lá na frente, exista dinheiro para reparar o dano.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 11 de 20</span>
+      <h2>Decisão Monocrática vs. Decisão Colegiada nos Tribunais (STF e STJ)</h2>
+      <p>Sempre que o Supremo Tribunal Federal (STF) ou o Superior Tribunal de Justiça (STJ) aparece no noticiário, você ouvirá falar que &quot;o ministro relator concedeu uma liminar monocrática&quot; ou que &quot;o Plenário / a Turma julgou o recurso em decisão colegiada&quot;. Compreender a diferença entre essas duas formas de decidir ajuda a eliminar grande parte das confusões sobre o funcionamento das cortes superiores.</p>
+      <p>Os tribunais superiores são, por definição constitucional, <strong>órgãos colegiados</strong> — isto é, desenhados para decidir em grupo (no STF, por exemplo, existem duas Turmas de 5 ministros cada e o Plenário com os 11 ministros). Quando um processo chega ao tribunal, ele é distribuído por sorteio eletrônico a um ministro, que passa a ser o <strong>Relator</strong> do caso (responsável por conduzir a instrução, ouvir as partes e redigir o relatório e o voto).</p>
+      <p>Uma <strong>decisão colegiada (acórdão)</strong> ocorre quando o Relator leva o processo para julgamento na Turma ou no Plenário, todos os ministros do colegiado votam e prevalece a vontade da maioria. Já uma <strong>decisão monocrática</strong> é aquela assinada individualmente apenas pelo ministro Relator. Na lei brasileira (art. 932 do Código de Processo Civil e art. 21 do Regimento Interno do STF), a decisão monocrática é permitida em duas situações principais: (a) para apreciar pedidos urgentes de <strong>medida liminar ou cautelar</strong> que não podem esperar até a próxima sessão colegiada sob pena de dano irreparável; ou (b) para negar seguimento ou dar provimento a recursos quando a matéria já está pacificada em súmula ou tese de repercussão geral do próprio tribunal.</p>
+      <p>Nos últimos anos, reformas regimentais no STF estabeleceram que medidas cautelares monocráticas de alta sensibilidade (como suspensão de leis ou afastamento de autoridades) devem ser submetidas imediatamente a <strong>referendo do colegiado</strong>, e de toda decisão monocrática cabe recurso interno (<strong>agravo regimental / agravo interno</strong>) para que a Turma ou o Plenário dê a palavra final.</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Decisão monocrática é a decisão individual do relator para casos urgentes ou já pacificados; decisão colegiada é o voto da maioria do tribunal reunido, que sempre tem a última palavra se houver recurso.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 12 de 20</span>
+      <h2>Pedido de Vista: Como Funciona e Qual o Prazo nos Tribunais</h2>
+      <p>Imagine que o julgamento de um grande caso está acontecendo no tribunal: o ministro Relator lê o seu voto de cinquenta páginas, um segundo ministro vota em sentido contrário trazendo argumentos novos, e um terceiro magistrado anuncia: <em>&quot;Peço vista dos autos&quot;</em>. Imediatamente o julgamento é interrompido, e o público fica se perguntando se aquilo foi uma manobra para engavetar o processo ou um direito legítimo do julgador.</p>
+      <p>Na lei processual brasileira (art. 940 do Código de Processo Civil), o <strong>pedido de vista</strong> é o instrumento pelo qual um juiz de tribunal (desembargador ou ministro) que não se sente suficientemente esclarecido após ouvir o voto do relator solicita a suspensão temporária do julgamento para examinar os autos com profundidade no seu gabinete antes de proferir o seu voto. A lógica do instituto é saudável: é muito melhor que um magistrado estude os documentos por alguns dias do que vote no improviso sobre uma questão complexa que afeta a vida de milhões de pessoas.</p>
+      <p>Historicamente, o problema brasileiro nunca foi a existência do pedido de vista, mas o uso de vistas sem prazo efetivo de devolução, que paralisavam processos por anos. Para corrigir essa distorção, o Código de Processo Civil fixou a regra geral de <strong>10 dias úteis</strong> (prorrogáveis por mais 10) para devolução de vista nos tribunais comuns, e o <strong>Supremo Tribunal Federal</strong>, por meio da Emenda Regimental nº 58/2022, estabeleceu uma trava automática rigorosa: o ministro que pede vista no STF tem o prazo máximo de <strong>90 dias úteis</strong> para devolver o processo; caso esse prazo se esgote sem devolução, <strong>os autos são liberados automaticamente pelo sistema eletrônico para a continuação do julgamento</strong>.</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Pedir vista é o direito de estudar o processo antes de votar, e hoje no STF existe relógio automático: passou de 90 dias úteis, o processo volta para a pauta sozinho.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 13 de 20</span>
+      <h2>Inelegibilidade e a Lei da Ficha Limpa</h2>
+      <p>De dois em dois anos, nas eleições municipais e gerais, uma pergunta domina os debates políticos: &quot;Se tal candidato ainda cabe recurso no processo dele, por que a Justiça Eleitoral barrou a candidatura com base na Lei da Ficha Limpa?&quot;. A resposta exige separar dois conceitos que caminham em trilhos diferentes: a <strong>culpa criminal</strong> (que exige trânsito em julgado final) e os <strong>requisitos de elegibilidade e moralidade para o exercício de mandato eletivo</strong> (previstos no art. 14, § 9º, da Constituição Federal e na Lei Complementar nº 64/1990, alterada pela Lei Complementar nº 135/2010 — a <strong>Lei da Ficha Limpa</strong>).</p>
+      <p>A Lei da Ficha Limpa (declarada constitucional pelo STF nas ADCs 29 e 30) não aplica pena de prisão a ninguém; ela estabelece um filtro ético-objetivo para quem deseja pedir o voto popular e gerir dinheiro público. Pela regra central da lei (art. 1º, I, &quot;e&quot; e &quot;l&quot;, da LC 64/1990), torna-se <strong>inelegível por 8 anos</strong> quem for condenado por <strong>órgão judicial colegiado</strong> (isto é, por uma turma de tribunal de segunda instância ou superior, não bastando a sentença de um único juiz de primeiro grau) pela prática de crimes graves listados na lei — como crimes contra a administração pública, lavagem de dinheiro, tráfico, crimes contra o sistema financeiro, crimes hediondos — ou por ato doloso de improbidade administrativa que importe cumulativamente lesão ao patrimônio público e enriquecimento ilícito.</p>
+      <p>Da mesma forma, também gera inelegibilidade a rejeição de contas de gestores públicos por decisão irrecorrível do Tribunal de Contas (no caso de prefeitos, quando julgadas pela Câmara Municipal, conforme o STF) por irregularidade insanável que configure ato doloso de improbidade, a menos que a decisão colegiada ou a rejeição seja suspensa por liminar do tribunal superior competente antes do registro da candidatura.</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Para ser preso no Brasil, exige-se o fim de todos os recursos; mas para ser candidato a cargo público, a Lei da Ficha Limpa exige mais: quem já foi condenado por um colegiado de juízes em crimes graves fica fora da urna por 8 anos.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 14 de 20</span>
+      <h2>Imunidade Parlamentar Material e Formal: Limites Constitucionais</h2>
+      <p>Por que deputados e senadores têm regras diferentes dos cidadãos comuns quando fazem discursos duros na tribuna ou quando são alvo de processos criminais? Na Constituição de 1988 (art. 53), essas garantias chamam-se <strong>imunidades parlamentares</strong> e pertencem ao Parlamento como instituição (para garantir que o Poder Legislativo possa fiscalizar o governo sem medo de represálias), dividindo-se em duas espécies bem distintas:</p>
+      <ol><li><strong>Imunidade Material (ou Inviolabilidade — art. 53, <em>caput</em>, da CF):</strong> diz que os deputados e senadores são invioláveis, civil e penalmente, por <strong>quaisquer de suas opiniões, palavras e votos</strong>. Contudo, a jurisprudência consolidada do Supremo Tribunal Federal estabelece que essa imunidade não é um cheque em branco para cometer crimes pela internet: ela exige <strong>nexo funcional</strong> (relação entre a manifestação e o exercício do mandato parlamentar). Quando a fala é proferida dentro do recinto do Congresso Nacional no exercício da atividade legislativa, a proteção é máxima; quando é publicada fora do Parlamento (como em redes sociais), ela só é coberta pela imunidade se tiver relação direta com a função parlamentar, e <strong>jamais protege a incitação à prática de crimes ou ataques violentos destinados a abolir o Estado Democrático de Direito</strong>.</li><li><strong>Imunidade Formal (Processual — art. 53, §§ 2º e 3º, da CF):</strong> refere-se às regras de prisão e processo. Desde a entrada em vigor do diploma, os membros do Congresso Nacional <strong>não poderão ser presos, salvo em flagrante de crime inafiançável</strong> (e, nesse caso, os autos são remetidos em 24 horas à Câmara ou ao Senado para que a maioria absoluta dos parlamentares resolva sobre a prisão). Além disso, recebida uma denúncia contra senador ou deputado por crime ocorrido após a diplomação, a Casa respectiva pode, pelo voto da maioria de seus membros, sustar o andamento da ação enquanto durar o mandato (suspendo-se também a prescrição).</li></ol>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> A imunidade parlamentar protege o debate político e a fiscalização do governo, mas não transforma o mandato em autorização para praticar crimes inafiançáveis nem para incitar delitos fora da função legislativa.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 15 de 20</span>
+      <h2>Legítima Defesa: Requisitos Legais e Excesso Punível</h2>
+      <p>Poucos temas despertam tanta paixão nas conversas cotidianas quanto a <strong>legítima defesa</strong>. Seja na proteção da casa e da família, seja na atuação de agentes de segurança, é essencial conhecer a fórmula exata do artigo 25 do Código Penal: <strong>&quot;Entende-se em legítima defesa quem, usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente, a direito seu ou de outrem&quot;</strong>.</p>
+      <p>Para que uma conduta seja considerada legítima defesa (excluindo o crime, conforme o art. 23, II, do CP), a lei exige que <strong>quatro requisitos</strong> estejam presentes ao mesmo tempo:</p>
+      <ol><li><strong>Agressão injusta:</strong> um ataque humano contrário ao direito (que pode ser contra a vida, a integridade física, a liberdade sexual ou o patrimônio — lembrando que o STF, na ADPF 779, declarou inconstitucional a tese arcaica da &quot;legítima defesa da honra&quot; em crimes de feminicídio/violência doméstica, pois a honra pessoal não autoriza matar o cônjuge);</li><li><strong>Atual ou iminente:</strong> a agressão está acontecendo agora (<em>atual</em>) ou está prestes a acontecer no instante seguinte (<em>iminente</em>). Reagir contra uma agressão passada — ir atrás do agressor no dia seguinte ou disparar contra quem já desistiu do ataque e está fugindo desarmado — <strong>não é legítima defesa; é vingança privada</strong>;</li><li><strong>Uso dos meios necessários:</strong> utilizar o instrumento eficaz de menor poder lesivo que estava disponível à vítima naquele momento de tensão;</li><li><strong>Moderação no uso do meio:</strong> empregar a força apenas até o momento em que a agressão injusta cessa.</li></ol>
+      <p>Se a pessoa começa agindo em legítima defesa, mas continua golpeando ou atirando depois que o agressor já foi imobilizado e neutralizado, ela incorre no que o parágrafo único do artigo 23 do Código Penal chama de <strong>excesso punível</strong>, respondendo pelo resultado causado no excesso (a título de dolo ou de culpa).</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Legítima defesa é escudo para parar um ataque que está acontecendo agora; quando o ataque termina e a reação continua, termina a defesa e começa o excesso punido pela lei.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 16 de 20</span>
+      <h2>Dolo Eventual vs. Culpa Consciente (Tragédias e Crimes de Trânsito)</h2>
+      <p>Quando ocorre um grave acidente de trânsito ou uma tragédia coletiva (como o rompimento de uma barragem ou um incêndio em casa noturna), a grande discussão jurídica gira sempre em torno de uma fronteira tênue do artigo 18 do Código Penal: o réu agiu com <strong>culpa consciente</strong> ou com <strong>dolo eventual</strong>? Essa diferença muda completamente o rumo do processo, pois no homicídio, por exemplo, o crime doloso vai a julgamento popular no <strong>Tribunal do Júri</strong> com penas muito mais altas (6 a 20 anos, ou 12 a 30 anos se qualificado), enquanto o crime culposo é julgado pelo juiz singular.</p>
+      <p>A semelhança entre os dois conceitos é o que confunde os leigos: <strong>tanto na culpa consciente quanto no dolo eventual, o agente prevê que a sua conduta perigosa pode causar o resultado trágico (morte ou lesão)</strong>. A diferença está na atitude interna diante dessa previsão, demonstrada pelas circunstâncias objetivas do caso:</p>
+      <ul><li>Na <strong>culpa consciente</strong>, o agente prevê que o acidente pode acontecer, mas <strong>acredita sinceramente que ele não vai ocorrer</strong> porque confia demais na própria habilidade, na sorte ou nas condições do veículo/equipamento. Se ele soubesse com certeza que o resultado trágico aconteceria, ele desistiria da ação. O lema interno da culpa consciente é: <em>&quot;Sei que é perigoso, mas sou bom motorista e vai dar tudo certo&quot;</em>.</li><li>No <strong>dolo eventual</strong> (art. 18, I, segunda parte, do CP), o agente prevê que o resultado trágico pode acontecer e <strong>assume o risco de produzi-lo</strong>, mostrando-se indiferente à vida alheia. Para ele, tanto faz se o resultado ocorrer ou não, desde que ele atinja o seu objetivo imediato. O lema interno do dolo eventual é: <em>&quot;Sei que posso matar alguém fazendo isso, mas não me importo; vou fazer assim mesmo&quot;</em>.</li></ul>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Na culpa consciente, a pessoa é imprudente, mas confia sinceramente que vai evitar a tragédia; no dolo eventual, ela prevê o risco de morte e age com total indiferença: <em>&quot;se acontecer, aconteceu&quot;</em>.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 17 de 20</span>
+      <h2>Fiança: Quando Cabe e Por Que Alguns Crimes São Inafiançáveis</h2>
+      <p>Graças aos filmes norte-americanos, muita gente imagina que a <strong>fiança</strong> no Brasil funciona como um &quot;preço para comprar a liberdade&quot; em qualquer crime, bastando ter dinheiro no banco para sair pela porta da frente da delegacia. Na lei brasileira (arts. 321 a 350 do Código de Processo Penal), a realidade é muito diferente.</p>
+      <p>A fiança é uma <strong>caução (garantia em dinheiro ou bens)</strong> prestada pelo investigado para assegurar que ele comparecerá a todos os atos do inquérito e do processo, não obstruirá a Justiça e cumprirá as condições impostas enquanto responde em liberdade provisória. Ela tem três travas rigorosas que impedem que o dinheiro crie impunidade:</p>
+      <ol><li><strong>Crimes Inafiançáveis pela Constituição e pela Lei (art. 5º, XLII, XLIII e XLIV da CF e arts. 323 e 324 do CPP):</strong> não cabe fiança, em hipótese alguma, nos crimes de <strong>racismo</strong>, <strong>tortura</strong>, <strong>tráfico ilícito de entorpecentes</strong>, <strong>terrorismo</strong>, nos <strong>crimes hediondos</strong> (como homicídio qualificado, estupro, extorsão mediante sequestro, feminicídio) e na ação de grupos armados contra o Estado Democrático, nem tampouco para quem descumpriu medida cautelar anterior ou quando estão presentes os requisitos que exigem a prisão preventiva;</li><li><strong>Quem pode arbitrar:</strong> o delegado de polícia só pode arbitrar fiança na delegacia em infrações leves ou médias cuja <strong>pena máxima não seja superior a 4 anos</strong> (art. 322 do CPP). Nos crimes com pena máxima acima de 4 anos (como furto qualificado ou estelionato), somente o juiz pode decidir sobre a liberdade provisória;</li><li><strong>Regra contra a desigualdade econômica (art. 350 do CPP):</strong> se o investigado tiver direito legal à liberdade provisória mediante fiança, mas for comprovadamente pobre e não tiver recursos para pagá-la, o juiz <strong>dispensa o pagamento da fiança</strong> e o coloca em liberdade sujeito às mesmas obrigações legais. No Brasil, portanto, ninguém fica preso apenas por ser pobre quando o crime admite fiança, e ninguém sai solto por ser rico quando o crime exige prisão preventiva ou é inafiançável.</li></ol>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Fiança não é multa nem compra de absolvição; é uma garantia de comparecimento ao processo que só cabe em crimes sem violência grave e quando não há motivo para prisão preventiva.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 18 de 20</span>
+      <h2>Progressão de Regime (Fechado, Semiaberto e Aberto): Como se Calcula</h2>
+      <p>&quot;Foi condenado a 12 anos de prisão, mas com poucos anos já saiu do regime fechado!&quot; Essa frase, repetida diariamente no Brasil, nasce do desconhecimento de como funciona o <strong>sistema progressivo de execução penal</strong> adotado pelo Código Penal (art. 33, § 2º) e pela Lei de Execução Penal (Lei nº 7.210/1984, art. 112).</p>
+      <p>O direito brasileiro proíbe penas perpétuas e determina que a pena privativa de liberdade seja cumprida de forma progressiva, preparando gradualmente o retorno do condenado ao convívio social para reduzir a reincidência. Existem três regimes de cumprimento: o <strong>fechado</strong> (em penitenciária de segurança máxima ou média), o <strong>semiaberto</strong> (em colônia agrícola, industrial ou similar, com possibilidade de trabalho e estudo externo mediante autorização) e o <strong>aberto</strong> (baseado na autodisciplina e senso de responsabilidade, trabalhando durante o dia e recolhendo-se à noite).</p>
+      <p>Desde a reforma da Lei nº 13.964/2019 (Pacote Anticrime), a antiga regra única de &quot;cumprir 1/6 (16%) da pena&quot; acabou. Hoje, o artigo 112 da Lei de Execução Penal estabelece uma <strong>escada de percentuais que vai de 16% a 70% da pena</strong>, dependendo da natureza do crime e da reincidência:</p>
+      <ul><li><strong>16% da pena:</strong> crimes cometidos sem violência à pessoa ou grave ameaça, se o réu for primário (20% se reincidente);</li><li><strong>25% da pena:</strong> crimes cometidos com violência ou grave ameaça, se o réu for primário (30% se reincidente);</li><li><strong>40% da pena:</strong> crime hediondo ou equiparado, se o réu for primário;</li><li><strong>50% da pena:</strong> crime hediondo ou equiparado com resultado morte (primário, vedado o livramento condicional), comando de organização criminosa estruturada para crime hediondo ou constituição de milícia privada (55% no feminicídio, conforme a Lei nº 14.994/2024);</li><li><strong>60% da pena:</strong> reincidente na prática de crime hediondo ou equiparado;</li><li><strong>70% da pena:</strong> reincidente em crime hediondo ou equiparado com resultado morte (vedado o livramento condicional).</li></ul>
+      <p>Além do tempo mínimo no relógio (requisito objetivo), a progressão só é concedida pelo juiz da execução se o apenado comprovar <strong>bom comportamento carcerário</strong> atestado pelo diretor do estabelecimento (requisito subjetivo) e, nos crimes contra a administração pública, reparar o dano causado ou devolver o produto do ilícito (art. 33, § 4º, do CP).</p>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Progredir de regime não significa que a pena acabou; significa passar para uma etapa menos rígida de fiscalização após cumprir o percentual exigido pela lei e manter bom comportamento.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 19 de 20</span>
+      <h2>Ação Civil Pública e Improbidade Administrativa vs. Crime Penal</h2>
+      <p>Por que às vezes lemos no jornal que um prefeito ou gestor público foi condenado a &quot;devolver dinheiro aos cofres públicos e perder os direitos políticos por improbidade&quot;, mas continua solto e sem antecedentes criminais? Porque, no direito brasileiro, existe a <strong>independência das instâncias</strong> (penal, cível/administrativa e de improbidade), e uma mesma conduta ilícita pode ser julgada em processos diferentes com sanções de natureza distinta.</p>
+      <ul><li><strong>Processo Penal (Crime):</strong> julga se houve infração tipificada no Código Penal ou em leis penais especiais (como corrupção passiva, peculato ou fraude em licitação). É a única esfera que pode aplicar <strong>pena privativa de liberdade (prisão)</strong>.</li><li><strong>Ação de Improbidade Administrativa (art. 37, § 4º, da Constituição Federal e Lei nº 8.429/1992, reformada pela Lei nº 14.230/2021):</strong> é uma ação de natureza <strong>cível-sancionadora</strong> (não penal) voltada a punir agentes públicos e terceiros que pratiquem atos desonestos contra a Administração Pública — divididos em atos que importam <strong>enriquecimento ilícito</strong> (art. 9º), atos que causam <strong>prejuízo ao erário</strong> (art. 10) e atos que <strong>atentam contra os princípios da Administração Pública</strong> (art. 11). Desde a reforma de 2021, toda condenação por improbidade exige a comprovação de <strong>dolo específico</strong> (vontade livre e consciente de alcançar o resultado ilícito, não existindo mais improbidade por mera culpa ou inabilidade do gestor). Suas sanções não incluem prisão, mas sim perda dos bens acrescidos ilicitamente, ressarcimento integral do dano ao erário, perda da função pública, suspensão dos direitos políticos (por até 14 anos), pagamento de multa civil e proibição de contratar com o poder público.</li><li><strong>Ação Civil Pública (Lei nº 7.347/1985):</strong> é o instrumento processual coletivo usado pelo Ministério Público, Defensoria Pública, entes públicos e associações para proteger o patrimônio público, o meio ambiente, os consumidores e outros interesses difusos e coletivos, buscando obrigar o causador do dano a reparar o prejuízo ou cessar uma atividade lesiva.</li></ul>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Improbidade administrativa não dá cadeia porque não é processo criminal, mas atinge diretamente o bolso, o cargo e os direitos políticos do agente desonesto, sem impedir que ele também responda a um processo criminal separado pelo mesmo fato.</div>
+    </article>
+    <article class="card-block concept-item">
+      <span class="kicker">Conceito 20 de 20</span>
+      <h2>Coisa Julgada e Trânsito em Julgado: Quando Não Cabe Mais Recurso</h2>
+      <p>Chegamos ao último conceito da nossa caminhada, que representa o ponto final de toda disputa judicial: o <strong>trânsito em julgado</strong> e a <strong>coisa julgada</strong> (art. 5º, XXXVI, da Constituição Federal e arts. 502 a 508 do Código de Processo Civil).</p>
+      <p>Diz-se que ocorreu o <strong>trânsito em julgado</strong> no momento exato em que uma decisão judicial (sentença ou acórdão) se torna irrecorrível — seja porque as partes já utilizaram todos os recursos previstos na lei até a última instância cabível, seja porque deixaram passar o prazo legal sem recorrer (preclusão temporal). A partir desse instante, forma-se a <strong>coisa julgada material</strong>: a qualidade que torna a decisão imutável e indiscutível, garantindo segurança jurídica para que os conflitos sociais tenham um fim definitivo e nem mesmo uma lei nova possa desfazer o que foi decidido.</p>
+      <p>No processo penal, porém, existe uma assimetria histórica em favor da liberdade humana que todo cidadão deve conhecer:</p>
+      <ul><li>Se o réu foi <strong>absolvido</strong> e a sentença transitou em julgado, a coisa julgada é <strong>absoluta</strong>. Ainda que surjam provas novas anos depois ou que o próprio réu confesse o crime em praça pública, a lei brasileira <strong>proíbe a revisão criminal <em>pro societate</strong></em> (contra o réu absolvido). Ninguém pode ser processado novamente por um fato do qual já foi definitivamente absolvido (<em>ne bis in idem</em>).</li><li>Se o réu foi <strong>condenado</strong> e a sentença transitou em julgado, ele começa ou segue cumprindo a pena em definitivo; contudo, a qualquer tempo (inclusive após o cumprimento da pena ou mesmo após a morte do condenado, para reabilitar sua memória), a defesa pode ajuizar uma <strong>Revisão Criminal</strong> (art. 621 do Código de Processo Penal) se surgirem provas novas da inocência do condenado, se a sentença tiver se fundado em depoimentos ou documentos comprovadamente falsos, ou se a decisão for contrária ao texto expresso da lei penal.</li></ul>
+      <div class="lunch-box"><strong>🍽️ Para guardar na mesa do almoço:</strong> Trânsito em julgado é o apito final do processo; no crime, quem foi absolvido em definitivo nunca mais pode ser julgado pelo mesmo fato, mas um inocente condenado injustamente sempre pode provar sua inocência a qualquer tempo pela revisão criminal.</div>
+    </article>
+    <article class="card-block">
+      <span class="kicker">Método Zamboni Explica</span>
+      <h2>Quadro-Síntese Rápido: O Método das 6 Perguntas <em>&quot;Antes de Tomar Partido&quot;</em></h2>
+      <p>Sempre que você ler uma notícia envolvendo qualquer um dos 20 conceitos deste Manual, aplique mentalmente a régua das 6 perguntas do <em>Zamboni Explica</em>:</p>
+      <ol><li><strong>Qual é a afirmação exata?</strong> <em>(O que exatamente está sendo decidido ou acusado, sem adjetivos?)</em></li><li><strong>O que sabemos e de qual fonte?</strong> <em>(Há decisão oficial publicada, perícia ou vídeo íntegro, ou apenas comentário de terceiros?)</em></li><li><strong>O que é fato, relato, inferência ou opinião?</strong> <em>(O que está provado nos autos vs. o que é tese da acusação ou da defesa?)</em></li><li><strong>Que outras explicações cabem nos dados?</strong> <em>(A decisão aplicou uma regra técnica geral da lei que vale para qualquer réu?)</em></li><li><strong>O que falta saber e poderia mudar a conclusão?</strong> <em>(Ainda cabem recursos, perícias ou instrução probatória?)</em></li><li><strong>O que é responsável concluir agora?</strong> <em>(Qual é a conclusão sóbria compatível com a lei hoje, sem vestir camisa de time?)</em></li></ol>
+    </article>
 
-    <div class="concept-item">
-      <span class="num">Conceito 03 • Processo Penal</span>
-      <h2>Medida Cautelar vs. Condenação Definitiva</h2>
-      <p>Retenção de passaporte, uso de tornozeleira eletrônica, proibição de contato ou prisão preventiva não são penas antecipadas. São medidas provisórias para proteger a investigação ou evitar fuga. Se o risco desaparece, o juiz tem o dever legal de revogar a medida.</p>
-      <div class="law">Base na lei: Código de Processo Penal, artigos 282, § 5º, 319 e 320.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 04 • Direito Constitucional</span>
-      <h2>Foro por Prerrogativa de Função ("Foro Privilegiado")</h2>
-      <p>Não significa ficar acima da lei, mas definir qual tribunal julga determinadas autoridades. Pela jurisprudência do STF, o foro especial aplica-se aos crimes cometidos no exercício do cargo e em razão das funções a ele relacionadas.</p>
-      <div class="law">Base na lei: Constituição Federal, artigo 102, I, "b" e "c", e jurisprudência do Plenário do STF.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 05 • Tribunais</span>
-      <h2>Decisão Monocrática vs. Decisão Colegiada</h2>
-      <p>Decisão monocrática é aquela assinada individualmente por um ministro ou desembargador relator, geralmente em pedidos urgentes. Decisão colegiada é aquela tomada pelo conjunto de julgadores na Turma ou no Plenário do tribunal.</p>
-      <div class="law">Base na lei: Regimento Interno dos Tribunais e Código de Processo Penal.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 06 • Estrutura da Justiça</span>
-      <h2>Independência das Esferas Civil, Penal e Administrativa</h2>
-      <p>Um único acontecimento pode gerar três apurações diferentes ao mesmo tempo: uma multa administrativa (como dos Bombeiros ou Procon), um processo cível de indenização e um inquérito criminal. Uma esfera só tranca as outras quando fica provado no juízo criminal que o fato não existiu ou que a pessoa não foi a autora.</p>
-      <div class="law">Base na lei: Código Civil, artigo 935, e Código de Processo Penal, artigos 64 a 67.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 07 • Prisões no Brasil</span>
-      <h2>Prisão em Flagrante, Temporária e Preventiva</h2>
-      <p>O flagrante ocorre no instante em que o delito é praticado ou logo após. A prisão temporária tem prazo curto e fixo em lei (5 dias em crimes comuns previstos na lei específica, ou 30 dias em hediondos) apenas para viabilizar o inquérito. Já a preventiva exige prova da existência do crime, indícios suficientes de autoria e perigo atual gerado pelo estado de liberdade do investigado.</p>
-      <div class="law">Base na lei: CPP, artigos 302 e 312, e Lei nº 7.960/1989.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 08 • Garantias Processuais</span>
-      <h2>Audiência de Custódia em 24 Horas</h2>
-      <p>Não serve para julgar o mérito da acusação nem para declarar inocência. O juiz analisa exclusivamente se a prisão foi legal, se houve maus-tratos e se a pessoa deve responder ao processo presa preventivamente ou sob medidas cautelares.</p>
-      <div class="law">Base na lei: Código de Processo Penal, artigo 310.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 09 • Direito Penal</span>
-      <h2>Dolo Eventual vs. Culpa Consciente</h2>
-      <p>Em ambos o agente prevê que sua conduta perigosa pode causar um resultado grave. Na culpa consciente, ele confia sinceramente que conseguirá evitar o acidente; no dolo eventual, ele assume o risco de produzir o resultado e age com indiferença. Nos crimes contra a vida, essa diferença define se o caso vai ou não ao Tribunal do Júri.</p>
-      <div class="law">Base na lei: Código Penal, artigo 18, incisos I e II, e Constituição Federal, artigo 5º, XXXVIII.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 10 • Publicidade Processual</span>
-      <h2>Segredo de Justiça</h2>
-      <p>A regra na Justiça brasileira é a publicidade dos atos. O segredo de justiça é a exceção aplicada para preservar a intimidade de vítimas e crianças ou para não frustrar diligências investigativas que perderiam eficácia se anunciadas antes da hora.</p>
-      <div class="law">Base na lei: Constituição Federal, artigo 5º, LX, e artigo 93, IX; CPP, artigo 20.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 11 • Liberdade de Locomoção</span>
-      <h2>Habeas Corpus</h2>
-      <p>Garantia constitucional gratuita destinada a proteger o direito de ir e vir sempre que alguém sofrer ou se achar na iminência de sofrer violência ou coação ilegal na sua liberdade de locomoção.</p>
-      <div class="law">Base na lei: Constituição Federal, artigo 5º, LXVIII, e CPP, artigos 647 e seguintes.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 12 • Provas no Processo</span>
-      <h2>Prova Ilícita e Provas Derivadas</h2>
-      <p>No Estado de Direito, os fins não justificam quaisquer meios na colheita de provas. Provas obtidas com violação da lei ou da Constituição são inadmissíveis e devem ser desentranhadas do processo, assim como as provas que delas derivarem diretamente.</p>
-      <div class="law">Base na lei: Constituição Federal, artigo 5º, LVI, e CPP, artigo 157.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 13 • Crime Organizado</span>
-      <h2>Colaboração Premiada</h2>
-      <p>Meio de obtenção de prova em que o investigado coopera voluntariamente para identificar coautores, revelar a estrutura criminosa ou recuperar valores. A lei proíbe que qualquer sentença condenatória seja proferida com base apenas nas declarações do colaborador sem provas independentes de corroboração.</p>
-      <div class="law">Base na lei: Lei nº 12.850/2013, artigo 4º, § 16.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 14 • Limite Temporal</span>
-      <h2>Prescrição Penal</h2>
-      <p>Perda do direito de punir do Estado pelo decurso do tempo previsto em lei sem que a investigação ou o processo cheguem ao desfecho definitivo, evitando processos perpétuos.</p>
-      <div class="law">Base na lei: Código Penal, artigos 107, IV, e 109.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 15 • Liberdade Provisória</span>
-      <h2>Fiança Criminal e Crimes Inafiançáveis</h2>
-      <p>A fiança é uma garantia financeira para que o investigado responda ao processo em liberdade cumprindo obrigações legais. A Constituição veda fiança para racismo, tortura, tráfico ilícito de entorpecentes, terrorismo e crimes hediondos.</p>
-      <div class="law">Base na lei: Constituição Federal, artigo 5º, XLII a XLIV, e CPP, artigos 321 e seguintes.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 16 • Excludentes de Ilicitude</span>
-      <h2>Legítima Defesa e Excesso Punível</h2>
-      <p>Age em legítima defesa quem, usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente, a direito seu ou de outrem. Quando a agressão já cessou e o agente continua golpeando por vingança ou descontrole, deixa de haver defesa e surge o excesso punível.</p>
-      <div class="law">Base na lei: Código Penal, artigos 23, II, e 25, parágrafo único.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 17 • Julgamentos em Tribunais</span>
-      <h2>Pedido de Vista</h2>
-      <p>Direito de um julgador do colegiado solicitar a suspensão temporária do julgamento para examinar melhor os autos antes de proferir seu voto, sujeito hoje a prazos regimentais de devolução.</p>
-      <div class="law">Base na lei: Código de Processo Civil, artigo 940, e Regimento Interno do STF.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 18 • Segurança Jurídica</span>
-      <h2>Trânsito em Julgado</h2>
-      <p>Momento processual em que a decisão judicial se torna definitiva por não caber mais nenhum recurso, encerrando a discussão e autorizando a execução definitiva da pena.</p>
-      <div class="law">Base na lei: Constituição Federal, artigo 5º, LVII, e CPP, artigo 283.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 19 • Crimes Contra a Honra</span>
-      <h2>Calúnia, Difamação e Injúria</h2>
-      <p>Calúnia é imputar falsamente a alguém um fato definido como crime. Difamação é atribuir fato determinado ofensivo à reputação social da pessoa. Injúria é ofender a dignidade ou o decoro com xingamentos ou conceitos depreciativos.</p>
-      <div class="law">Base na lei: Código Penal, artigos 138, 139 e 140.</div>
-    </div>
-
-    <div class="concept-item">
-      <span class="num">Conceito 20 • Direito Bancário e Digital</span>
-      <h2>Fortuito Interno em Fraudes Bancárias (Súmula 479 do STJ)</h2>
-      <p>O Superior Tribunal de Justiça consolidou que as instituições financeiras respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes e delitos praticados por terceiros no âmbito de operações bancárias, quando falha o dever de segurança do sistema.</p>
-      <div class="law">Base na lei: Súmula 479 do STJ e artigo 14 do Código de Defesa do Consumidor.</div>
-    </div>
-
-    <div class="concept-item" style="background:#fffdf6; border-color:#e6d8a8; margin-top:24px;">
-      <span class="num" style="color:#8A6421;">🤝 Canal Aberto aos Assinantes • Linha Direta</span>
-      <h2>Ficou com dúvida em algum caso ou precisa de indicação de advogado(a)?</h2>
-      <p>Este manual tem caráter educativo e informativo sobre o funcionamento geral da lei brasileira (respeitando as normas éticas da OAB). Mas se você estiver passando por uma situação concreta e precisar de orientação inicial sobre como a lei funciona ou desejar ser encaminhado(a) a um advogado ou advogada da lista pessoal de confiança do Prof. Alexandre Zamboni, escreva para a nossa <strong>Linha Direta</strong> direto na <a href="area-assinante.html" style="color:#1B4D89; font-weight:700;">Área do Assinante</a> ou em <strong>zamboniexplica@gmail.com</strong>.</p>
+    <div class="oab-footer">
+      <span class="kicker">⚖️ Nota de Transparência, Ética e Educação Jurídica (OAB)</span>
+      <h2>Ficou com alguma dúvida conceitual ou quer sugerir um tema público?</h2>
+      <p>Este manual tem caráter estritamente educativo e informativo sobre o funcionamento geral da legislação brasileira, em observância ao Estatuto da Advocacia e às normas éticas da OAB, não constituindo consultoria jurídica nem substituindo a análise técnica de um caso concreto. Se algum termo do noticiário despertar a sua curiosidade ou se você quiser sugerir um caso público para ser explicado em tese, escreva para a nossa <strong>Linha Direta</strong> na <a href="area-assinante.html" style="color:#1B4D89; font-weight:700;">Área do Assinante</a> ou em <strong>zamboniexplica@gmail.com</strong>. Caso você ou sua família estejam vivendo uma situação jurídica particular, procure sempre um(a) advogado(a) de sua livre confiança regularmente inscrito(a) na OAB ou a Defensoria Pública do seu Estado — apenas o profissional constituído pode examinar documentos, acompanhar prazos e definir a melhor estratégia para o seu caso.</p>
+      <div class="oab-meta">
+        <strong>Zamboni Explica</strong> — A Zamboni Lins Filho Serviços de Informação Ltda. (CNPJ 67.166.139/0001-80) · Suporte editorial e pedidos de temas públicos: <strong>zamboniexplica@gmail.com</strong>
+      </div>
     </div>
   </div>
   <script>
     function filterManualConcepts() {
       var q = (document.getElementById('search-manual').value || '').toLowerCase().trim();
       document.querySelectorAll('.concept-item').forEach(function(item) {
-        if (!q || item.innerText.toLowerCase().indexOf(q) !== -1) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
+        item.style.display = (!q || item.innerText.toLowerCase().indexOf(q) !== -1) ? 'block' : 'none';
       });
     }
   </script>
