@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Os 30 Problemas Jurídicos Mais Comuns da Vida Real — Zamboni Explica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B192C;
+      --gold: #C5A059;
+      --paper: #FAF8F5;
+      --ink: #1C252C;
+      --muted: #5A6570;
+      --border: rgba(11, 25, 44, 0.12);
+      --blue: #1B4D89;
+      --green: #1F7A4C;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      padding: 32px 16px 64px;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .top-bar a { color: var(--navy); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    .btn-print {
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .cover {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 22px;
+      padding: 42px 36px;
+      border: 2px solid var(--gold);
+      margin-bottom: 24px;
+    }
+    .cover .badge {
+      display: inline-block;
+      color: #E5D1A7;
+      border: 1px solid rgba(197, 160, 89, 0.45);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .cover h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1.13;
+      margin-bottom: 12px;
+    }
+    .cover p {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 1.02rem;
+      max-width: 700px;
+    }
+    .audio-card {
+      background: #fff;
+      border: 1.5px solid rgba(197, 160, 89, 0.55);
+      border-radius: 18px;
+      padding: 22px 26px;
+      margin-bottom: 22px;
+      box-shadow: 0 6px 20px rgba(11, 25, 44, 0.05);
+    }
+    .audio-card .kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8A6421;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .audio-card h2 { font-size: 1.15rem; color: var(--navy); margin-bottom: 6px; }
+    .audio-card p { font-size: 0.94rem; color: var(--muted); margin-bottom: 14px; }
+    .audio-card audio { width: 100%; height: 42px; }
+    .controls-wrap {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+    }
+    .search-box {
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--paper);
+      font-size: 0.97rem;
+      font-family: inherit;
+      margin-bottom: 12px;
+      outline: none;
+    }
+    .search-box:focus { border-color: var(--blue); background: #fff; box-shadow: 0 0 0 3px rgba(27, 77, 137, 0.12); }
+    .filter-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-pill {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--ink);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+    }
+    .filter-pill.active, .filter-pill:hover {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+    .bloco-banner {
+      margin: 28px 0 14px;
+      padding: 14px 20px;
+      background: #EFF3F8;
+      border-left: 4px solid var(--navy);
+      border-radius: 0 12px 12px 0;
+    }
+    .bloco-banner span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+    }
+    .bloco-banner h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+      color: var(--navy);
+    }
+    .card-block {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 26px;
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+    .card-block .kicker {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .card-block h3 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.62rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 14px;
+      line-height: 1.22;
+    }
+    .scene-box {
+      background: #F8F9FB;
+      border: 1px solid rgba(11, 25, 44, 0.08);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      font-size: 0.96rem;
+    }
+    .card-block p { font-size: 0.97rem; margin-bottom: 12px; }
+    .prevent-box {
+      background: #F4FAF6;
+      border: 1px solid rgba(31, 122, 76, 0.2);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+    .prevent-box strong { display: block; color: var(--green); margin-bottom: 8px; font-size: 0.95rem; }
+    .prevent-box ul { margin-left: 20px; }
+    .prevent-box li { font-size: 0.95rem; margin-bottom: 6px; }
+    .prevent-box li:last-child { margin-bottom: 0; }
+    .lunch-box {
+      background: #F4F7FB;
+      border-left: 4px solid var(--blue);
+      padding: 11px 15px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.94rem;
+      color: var(--navy);
+    }
+    .card-block ol li { margin-bottom: 10px; font-size: 0.97rem; }
+    code { background: #F1F4F8; padding: 2px 6px; border-radius: 6px; font-size: 0.9em; }
+    .oab-footer {
+      background: #FFFDF6;
+      border: 1px solid #E6D8A8;
+      border-radius: 18px;
+      padding: 24px 26px;
+      margin-top: 24px;
+    }
+    .oab-footer .kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8A6421;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .oab-footer h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .oab-footer p { font-size: 0.94rem; color: var(--ink); margin-bottom: 10px; }
+    .oab-meta {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(11, 25, 44, 0.1);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media print {
+      .top-bar, .controls-wrap, .audio-card { display: none !important; }
+      body { background: #fff; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <a href="area-assinante.html">← Ir para a Área do Assinante</a>
+      <button class="btn-print" onclick="window.print()">🖨️ Salvar / Imprimir Guia em PDF</button>
+    </div>
+
+    <div class="cover">
+      <span class="badge">Guia Oficial de Educação Preventiva • Edição Integral (30 Problemas)</span>
+      <h1>Os 30 Problemas Jurídicos Mais Comuns da Vida Real — e Como Se Proteger Antes do Prejuízo</h1>
+      <p>Escrito sem juridiquês pelo Prof. Alexandre Zamboni para você e sua família reconhecerem as armadilhas mais comuns do cotidiano — bancos, compras, viagens, aluguel, carro, trabalho, família e internet — antes que o prejuízo aconteça.</p>
+    </div>
+
+    <div class="audio-card">
+      <span class="kicker">🎧 Áudio-Guia Oficial • Voz do Prof. Alexandre Zamboni</span>
+      <h2>As 3 Regras de Ouro da Proteção Jurídica no Brasil (ouça em 4 minutos)</h2>
+      <p>Dê o play para ouvir o Prof. Alexandre Zamboni apresentar as três chaves preventivas que protegem você em todos os 30 capítulos deste guia.</p>
+      <audio controls preload="metadata" src="audio/30-problemas-vida-real.mp3">
+        Seu navegador não suporta reprodução de áudio embutido. <a href="audio/30-problemas-vida-real.mp3">Baixar o Áudio-Guia (MP3)</a>.
+      </audio>
+    </div>
+
+    <div class="controls-wrap">
+      <input id="search-problems" class="search-box" type="search" placeholder="🔎 Buscar na hora (ex.: Pix, fiador, voo, aluguel, Detran, FGTS, pensão, WhatsApp, intimação...)" oninput="applyFilters()" />
+      <div class="filter-row">
+        <button class="filter-pill active" data-bloco="all" onclick="filterBloco('all', this)">Todos (30)</button><button class="filter-pill" data-bloco="bloco-1" onclick="filterBloco('bloco-1', this)">1. Dinheiro</button><button class="filter-pill" data-bloco="bloco-2" onclick="filterBloco('bloco-2', this)">2. Compras</button><button class="filter-pill" data-bloco="bloco-3" onclick="filterBloco('bloco-3', this)">3. Casa</button><button class="filter-pill" data-bloco="bloco-4" onclick="filterBloco('bloco-4', this)">4. Trabalho</button><button class="filter-pill" data-bloco="bloco-5" onclick="filterBloco('bloco-5', this)">5. Família</button><button class="filter-pill" data-bloco="bloco-6" onclick="filterBloco('bloco-6', this)">6. Internet</button>
+      </div>
+    </div>
+
+<div class="bloco-banner" data-bloco="bloco-1"><span>Bloco 1 de 6</span><h2>Dinheiro, Bancos E Nome Limpo</h2></div>
+    <article class="card-block problem-item" data-bloco="bloco-1">
+      <span class="kicker">Problema 01 de 30 • Dinheiro, Bancos E Nome Limpo</span>
+      <h3>Golpes digitais, Pix e falsa central telefônica de banco</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Um falso atendente liga com o número oficial do banco no visor (ou envia mensagem pelo WhatsApp fingindo ser um familiar) e, em minutos, faz a vítima transferir valores via Pix, instalar aplicativo de acesso remoto ou aprovar empréstimos que nunca pediu.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> A legislação (Lei nº 14.155/2021) separa o furto mediante fraude eletrônica (art. 155, § 4º-B do CP) do estelionato eletrônico (art. 171, § 2º-A do CP). Na esfera cível, pela Súmula 479 do STJ, o banco responde quando há falha de segurança ou movimentação totalmente fora do perfil habitual do cliente (fortuito interno), mas os tribunais costumam afastar a responsabilidade do banco quando o próprio correntista faz uma transferência única e compatível com sua rotina para um anúncio falso na internet (fortuito externo). Além disso, apagar a conversa com o golpista destrói vestígios essenciais.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Reduza no aplicativo bancário os limites diários e noturnos de Pix e de empréstimos pré-aprovados para o mínimo que você realmente usa.</li>
+          <li>Nunca clique em links nem instale aplicativos enviados por telefone; desligue e ligue de outro aparelho para o número oficial do verso do cartão.</li>
+          <li>Se ocorrer fraude, acione imediatamente o <strong>Mecanismo Especial de Devolução (MED — Resolução BCB nº 103/2021)</strong> no banco informando o código <code>EndToEndId</code> do comprovante, preserve prints/exportação da conversa e registre Boletim de Ocorrência (a competência é no domicílio da vítima — art. 70, § 4º do CPP).</li>
+          <li>Guarde os extratos dos últimos 90 a 180 dias para demonstrar qual era o seu padrão normal de movimentação.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Banco de verdade nunca liga pedindo Pix de teste nem instalação de aplicativo; limite baixo no app é o melhor cadeado preventivo.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-1">
+      <span class="kicker">Problema 02 de 30 • Dinheiro, Bancos E Nome Limpo</span>
+      <h3>Emprestar o nome, cartão ou ser fiador/avalista de parente ou amigo</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Um parente querido ou amigo próximo pede para parcelar um celular no seu cartão, financiar um carro no seu nome ou pede sua assinatura como fiador de um aluguel, prometendo pagar tudo religiosamente em dia. Meses depois, ele atrasa e a cobrança cai inteira sobre você.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Para o credor e para a Justiça, quem assina o contrato, empresta o cartão ou figura como fiador/avalista (arts. 818 e seguintes do Código Civil) <strong>é juridicamente o responsável direto pela dívida</strong>. Pior ainda: na fiança de locação de imóvel, o STF (Tema 1127) e a Lei nº 8.009/1990 (art. 3º, VII) permitem inclusive a <strong>penhora do único imóvel residencial (bem de família) do fiador</strong> para pagar o aluguel atrasado de terceiros!</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Nunca assuma fiança locatícia sem estar ciente de que até a sua casa própria pode responder pela dívida; prefira sugerir caução em dinheiro ou seguro-fiança.</li>
+          <li>Se decidir ajudar alguém financeiramente, só comprometa um valor que não quebraria o seu orçamento caso a pessoa não consiga pagar.</li>
+          <li>Caso empreste dinheiro diretamente, formalize um recibo ou termo simples por escrito indicando valor, data, forma de pagamento e conta bancária — nunca apenas em dinheiro vivo sem comprovante.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Para a lei, não existe &quot;emprestar o nome&quot;: quem assina o contrato assume a dívida como se fosse sua — e o fiador de aluguel arrisca até a própria casa.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-1">
+      <span class="kicker">Problema 03 de 30 • Dinheiro, Bancos E Nome Limpo</span>
+      <h3>Cobrança indevida, assinatura oculta e negativação no Serasa/SPC</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você descobre na hora de fazer uma compra que seu CPF está negativado por uma linha telefônica que nunca contratou, uma conta já paga há meses ou uma assinatura que continuou sendo cobrada depois do cancelamento.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> O Código de Defesa do Consumidor (art. 42, parágrafo único) prevê repetição em dobro de valores pagos indevidamente (salvo engano justificável), e o art. 43, § 2º exige notificação prévia antes da negativação. Porém, muita gente perde uma ação de dano moral por causa da <strong>Súmula 385 do STJ</strong>: se o consumidor já tiver outra negativação legítima anterior no CPF, em regra não cabe indenização por dano moral pela nova inscrição indevida (apenas o cancelamento dela). Outro erro fatal é cancelar serviço por telefone sem guardar protocolo.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Consulte gratuitamente o seu CPF periodicamente (Serasa, Boa Vista e Registrato do Banco Central) para detectar fraudes ou dívidas desconhecidas cedo.</li>
+          <li>Ao cancelar qualquer serviço recorrente, anote protocolo, data, hora e exija confirmação por e-mail; pague sempre por meio rastreável e guarde comprovantes por pelo menos 5 anos.</li>
+          <li>Diante de cobrança indevida, registre reclamação formal na ouvidoria da empresa e em <code>consumidor.gov.br</code> (ou Procon) guardando toda a trilha documental.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Cancelamento sem protocolo e sem confirmação por escrito é convite para cobrança fantasma meses depois.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-1">
+      <span class="kicker">Problema 04 de 30 • Dinheiro, Bancos E Nome Limpo</span>
+      <h3>Empréstimo consignado não solicitado ou bola de neve de cartão e renegociação</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Um aposentado percebe descontos mensais no benefício do INSS referentes a um empréstimo consignado ou cartão consignado (RMC/RCC) que nunca contratou — ou um trabalhador entra no rotativo do cartão e assina uma renegociação sem entender os juros embutidos.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Bancos respondem objetivamente por fraudes contratuais (Súmula 479/STJ) e não podem impor empréstimo não solicitado (prática abusiva, art. 39, III do CDC). Já na renegociação voluntária, assinar contrato de confissão de dívida sem ler o <strong>Custo Efetivo Total (CET)</strong> e seguros embutidos (<em>venda casada</em>, proibida pelo art. 39, I do CDC) vincula o consumidor a parcelas que ele não consegue cumprir.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Para aposentados e pensionistas, mantenha o benefício <strong>bloqueado para empréstimo consignado</strong> no aplicativo oficial <em>Meu INSS</em> (só desbloqueie no dia em que realmente quiser contratar).</li>
+          <li>Antes de assinar qualquer renegociação ou empréstimo, exija o documento completo com o <strong>CET anual</strong>, número exato de parcelas e confirme que não há seguro prestamista embutido sem seu pedido.</li>
+          <li>Se cair dinheiro desconhecido na conta de aposentado sem contratação, <strong>não gaste o valor</strong>; conteste imediatamente no banco, no Meu INSS e no Banco Central (consumidor.gov.br / Meu BC) mantendo o valor preservado para devolução/estorno formal.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Bloquear empréstimo no Meu INSS leva dois minutos e evita a fraude mais comum contra idosos no Brasil.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-1">
+      <span class="kicker">Problema 05 de 30 • Dinheiro, Bancos E Nome Limpo</span>
+      <h3>Boleto falso ou Pix enviado por engano para chave errada</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você recebe um boleto por WhatsApp ou e-mail para pagar financiamento, escola ou condomínio e só descobre depois que era adulterado — ou digita um número errado na chave Pix e envia dinheiro para um desconhecido que se recusa a devolver.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> No <strong>Pix enviado por engano</strong> para um terceiro real (sem fraude), o MED do Banco Central <strong>não se aplica</strong> porque não houve golpe no arranjo. Contudo, quem recebe valor por engano e se recusa a devolver pratica <strong>enriquecimento sem causa</strong> (art. 884 do Código Civil) e pode incorrer no crime de <strong>apropriação de coisa havida por erro</strong> (art. 169 do Código Penal). Já no <strong>boleto falso</strong>, se o boleto saiu de dentro do site oficial ou por vazamento de dados do credor, há debate sobre falha de segurança; se veio de pesquisa aleatória em anúncio patrocinado falso, o risco recai sobre o pagador.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Nunca pague boletos recebidos por WhatsApp sem conferir <strong>três dados na tela de confirmação do banco</strong>: nome exato do beneficiário final, CNPJ correto e os 3 primeiros dígitos do código de barras (código do banco emissor).</li>
+          <li>No Pix, confira sempre o nome completo e parte do CPF/CNPJ na tela de revisão antes de digitar a senha.</li>
+          <li>Se enviar Pix por engano, tente contato educado (se a chave for telefone/e-mail), guarde o comprovante com o <code>EndToEndId</code>, acione o banco para mediação e registre Boletim de Ocorrência se houver recusa deliberada na devolução.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Três segundos conferindo o beneficiário real na tela do banco evitam a quase totalidade dos golpes de boleto e erros de Pix.</div>
+    </article>
+<div class="bloco-banner" data-bloco="bloco-2"><span>Bloco 2 de 6</span><h2>Compras, Serviços, Viagens E Saúde</h2></div>
+    <article class="card-block problem-item" data-bloco="bloco-2">
+      <span class="kicker">Problema 06 de 30 • Compras, Serviços, Viagens E Saúde</span>
+      <h3>Compra online que não chega, vem com defeito ou anúncio enganoso</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você compra um produto pela internet atraído por uma oferta ótima; ele chega diferente do anunciado, vem quebrado ou simplesmente nunca é entregue — e a loja some ou enrola no atendimento.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Nas compras fora do estabelecimento comercial (internet, telefone, catálogo), o <strong>art. 49 do CDC</strong> garante o <strong>direito de arrependimento em até 7 dias corridos</strong> a contar do recebimento do produto, com devolução integral (inclusive frete), sem precisar justificar o motivo. Se o produto vier com defeito (<em>vício</em>), o fornecedor tem até <strong>30 dias</strong> para consertar (art. 18, § 1º do CDC), salvo produto essencial (como geladeira ou fogão, em que a troca/devolução deve ser imediata). O erro comum é deixar o prazo passar conversando informalmente sem protocolo ou comprar em loja falsa sem CNPJ verificável.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Antes de pagar em loja desconhecida, cheque o CNPJ no rodapé (obrigatório pelo Decreto nº 7.962/2013), o histórico no Reclame Aqui e prefira pagamento por cartão de crédito (que permite contestação por desacordo comercial em caso de não entrega).</li>
+          <li>Tire print do anúncio, do preço e do prazo de entrega prometido no momento da compra.</li>
+          <li>Se quiser desistir dentro dos 7 dias, envie o pedido <strong>por escrito</strong> (e-mail ou chat com print/protocolo) dentro do prazo para travar a contagem legal.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Na internet, você tem 7 dias depois que o pacote chega na sua casa para desistir de graça — mas o pedido precisa ficar registrado por escrito dentro do prazo.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-2">
+      <span class="kicker">Problema 07 de 30 • Compras, Serviços, Viagens E Saúde</span>
+      <h3>Voo cancelado, atraso longo, overbooking ou bagagem extraviada</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você chega ao aeroporto com a família para viajar e o voo é cancelado, atrasa 5 horas, você é barrado por excesso de vendas (<em>overbooking</em>) ou sua mala desaparece na esteira.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> A Resolução nº 400/2016 da ANAC e o CDC garantem assistência material escalonada no aeroporto: a partir de <strong>1 hora</strong> (comunicação), <strong>2 horas</strong> (alimentação/voucher) e <strong>4 horas</strong> (hospedagem se houver pernoite + transporte, além de escolha entre reacomodação ou reembolso integral). Em caso de <em>overbooking</em> (preterição de embarque), há compensação financeira imediata prevista pela ANAC. A armadilha é sair do aeroporto sem prova documental do motivo do atraso ou sem registrar o extravio da mala na hora.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Fotografe o painel do aeroporto mostrando o atraso/cancelamento e exija da companhia aérea a <strong>declaração escrita de contingência</strong> (direito previsto na Res. 400/ANAC).</li>
+          <li>Se a mala sumir ou vier danificada, <strong>não saia da área de desembarque sem preencher o RIB (Registro de Irregularidade de Bagagem)</strong> no balcão da companhia aérea.</li>
+          <li>Guarde cartões de embarque, etiquetas de bagagem e todas as notas fiscais de gastos extras com alimentação, transporte ou itens essenciais comprados por causa do extravio.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> No aeroporto, sem foto do painel, declaração de atraso e RIB da mala antes de sair do saguão, provar o prejuízo depois fica muito mais difícil.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-2">
+      <span class="kicker">Problema 08 de 30 • Compras, Serviços, Viagens E Saúde</span>
+      <h3>Negativa de plano de saúde, carência abusiva ou descredenciamento de hospital/médico</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Diante de um diagnóstico urgente, o plano de saúde recusa um exame, cirurgia ou medicamento prescrito pelo médico — geralmente apenas por telefone — ou descredencia o hospital sem avisar o beneficiário.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> A Lei dos Planos de Saúde (Lei nº 9.656/1998) e a Resolução Normativa nº 623/2024 da ANS obrigam a operadora a fornecer a <strong>negativa por escrito</strong> com justificativa clara e indicação da cláusula/norma em até 24 horas (e imediatamente em urgência/emergência). Além disso, em casos de urgência e emergência, a carência máxima permitida em lei é de <strong>24 horas</strong> (art. 12, V, &quot;c&quot; da Lei 9.656/98), e o descredenciamento de hospital exige aviso prévio de 30 dias e substituição por equivalente (art. 17). A armadilha é aceitar um &quot;não&quot; verbal pelo telefone sem deixar rastro.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Exija sempre o <strong>laudo médico detalhado e fundamentado</strong> explicando por que aquele exame, cirurgia ou remédio é indispensável e, se for o caso, o caráter de urgência.</li>
+          <li>Nunca aceite recusa verbal do plano: exija o <strong>número de protocolo</strong> e a <strong>negativa formal por escrito</strong> (por e-mail ou aplicativo da operadora).</li>
+          <li>Em caso de recusa injustificada, registre imediatamente a <strong>NIP (Notificação de Intermediação Preliminar)</strong> no site ou telefone da ANS (0800 701 9656), que tem prazos curtíssimos para resposta da operadora.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Negativa verbal no telefone não existe para o Direito; exigir o relatório médico claro e a recusa por escrito com protocolo muda o jogo na hora.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-2">
+      <span class="kicker">Problema 09 de 30 • Compras, Serviços, Viagens E Saúde</span>
+      <h3>Queda de energia elétrica com aparelho queimado ou falta prolongada de luz/água</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Um pico de energia durante uma tempestade ou manutenção da rede queima a geladeira, a televisão ou o computador da sua casa — ou o bairro fica dias inteiros sem luz ou água, estragando alimentos e paralisando o trabalho.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Concessionárias de serviço público respondem de forma objetiva pelos danos causados aos usuários (art. 37, § 6º da Constituição Federal e art. 22 do CDC). A Resolução Normativa nº 1.000/2021 da ANEEL garante ao consumidor o direito de pedir <strong>ressarcimento administrativo de danos elétricos</strong> diretamente à distribuidora em até <strong>5 anos</strong> (sendo que pedidos feitos nos primeiros 90 dias têm rito ainda mais célere). O erro clássico é mandar consertar o aparelho por conta própria antes de abrir o protocolo ou jogar fora o equipamento danificado sem laudo técnico.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Anote a data e o horário exatos da queda/oscilação de energia e abra imediatamente um protocolo na distribuidora informando a falta de luz ou o aparelho queimado.</li>
+          <li>Antes de consertar o aparelho (salvo geladeira/equipamento essencial, caso em que convém tirar fotos e pegar laudo), aguarde a vistoria da distribuidora ou guarde <strong>dois orçamentos + laudo técnico</strong> informando que a queima decorreu de sobrecarga elétrica.</li>
+          <li>Em falta prolongada de energia/água, fotografe alimentos perdidos, anote todos os protocolos e registre reclamação na ANEEL ou agência reguladora estadual.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Se um pico de luz queimar um aparelho, abra o protocolo na concessionária antes de mandar consertar — e nunca jogue fora o laudo técnico.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-2">
+      <span class="kicker">Problema 10 de 30 • Compras, Serviços, Viagens E Saúde</span>
+      <h3>Garantia negada em loja física, venda casada ou multa de fidelidade abusiva</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Um eletrodoméstico quebra dois meses depois da compra e a loja manda você &quot;se virar com o fabricante&quot;; ou a operadora de internet, academia ou banco cobra multa pesada de fidelidade mesmo quando o serviço não funciona direito — ou condiciona um serviço à compra de outro (<em>venda casada</em>).</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> O <strong>art. 26 do CDC</strong> garante garantia legal obrigatória de <strong>90 dias para bens duráveis</strong> (e 30 para não duráveis), que <strong>se soma</strong> à garantia contratual do fabricante (art. 50) — e, para defeitos ocultos (<em>vícios ocultos</em>), o prazo só começa a contar quando o defeito aparece! Pela solidariedade da cadeia de consumo (art. 18 do CDC), você pode acionar <strong>tanto a loja quanto o fabricante</strong>. Já na fidelidade (telefonia/internet), a Resolução nº 632/2014 da ANATEL determina que a multa deve ser proporcional ao tempo restante <strong>e não pode ser cobrada se o cancelamento decorrer de má prestação do serviço pela própria operadora</strong>.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Guarde a nota fiscal (tire foto assim que comprar, pois papel térmico apaga em poucos meses!).</li>
+          <li>Se a internet ou telefonia falhar de forma recorrente, acumule ao menos 3 protocolos de reclamação (e testes de velocidade/quedas) antes de pedir cancelamento sem multa por descumprimento contratual da operadora.</li>
+          <li>Recuse qualquer &quot;seguro obrigatório&quot; ou produto empurrado junto com outro (art. 39, I do CDC) e, se for condicionado para liberar o negócio, peça a informação por escrito ou registre na hora.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Nota fiscal em papel térmico apaga no bolso — fotografar a nota no dia da compra garante sua garantia de 90 dias ou mais sem dor de cabeça.</div>
+    </article>
+<div class="bloco-banner" data-bloco="bloco-3"><span>Bloco 3 de 6</span><h2>Casa, Carro, Aluguel E Vizinhança</h2></div>
+    <article class="card-block problem-item" data-bloco="bloco-3">
+      <span class="kicker">Problema 11 de 30 • Casa, Carro, Aluguel E Vizinhança</span>
+      <h3>Aluguel informal ou vistoria mal feita na entrada e na saída do imóvel</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você aluga um apartamento ou casa &quot;na confiança&quot;, sem laudo de vistoria detalhado, e ao entregar as chaves anos depois recebe uma cobrança pesada por defeitos antigos no piso, na pintura ou na fiação que já estavam lá quando você entrou.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> A Lei do Inquilinato (Lei nº 8.245/1991, art. 23, III) obriga o inquilino a devolver o imóvel no estado em que o recebeu, <strong>salvo as deteriorações decorrentes do uso normal</strong>. Sem um laudo fotográfico de entrada, o inquilino perde a prova do estado original e acaba pagando reformas que seriam obrigação estrutural do proprietário (art. 22). Pelo lado do proprietário, alugar &quot;de boca&quot; sem contrato escrito dificulta provar prazo, índice de reajuste, valor da caução e garantias.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Exija sempre contrato escrito definindo prazo, valor, responsabilidade por IPTU/condomínio e modalidade de garantia (a lei proíbe exigir mais de uma garantia ao mesmo tempo — art. 37, parágrafo único).</li>
+          <li>No dia em que pegar as chaves, <strong>grave um vídeo contínuo e tire fotos datadas</strong> de todos os cômodos, torneiras, tomadas, infiltrações e portas — e envie tudo por e-mail/WhatsApp à imobiliária ou proprietário nos primeiros dias pedindo confirmação de recebimento.</li>
+          <li>Ao devolver o imóvel, exija o <strong>Termo de Entrega de Chaves assinado</strong>; sem ele, o relógio do aluguel e do condomínio pode continuar correndo no seu nome!</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Vídeo da vistoria na entrada e recibo assinado das chaves na saída valem ouro tanto para o inquilino quanto para o dono do imóvel.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-3">
+      <span class="kicker">Problema 12 de 30 • Casa, Carro, Aluguel E Vizinhança</span>
+      <h3>Batida de trânsito sem acordo ou motorista que foge ou nega responsabilidade</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Outro motorista fura o sinal vermelho ou bate na traseira do seu carro, pede desculpas na hora prometendo &quot;pagar tudo semana que vem&quot;, mas dois dias depois bloqueia seu telefone ou diz que a culpa foi sua.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> No Código Civil (arts. 186 e 927), quem causa dano material ou moral no trânsito tem dever de indenizar; na batida traseira, a jurisprudência aplica presunção relativa de culpa de quem vinha atrás (por não guardar distância de segurança — art. 29, II do CTB). A armadilha está na <strong>falta de prova da dinâmica</strong>: sem fotos antes de retirar os carros (ou logo após, se houver risco à via), sem testemunhas e sem Boletim de Ocorrência de Trânsito (e-DAT/PRF/PM), a discussão vira &quot;palavra contra palavra&quot;.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Garanta primeiro a segurança física das pessoas; se houver feridos, ligue imediatamente para o SAMU (192) e Polícia (190/191) sem alterar o local.</li>
+          <li>Em colisão sem vítimas, <strong>fotografe e filme imediatamente</strong> a placa do outro veículo, os danos nos dois carros, o cruzamento/sinalização, marcas de frenagem e peça o contato de 1 ou 2 testemunhas oculares.</li>
+          <li>Registre o <strong>Boletim de Ocorrência de Trânsito</strong> (online na maioria dos Estados ou na PRF em rodovias federais) e peça ao outro motorista confirmação por escrito/mensagem antes de liberar; se houver acordo de conserto, exija <strong>3 orçamentos</strong> e formalização simples.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Promessa verbal no meio da avenida evapora no dia seguinte; foto da placa, sinalização, testemunha e BO online protegem seu bolso.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-3">
+      <span class="kicker">Problema 13 de 30 • Casa, Carro, Aluguel E Vizinhança</span>
+      <h3>Compra ou venda de carro usado sem comunicar ao Detran ou com defeito oculto</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você vende seu carro usado para um conhecido ou revendedor, entrega o recibo assinado e confia que o comprador vai fazer a transferência — meses depois, chegam dezenas de multas, cobrança de IPVA e até um processo por acidente grave no seu CPF! Ou você compra um carro que &quot;funde o motor&quot; duas semanas depois.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> O <strong>art. 134 do Código de Trânsito Brasileiro (CTB)</strong> obriga o antigo proprietário a encaminhar ao Detran a <strong>comunicação de venda</strong> (hoje feita em minutos pela Carteira Digital de Trânsito — ATPV-e ou cartório), sob pena de responder <strong>solidariamente</strong> pelas penalidades impostas até a data da comunicação (embora a Súmula 585 do STJ mitigue a responsabilidade solidária quanto ao IPVA conforme a lei estadual, o risco administrativo e judicial é enorme). Já quem compra carro usado em <strong>concessionária/loja</strong> conta com toda a proteção do <strong>CDC</strong> (90 dias de garantia legal + responsabilidade por defeito oculto e adulteração de quilometragem), enquanto na compra <strong>entre particulares</strong> aplica-se o Código Civil (vício redibitório — arts. 441 a 445, com prazos muito mais curtos).</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Ao <strong>vender</strong> um veículo, faça a <strong>Comunicação de Venda / transferência digital (ATPV-e)</strong> no mesmo dia no cartório ou pelo aplicativo <em>Carteira Digital de Trânsito</em> — nunca entregue o carro com recibo em branco!</li>
+          <li>Ao <strong>comprar</strong> um carro usado, puxe consulta completa de histórico (leilão, sinistro, gravame/financiamento, débitos e restrição judicial Renajud) e leve um mecânico de confiança antes de pagar.</li>
+          <li>Nunca transfira dinheiro para conta de terceiros desconhecidos que não seja o próprio dono no documento (clássico golpe do intermediário em anúncios online).</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Carro entregue sem comunicação de venda no Detran continua trazendo multa, IPVA e dor de cabeça para o CPF de quem vendeu.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-3">
+      <span class="kicker">Problema 14 de 30 • Casa, Carro, Aluguel E Vizinhança</span>
+      <h3>Conflito de vizinhança e condomínio (barulho, infiltração, obra, pet e vaga)</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> O apartamento de cima tem uma infiltração que estraga o seu teto e o vizinho não resolve; um morador faz festa de madrugada toda semana; ou o síndico tenta proibir seu animal de estimação ou multar sem direito de defesa.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> O Código Civil (art. 1.277) protege o sossego, a saúde e a segurança dos vizinhos (<em>direito de vizinhança</em>). Sobre animais em condomínio, o <strong>STJ (REsp 1.783.076/DF)</strong> firmou que a convenção <strong>não pode proibir genericamente a criação de animais</strong> dentro do apartamento se eles não causarem risco à segurança, higiene ou sossego. Sobre infiltrações, a regra técnica separa a rede vertical/prumada (responsabilidade do condomínio) da rede horizontal interna da unidade (responsabilidade do vizinho de cima). E toda multa condominial exige respeito à convenção e ao <strong>direito de defesa prévia</strong>. O erro comum é brigar aos gritos no corredor ou reagir com ofensas no grupo do prédio (o que transforma vítima em réu de crime contra a honra!).</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Registre sempre cada ocorrência no <strong>livro de ocorrências / aplicativo do condomínio</strong> ou por e-mail formal ao síndico, com data, hora, fotos ou vídeos curtos.</li>
+          <li>Em infiltração, peça uma vistoria simples de encanador/engenheiro para identificar se o vazamento vem da prumada comum ou da tubulação interna do vizinho antes de exigir o reparo.</li>
+          <li>Jamais ataque ou exponha o vizinho com xingamentos no grupo de WhatsApp do prédio; resolva por notificação formal e mediação em assembleia.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Em conflito de condomínio, quem perde a calma no grupo de WhatsApp perde a razão; quem registra no livro de ocorrências com calma e prova vence.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-3">
+      <span class="kicker">Problema 15 de 30 • Casa, Carro, Aluguel E Vizinhança</span>
+      <h3>Seguro de carro ou residencial negado na hora do sinistro (roubo, furto ou enchente)</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você paga seguro do carro ou da casa durante anos e, quando acontece um roubo, batida ou enchente, a seguradora recusa a indenização alegando &quot;perfil divergente&quot; (outro motorista dirigindo, CEP errado) ou &quot;agravamento de risco&quot; (álcool, chave no contato).</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Pelo Código Civil (arts. 765 e 766) e pela Lei de Seguros (Lei nº 15.040/2024), o contrato de seguro exige boa-fé objetiva e informações verdadeiras no questionário de risco. Porém, a jurisprudência consolidada do <strong>STJ</strong> estabelece que a seguradora só pode recusar a indenização por omissão ou erro no perfil se comprovar <strong>má-fé do segurado</strong> e <strong>relação direta com o agravamento do risco</strong> (por exemplo, dirigir embriagado gera perda da garantia pela Súmula 620/STJ quando provada a influência no acidente; já o mero atraso de uma parcela sem notificação prévia de cancelamento não cancela o seguro automaticamente — Súmula 616/STJ!).</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Preencha o questionário de perfil com 100% de precisão (principal condutor, garagem, CEP de pernoite, uso para trabalho/aplicativo) e guarde a apólice completa e a proposta assinada.</li>
+          <li>Se mudar de endereço ou passar a usar o carro com outro condutor frequente (como um filho recém-habilitado), comunique imediatamente à corretora por escrito para fazer o endosso.</li>
+          <li>Em caso de sinistro, faça o Boletim de Ocorrência imediatamente, não assine declarações confusas sob estresse e, diante de recusa, exija a <strong>negativa formal por escrito</strong> com base contratual para acionar a ouvidoria e a SUSEP.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Economizar cem reais colocando dado errado no perfil do seguro pode custar o valor inteiro do carro na hora em que você mais precisa.</div>
+    </article>
+<div class="bloco-banner" data-bloco="bloco-4"><span>Bloco 4 de 6</span><h2>Trabalho, Renda E Contratos Do Dia A Dia</h2></div>
+    <article class="card-block problem-item" data-bloco="bloco-4">
+      <span class="kicker">Problema 16 de 30 • Trabalho, Renda E Contratos Do Dia A Dia</span>
+      <h3>Reforma, serviço autônomo ou empréstimo de dinheiro &quot;só na palavra&quot;</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você contrata um pedreiro, marceneiro, pintor ou prestador de serviço pagando metade adiantado &quot;na confiança&quot;, sem prazo nem descrição clara; a obra atrasa meses, fica mal feita ou o prestador desaparece. Ou você presta um serviço e o cliente não paga.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Embora o contrato verbal exista no Código Civil (art. 107), <strong>provar o que foi combinado sem nada escrito é um pesadelo</strong>. Sem escopo detalhado, valor total, cronograma de etapas e forma de pagamento, qualquer desentendimento vira disputa sem fim sobre &quot;o que estava incluído ou não no preço&quot;. Pagar 80% ou 100% adiantado antes da entrega elimina todo o equilíbrio natural do contrato (art. 476 do Código Civil — exceção do contrato não cumprido).</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Antes de pagar o primeiro real, formalize pelo menos um <strong>termo simples de 1 página</strong> (ou resumo detalhado enviado e confirmado por WhatsApp/e-mail) contendo <strong>5 dados obrigatórios</strong>: (1) nome completo e CPF/CNPJ das partes; (2) descrição exata do serviço/materiais; (3) preço total; (4) data de início e prazo de entrega; e (5) parcelas vinculadas a etapas concluídas.</li>
+          <li>Nunca pague tudo adiantado: divida o pagamento por <strong>marcos de entrega</strong> (ex.: entrada para material + parcelas conforme a obra avança + saldo final só após a conferência).</li>
+          <li>Faça pagamentos sempre por Pix/transferência identificando na descrição o serviço contratado (nunca em dinheiro vivo sem recibo assinado).</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Combinar por escrito em cinco linhas não é desconfiança — é respeito que protege tanto quem contrata quanto quem trabalha direito.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-4">
+      <span class="kicker">Problema 17 de 30 • Trabalho, Renda E Contratos Do Dia A Dia</span>
+      <h3>Demissão, assinatura apressada no RH ou acordo irregular de FGTS</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> No dia tenso da demissão, o empregado assina vários papéis sem ler — às vezes aceitando um &quot;acordo por fora&quot; para sacar o FGTS e devolver a multa de 40% ao patrão — ou assina recibo de quitação de valores que ainda não caíram na conta.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Pela CLT (art. 477, § 6º), o empregador tem até <strong>10 dias corridos</strong> após o término do contrato para pagar as verbas rescisórias, sob pena de multa equivalente a um salário (art. 477, § 8º). Quanto ao &quot;acordo para devolver os 40% do FGTS&quot; e pegar seguro-desemprego, isso é <strong>fraude ilegal</strong> que expõe o trabalhador até a processo criminal por estelionato contra o erário (a Reforma Trabalhista já criou o <strong>distrato legal</strong> no art. 484-A da CLT, que permite acordo lícito com 20% de multa e saque de 80% do FGTS). Além disso, existe prazo constitucional fatal de <strong>2 anos após a saída</strong> para reclamar direitos trabalhistas (limitados aos últimos 5 anos — art. 7º, XXIX da CF).</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Nunca assine documento dizendo <em>&quot;recebi integralmente&quot;</em> antes de conferir se o valor realmente está na sua conta; se discordar de alguma conta na rescisão, você pode assinar colocando <strong>ressalva expressa por escrito</strong> ou pedir cópia para conferir com calma.</li>
+          <li>Recuse absolutamente qualquer proposta de &quot;devolver por fora a multa do FGTS&quot; ou simular demissão para receber seguro-desemprego.</li>
+          <li>Guarde cópia da carteira digital (CTPS Digital), holerites, extrato do FGTS e termo de rescisão (TRCT) logo no desligamento.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> No dia da demissão, a pressa é inimiga do bolso: nunca assine recibo de dinheiro que ainda não caiu nem aceite &quot;acordo por fora&quot; com o FGTS.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-4">
+      <span class="kicker">Problema 18 de 30 • Trabalho, Renda E Contratos Do Dia A Dia</span>
+      <h3>Horas extras fora do expediente (WhatsApp à noite), assédio moral ou falta de registro</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> O trabalhador cumpre jornada normal, mas recebe cobranças constantes do chefe por WhatsApp às 22h e no fim de semana, sofre humilhações repetidas na frente da equipe ou trabalha meses &quot;por fora&quot; sem carteira assinada.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Pela CLT (art. 6º, parágrafo único), os meios telemáticos e informatizados de comando e supervisão equiparam-se aos meios pessoais — logo, <strong>trabalhar respondendo demandas efetivas fora do horário configura hora extra</strong> (e a privação habitual do descanso pode caracterizar dano existencial). Da mesma forma, trabalhar com pessoalidade, habitualidade, onerosidade e subordinação gera vínculo empregatício independentemente de assinatura no papel (art. 3º da CLT). A armadilha é sair da empresa sem preservar provas e perder o acesso ao celular ou e-mail corporativo no dia da saída.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Em caso de trabalho recorrente fora do horário ou situações de assédio, preserve registros objetivos: exporte conversas com data/hora, salve escalas, comprovantes de pagamento e e-mails de cobrança (sem violar sigilo industrial ou dados de clientes da empresa).</li>
+          <li>Confira regularmente no aplicativo <em>Meu INSS</em> (extrato CNIS) e na <em>Carteira de Trabalho Digital</em> se o registro e os depósitos de INSS e FGTS estão sendo recolhidos corretamente todo mês.</li>
+          <li>Em caso de assédio grave, utilize também os canais internos de ética/compliance da empresa (quando confiáveis) e procure orientação trabalhista antes de pedir demissão no impulso (o que faz perder verbas importantes como aviso prévio e multa do FGTS).</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Conferir o extrato do FGTS e do INSS uma vez a cada trimestre evita descobrir anos depois que a empresa não recolheu o que descontou do seu salário.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-4">
+      <span class="kicker">Problema 19 de 30 • Trabalho, Renda E Contratos Do Dia A Dia</span>
+      <h3>Sociedade ou negócio familiar sem contrato claro (e o risco de dívida atingir o CPF)</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Dois amigos ou irmãos abrem um pequeno negócio cheios de entusiasmo usando um modelo genérico da internet (ou sem formalizar quotas e tarefas). Quando o negócio aperta ou um deles quer sair, as dívidas trabalhistas, fiscais e bancárias atingem o patrimônio pessoal dos sócios.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Mesmo em uma sociedade limitada (<code>Ltda.</code>), a proteção patrimonial não é blindagem absoluta: <strong>misturar contas pessoais com a conta da empresa</strong> (<em>confusão patrimonial</em>, art. 50 do Código Civil), assinar empréstimo bancário como <strong>avalista pessoa física</strong>, deixar dívidas trabalhistas ou encerrar a empresa &quot;fechando as portas&quot; sem baixa regular (<strong>dissolução irregular — Súmula 435 do STJ</strong>) abre caminho para a <strong>desconsideração da personalidade jurídica</strong>, atingindo o CPF, as contas e os bens dos sócios!</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Nunca misture dinheiro pessoal com o da empresa: conta bancária separada, pró-labore definido e contabilidade regular desde o primeiro dia.</li>
+          <li>Antes de abrir sociedade com amigo ou parente, escreva no Contrato Social ou Acordo de Sócios <strong>três regras essenciais</strong>: quanto cada um trabalha, como se divide o lucro e <strong>como se calcula a saída se um dos dois quiser deixar a empresa</strong>.</li>
+          <li>Se o negócio não der certo, faça sempre o encerramento formal (<em>baixa regular</em>) com o contador; simplesmente abandonar o CNPJ aberto é uma das maiores fontes de bloqueio judicial de CPF no Brasil.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Abandonar um CNPJ aberto sem dar baixa formal ou misturar a conta pessoal com a da empresa derruba a proteção da limitada e traz a dívida direto para o seu CPF.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-4">
+      <span class="kicker">Problema 20 de 30 • Trabalho, Renda E Contratos Do Dia A Dia</span>
+      <h3>Cláusula abusiva em escola, faculdade ou festa/evento cancelado</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você precisa cancelar a matrícula escolar antes do início das aulas ou cancelar um bufê/salão de festa por imprevisto grave, e a empresa diz que &quot;pelo contrato não devolve nem um centavo&quot; — ou a escola impede o aluno de fazer prova ou retém histórico escolar por mensalidade atrasada.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> A <strong>Lei nº 9.870/1999 (art. 6º)</strong> proíbe expressamente escolas e faculdades de suspender provas, reter documentos escolares (como histórico para transferência) ou aplicar penalidades pedagógicas por inadimplência — a escola pode cobrar a dívida pelos meios legais e não renovar a matrícula no ano seguinte, mas jamais constranger o aluno! Já em cancelamento de eventos ou matrículas antes do início, o <strong>art. 51, II e IV do CDC</strong> considera <strong>nula de pleno direito</strong> a cláusula que prevê perda total dos valores pagos (<em>cláusula de decaimento integral</em>), admitindo apenas retenção proporcional e razoável de custos administrativos comprovados (em geral balizados entre 10% e 20% pela jurisprudência, conforme o momento do aviso).</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Antes de fechar salão, bufê, viagem ou curso, leia especificamente a cláusula de <strong>cancelamento e remarcação</strong> e exija que o percentual de multa seja razoável e claro.</li>
+          <li>Comunique qualquer desistência <strong>por escrito o quanto antes</strong> (quanto maior a antecedência antes da data, menor o prejuízo real do fornecedor e menor a retenção legítima).</li>
+          <li>Em caso de escola/faculdade reter histórico ou barrar prova por atraso, cite expressamente o art. 6º da Lei nº 9.870/1999 por escrito à diretoria e registre reclamação no Procon ou Secretaria de Educação.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Nenhuma escola pode barrar prova ou segurar histórico escolar por mensalidade atrasada, e nenhum contrato de consumo pode reter 100% do que você pagou se o serviço não foi prestado.</div>
+    </article>
+<div class="bloco-banner" data-bloco="bloco-5"><span>Bloco 5 de 6</span><h2>Família, União E Patrimônio</h2></div>
+    <article class="card-block problem-item" data-bloco="bloco-5">
+      <span class="kicker">Problema 21 de 30 • Família, União E Patrimônio</span>
+      <h3>Pensão alimentícia paga &quot;por fora&quot; ou acordo verbal após separação</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Depois da separação, o pai ou a mãe combina verbalmente de pagar a pensão em dinheiro vivo na mão — ou decide pagar diretamente a escola ou compras no supermercado em vez de depositar o valor fixado na sentença. Meses depois, surge uma execução de alimentos cobrando tudo de novo, inclusive sob risco de prisão civil!</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Na lei brasileira, alimentos fixados judicialmente não podem ser alterados por simples acordo de boca nem, em regra, compensados unilateralmente (<em>alimentos in natura</em> não substituem automaticamente a pensão em dinheiro determinada pelo juiz, salvo expressa previsão ou concordância formal, conforme entendimento consolidado do STJ). Além disso, <strong>o débito das últimas 3 parcelas em aberto</strong> autoriza a prisão civil do devedor (art. 528, § 3º do Código de Processo Civil e Súmula 309/STJ). Pelo lado de quem recebe, depender só de &quot;acordo verbal&quot; sem decisão judicial impede executar o atraso rapidamente.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Pague a pensão <strong>sempre por transferência bancária ou Pix</strong> para a conta indicada na decisão judicial, escrevendo na descrição <em>&quot;Pensão alimentícia — mês/ano&quot;</em>, e guarde todos os comprovantes.</li>
+          <li>Nunca pague em dinheiro vivo sem recibo assinado e datado especificando o mês de referência.</li>
+          <li>Se a renda mudar drasticamente (desemprego ou nova situação financeira) ou se ambos concordarem em mudar a forma de pagamento, <strong>formalize a revisão ou o acordo em juízo</strong>; nunca pare de pagar ou altere o valor por conta própria.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Pensão alimentícia sem comprovante bancário ou acordo informal sem homologação na Justiça é uma das maiores armadilhas do Direito de Família.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-5">
+      <span class="kicker">Problema 22 de 30 • Família, União E Patrimônio</span>
+      <h3>União estável informal (&quot;morar junto&quot;) sem definir o regime de bens</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Um casal decide morar junto por anos sem ir ao cartório nem conversar sobre patrimônio. Um dos dois compra um apartamento, monta uma empresa ou recebe recursos durante o relacionamento; quando ocorre a separação ou o falecimento de um deles, ninguém sabe o que se divide ou quem tem direito a quê.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Pela Constituição (art. 226, § 3º) e pelo Código Civil (arts. 1.723 e 1.725), a união estável (convivência pública, contínua e duradoura com objetivo de constituir família) nasce dos fatos, independentemente de papel — e, <strong>quando não existe contrato escrito definindo outro regime, aplica-se automaticamente a comunhão parcial de bens</strong>! Isso significa que tudo o que for adquirido de forma onerosa durante a união pertence metade a cada um (mesmo estando registrado apenas no CPF de um), além de gerar direitos sucessórios (o STF, nos Temas 498 e 809, equiparou a sucessão do companheiro à do cônjuge). O mesmo vale para quem tem namoro sério morando junto sem querer comunicação patrimonial imediata.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Conversem com serenidade e transparência enquanto o relacionamento está em paz: se quiserem escolher um regime diferente da comunhão parcial (como separação total de bens), lavrem uma <strong>Escritura Pública de União Estável</strong> em Cartório de Notas — custa pouco e evita anos de briga futura.</li>
+          <li>Ao comprar um bem usando dinheiro que você já tinha <em>antes</em> da união (ou vindo de herança/doação exclusiva), <strong>registre expressamente na escritura a origem dos recursos (<em>sub-rogação</em>)</strong> para que aquele bem particular não se misture ao patrimônio comum.</li>
+          <li>Mantenha comprovantes claros da data de início da convivência e da origem dos bens adquiridos antes dela.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Quem mora junto em união estável sem escolher regime de bens no cartório entra automaticamente na comunhão parcial — conversar sobre isso na paz evita litígios dolorosos depois.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-5">
+      <span class="kicker">Problema 23 de 30 • Família, União E Patrimônio</span>
+      <h3>Imóvel de &quot;contrato de gaveta&quot; ou escritura nunca levada a registro</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você compra uma casa, terreno ou apartamento economizando a vida inteira, assina um &quot;contrato particular&quot; com firma reconhecida (o famoso <em>contrato de gaveta</em>) ou até faz a escritura no Cartório de Notas, mas nunca leva para registrar na matrícula do Cartório de Registro de Imóveis para economizar o ITBI e as taxas. Anos depois, descobre que o antigo dono teve dívidas, penhoraram a sua casa ou venderam o mesmo terreno para outra pessoa!</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> No Direito brasileiro vigora uma frase célebre do <strong>art. 1.245 do Código Civil</strong>: <em>&quot;Quem não registra não é dono&quot;</em>. A transferência real da propriedade de um imóvel <strong>só acontece no momento em que o título é registrado na matrícula no Cartório de Registro de Imóveis</strong>! Até lá, perante terceiros e bancos, o imóvel continua formalmente no nome do vendedor (exposto a bloqueios judiciais, dívidas fiscais ou inventário caso o vendedor faleça antes da transferência).</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Antes de pagar qualquer sinal na compra de um imóvel, peça a <strong>Certidão de Matrícula Atualizada (com Ônus Reais)</strong> no Cartório de Registro de Imóveis (validade de 30 dias) e as <strong>certidões negativas cíveis, trabalhistas, fiscais e de protesto</strong> do vendedor.</li>
+          <li>Inclua os custos de <strong>ITBI, escritura e registro</strong> no orçamento total da compra — não economize justamente no documento que transforma você em proprietário perante a lei.</li>
+          <li>Se você já possui um imóvel antigo com contrato de gaveta ou escritura sem registro, priorize regularizá-lo o quanto antes (seja pelo registro regular, adjudicação compulsória ou usucapião extrajudicial em cartório, avaliados por profissional habilitado).</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Contrato de gaveta não transfere a propriedade da casa — no Brasil, quem não registra na matrícula do imóvel continua correndo o risco de perder o bem para dívidas do antigo dono.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-5">
+      <span class="kicker">Problema 24 de 30 • Família, União E Patrimônio</span>
+      <h3>Herança e inventário sem planejamento (contas bloqueadas, brigas e imposto surpresa)</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Quando um pai ou uma mãe falece de forma inesperada, a família descobre em meio ao luto que todas as contas bancárias foram travadas, o imóvel não pode ser vendido, há multa pesada se o inventário atrasar e os herdeiros não têm dinheiro em caixa para pagar o imposto de transmissão (ITCMD).</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Pela lei processual (art. 611 do Código de Processo Civil), o inventário deve ser aberto em até <strong>60 dias</strong> a contar do falecimento — após esse prazo, os Estados aplicam <strong>multas sobre o ITCMD</strong> (que podem chegar a 10% ou 20% do imposto, conforme a lei estadual). Além disso, sacar dinheiro da conta de pessoa falecida usando a senha dela depois do óbito, sem autorização judicial, é conduta ilegal que gera prestação de contas e responsabilidade civil/penal. A boa notícia é que, havendo consenso entre herdeiros (e mesmo com menores/incapazes em certas hipóteses regulamentadas pela Resolução CNJ nº 571/2024, com parecer do MP), o <strong>inventário extrajudicial em cartório</strong> é muito mais rápido e barato.</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Organize uma <strong>&quot;pasta da família&quot;</strong> (física ou digital protegida) listando imóveis, contas, seguros de vida, previdência privada e senhas de documentos essenciais — evitando que a família perca bens esquecidos.</li>
+          <li>Lembre-se que <strong>seguro de vida e planos VGBL/PGBL (conforme regras vigentes)</strong> costumam garantir liquidez rápida aos beneficiários sem travar no inventário, ajudando a família a pagar despesas imediatas e impostos sem precisar vender imóveis às pressas.</li>
+          <li>Em famílias com patrimônio maior ou filhos de relacionamentos diferentes, converse em vida com advogado especializado sobre planejamento sucessório lícito (testamento, doação com reserva de usufruto) para preservar a paz entre os herdeiros.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> O prazo legal para abrir o inventário é de 60 dias; organizar os documentos em vida e prever liquidez para a família evita multas e protege o patrimônio na hora mais difícil.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-5">
+      <span class="kicker">Problema 25 de 30 • Família, União E Patrimônio</span>
+      <h3>Ameaça familiar, violência doméstica ou descumprimento de guarda e visitas</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Uma mulher sofre ameaças, perseguição, agressão psicológica ou controle financeiro dentro de casa — ou um dos genitores impede o outro de ver os filhos no fim de semana combinado ou viaja com a criança sem autorização.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> A <strong>Lei Maria da Penha (Lei nº 11.340/2006)</strong> protege contra cinco formas de violência doméstica e familiar: física, psicológica, sexual, patrimonial e moral — permitindo a concessão rápida de <strong>Medidas Protetivas de Urgência</strong> (afastamento do agressor, proibição de aproximação e contato), cujo descumprimento é <strong>crime autônomo</strong> punido com reclusão (art. 24-A). No âmbito dos filhos, a regra geral é a <strong>guarda compartilhada</strong> (art. 1.584, § 2º do Código Civil, salvo quando um dos pais não deseja ou há risco/violência doméstica — Lei nº 14.713/2023), e viajar para o exterior com menor exige autorização do outro genitor ou judicial (art. 84 do ECA).</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Em situação de risco imediato à integridade física, acione a Polícia Militar (<strong>190</strong>) ou a Central de Atendimento à Mulher (<strong>180</strong>); procure a Delegacia Especializada (DEAM) ou delegacia comum para registrar BO e pedir Medidas Protetivas.</li>
+          <li>Preserve todas as provas de ameaças, perseguição ou descumprimento de visitas: salve áudios, mensagens (sem apagar o histórico), laudos médicos e nomes de testemunhas.</li>
+          <li>Em questões de guarda e visitas, formalize a convivência por escrito/homologação judicial e mantenha a comunicação sobre os filhos estritamente respeitosa e registrada por mensagem — evitando discussões na frente das crianças.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Violência doméstica não é só agressão física: ameaça, perseguição e destruição de documentos ou bens também são protegidas pela Lei Maria da Penha com medidas urgentes.</div>
+    </article>
+<div class="bloco-banner" data-bloco="bloco-6"><span>Bloco 6 de 6</span><h2>Internet, Honra E Segurança Pessoal</h2></div>
+    <article class="card-block problem-item" data-bloco="bloco-6">
+      <span class="kicker">Problema 26 de 30 • Internet, Honra E Segurança Pessoal</span>
+      <h3>Brigas em grupos de WhatsApp, prints, calúnia, difamação e exposição online</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Numa discussão acalorada no grupo do condomínio, da família, da escola ou nos comentários de uma rede social, alguém chama o outro de &quot;bandido&quot;, &quot;caloteiro&quot; ou espalha um boato mentiroso sobre um crime — e acha que apagar a mensagem cinco minutos depois resolve tudo.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> O Código Penal tipifica <strong>calúnia</strong> (imputar falsamente fato definido como crime — art. 138), <strong>difamação</strong> (imputar fato ofensivo à reputação — art. 139) e <strong>injúria</strong> (xingamento à dignidade — art. 140), com <strong>pena aumentada até o triplo</strong> quando praticados ou divulgados em redes sociais (art. 141, § 2º), além da obrigação de indenizar por dano moral na esfera cível. Nos crimes contra a honra de ação privada, existe um prazo curto e fatal de <strong>6 meses</strong> a contar do conhecimento da autoria para oferecer queixa-crime (<em>decadência</em> — art. 103 do CP). Já para quem sofre o ataque, um simples print recortado sem contexto, URL ou metadados pode ser contestado pela defesa por risco de manipulação (jurisprudência do STJ sobre cadeia de custódia digital).</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Antes de publicar qualquer acusação em grupo ou rede social, lembre-se: <strong>criticar ideias ou serviços é lícito; atribuir crime falso ou xingar a pessoa gera processo criminal e indenização</strong>.</li>
+          <li>Se você for vítima de ofensa ou difamação grave na internet, não apenas tire um print solto: <strong>grave a tela mostrando a URL, o perfil/número real do autor, a data e o contexto</strong>, exporte a conversa e, em casos relevantes, registre <strong>Ata Notarial em cartório</strong> ou ferramenta certificada de preservação de prova digital.</li>
+          <li>Não responda no mesmo nível com outros xingamentos (retorsão/ofensas recíprocas enfraquecem sua posição e podem gerar condenação mútua).</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Grupo de WhatsApp não é terra sem lei — ofensa publicada em rede social tem pena agravada e prazo curto de 6 meses para providência criminal.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-6">
+      <span class="kicker">Problema 27 de 30 • Internet, Honra E Segurança Pessoal</span>
+      <h3>Perfil falso, conta invadida, uso indevido de imagem ou vazamento de foto/áudio</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Golpistas clonam seu Instagram ou WhatsApp para pedir Pix aos seus contatos, criam perfil falso com suas fotos, usam sua imagem comercialmente sem autorização ou ameaçam vazar fotos/vídeos íntimos (<em>sextorsão</em>).</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> A <strong>Súmula 403 do STJ</strong> estabelece que o uso não autorizado de imagem para fins econômicos ou comerciais gera dever de indenizar independentemente de prova de prejuízo material. A invasão de dispositivo informático é crime (art. 154-A do CP, com pena agravada pela Lei nº 14.155/2021). Já a divulgação não consentida de cenas de nudez ou sexo é crime grave punido com <strong>reclusão de 1 a 5 anos</strong> (art. 218-C do CP), e pelo <strong>art. 21 do Marco Civil da Internet (Lei nº 12.965/2014)</strong>, basta uma <strong>notificação extrajudicial</strong> da vítima para que a plataforma seja obrigada a retirar imediatamente conteúdo íntimo vazado, sem sequer precisar de ordem judicial prévia!</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Ative <strong>hoje</strong> a <strong>verificação em duas etapas (2FA)</strong> com aplicativo autenticador (e PIN no WhatsApp) em todas as suas redes sociais e e-mail principal — isso bloqueia 99% das invasões de conta.</li>
+          <li>Se sua conta for invadida ou clonada, avise imediatamente amigos e familiares por outro canal, salve o link (<code>URL</code>) do perfil falso e os prints das conversas antes de denunciar à plataforma (porque depois que a plataforma apaga o perfil, você perde o rastro visual!).</li>
+          <li>Em caso de chantagem (<em>sextorsão</em>), <strong>nunca pague o chantagista</strong> (o pagamento só incentiva novas cobranças); preserve prints, registros e faça Boletim de Ocorrência imediatamente.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Ativar a verificação em duas etapas no WhatsApp e no Instagram leva três minutos e impede o golpe de conta clonada que atinge amigos e parentes.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-6">
+      <span class="kicker">Problema 28 de 30 • Internet, Honra E Segurança Pessoal</span>
+      <h3>Documentos perdidos e CPF usado por golpistas para abrir contas ou empresas</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você perde a carteira, tem o RG/CNH furtado ou sofre vazamento de dados e, meses depois, descobre que golpistas abriram contas bancárias digitais, pediram cartões de crédito ou até abriram um MEI/empresa fantasma usando o seu CPF!</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Embora o cidadão não seja culpado pela fraude de terceiros (responsabilidade objetiva das instituições que falham na verificação cadastral — Súmula 479/STJ), demorar meses para descobrir contas ou CNPJs fraudulentos abertos no seu CPF permite que os criminosos usem seu nome como &quot;conta laranja&quot; em outros golpes, gerando bloqueios fiscais, dívidas de DAS/MEI e até intimações policiais para você explicar que também foi vítima!</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Perdeu RG, CNH ou celular? Registre <strong>Boletim de Ocorrência online imediatamente</strong> (constando data e hora exatas da perda/furto) — esse BO será seu escudo temporal contra qualquer fraude feita a partir daquele dia.</li>
+          <li>Acesse gratuitamente duas ferramentas oficiais do governo e do Banco Central ao menos a cada 6 meses:</li>
+          <li><strong>Registrato do Banco Central</strong> (<code>registrato.bcb.gov.br</code> — via conta Gov.br): mostra todas as contas bancárias, chaves Pix e empréstimos abertos no seu CPF;</li>
+          <li><strong>Proteção de CPF na Receita Federal / Portal Gov.br (<code>Proteção do CPF</code>)</strong>: permite ativar uma trava gratuita impedindo que qualquer pessoa abra um CNPJ ou inclua você como sócio de empresa sem sua autorização!</li>
+          <li>Nunca envie foto frente e verso do RG/CNH + selfie segurando documento para cadastros suspeitos ou supostas vagas de emprego por WhatsApp.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Ativar a trava gratuita de &quot;Proteção do CPF&quot; na Receita Federal e checar o Registrato do Banco Central bloqueia contas fantasmas e empresas falsas no seu nome.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-6">
+      <span class="kicker">Problema 29 de 30 • Internet, Honra E Segurança Pessoal</span>
+      <h3>Abordagem policial, blitz ou conflito na rua (direitos e limites da lei)</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Você é parado numa blitz de trânsito ou abordagem policial à noite, fica nervoso, discute em tom ríspido, recusa-se a apresentar documento de identificação ou reage de forma exaltada — e uma parada de rotina de três minutos vira condução à delegacia por desobediência ou desacato.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> A legislação brasileira (CPP, art. 244; Lei nº 13.869/2019 — Lei de Abuso de Autoridade; e jurisprudência do STJ no RHC 158.580/BA) equilibra dois polos: a busca pessoal exige <strong>fundada suspeita concreta</strong> (e a entrada em residência sem mandado exige flagrante delito real ou consentimento comprovado), <strong>mas</strong> resistir fisicamente, xingar o agente público (desacato — art. 331 do CP) ou desobedecer ordem legal de parada e identificação (art. 330 do CP e art. 68 da LCP) configura infração penal imediata. No trânsito, a recusa ao teste do bafômetro não obriga ninguém a produzir prova contra si na esfera criminal, mas gera <strong>infração administrativa gravíssima autônoma</strong> (art. 165-A do CTB — multa pesada e suspensão da CNH por 12 meses, declarada constitucional pelo STF no Tema 1079).</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li>Mantenha sempre <strong>calma absoluta, mãos visíveis e tom respeitoso</strong>: acenda a luz interna do carro à noite, apresente CNH/documento quando solicitado e evite movimentos bruscos ou discussões acaloradas na rua.</li>
+          <li>O cidadão tem o direito de acompanhar a abordagem em segurança e filmar ostensivamente em via pública sem atrapalhar a atuação policial (conforme jurisprudência consolidada sobre publicidade de atos estatais), sempre sem invadir o perímetro de segurança ou ofender os agentes.</li>
+          <li>Se entender que houve excesso ou abuso de autoridade, <strong>não tente resolver no grito na hora</strong>: anote identificação da viatura, local, horário e nomes de testemunhas para registrar formalmente na Corregedoria ou Ministério Público depois, em segurança.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Numa abordagem na rua, serenidade e respeito protegem a sua segurança física e evitam transformar uma verificação de rotina em ocorrência criminal.</div>
+    </article>
+    <article class="card-block problem-item" data-bloco="bloco-6">
+      <span class="kicker">Problema 30 de 30 • Internet, Honra E Segurança Pessoal</span>
+      <h3>Receber intimação policial/judicial ou ser chamado como testemunha (nunca ignore prazos!)</h3>
+      <div class="scene-box"><strong>🎬 A cena real:</strong> Chega uma carta registrada com AR, um oficial de justiça toca a campainha ou chega uma intimação oficial pedindo para você comparecer à delegacia, a uma audiência do Juizado Especial ou apresentar defesa num processo — e a pessoa, por medo ou achando que &quot;é engano e vai se resolver sozinho&quot;, ignora a carta e não comparece.</div>
+      <p><strong>⚖️ Onde mora a armadilha na lei:</strong> Ignorar uma citação ou intimação válida é um dos erros mais caros do Direito brasileiro! Na esfera <strong>cível</strong> (e nos Juizados Especiais — Lei nº 9.099/1995, art. 20), não comparecer à audiência ou não apresentar defesa no prazo gera <strong>revelia</strong>: os fatos narrados pela outra parte podem ser presumidos verdadeiros e você pode ser condenado sem sequer contar a sua versão! Na esfera <strong>criminal</strong>, deixar de atender a intimação válida de juiz ou mudar de endereço sem avisar pode gerar revogação de benefícios, condução coercitiva de testemunha faltosa (art. 218 do CPP) ou até complicações processuais sérias. Por outro lado, existem também golpes de &quot;falsa intimação por WhatsApp ou e-mail com link malicioso&quot; que precisam ser verificados antes de clicar em qualquer coisa!</p>
+      <div class="prevent-box">
+        <strong>🛡️ Como prevenir e mitigar na prática:</strong>
+        <ul>
+          <li><strong>Primeiro cheque a autenticidade sem clicar em links suspeitos:</strong> intimações judiciais reais trazem <strong>número único de processo (20 dígitos)</strong> e vara/tribunal identificáveis; consulte diretamente no site oficial do Tribunal do seu Estado (<code>tj__.jus.br</code>) ou ligue para a delegacia/cartório oficial.</li>
+          <li><strong>Confirmou que é verdadeira? Anote a data exata do recebimento</strong> (o relógio do prazo processual começa a correr a partir da juntada ou da data prevista em lei) e <strong>jamais deixe para a véspera</strong>.</li>
+          <li>Em delegacia ou audiência criminal como investigado, você tem garantia constitucional de ser acompanhado por advogado(a) ou Defensor Público e direito ao silêncio sem autoincriminação (art. 5º, LXIII da Constituição); como testemunha, tem o dever legal de comparecer e dizer a verdade sobre o que presenciou.</li>
+        </ul>
+      </div>
+      <div class="lunch-box"><strong>🍽️ Para guardar e avisar a família:</strong> Nunca clique em links de intimação suspeita, mas nunca ignore uma intimação verdadeira — no Direito, quem falta à audiência ou perde o prazo entrega a razão de bandeja.</div>
+    </article>
+
+    <article class="card-block" style="border-color: rgba(197, 160, 89, 0.55); background: #FFFDF8;">
+      <span class="kicker" style="color:#8A6421;">Resumo de Bolso • Para Nunca Esquecer</span>
+      <h2 style="font-family:'Instrument Serif', Georgia, serif; font-size:1.8rem; font-weight:400; color:var(--navy); margin-bottom:12px;">As 3 Regras de Ouro da Proteção Preventiva</h2>
+      <ol style="margin-left:20px;">
+        <li><strong>Regra do Registro:</strong> Combinou algo importante? Transforme em prova simples (contrato de 1 página, mensagem confirmada, protocolo anotado, negativa por escrito ou vídeo de vistoria).</li><li><strong>Regra do Tempo:</strong> Aconteceu um problema? Não empurre com a barriga — os primeiros minutos (MED/Pix), 7 dias (internet), 60 dias (inventário), 90 dias (garantia) e 6 meses (crimes contra a honra) mudam completamente o desfecho.</li><li><strong>Regra da Serenidade:</strong> Em conflitos de trânsito, condomínio, internet ou abordagem na rua, quem mantém a calma e guarda provas preserva a razão; quem reage no impulso costuma perder o direito que tinha.</li>
+      </ol>
+    </article>
+
+    <div class="oab-footer">
+      <span class="kicker">⚖️ Nota de Transparência, Ética e Educação Jurídica (OAB)</span>
+      <h2>Natureza educativa preventiva deste guia e onde buscar assistência em caso concreto</h2>
+      <p>Este guia possui caráter estritamente educativo e informativo sobre a legislação brasileira e a jurisprudência pública dos tribunais superiores, em observância ao Estatuto da Advocacia e ao Provimento nº 205/2021 da OAB. Ele não constitui consultoria jurídica nem substitui a análise técnica de documentos e prazos em um caso concreto. Caso você ou sua família estejam vivendo uma situação jurídica particular, procure sempre um(a) advogado(a) de sua livre escolha regularmente inscrito(a) na OAB ou a Defensoria Pública do seu Estado. Para enviar notícias públicas ou dúvidas conceituais em tese, conte com a nossa <strong>Linha Direta</strong> na <a href="area-assinante.html" style="color:#1B4D89; font-weight:700;">Área do Assinante</a> ou em <strong>zamboniexplica@gmail.com</strong>.</p>
+      <div class="oab-meta">
+        <strong>Zamboni Explica</strong> — A Zamboni Lins Filho Serviços de Informação Ltda. (CNPJ 67.166.139/0001-80) · zamboniexplica.com.br
+      </div>
+    </div>
+  </div>
+  <script>
+    var activeBloco = 'all';
+    function filterBloco(bloco, btn) {
+      activeBloco = bloco;
+      document.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+      if (btn) btn.classList.add('active');
+      applyFilters();
+    }
+    function applyFilters() {
+      var q = (document.getElementById('search-problems').value || '').toLowerCase().trim();
+      document.querySelectorAll('.problem-item').forEach(function(item) {
+        var matchBloco = (activeBloco === 'all' || item.getAttribute('data-bloco') === activeBloco);
+        var matchText = (!q || item.innerText.toLowerCase().indexOf(q) !== -1);
+        item.style.display = (matchBloco && matchText) ? 'block' : 'none';
+      });
+      document.querySelectorAll('.bloco-banner').forEach(function(banner) {
+        var b = banner.getAttribute('data-bloco');
+        var visibleInBloco = Array.from(document.querySelectorAll('.problem-item[data-bloco="' + b + '"]'))
+          .some(function(el) { return el.style.display !== 'none'; });
+        banner.style.display = visibleInBloco ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
