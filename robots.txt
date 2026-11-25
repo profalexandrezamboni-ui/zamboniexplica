@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /area-assinante.html
+Disallow: /30-problemas-vida-real.html
+Disallow: /manual-20-conceitos.html
+Disallow: /guia-golpes-pix.html
+Disallow: /dossie-historico-01.html
+Disallow: /galeria-instagram.html
+Disallow: /audio/
 
 Sitemap: https://zamboniexplica.com.br/sitemap.xml
