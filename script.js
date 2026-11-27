@@ -1,87 +1,37 @@
-// ===== Configuração (único lugar para editar) =====
+// ===== Configuração (venda contínua / carrinho sempre aberto) =====
 const CONFIG = {
   CHECKOUT_URL: "https://pay.kiwify.com.br/kOr6u1x",
   CHECKOUT_ANNUAL_URL: "https://pay.kiwify.com.br/xlNLeB4",
-  VIP_TELEGRAM_URL: "https://t.me/ZamboniExplicaBot?start=lista_fundador",
-  ABRE:  "2026-11-10T00:00:00-03:00",   // vendas abertas imediatamente (modelo perpétuo)
-  FECHA: "2099-12-31T23:59:59-03:00",   // carrinho sempre aberto (perpétuo)
 };
 
-// Permite conferir os estados: ?estado=antes | aberta | encerrada
-function estadoAtual(){
-  const p = new URLSearchParams(location.search).get("estado");
-  if (["antes","aberta","encerrada"].includes(p)) return p;
-  const now = Date.now();
-  if (now < Date.parse(CONFIG.ABRE)) return "antes";
-  if (now <= Date.parse(CONFIG.FECHA)) return "aberta";
-  return "encerrada";
-}
-
 function aplicarEstado(){
-  const est = estadoAtual();
   const status = document.getElementById("status");
   const mainCtas = document.querySelectorAll(".btn.cta-main");
   const btnMensal = document.getElementById("btn-plan-mensal");
   const btnAnual = document.getElementById("btn-plan-anual");
-  const waitlistBox = document.getElementById("waitlist-box");
   const label = (b, txt) => { b.innerHTML = txt + ' <span class="arr">→</span>'; };
 
-  if (est === "antes"){
-    status.innerHTML = 'Pré-venda de fundador abre em <b>2 de dezembro</b> · entre na Lista Prioritária gratuita';
-    if (waitlistBox) waitlistBox.classList.add("active");
-    mainCtas.forEach(b => {
-      b.href = "#oferta";
-      if (!b.closest(".dock")) label(b, '<span>Entrar na Lista Prioritária de Fundador<span class="px"> — R$ 9,90/mês</span></span>');
-      else label(b, "Lista VIP");
-    });
-    if (btnMensal){
-      btnMensal.href = CONFIG.VIP_TELEGRAM_URL;
-      btnMensal.target = "_blank";
-      btnMensal.rel = "noopener";
-      label(btnMensal, "📲 Ser avisado no Telegram (2/12)");
-    }
-    if (btnAnual){
-      btnAnual.href = CONFIG.VIP_TELEGRAM_URL;
-      btnAnual.target = "_blank";
-      btnAnual.rel = "noopener";
-      label(btnAnual, "📲 Reservar vaga anual no Telegram");
-    }
-    document.querySelectorAll(".cta-note").forEach(n => {
-      n.innerHTML = 'A pré-venda com preço congelado (R$ 9,90/mês ou R$ 99/ano) abre de <b>2 a 8 de dezembro</b>. Entre na Lista Prioritária em 1 toque para receber o link de abertura.';
-    });
-  } else if (est === "aberta"){
-    if (waitlistBox) waitlistBox.classList.remove("active");
-    status.innerHTML = 'Inscrições de Assinante Fundador <b>abertas agora</b> · acesso imediato à Área do Assinante + edição todo domingo às 8h';
-    mainCtas.forEach(b => {
-      b.href = "#oferta";
-      if (!b.closest(".dock")) label(b, '<span>Quero ser assinante fundador<span class="px"> — R$ 9,90/mês</span></span>');
-      else label(b, "Assinar");
-    });
-    if (btnMensal){
-      btnMensal.href = CONFIG.CHECKOUT_URL;
-      btnMensal.rel = "noopener";
-      label(btnMensal, "Assinar Mensal — R$ 9,90/mês");
-    }
-    if (btnAnual){
-      btnAnual.href = CONFIG.CHECKOUT_ANNUAL_URL;
-      btnAnual.rel = "noopener";
-      label(btnAnual, "Assinar Anual — R$ 99/ano");
-    }
-    document.querySelectorAll(".cta-note").forEach(n => {
-      n.innerHTML = 'Inscrições abertas agora com preço de Fundador congelado (<b>R$ 9,90/mês</b> ou <b>R$ 99/ano</b> com 2 meses grátis) + acesso imediato ao portal e Semana Especial de Fundador (2 a 8/12).';
-    });
-  } else {
-    if (waitlistBox) waitlistBox.classList.remove("active");
-    status.innerHTML = 'A pré-venda de fundador foi encerrada · obrigado a quem entrou';
-    [...mainCtas, btnMensal, btnAnual].filter(Boolean).forEach(b => {
-      b.removeAttribute("href");
-      b.setAttribute("aria-disabled","true");
-      b.innerHTML = b.closest(".dock") ? "Encerrada" : "Pré-venda encerrada";
-    });
-    document.querySelectorAll(".cta-note").forEach(n => {
-      n.textContent = "As assinaturas estão fechadas por enquanto. Quando reabrirem, o aviso sai no @profalexandrezamboni.";
-    });
+  if (status){
+    status.innerHTML = 'Meu primeiro projeto social de educação jurídica · <b>inscrições abertas</b> · acesso imediato + edição todo domingo às 8h';
   }
+  mainCtas.forEach(b => {
+    b.href = "#oferta";
+    if (!b.closest(".dock")) label(b, '<span>Quero ser assinante fundador<span class="px"> — R$ 9,90/mês</span></span>');
+    else label(b, "Assinar");
+  });
+  if (btnMensal){
+    btnMensal.href = CONFIG.CHECKOUT_URL;
+    btnMensal.rel = "noopener";
+    label(btnMensal, "Assinar Mensal — R$ 9,90/mês");
+  }
+  if (btnAnual){
+    btnAnual.href = CONFIG.CHECKOUT_ANNUAL_URL;
+    btnAnual.rel = "noopener";
+    label(btnAnual, "Assinar Anual — R$ 99/ano");
+  }
+  document.querySelectorAll(".cta-note").forEach(n => {
+    n.innerHTML = 'Inscrições abertas em modo contínuo com valor simbólico (<b>R$ 9,90/mês</b> ou <b>R$ 99/ano</b> com 2 meses grátis) + acesso imediato à Área do Assinante e edições todo domingo às 8h.';
+  });
 }
 
 // ===== As seis perguntas (Degustação aberta nas 1-3 + Suspense editorial nas 4-6) =====
