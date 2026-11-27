@@ -27,7 +27,7 @@ function aplicarEstado(){
   const label = (b, txt) => { b.innerHTML = txt + ' <span class="arr">→</span>'; };
 
   if (est === "antes"){
-    status.innerHTML = 'Pré-venda de fundador abre em <b>1º de dezembro</b> · entre na Lista Prioritária gratuita';
+    status.innerHTML = 'Pré-venda de fundador abre em <b>2 de dezembro</b> · entre na Lista Prioritária gratuita';
     if (waitlistBox) waitlistBox.classList.add("active");
     mainCtas.forEach(b => {
       b.href = "#oferta";
@@ -38,7 +38,7 @@ function aplicarEstado(){
       btnMensal.href = CONFIG.VIP_TELEGRAM_URL;
       btnMensal.target = "_blank";
       btnMensal.rel = "noopener";
-      label(btnMensal, "📲 Ser avisado no Telegram (1º/12)");
+      label(btnMensal, "📲 Ser avisado no Telegram (2/12)");
     }
     if (btnAnual){
       btnAnual.href = CONFIG.VIP_TELEGRAM_URL;
@@ -47,7 +47,7 @@ function aplicarEstado(){
       label(btnAnual, "📲 Reservar vaga anual no Telegram");
     }
     document.querySelectorAll(".cta-note").forEach(n => {
-      n.innerHTML = 'A pré-venda com preço congelado (R$ 9,90/mês ou R$ 99/ano) abre de <b>1º a 7 de dezembro</b>. Entre na Lista Prioritária em 1 toque para receber o link de abertura.';
+      n.innerHTML = 'A pré-venda com preço congelado (R$ 9,90/mês ou R$ 99/ano) abre de <b>2 a 8 de dezembro</b>. Entre na Lista Prioritária em 1 toque para receber o link de abertura.';
     });
   } else if (est === "aberta"){
     if (waitlistBox) waitlistBox.classList.remove("active");
@@ -68,7 +68,7 @@ function aplicarEstado(){
       label(btnAnual, "Assinar Anual — R$ 99/ano");
     }
     document.querySelectorAll(".cta-note").forEach(n => {
-      n.innerHTML = 'Inscrições abertas agora com preço de Fundador congelado (<b>R$ 9,90/mês</b> ou <b>R$ 99/ano</b> com 2 meses grátis) + acesso imediato ao portal e Semana Especial de Fundador (1º a 7/12).';
+      n.innerHTML = 'Inscrições abertas agora com preço de Fundador congelado (<b>R$ 9,90/mês</b> ou <b>R$ 99/ano</b> com 2 meses grátis) + acesso imediato ao portal e Semana Especial de Fundador (2 a 8/12).';
     });
   } else {
     if (waitlistBox) waitlistBox.classList.remove("active");
